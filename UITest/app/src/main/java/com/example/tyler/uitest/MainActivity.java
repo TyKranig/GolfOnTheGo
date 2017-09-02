@@ -18,33 +18,59 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout layout = new RelativeLayout(this);
         layout.setBackgroundColor(Color.DKGRAY);
 
-        RelativeLayout.LayoutParams buttonDetails = new RelativeLayout.LayoutParams(
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
-                RelativeLayout.LayoutParams.WRAP_CONTENT
-        );
-
+        //Add the username field
         EditText userName = new EditText(this);
         userName.setGravity(Gravity.CENTER);
         userName.setHint(R.string.userName);
         userName.setWidth(560);
-        layout.addView(userName);
+        userName.setId(0);
 
+        //Add the password field
         EditText password = new EditText(this);
         password.setGravity(Gravity.CENTER);
         password.setHint(R.string.password);
         password.setWidth(560);
-
         password.setTransformationMethod(new PasswordTransformationMethod());
-        layout.addView(password);
+        password.setId(1);
 
+        //Add the login button
         Button login = new Button(this);
         login.setText(R.string.login);
         login.setBackgroundColor(Color.BLACK);
         login.setTextColor(Color.WHITE);
-        buttonDetails.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        buttonDetails.addRule(RelativeLayout.CENTER_VERTICAL);
+        login.setId(2);
 
-        layout.addView(login, buttonDetails);
+        RelativeLayout.LayoutParams buttonContainer = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        RelativeLayout.LayoutParams userNameContainer = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        RelativeLayout.LayoutParams passwordContainer = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        //give rules to containers
+        buttonContainer.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        buttonContainer.addRule(RelativeLayout.CENTER_VERTICAL);
+
+        userNameContainer.addRule(RelativeLayout.ABOVE, password.getId());
+        userNameContainer.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        userNameContainer.setMargins(0, 0, 0, 50);
+
+        passwordContainer.addRule(RelativeLayout.ABOVE, login.getId());
+        passwordContainer.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        passwordContainer.setMargins(0, 0, 0, 50);
+
+        //add to layout
+        layout.addView(login, buttonContainer);
+        layout.addView(password, passwordContainer);
+        layout.addView(userName, userNameContainer);
 
         setContentView(layout);
     }
