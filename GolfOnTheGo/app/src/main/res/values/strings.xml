@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GolfOnTheGo</string>
+    <string name="title_activity_course">Map</string>
 </resources>
