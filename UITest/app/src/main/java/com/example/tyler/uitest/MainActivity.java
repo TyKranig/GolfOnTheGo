@@ -1,15 +1,18 @@
 package com.example.tyler.uitest;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "userName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         userName.setGravity(Gravity.CENTER);
         userName.setHint(R.string.userName);
         userName.setWidth(560);
-        userName.setId(0);
+        userName.setId(R.id.userName);
 
         //Add the password field
         EditText password = new EditText(this);
@@ -31,14 +34,15 @@ public class MainActivity extends AppCompatActivity {
         password.setHint(R.string.password);
         password.setWidth(560);
         password.setTransformationMethod(new PasswordTransformationMethod());
-        password.setId(1);
+        password.setId(R.id.password);
 
         //Add the login button
         Button login = new Button(this);
         login.setText(R.string.login);
         login.setBackgroundColor(Color.BLACK);
         login.setTextColor(Color.WHITE);
-        login.setId(2);
+        login.setId(R.id.loginButton);
+        login.setOnClickListener(LoginClickDo(login));
 
         RelativeLayout.LayoutParams buttonContainer = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -73,5 +77,17 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(userName, userNameContainer);
 
         setContentView(layout);
+    }
+
+    View.OnClickListener LoginClickDo(final Button button) {
+        return new View.OnClickListener() {
+            public void onClick(View v){
+                EditText userName = (EditText)findViewById(R.id.userName);
+                Intent intent = new Intent(MainActivity.this, MainScreen.class);
+                String message = userName.getText().toString();
+                intent.putExtra(EXTRA_MESSAGE, message);
+                startActivity(intent);
+            }
+        };
     }
 }
