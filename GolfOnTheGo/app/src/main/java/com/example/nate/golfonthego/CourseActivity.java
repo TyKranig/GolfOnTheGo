@@ -1,14 +1,17 @@
 package com.example.nate.golfonthego;
 
+import android.content.Context;
 import android.graphics.Point;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -38,6 +41,16 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        boolean mapStyleSuccess = mMap.setMapStyle(new MapStyleOptions(getResources().getString(R.string.map_style)));
+
+        if(!mapStyleSuccess) {
+            Context context = getApplicationContext();
+            CharSequence text = "Style Input Failed";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
 
         // Add a marker in Sydney and move the camera
         LatLng ames = new LatLng(42, -93);
