@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -52,9 +53,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        // Add a marker in Sydney and move the camera
-        LatLng ames = new LatLng(42, -93);
+        // Add a marker in hopefully ames and move the camera to that poing and zoom in
+        LatLng ames = new LatLng(42.02672222, -93.6475);
         mMap.addMarker(new MarkerOptions().position(ames).title("Hopefully Ames"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ames, (float)15.0));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ames, (float)19.0));
     }
 }
