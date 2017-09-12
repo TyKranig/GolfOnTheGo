@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">GolfOnTheGo</string>
     <string name="title_activity_course">Map</string>
+    <string name="title_location_permission">Access Location</string>
+    <string name="text_location_permission">Allow us to access your location to play the game?</string>
+    <string name="ok">ok</string>
     <string name="map_style">[
   {
     \"elementType\": \"geometry\",
