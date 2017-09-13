@@ -10,17 +10,12 @@ import android.widget.RelativeLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.graphics.Color;
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-=======
-import android.content.res.Resources;
-import android.util.TypedValue;
->>>>>>> 6b46ce1dc73af33fc727eda8bfba142b807bbd18
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "userName";
@@ -39,12 +34,14 @@ public class MainActivity extends AppCompatActivity {
         EditText userName = new EditText(this);
         userName.setGravity(Gravity.CENTER);
         userName.setHint(R.string.userName);
+        userName.setWidth(560);
         userName.setId(R.id.userName);
 
         //Add the password field
         EditText password = new EditText(this);
         password.setGravity(Gravity.CENTER);
         password.setHint(R.string.password);
+        password.setWidth(560);
         password.setTransformationMethod(new PasswordTransformationMethod());
         password.setId(R.id.password);
 
@@ -82,15 +79,6 @@ public class MainActivity extends AppCompatActivity {
         passwordContainer.addRule(RelativeLayout.ABOVE, login.getId());
         passwordContainer.addRule(RelativeLayout.CENTER_HORIZONTAL);
         passwordContainer.setMargins(0, 0, 0, 50);
-
-        //setting the same size for the inputs on multiple devices
-        Resources r = getResources();
-        int adamSandlerFilm = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 200,
-                    r.getDisplayMetrics()
-                );
-
-        userName.setWidth(adamSandlerFilm);
-        password.setWidth(adamSandlerFilm);
 
         //add to layout
         layout.addView(login, buttonContainer);

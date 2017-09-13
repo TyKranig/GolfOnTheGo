@@ -10,23 +10,11 @@ import android.widget.RelativeLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.graphics.Color;
-<<<<<<< HEAD
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-=======
 import android.content.res.Resources;
 import android.util.TypedValue;
->>>>>>> 6b46ce1dc73af33fc727eda8bfba142b807bbd18
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "userName";
-    Connection conn = null;
-    ResultSet rs;
-    Statement stmt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,49 +84,6 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(login, buttonContainer);
         layout.addView(password, passwordContainer);
         layout.addView(userName, userNameContainer);
-
-        try{
-            conn = DriverManager.getConnection("mysql.cs.iastate.edu", "dbu309amc1", "XFsBvb1t");
-        }
-        catch(SQLException e){
-            throw new IllegalStateException("Cannot connect the database!", e);
-        }
-
-        try{
-            stmt = conn.createStatement();
-            rs =  stmt.executeQuery("Select * from User");
-
-            while(rs.next()){
-                login.setText(rs.getString("userName"));
-            }
-        }
-        catch (SQLException ex){
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
-        finally {
-            // it is a good idea to release
-            // resources in a finally{} block
-            // in reverse-order of their creation
-            // if they are no-longer needed
-
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException sqlEx) { } // ignore
-
-                rs = null;
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqlEx) { } // ignore
-
-                stmt = null;
-            }
-        }
 
         setContentView(layout);
     }
