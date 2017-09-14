@@ -10,17 +10,14 @@ import android.widget.RelativeLayout;
 import android.widget.Button;
 import android.widget.EditText;
 import android.graphics.Color;
-<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-=======
 import android.content.res.Resources;
 import android.util.TypedValue;
->>>>>>> 6b46ce1dc73af33fc727eda8bfba142b807bbd18
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "userName";
