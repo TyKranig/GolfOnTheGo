@@ -1,64 +1,99 @@
 package com.example.nate.golfonthego;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-
-import static com.example.nate.golfonthego.R.string.login;
+import java.util.concurrent.TimeUnit;
 
 public class LoginScreen extends AppCompatActivity {
 
-    Connection conn = null;
+    public EditText userName;
+    public EditText password;
+    public Button login;
+    public Button register;
+    public Boolean loginsuccess;
+    public static final String EXTRA_MESSAGE = "userName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
 
-        /*try{
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-        }
-        catch(Exception e){
-            System.out.println("The class was not found!");
-            e.printStackTrace();
-            return;
-        }
+        userName = (EditText)findViewById(R.id.userName);
+        password = (EditText)findViewById(R.id.password);
 
-        try{
-            conn = DriverManager.getConnection("jdbc:mysql://mysql.cs.iastate.edu:3306/db309amc1","dbu309amc1","XFsBvb1t");
-        }
-        catch(SQLException e){
-            System.out.println("couldn't get the connection ");
-            e.printStackTrace();
-            return;
-        }*/
-        new URLTask().execute();
+        login = (Button)findViewById(R.id.login);
+        register = (Button)findViewById(R.id.register);
+
+        login.setOnClickListener(LoginClickDo());
+        register.setOnClickListener(RegisterClickDo());
+
+    }
+
+    View.OnClickListener LoginClickDo(){
+        return new View.OnClickListener() {
+            public void onClick(View v) {
+                if (userName.getText().toString().equals("") || password.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Please enter a UserName and Password", Toast.LENGTH_LONG).show();
+
+                } else {
+                    try {
+                        final AsyncTask<Void,Void,Void> loginner = new URLTask(userName.getText().toString(), password.getText().toString());
+                        loginner.execute();
+                        loginner.get(10000, TimeUnit.MILLISECONDS);
+
+                        if (loginsuccess) {
+                            Intent intent = new Intent(LoginScreen.this, MainScreen.class);
+                            intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Incorrect Username or password", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+    }
+
+    View.OnClickListener RegisterClickDo() {
+        return new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intent = new Intent(LoginScreen.this, Register.class);
+                startActivity(intent);
+            }
+        };
     }
 
     class URLTask extends AsyncTask<Void,Void,Void>{
 
-        public ArrayList<String> userNames;
+        private String username;
+        private String password;
+        public boolean Success;
 
-        protected void onPreExecute() {
-            //display progress dialog.
+        public URLTask(String username, String password)
+        {
+            this.username = username;
+            this.password = password;
         }
+        protected void onPreExecute() {
+        }
+
         @Override
         protected Void doInBackground(Void... voids) {
             try{
-                URL url = new URL("http://proj-309-am-c-1.cs.iastate.edu/database.php");
+                URL url = new URL("http://proj-309-am-c-1.cs.iastate.edu/login.php?userName=\"" + username + "\"&password=\"" + password + "\"");
                 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
                 urlconnection.setRequestProperty("Accept-Charset", "UTF-8");
                 urlconnection.setConnectTimeout(15000);
@@ -76,13 +111,10 @@ public class LoginScreen extends AppCompatActivity {
                             sb.append(line+"\n");
                         }
                         br.close();
-                        JSONArray users = new JSONArray(sb.toString());
-                        for (int i = 0; i < users.length(); ++i) {
-                            final JSONObject person = users.getJSONObject(i);
-                            System.out.println(person.getInt("userId"));
-                            System.out.println(person.getString("userName"));
-                            System.out.println(person.getString("password"));
-                        }
+                        //JSONArray users = new JSONArray(sb.toString());
+                        System.out.println("\n" + sb.toString());
+                        Success = sb.toString().trim().equals("1");
+                        handleLogin(Success);
                 }
                 // add more code here to send a run request ?
                 urlconnection.disconnect();
@@ -94,6 +126,10 @@ public class LoginScreen extends AppCompatActivity {
 
             return null;
         }
+    }
+
+    private void handleLogin(Boolean result){
+        loginsuccess = result;
     }
 
 }
