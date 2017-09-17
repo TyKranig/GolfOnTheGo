@@ -241,7 +241,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                             ACCESS_FINE_LOCATION)
                             == PackageManager.PERMISSION_GRANTED) {
 
-                        //Request location updates:
+                        //Restart the api connection because onmapready
+                        //throws an error
                         googleApiClient.disconnect();
                         googleApiClient.connect();
                     }
