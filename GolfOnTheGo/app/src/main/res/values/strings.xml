@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GolfOnTheGo</string>
+    <string name="userName">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="regConfpass">Confirm</string>
 </resources>
