@@ -54,8 +54,9 @@ public class LoginScreen extends AppCompatActivity {
                         if (loginsuccess) {
                             Intent intent = new Intent(LoginScreen.this, MainScreen.class);
                             intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
-                            startActivity(intent);
                             finish();
+                            startActivity(intent);
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Incorrect Username or password", Toast.LENGTH_LONG).show();
                         }
