@@ -13,6 +13,9 @@ android {
         jackOptions {
             enabled true
         }
+        defaultConfig {
+            multiDexEnabled true
+        }
     }
     buildTypes {
         release {

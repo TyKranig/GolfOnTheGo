@@ -18,5 +18,7 @@ public class MainScreen extends AppCompatActivity {
         TextView userMessage = (TextView)findViewById(R.id.usernameHello);
         userMessage.setText("Hello " + message + "!");
         userMessage.setTextColor(Color.BLACK);
+        Intent intent = new Intent(MainScreen.this, CourseActivity.class);
+        startActivity(intent);
     }
 }
