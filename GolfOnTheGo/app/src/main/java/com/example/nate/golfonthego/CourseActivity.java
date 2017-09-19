@@ -2,34 +2,26 @@ package com.example.nate.golfonthego;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.IntentSender;
 import android.content.pm.PackageManager;
-import android.graphics.Point;
 import android.location.Location;
-import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.CommonStatusCodes;
-import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.location.LocationSettingsRequest;
-import com.google.android.gms.location.LocationSettingsResponse;
-import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -39,12 +31,9 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static com.example.nate.golfonthego.R.id.map;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener {
@@ -88,7 +77,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         setContentView(R.layout.activity_course);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(map);
         mapFragment.getMapAsync(this);
     }
 
@@ -130,6 +119,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
         // Add a marker in hopefully ames and move the camera to that poing and zoom in
         LatLng ames = new LatLng(42.02672222, -93.6475);
+        LatLng ames2 = new LatLng(42.01672222, -93.6475);
+        LatLng ames3 = new LatLng(42.00672222, -93.6475);
+
         mMap.addMarker(new MarkerOptions().position(ames).title("Hopefully Ames"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ames, (float)19.0));
 
@@ -140,10 +132,30 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 for (Location location : locationResult.getLocations()) {
                     LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
+                    //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
                 }
             };
         };
+        GroundOverlayOptions testHole1 = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name))
+                .position(ames, 86f, 150f)
+                .transparency((float)0)
+                .bearing((float)90);
+        mMap.addGroundOverlay(testHole1);
+
+        GroundOverlayOptions testHole2 = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.yellow_image))
+                .position(ames2, 86f, 150f)
+                .transparency((float)0)
+                .bearing((float)90);
+        mMap.addGroundOverlay(testHole2);
+
+        GroundOverlayOptions testHole3 = new GroundOverlayOptions()
+                .image(BitmapDescriptorFactory.fromResource(R.drawable.red_image))
+                .position(ames3, 86f, 150f)
+                .transparency((float)0)
+                .bearing((float)90);
+        mMap.addGroundOverlay(testHole3);
     }
 
     @Override
