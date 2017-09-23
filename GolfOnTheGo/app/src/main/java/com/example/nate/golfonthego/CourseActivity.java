@@ -3,6 +3,9 @@ package com.example.nate.golfonthego;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -19,6 +22,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.GroundOverlay;
 import com.google.android.gms.maps.model.GroundOverlayOptions;
@@ -119,15 +123,21 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        // Add a marker in hopefully ames and move the camera to that poing and zoom in
-        LatLng hole1a = new LatLng(42.02672222, -93.6475);
-        LatLng hole1b = new LatLng(42.02642222, -93.6475);
-        LatLng hole1c = new LatLng(42.02642222, -93.6435);
+        // markers for drawing the first polygon (hole) and a tee box to check distance to
+        LatLng hole1a = new LatLng(42.026855, -93.647630);
+        LatLng hole1b = new LatLng(42.026499, -93.647619);
+        LatLng hole1c = new LatLng(42.026224, -93.647684);
+        LatLng hole1d = new LatLng(42.026377, -93.646026);
+        LatLng hole1e = new LatLng(42.026356, -93.645405);
+        LatLng hole1f = new LatLng(42.026778, -93.645426);
+        LatLng hole1g = new LatLng(42.026814, -93.646231);
+        LatLng hole1h = new LatLng(42.026655, -93.646950);
+        LatLng hole1Tee = new LatLng(42.021674, -93.677621);
 
         mMap.addMarker(new MarkerOptions().position(hole1a).title("Hopefully Ames"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
 
-        // trying to do updating ui
+        // where the magic happens, location callbacks and updating UI
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
@@ -135,10 +145,20 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
                     mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
                     //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
+                    Location teeLocation = new Location("tmp");
+                    teeLocation.setLatitude(hole1Tee.latitude);
+                    teeLocation.setLongitude(hole1Tee.longitude);
+                    if(location.distanceTo(teeLocation) < 100){
+                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
+                        BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
+                        mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!")).setIcon(ballMarker);
+                    }
                 }
             };
         };
-        PolygonOptions hole1 = new PolygonOptions().add(hole1a, hole1b, hole1c);
+        PolygonOptions hole1 = new PolygonOptions().add(hole1a, hole1b, hole1c, hole1d, hole1e, hole1f,
+                hole1g, hole1h).fillColor(Color.GREEN).strokeJointType(2)
+                .strokeWidth((float)10).strokeColor(Color.GREEN);
         Polygon holePolygon1 = mMap.addPolygon(hole1);
     }
 
