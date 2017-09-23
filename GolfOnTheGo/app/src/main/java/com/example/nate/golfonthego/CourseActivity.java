@@ -31,6 +31,8 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
@@ -118,12 +120,12 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         }
 
         // Add a marker in hopefully ames and move the camera to that poing and zoom in
-        LatLng ames = new LatLng(42.02672222, -93.6475);
-        LatLng ames2 = new LatLng(42.01672222, -93.6475);
-        LatLng ames3 = new LatLng(42.00672222, -93.6475);
+        LatLng hole1a = new LatLng(42.02672222, -93.6475);
+        LatLng hole1b = new LatLng(42.02642222, -93.6475);
+        LatLng hole1c = new LatLng(42.02642222, -93.6435);
 
-        mMap.addMarker(new MarkerOptions().position(ames).title("Hopefully Ames"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ames, (float)19.0));
+        mMap.addMarker(new MarkerOptions().position(hole1a).title("Hopefully Ames"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
 
         // trying to do updating ui
         locationCallback = new LocationCallback() {
@@ -136,26 +138,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 }
             };
         };
-        GroundOverlayOptions testHole1 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name))
-                .position(ames, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole1);
-
-        GroundOverlayOptions testHole2 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.yellow_image))
-                .position(ames2, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole2);
-
-        GroundOverlayOptions testHole3 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.red_image))
-                .position(ames3, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole3);
+        PolygonOptions hole1 = new PolygonOptions().add(hole1a, hole1b, hole1c);
+        Polygon holePolygon1 = mMap.addPolygon(hole1);
     }
 
     @Override
