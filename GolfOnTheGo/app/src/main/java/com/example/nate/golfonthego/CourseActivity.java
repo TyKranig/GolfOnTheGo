@@ -56,6 +56,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     Location currentLocation;
     // current location marker
     Marker livePlayerMarker;
+    Marker ballmarker;
 
     // request for location
     LocationRequest locationRequest;
@@ -135,11 +136,18 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         LatLng hole1g = new LatLng(42.026814, -93.646231);
         LatLng hole1h = new LatLng(42.026655, -93.646950);
         LatLng hole1Tee = new LatLng(42.026486, -93.647377);
+        LatLng hole1Greena = new LatLng(42.026633, -93.645787);
+        LatLng hole1Greenb = new LatLng(42.026406, -93.645795);
+        LatLng hole1Greenc = new LatLng(42.026370, -93.645495);
+        LatLng hole1Greend = new LatLng(42.026677, -93.645500);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
         // this is the instantiation of the player marker, updates position when permissed.
         livePlayerMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("You are here"));
-
+        Marker tempTeeMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("Move Here to Play"));
+        Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.course_start);
+        BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
+        tempTeeMarker.setIcon(startBitmapDescriptor);
         // where the magic happens, location callbacks and updating UI
         locationCallback = new LocationCallback() {
             @Override
@@ -155,9 +163,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     if(location.distanceTo(teeLocation) < 10){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
-                        Marker ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
+                        ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
                         ballmarker.setIcon(ballMarker);
-                        mMap.addCircle(new CircleOptions().center(hole1Tee).radius((double)10).fillColor(Color.CYAN));
+                        tempTeeMarker.remove();
                     }
                 }
             };
@@ -166,6 +174,11 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 hole1g, hole1h).fillColor(Color.GREEN).strokeJointType(2)
                 .strokeWidth((float)10).strokeColor(Color.GREEN);
         Polygon holePolygon1 = mMap.addPolygon(hole1);
+        holePolygon1.setZIndex(0);
+        PolygonOptions green1 = new PolygonOptions().add(hole1Greena, hole1Greenb, hole1Greenc, hole1Greend)
+                .fillColor(Color.rgb((float)19, (float)82, (float)25));
+        Polygon greenPolygon1 = mMap.addPolygon(green1);
+        greenPolygon1.setZIndex(1);
     }
 
     @Override
