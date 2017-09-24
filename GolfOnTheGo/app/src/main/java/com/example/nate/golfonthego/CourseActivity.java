@@ -24,10 +24,10 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -54,6 +54,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private LocationCallback locationCallback = new LocationCallback();
     // the actual location variable
     Location currentLocation;
+    // current location marker
+    Marker livePlayerMarker;
 
     // request for location
     LocationRequest locationRequest;
@@ -132,26 +134,30 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         LatLng hole1f = new LatLng(42.026778, -93.645426);
         LatLng hole1g = new LatLng(42.026814, -93.646231);
         LatLng hole1h = new LatLng(42.026655, -93.646950);
-        LatLng hole1Tee = new LatLng(42.021674, -93.677621);
+        LatLng hole1Tee = new LatLng(42.026486, -93.647377);
 
-        mMap.addMarker(new MarkerOptions().position(hole1a).title("Hopefully Ames"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
+        // this is the instantiation of the player marker, updates position when permissed.
+        livePlayerMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("You are here"));
 
         // where the magic happens, location callbacks and updating UI
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 for (Location location : locationResult.getLocations()) {
-                    LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
-                    mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
+                    livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
                     //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
                     Location teeLocation = new Location("tmp");
                     teeLocation.setLatitude(hole1Tee.latitude);
                     teeLocation.setLongitude(hole1Tee.longitude);
-                    if(location.distanceTo(teeLocation) < 100){
+
+                    // if the distance  between the player and the first tee is less than 10 meters
+                    if(location.distanceTo(teeLocation) < 10){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
-                        mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!")).setIcon(ballMarker);
+                        Marker ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
+                        ballmarker.setIcon(ballMarker);
+                        mMap.addCircle(new CircleOptions().center(hole1Tee).radius((double)10).fillColor(Color.CYAN));
                     }
                 }
             };
