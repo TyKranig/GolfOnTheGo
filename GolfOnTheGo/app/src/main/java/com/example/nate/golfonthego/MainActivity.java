@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Plays music - change music eventualy or comment to perma-off
-        MediaPlayer player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI);
+        MediaPlayer player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
 
@@ -81,5 +81,23 @@ public class MainActivity extends AppCompatActivity {
     public void btnSettings_onClick(View view){
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
+    }
+    public void friendsBtn_onClick(View view){
+        /*
+        Intent intent = new Intent(this, Activity.class);
+        startActivity(intent);
+        */
+    }
+    public void coursesBtn_onClick(View view){
+        /*
+        Intent intent = new Intent(this, Activity.class);
+        startActivity(intent);
+        */
+    }
+    public void leaderBoardBtn_onClick(View view){
+        /*
+        Intent intent = new Intent(this, Activity.class);
+        startActivity(intent);
+        */
     }
 }
