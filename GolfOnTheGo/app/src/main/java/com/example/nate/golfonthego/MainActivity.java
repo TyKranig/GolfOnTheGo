@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
+    Button play;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,5 +126,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Activity.class);
         startActivity(intent);
         */
+    }
+
+    public void play_onClick(View view){
+        Intent intent = new Intent(this, CourseActivity.class);
+        startActivity(intent);
     }
 }
