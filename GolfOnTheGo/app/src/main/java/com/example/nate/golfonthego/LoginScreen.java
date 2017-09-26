@@ -65,7 +65,7 @@ public class LoginScreen extends AppCompatActivity {
                         try{
                             System.out.println(response.toString());
                             if(response.getInt("result") == 1){
-                                Intent intent = new Intent(LoginScreen.this, MainScreen.class);
+                                Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                                 intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
                                 finish();
                                 startActivity(intent);
