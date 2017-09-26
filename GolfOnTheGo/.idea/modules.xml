@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GolfOnTheGo.iml" filepath="$PROJECT_DIR$/GolfOnTheGo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mysql-connector-java-5.1.44-bin/mysql-connector-java-5.1.44-bin.iml" filepath="$PROJECT_DIR$/mysql-connector-java-5.1.44-bin/mysql-connector-java-5.1.44-bin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" />
     </modules>
   </component>
 </project>
