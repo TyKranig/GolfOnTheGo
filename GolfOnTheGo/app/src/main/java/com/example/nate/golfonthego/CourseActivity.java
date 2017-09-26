@@ -3,6 +3,9 @@ package com.example.nate.golfonthego;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
@@ -19,11 +22,12 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -31,6 +35,8 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
@@ -48,6 +54,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private LocationCallback locationCallback = new LocationCallback();
     // the actual location variable
     Location currentLocation;
+    // current location marker
+    Marker livePlayerMarker;
+    Marker ballmarker;
 
     // request for location
     LocationRequest locationRequest;
@@ -117,45 +126,59 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        // Add a marker in hopefully ames and move the camera to that poing and zoom in
-        LatLng ames = new LatLng(42.02672222, -93.6475);
-        LatLng ames2 = new LatLng(42.01672222, -93.6475);
-        LatLng ames3 = new LatLng(42.00672222, -93.6475);
+        // markers for drawing the first polygon (hole) and a tee box to check distance to
+        LatLng hole1a = new LatLng(42.026855, -93.647630);
+        LatLng hole1b = new LatLng(42.026499, -93.647619);
+        LatLng hole1c = new LatLng(42.026224, -93.647684);
+        LatLng hole1d = new LatLng(42.026377, -93.646026);
+        LatLng hole1e = new LatLng(42.026356, -93.645405);
+        LatLng hole1f = new LatLng(42.026778, -93.645426);
+        LatLng hole1g = new LatLng(42.026814, -93.646231);
+        LatLng hole1h = new LatLng(42.026655, -93.646950);
+        LatLng hole1Tee = new LatLng(42.026486, -93.647377);
+        LatLng hole1Greena = new LatLng(42.026633, -93.645787);
+        LatLng hole1Greenb = new LatLng(42.026406, -93.645795);
+        LatLng hole1Greenc = new LatLng(42.026370, -93.645495);
+        LatLng hole1Greend = new LatLng(42.026677, -93.645500);
 
-        mMap.addMarker(new MarkerOptions().position(ames).title("Hopefully Ames"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ames, (float)19.0));
-
-        // trying to do updating ui
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
+        // this is the instantiation of the player marker, updates position when permissed.
+        livePlayerMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("You are here"));
+        Marker tempTeeMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("Move Here to Play"));
+        Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.course_start);
+        BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
+        tempTeeMarker.setIcon(startBitmapDescriptor);
+        // where the magic happens, location callbacks and updating UI
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 for (Location location : locationResult.getLocations()) {
-                    LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
-                    mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
+                    livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
                     //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
+                    Location teeLocation = new Location("tmp");
+                    teeLocation.setLatitude(hole1Tee.latitude);
+                    teeLocation.setLongitude(hole1Tee.longitude);
+
+                    // if the distance  between the player and the first tee is less than 10 meters
+                    if(location.distanceTo(teeLocation) < 10){
+                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
+                        BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
+                        ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
+                        ballmarker.setIcon(ballMarker);
+                        tempTeeMarker.remove();
+                    }
                 }
             };
         };
-        GroundOverlayOptions testHole1 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name))
-                .position(ames, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole1);
-
-        GroundOverlayOptions testHole2 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.yellow_image))
-                .position(ames2, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole2);
-
-        GroundOverlayOptions testHole3 = new GroundOverlayOptions()
-                .image(BitmapDescriptorFactory.fromResource(R.drawable.red_image))
-                .position(ames3, 86f, 150f)
-                .transparency((float)0)
-                .bearing((float)90);
-        mMap.addGroundOverlay(testHole3);
+        PolygonOptions hole1 = new PolygonOptions().add(hole1a, hole1b, hole1c, hole1d, hole1e, hole1f,
+                hole1g, hole1h).fillColor(Color.GREEN).strokeJointType(2)
+                .strokeWidth((float)10).strokeColor(Color.GREEN);
+        Polygon holePolygon1 = mMap.addPolygon(hole1);
+        holePolygon1.setZIndex(0);
+        PolygonOptions green1 = new PolygonOptions().add(hole1Greena, hole1Greenb, hole1Greenc, hole1Greend)
+                .fillColor(Color.rgb((float)19, (float)82, (float)25));
+        Polygon greenPolygon1 = mMap.addPolygon(green1);
+        greenPolygon1.setZIndex(1);
     }
 
     @Override
