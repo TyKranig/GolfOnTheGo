@@ -135,7 +135,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         LatLng hole1f = new LatLng(42.026778, -93.645426);
         LatLng hole1g = new LatLng(42.026814, -93.646231);
         LatLng hole1h = new LatLng(42.026655, -93.646950);
-        LatLng hole1Tee = new LatLng(42.026486, -93.647377);
+        final LatLng hole1Tee = new LatLng(42.026486, -93.647377);
         LatLng hole1Greena = new LatLng(42.026633, -93.645787);
         LatLng hole1Greenb = new LatLng(42.026406, -93.645795);
         LatLng hole1Greenc = new LatLng(42.026370, -93.645495);
@@ -144,7 +144,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
         // this is the instantiation of the player marker, updates position when permissed.
         livePlayerMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("You are here"));
-        Marker tempTeeMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("Move Here to Play"));
+        final Marker tempTeeMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("Move Here to Play"));
         Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.course_start);
         BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
         tempTeeMarker.setIcon(startBitmapDescriptor);
