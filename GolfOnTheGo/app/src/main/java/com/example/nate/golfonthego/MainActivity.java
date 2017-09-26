@@ -1,5 +1,6 @@
 package com.example.nate.golfonthego;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioManager;
@@ -8,6 +9,8 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -82,17 +85,40 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
-    public void friendsBtn_onClick(View view){
+    final Context context = this;
+    private Button button;
+
+    public void friendsBtn_onClick(View view){ // used to test dialogues
         /*
         Intent intent = new Intent(this, Activity.class);
         startActivity(intent);
         */
+
+        //dialog
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.custom);
+        dialog.setTitle("Title");
+
+        // set the custom dialog components - text, image and button
+        TextView text = (TextView) dialog.findViewById(R.id.text);
+        text.setText("Dialog Testing");
+        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+
+        //close dialog
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
     public void coursesBtn_onClick(View view){
-        /*
-        Intent intent = new Intent(this, Activity.class);
-        startActivity(intent);
-        */
+
+        //Intent intent = new Intent(this, CourseActivity.class); //won't work until merge
+        //startActivity(intent);
+
     }
     public void leaderBoardBtn_onClick(View view){
         /*
