@@ -15,8 +15,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONObject;
 
 import Constants.ConstantURL;
+import VolleyAPI.RequestQueueSingleton;
 
 
 public class AccelerometerTest extends AppCompatActivity implements SensorEventListener{
@@ -45,6 +54,11 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float yAcc;
     private float zAcc;
 
+    private float swingThroughVal;
+    private float backSwingVal;
+    private int swingThroughCount;
+    private boolean backSwing = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -56,6 +70,10 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         SM = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
+
+        backSwingVal = - 25;
+        swingThroughVal = 25;
+        swingThroughCount = 0;
 
         //setting up both buttons
         Button testButton = (Button)findViewById(R.id.test);
@@ -77,6 +95,19 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         yAcc = sensorEvent.values[1];
         zAcc = sensorEvent.values[2];
 
+        //start the swing logic on a backswing
+        if(xAcc < backSwingVal){
+            backSwing = true;
+        }
+
+        //after the swing starts...
+        if(backSwing && xAcc > swingThroughVal){
+            swingThroughVal -= 5;
+            swingThroughCount ++;
+        }
+        else{
+            swingThroughCount --;
+        }
     }
 
     @Override
@@ -94,6 +125,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         yStat = new ArrayList<String>();
         zStat = new ArrayList<String>();
 
+        backSwing = false;
         xStat.add("Time, X");
         yStat.add("Time, Y");
         zStat.add("Time, Z");
@@ -142,10 +174,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
                 push = 0;
 
-                //String swingUrl = ConstantURL.URL_REGISTER + "XMax=\"" + maxX + "\"&XMin=\"" + minX + "\"&XAverage=\"" + avgX
-                //        + "YMax=\"" + maxY + "\"&YMin=\"" + minY + "\"&YAverage=\"" + avgY
-                //        + "ZMax=\"" + maxZ + "\"&ZMin=\"" + minZ + "\"&ZAverage=\"" + avgZ + "\"";
-
                 //Swing stats logic
                 swingStat.add("Max X Value: " + maxX);
                 swingStat.add("Min X Value: " + minX);
@@ -172,6 +200,29 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                     zStat.remove(0);
                 }
 
+                String swingUrl = ConstantURL.URL_STATS + "XMax=\""+maxX+"\"&XMin=\""+minX+"\"&XAverage=\""+avgX+"\"&YMax=\""+maxY+"\"&YMin=\""+minY+"\"&YAverage=\""+avgY+"\"&ZMax=\""+maxZ+"\"&ZMin=\""+minZ+"\"&ZAverage=\""+avgZ+"\"";
+                JsonObjectRequest registerRequest = new JsonObjectRequest
+                        (Request.Method.GET, swingUrl, null, new Response.Listener<JSONObject>(){
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try{
+                                    System.out.println(response.toString());
+                                    if(response.getInt("result") == 1){
+                                        finish();
+                                    }
+                                } catch (Exception e){
+                                    System.out.println(e.toString());
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                System.out.println(error.toString());
+                            }
+                        });
+
+                RequestQueueSingleton.getInstance(AccelerometerTest.this).addToRequestQueue(registerRequest);
+
                 ArrayAdapter fullAdapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, allStat);
                 ListView fullList = (ListView) findViewById(R.id.fullList);
                 fullList.setAdapter(fullAdapter);
@@ -179,6 +230,8 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                 ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
                 ListView popup = (ListView) findViewById(R.id.popup);
                 popup.setAdapter(adapter);
+
+
 
                 swingStat = new ArrayList<String>();
                 allStat = new ArrayList<String>();
