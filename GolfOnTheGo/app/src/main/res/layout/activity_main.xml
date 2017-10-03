@@ -125,7 +125,7 @@
         android:layout_height="wrap_content"
         android:text="ToggleButton"
         android:textOff="Turn Off"
-        android:textOn="Turn On"
+        android:textOn="Off"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"

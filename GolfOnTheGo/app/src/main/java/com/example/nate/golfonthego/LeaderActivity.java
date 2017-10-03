@@ -8,15 +8,16 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class LeaderActivity extends AppCompatActivity {
-    //TableLayout ll = (TableLayout) findViewById(R.id.displayLinear);
+    //TableLayout ll = (TableLayout) findViewById(R.id.Table);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader);
-        initTable();
+        //initTable();
     }
 
     public void initTable(){
+        //ll.setOutlineProvider();
 
         for(int i=0; i<10; i++) {
             TableRow row = new TableRow(this);

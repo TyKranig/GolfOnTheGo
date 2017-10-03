@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
 
                     player.setLooping(true);
-                    player.start();
+                    player.reset();
                     /*
                     AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
                     amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void coursesBtn_onClick(View view){
 
-        Intent intent = new Intent(this, CourseActivity.class); //won't work until merge
+        Intent intent = new Intent(this, CourseActivity.class);
         startActivity(intent);
 
     }
