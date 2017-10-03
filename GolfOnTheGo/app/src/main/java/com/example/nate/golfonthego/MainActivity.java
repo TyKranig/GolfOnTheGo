@@ -3,7 +3,6 @@ package com.example.nate.golfonthego;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -15,7 +14,8 @@ import android.widget.ToggleButton;
 
 public class MainActivity extends AppCompatActivity {
     Button play;
-
+    float currVolume = 0.90f;
+    MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Plays music - change music eventualy or comment to perma-off
-        MediaPlayer player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
+        player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
+        player.setVolume(currVolume, currVolume);
 
         //toggles the music on and off
         final ToggleButton t;
@@ -62,17 +63,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 //mute
                 if(t.isChecked()){
+                    player.stop();
+                    /*
                     AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
                     amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
                     amanager.setStreamMute(AudioManager.STREAM_RING, true);
-
+                    */
                 }
 
                 else{
+
+                    player.setLooping(true);
+                    player.start();
+                    /*
                     AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
                     amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
                     amanager.setStreamMute(AudioManager.STREAM_RING, false);
-
+                    */
                 }
             }
 
@@ -117,19 +124,48 @@ public class MainActivity extends AppCompatActivity {
     }
     public void coursesBtn_onClick(View view){
 
-        //Intent intent = new Intent(this, CourseActivity.class); //won't work until merge
-        //startActivity(intent);
+        Intent intent = new Intent(this, CourseActivity.class); //won't work until merge
+        startActivity(intent);
 
     }
     public void leaderBoardBtn_onClick(View view){
-        /*
-        Intent intent = new Intent(this, Activity.class);
+
+        Intent intent = new Intent(this, LeaderActivity.class);
         startActivity(intent);
-        */
+
     }
 
     public void play_onClick(View view){
-        Intent intent = new Intent(this, CourseActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    public void volumeOff(View view) {
+        //MediaPlayer mediaPlayer = null;
+        player.setVolume(0.0f, 0.0f);
+        currVolume = 0.0f;
+        return;
+    }
+
+    public void volumeLow(View view){
+        //MediaPlayer mediaPlayer = null;
+            player.setVolume(0.09f, 0.09f);
+            currVolume = 0.09f;
+        return;
+        //currVolume=25;
+        //float v  = (float)(Math.log(50-currVolume)/Math.log(50));
+        //player.setVolume(1-v);
+    }
+    public void volumeMed(View view) {
+        //MediaPlayer mediaPlayer = null;
+        player.setVolume(0.40f, 0.40f);
+        currVolume = 0.40f;
+        return;
+    }
+
+    public void volumeHigh(View view) {
+        //MediaPlayer mediaPlayer = null;
+        player.setVolume(0.90f, 0.90f);
+        currVolume = 0.90f;
+        return;
     }
 }
