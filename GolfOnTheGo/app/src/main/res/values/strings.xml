@@ -408,4 +408,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="playbutton">Play</string>
     <string name="title_activity_accelerometer_test">AccelerometerTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
