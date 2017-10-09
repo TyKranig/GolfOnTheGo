@@ -100,7 +100,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         if(xAcc + zAcc < backSwingVal && backSwing == 1){
             backSwing = 2;
         }
-        else if(backSwing == 2 && xAcc > 0 && zAcc > 0){
+        if(backSwing == 2 && (xAcc > 0 || zAcc > 0)){
             backSwing = 3;
         }
 
@@ -130,7 +130,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
         }
         //end swing
-        else if(backSwing == 3 && xAcc + zAcc <= 0){
+        if(backSwing == 3 && (xAcc <= 0 || zAcc <= 0)){
 
             //calculating power, overswing, error, and swingscore.
             power = maxX + maxZ;
@@ -138,7 +138,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
             //error is based solely on Y acceleration
             error = avgY - 10;
-            error = error < 0? 0 : error;
             overswing = overswing < 0? 0 : overswing;
 
             swingScore = power - overswing;
@@ -146,10 +145,10 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             backSwing = 0;
             push = 0;
 
-            swingStat.add(power + "\n");
-            swingStat.add(overswing + "\n");
-            swingStat.add(error + "\n");
-            swingStat.add(swingScore + "\n");
+            swingStat.add("Power:       " + power + "\n");
+            swingStat.add("Overswing:   " + overswing + "\n");
+            swingStat.add("Error:       " + error + "\n");
+            swingStat.add("Score:       " + swingScore + "\n");
 
             ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
             ListView popup = (ListView) findViewById(R.id.popup);

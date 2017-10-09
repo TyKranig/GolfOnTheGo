@@ -2,6 +2,7 @@ package com.example.nate.golfonthego;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,6 +13,10 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -42,13 +47,18 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
+import java.util.ArrayList;
+
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
+import static com.example.nate.golfonthego.R.id.swingLayout;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
 
     //LEO'S VARIABLES
+
+    private ArrayList<String> swingStat;
 
     //swing bool
     private int push = 0;
@@ -57,6 +67,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private float xAcc;
     private float yAcc;
     private float zAcc;
+
+    private Button swingButton;
 
     //logic objects leading to the final swingScore
     private float power;
@@ -122,6 +134,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
     }
 
     //Leo's accelerometer stuff
@@ -143,7 +156,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         if(backSwing == 1 && xAcc + zAcc < backSwingVal){
             backSwing = 2;
         }
-        else if(backSwing == 2 && xAcc > 0 && zAcc > 0){
+        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
             backSwing = 3;
         }
 
@@ -173,7 +186,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
         }
         //end swing
-        else if(backSwing == 3 && xAcc + zAcc <= 0){
+        if(backSwing == 3 && xAcc + zAcc <= 0){
 
             //calculating power, overswing, error, and swingscore.
             power = maxX + maxZ;
@@ -189,12 +202,15 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             backSwing = 0;
             push = 0;
 
-            /*swingStat.add(power + "\n");
+
+
+            swingStat.add(power + "\n");
             swingStat.add(overswing + "\n");
             swingStat.add(error + "\n");
-            swingStat.add(swingScore + "\n");*/
+            swingStat.add(swingScore + "\n");
 
         }
+
     }
 
     @Override
@@ -279,11 +295,27 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
-                        if(push < 1) {
-                            push ++;
-                            float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-                            backSwing = 1;
-                        }
+
+                        //button appears
+                        Button swingButton = (Button)findViewById(R.id.swingButton);
+                        swingButton.setText("Swing");
+                        swingButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View arg0) {
+                                /*if(push < 1) {
+                                    push ++;
+                                    float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+                                    backSwing = 1;
+                                }*/
+                                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
+                                swingFinishIntent.putExtra("SwingStats", swingStat);
+                                startActivity(swingFinishIntent);
+                            }
+                        });
+
+                        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+                        LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
+                        ll.addView(swingButton, lp);
                     }
                 }
             };
