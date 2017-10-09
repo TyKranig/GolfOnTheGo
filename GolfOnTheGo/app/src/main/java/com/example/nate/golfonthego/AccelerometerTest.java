@@ -1,21 +1,22 @@
 package com.example.nate.golfonthego;
 
 import java.util.ArrayList;
+
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.hardware.Sensor;
-import android.app.Activity;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
+import android.app.Activity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -54,10 +55,15 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float yAcc;
     private float zAcc;
 
-    private float swingThroughVal;
-    private float backSwingVal;
-    private int swingThroughCount;
-    private boolean backSwing = false;
+    //logic objects
+    private float power;
+    private float overswing;
+    private float swingScore;
+    private float error = 0;
+    private float backSwingVal = -15;
+    private int backSwing = 0;
+
+    private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
 
 
     @Override
@@ -71,19 +77,21 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
 
-        backSwingVal = - 25;
-        swingThroughVal = 25;
-        swingThroughCount = 0;
-
         //setting up both buttons
         Button testButton = (Button)findViewById(R.id.test);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                if(push < 1) {
-                    push ++;
                     buttonPush();
-                }
+            }
+        });
+
+        Button backButton = (Button)findViewById(R.id.testToMain);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent testToMain = new Intent(AccelerometerTest.this, MainActivity.class);
+                startActivity(testToMain);
             }
         });
     }
@@ -91,22 +99,68 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     @Override
     public void onSensorChanged(SensorEvent sensorEvent)
     {
+        //saving accelerometer values
         xAcc = sensorEvent.values[0];
         yAcc = sensorEvent.values[1];
         zAcc = sensorEvent.values[2];
 
         //start the swing logic on a backswing
-        if(xAcc < backSwingVal){
-            backSwing = true;
+        if(xAcc + zAcc < backSwingVal && backSwing == 1){
+            backSwing = 2;
+        }
+        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
+            backSwing = 3;
         }
 
         //after the swing starts...
-        if(backSwing && xAcc > swingThroughVal){
-            swingThroughVal -= 5;
-            swingThroughCount ++;
+        if(backSwing == 3){
+            avgX = (avgX + xAcc) / 2;
+            avgY = (avgY + yAcc) / 2;
+            avgZ = (avgZ + zAcc) / 2;
+            if(xAcc > maxX){
+                maxX = xAcc;
+            }
+            if(xAcc < minX) {
+                minX = xAcc;
+            }
+            if(yAcc > maxY){
+                maxY = yAcc;
+            }
+            if(yAcc < minY){
+                minY = yAcc;
+            }
+            if(zAcc > maxZ){
+                maxZ = zAcc;
+            }
+            if(zAcc < minZ){
+                minZ = zAcc;
+            }
+
         }
-        else{
-            swingThroughCount --;
+        //end swing
+        if(backSwing == 3 && xAcc <= 0 && zAcc <= 0){
+
+            //calculating power, overswing, error, and swingscore.
+            power = maxX + maxZ;
+            overswing = ((maxX + maxZ) - (avgX + avgZ)) - 70;
+
+            //error is based solely on Y acceleration
+            error = avgY - 10;
+            overswing = overswing < 0? 0 : overswing;
+
+            swingScore = power - overswing;
+
+            backSwing = 0;
+            push = 0;
+
+            swingStat.add("Power:       " + power + "\n");
+            swingStat.add("Overswing:   " + overswing + "\n");
+            swingStat.add("Error:       " + error + "\n");
+            swingStat.add("Score:       " + swingScore + "\n");
+
+            ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
+            ListView popup = (ListView) findViewById(R.id.popup);
+            popup.setAdapter(adapter);
         }
     }
 
@@ -125,8 +179,10 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         yStat = new ArrayList<String>();
         zStat = new ArrayList<String>();
 
-        backSwing = false;
-        xStat.add("Time, X");
+        float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+
+        backSwing = 1;
+        /*xStat.add("Time, X");
         yStat.add("Time, Y");
         zStat.add("Time, Z");
 
@@ -187,6 +243,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                 swingStat.add("Min Z Value: " + minZ);
                 swingStat.add("Avg Z Value: " + avgZ);
 
+                //putting stats into the all stat ArrayList
                 while(!xStat.isEmpty()){
                     allStat.add(xStat.get(0));
                     xStat.remove(0);
@@ -223,6 +280,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
                 RequestQueueSingleton.getInstance(AccelerometerTest.this).addToRequestQueue(registerRequest);
 
+                //adapters filling the listviews with text
                 ArrayAdapter fullAdapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, allStat);
                 ListView fullList = (ListView) findViewById(R.id.fullList);
                 fullList.setAdapter(fullAdapter);
@@ -231,19 +289,18 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                 ListView popup = (ListView) findViewById(R.id.popup);
                 popup.setAdapter(adapter);
 
-
-
+                //reinitializing all ArrayLists
                 swingStat = new ArrayList<String>();
                 allStat = new ArrayList<String>();
                 xStat = new ArrayList<String>();
                 yStat = new ArrayList<String>();
-                zStat = new ArrayList<String>();
+                zStat = new ArrayList<String>();*/
 
             }
 
-        };
-        timer.start();
-        //
-    }
+        }
+        //timer.start();
 
-}
+
+
+

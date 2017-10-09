@@ -2,6 +2,7 @@ package com.example.nate.golfonthego;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -12,7 +13,15 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
@@ -38,11 +47,40 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
+import java.util.ArrayList;
+
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
+import static com.example.nate.golfonthego.R.id.swingLayout;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
-        ConnectionCallbacks, OnConnectionFailedListener, LocationListener {
+        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
+
+    //LEO'S VARIABLES
+
+    private ArrayList<String> swingStat;
+
+    //swing bool
+    private int push = 0;
+
+    //accelerations vals
+    private float xAcc;
+    private float yAcc;
+    private float zAcc;
+
+    private Button swingButton;
+
+    //logic objects leading to the final swingScore
+    private float power;
+    private float overswing;
+    private float swingScore;
+    private float error = 0;
+    private float backSwingVal = -20;
+    private int backSwing = 0;
+
+    //swing statistics to be tracked
+    private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+
 
     // main google map object
     private GoogleMap mMap;
@@ -57,6 +95,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     // current location marker
     Marker livePlayerMarker;
     Marker ballmarker;
+
+    //sensor stuff
+    private Sensor accelSensor;
+    private SensorManager SM;
 
     // request for location
     LocationRequest locationRequest;
@@ -73,6 +115,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Sensor manager and accelerometer
+        SM = (SensorManager) getSystemService(SENSOR_SERVICE);
+        accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         // create the location request
         this.checkLocationPermission();
         this.createLocationRequest();
@@ -88,6 +134,89 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
+    }
+
+    //Leo's accelerometer stuff
+    public void onSensorChanged(SensorEvent sensorEvent)
+    {
+        /*Backswing is the variable keeping track of the stages of the swing.
+        *   0: the swing has not started yet.
+        *   1: the user has indicated somehow they want to swing. (e.g. button)
+        *   2: the user has started the swing by swinging back past the backSwingVal threshold.
+        *   3: the user has started to swing forward, so the acc values are being tracked and calculated.
+        *   0: back to 0 when the user has stopped swinging, or started swinging back again ( X + Z <=0 ) */
+
+        //saving accelerometer values
+        xAcc = sensorEvent.values[0];
+        yAcc = sensorEvent.values[1];
+        zAcc = sensorEvent.values[2];
+
+        //start the swing logic on a backswing
+        if(backSwing == 1 && xAcc + zAcc < backSwingVal){
+            backSwing = 2;
+        }
+        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
+            backSwing = 3;
+        }
+
+        //after the swing starts...
+        if(backSwing == 3){
+            avgX = (avgX + xAcc) / 2;
+            avgY = (avgY + yAcc) / 2;
+            avgZ = (avgZ + zAcc) / 2;
+            if(xAcc > maxX){
+                maxX = xAcc;
+            }
+            if(xAcc < minX) {
+                minX = xAcc;
+            }
+            if(yAcc > maxY){
+                maxY = yAcc;
+            }
+            if(yAcc < minY){
+                minY = yAcc;
+            }
+            if(zAcc > maxZ){
+                maxZ = zAcc;
+            }
+            if(zAcc < minZ){
+                minZ = zAcc;
+            }
+
+        }
+        //end swing
+        if(backSwing == 3 && xAcc + zAcc <= 0){
+
+            //calculating power, overswing, error, and swingscore.
+            power = maxX + maxZ;
+            overswing = ((maxX + maxZ) - (avgX + avgZ)) - 70;
+
+            //error is based solely on Y acceleration
+            error = avgY - 10;
+            error = error < 0? 0 : error;
+            overswing = overswing < 0? 0 : overswing;
+
+            swingScore = power - overswing;
+
+            backSwing = 0;
+            push = 0;
+
+
+
+            swingStat.add(power + "\n");
+            swingStat.add(overswing + "\n");
+            swingStat.add(error + "\n");
+            swingStat.add(swingScore + "\n");
+
+        }
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i)
+    {
+
     }
 
     // overriden to start the googleapiclient
@@ -166,6 +295,27 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
+
+                        //button appears
+                        Button swingButton = (Button)findViewById(R.id.swingButton);
+                        swingButton.setText("Swing");
+                        swingButton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View arg0) {
+                                /*if(push < 1) {
+                                    push ++;
+                                    float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+                                    backSwing = 1;
+                                }*/
+                                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
+                                swingFinishIntent.putExtra("SwingStats", swingStat);
+                                startActivity(swingFinishIntent);
+                            }
+                        });
+
+                        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+                        LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
+                        ll.addView(swingButton, lp);
                     }
                 }
             };
