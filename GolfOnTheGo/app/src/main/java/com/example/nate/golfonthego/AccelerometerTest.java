@@ -1,6 +1,8 @@
 package com.example.nate.golfonthego;
 
 import java.util.ArrayList;
+
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -58,7 +60,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float overswing;
     private float swingScore;
     private float error = 0;
-    private float backSwingVal = -20;
+    private float backSwingVal = -15;
     private int backSwing = 0;
 
     private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
@@ -80,10 +82,16 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                if(push < 1) {
-                    push ++;
                     buttonPush();
-                }
+            }
+        });
+
+        Button backButton = (Button)findViewById(R.id.testToMain);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent testToMain = new Intent(AccelerometerTest.this, MainActivity.class);
+                startActivity(testToMain);
             }
         });
     }
@@ -100,7 +108,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         if(xAcc + zAcc < backSwingVal && backSwing == 1){
             backSwing = 2;
         }
-        if(backSwing == 2 && (xAcc > 0 || zAcc > 0)){
+        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
             backSwing = 3;
         }
 
@@ -130,7 +138,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
         }
         //end swing
-        if(backSwing == 3 && (xAcc <= 0 || zAcc <= 0)){
+        if(backSwing == 3 && xAcc <= 0 && zAcc <= 0){
 
             //calculating power, overswing, error, and swingscore.
             power = maxX + maxZ;
