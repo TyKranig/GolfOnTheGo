@@ -392,22 +392,22 @@
         <item>3</item>
     </string-array>
 
-    <string-array name="multi_select_list_preference_default_value" />
+  <string-array name="multi_select_list_preference_default_value" />
 
-    <string name="pref_title_system_sync_settings">System sync settings</string>
+  <string name="pref_title_system_sync_settings">System sync settings</string>
 
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
+  <!-- Example settings for Notifications -->
+  <string name="pref_header_notifications">Notifications</string>
 
-    <string name="pref_title_new_message_notifications">New message notifications</string>
+  <string name="pref_title_new_message_notifications">New message notifications</string>
 
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
+  <string name="pref_title_ringtone">Ringtone</string>
+  <string name="pref_ringtone_silent">Silent</string>
 
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="playbutton">Play</string>
-    <string name="title_activity_accelerometer_test">AccelerometerTest</string>
+  <string name="pref_title_vibrate">Vibrate</string>
+  <string name="title_activity_main">MainActivity</string>
+  <string name="playbutton">Play</string>
+  <string name="title_activity_accelerometer_test">AccelerometerTest</string>
   <string name="friends">Friends</string>
   <string name="courses">Courses</string>
   <string name="med">Med</string>
@@ -416,4 +416,6 @@
   <string name="open_settings">Open Settings</string>
   <string name="leader_boards">Leader Boards</string>
   <string name="mute">Mute</string>
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

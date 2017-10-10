@@ -5,4 +5,16 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.nate.golfonthego.CourseActivity" />
+    tools:context="com.example.nate.golfonthego.CourseActivity">\
+
+    <LinearLayout
+        android:id="@+id/swingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"/>
+    <Button
+        android:id="@+id/swingButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</fragment>
