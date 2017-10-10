@@ -16,7 +16,6 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
@@ -33,7 +32,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -51,7 +49,6 @@ import java.util.ArrayList;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
-import static com.example.nate.golfonthego.R.id.swingLayout;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
@@ -196,8 +193,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             backSwing = 0;
             push = 0;
 
-
-
             swingStat.add(power + "\n");
             swingStat.add(overswing + "\n");
             swingStat.add(error + "\n");
@@ -273,11 +268,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                                /*if(push < 1) {
-                                    push ++;
-                                    float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-                                    backSwing = 1;
-                                }*/
                 Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
                 swingFinishIntent.putExtra("SwingStats", swingStat);
                 startActivity(swingFinishIntent);
