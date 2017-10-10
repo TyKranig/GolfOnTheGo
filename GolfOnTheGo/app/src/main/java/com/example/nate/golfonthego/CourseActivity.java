@@ -57,19 +57,15 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
 
     //LEO'S VARIABLES
-
+    // put extra sent to accelerometertest
     private ArrayList<String> swingStat;
-
     //swing bool
     private int push = 0;
-
     //accelerations vals
     private float xAcc;
     private float yAcc;
     private float zAcc;
-
     private Button swingButton;
-
     //logic objects leading to the final swingScore
     private float power;
     private float overswing;
@@ -77,10 +73,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private float error = 0;
     private float backSwingVal = -20;
     private int backSwing = 0;
-
     //swing statistics to be tracked
     private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-
 
     // main google map object
     private GoogleMap mMap;
@@ -255,29 +249,41 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        // markers for drawing the first polygon (hole) and a tee box to check distance to
-        LatLng hole1a = new LatLng(42.026855, -93.647630);
-        LatLng hole1b = new LatLng(42.026499, -93.647619);
-        LatLng hole1c = new LatLng(42.026224, -93.647684);
-        LatLng hole1d = new LatLng(42.026377, -93.646026);
-        LatLng hole1e = new LatLng(42.026356, -93.645405);
-        LatLng hole1f = new LatLng(42.026778, -93.645426);
-        LatLng hole1g = new LatLng(42.026814, -93.646231);
-        LatLng hole1h = new LatLng(42.026655, -93.646950);
-        final LatLng hole1Tee = new LatLng(42.026486, -93.647377);
-        LatLng hole1Greena = new LatLng(42.026633, -93.645787);
-        LatLng hole1Greenb = new LatLng(42.026406, -93.645795);
-        LatLng hole1Greenc = new LatLng(42.026370, -93.645495);
-        LatLng hole1Greend = new LatLng(42.026677, -93.645500);
+        final LatLng TEST = new LatLng(42.021679, -93.677612);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hole1a, (float)19.0));
+        //pick a course to load in, eventually will be extended to be based on savedIntsanceState
+        final Course currentCourse = new Course(1);
+        final int currentHole = 1;
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(currentHole), (float)19.0));
         // this is the instantiation of the player marker, updates position when permissed.
-        livePlayerMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("You are here"));
-        final Marker tempTeeMarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("Move Here to Play"));
+        livePlayerMarker = mMap.addMarker(
+                new MarkerOptions().position(currentCourse.getTee(currentHole)).title("You are here"));
+        final Marker tempTeeMarker = mMap.addMarker(
+                new MarkerOptions().position(currentCourse.getTee(currentHole)).title("Move Here to Play"));
+        // tee marker on the map
         Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.course_start);
         BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
         tempTeeMarker.setIcon(startBitmapDescriptor);
+
         // where the magic happens, location callbacks and updating UI
+        // initialize button, make it invisible
+        swingButton = (Button)findViewById(R.id.swingButton);
+        swingButton.setVisibility(View.GONE);
+        swingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                                /*if(push < 1) {
+                                    push ++;
+                                    float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+                                    backSwing = 1;
+                                }*/
+                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
+                swingFinishIntent.putExtra("SwingStats", swingStat);
+                startActivity(swingFinishIntent);
+            }
+        });
+
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
@@ -285,47 +291,35 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
                     //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
                     Location teeLocation = new Location("tmp");
-                    teeLocation.setLatitude(hole1Tee.latitude);
-                    teeLocation.setLongitude(hole1Tee.longitude);
-
+                    teeLocation.setLatitude(TEST.latitude);
+                    teeLocation.setLongitude(TEST.longitude);
+                    LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
                     // if the distance  between the player and the first tee is less than 10 meters
                     if(location.distanceTo(teeLocation) < 10){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
-                        ballmarker = mMap.addMarker(new MarkerOptions().position(hole1Tee).title("start here!"));
+                        ballmarker = mMap.addMarker(
+                                new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
 
                         //button appears
-                        Button swingButton = (Button)findViewById(R.id.swingButton);
+                        swingButton.setVisibility(View.VISIBLE);
                         swingButton.setText("Swing");
-                        swingButton.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View arg0) {
-                                /*if(push < 1) {
-                                    push ++;
-                                    float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-                                    backSwing = 1;
-                                }*/
-                                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
-                                swingFinishIntent.putExtra("SwingStats", swingStat);
-                                startActivity(swingFinishIntent);
-                            }
-                        });
-
-                        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-                        LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
-                        ll.addView(swingButton, lp);
+                    }
+                    else{
+                        swingButton.setVisibility(View.INVISIBLE);
+                        swingButton.setVisibility(View.GONE);
                     }
                 }
             };
         };
-        PolygonOptions hole1 = new PolygonOptions().add(hole1a, hole1b, hole1c, hole1d, hole1e, hole1f,
-                hole1g, hole1h).fillColor(Color.GREEN).strokeJointType(2)
+        PolygonOptions hole1 = new PolygonOptions().addAll(
+                currentCourse.getFairway(currentHole)).fillColor(Color.GREEN).strokeJointType(2)
                 .strokeWidth((float)10).strokeColor(Color.GREEN);
         Polygon holePolygon1 = mMap.addPolygon(hole1);
         holePolygon1.setZIndex(0);
-        PolygonOptions green1 = new PolygonOptions().add(hole1Greena, hole1Greenb, hole1Greenc, hole1Greend)
+        PolygonOptions green1 = new PolygonOptions().addAll(currentCourse.getGreen(currentHole))
                 .fillColor(Color.rgb((float)19, (float)82, (float)25));
         Polygon greenPolygon1 = mMap.addPolygon(green1);
         greenPolygon1.setZIndex(1);
@@ -367,8 +361,12 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
     }
 
+    // The remaining is allowing for persistent lcoation permissions for the app across life cycles
     //
-    //requesting permissions for fine location
+    // requesting permissions for fine location
+    //
+    //
+    //
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     public boolean checkLocationPermission() {
