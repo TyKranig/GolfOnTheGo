@@ -10,7 +10,6 @@
 
 
     <Button
-<<<<<<< HEAD
         android:id="@+id/button8"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="wrap_content"
@@ -23,7 +22,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="volumeOff"
-        android:text="Mute"
+        android:text="@string/mute"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -33,6 +32,21 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mr_group_collapse"
+        android:elevation="0dp"
+        android:text="@string/title_activity_accelerometer_test"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
         android:id="@+id/button7"
@@ -47,7 +61,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="volumeHigh"
-        android:text="High"
+        android:text="@string/high"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -71,7 +85,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="volumeMed"
-        android:text="Med"
+        android:text="@string/med"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -81,22 +95,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-=======
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
-        android:onClick="play_onClick"
-        android:text="Test"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
->>>>>>> origin/AlphaRelease
 
     <Button
         android:id="@+id/button3"
@@ -111,7 +109,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="coursesBtn_onClick"
-        android:text="Courses"
+        android:text="@string/courses"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -135,7 +133,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="btnSettings_onClick"
-        android:text="Open Settings"
+        android:text="@string/open_settings"
         android:textColor="#ff9090"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -159,7 +157,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="friendsBtn_onClick"
-        android:text="Friends"
+        android:text="@string/friends"
         android:textColor="#ff9090"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -183,7 +181,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="leaderBoardBtn_onClick"
-        android:text="Leader Boards"
+        android:text="@string/leader_boards"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -229,7 +227,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:onClick="volumeLow"
-        android:text="Low"
+        android:text="@string/low"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
         android:textStyle="bold"
@@ -244,17 +242,18 @@
         android:id="@+id/linearlayout"
         android:layout_width="392dp"
         android:layout_height="576dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/golf_background1"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        tools:context="overbit.user.MainActivity"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.52"
+        tools:context="overbit.user.MainActivity">
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
