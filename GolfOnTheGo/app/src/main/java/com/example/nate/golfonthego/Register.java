@@ -15,6 +15,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONObject;
 import Constants.ConstantURL;
 import VolleyAPI.RequestQueueSingleton;
+import VolleyAPI.VolleyBall;
 
 public class Register extends AppCompatActivity {
 
@@ -55,28 +56,22 @@ public class Register extends AppCompatActivity {
         }
 
         String url = ConstantURL.URL_REGISTER + "userName=\"" + user + "\"&password=\"" + pass + "\"";
-        JsonObjectRequest registerRequest = new JsonObjectRequest
-                (Request.Method.GET, url, null, new Response.Listener<JSONObject>(){
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try{
-                            System.out.println(response.toString());
-                            if(response.getInt("result") == 1){
-                                finish();
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Username already taken", Toast.LENGTH_LONG).show();
-                            }
-                        } catch (Exception e){
-                            System.out.println(e.toString());
-                        }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.println(error.toString());
-                    }
-                });
 
-        RequestQueueSingleton.getInstance(this).addToRequestQueue(registerRequest);
+        VolleyBall.getResponseJson(this, new VolleyBall.VolleyCallback() {
+            @Override
+            public void doThings(Object result) {
+                try{
+                    JSONObject response = (JSONObject)result;
+                    System.out.println(response.toString());
+                    if(response.getInt("result") == 1){
+                        finish();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Username already taken", Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e){
+                    System.out.println(e.toString());
+                }
+            }
+        }, url);
     }
 }

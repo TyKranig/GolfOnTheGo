@@ -1,21 +1,14 @@
 package VolleyAPI;
 
-import android.app.Activity;
 import android.content.Context;
-import android.provider.Settings;
-
-import com.android.volley.Cache;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.example.nate.golfonthego.MainScreen;
-
 import org.json.JSONObject;
+import java.util.Map;
 
 /**
  * Created by Tyler on 9/23/17 volley stuffs.
@@ -23,42 +16,23 @@ import org.json.JSONObject;
  */
 
 public class VolleyBall {
-    private JSONObject theStuff;
-    public boolean Login(Context context, String userName, String password){
-        VolleyCallback callback = new VolleyCallback() {
-            @Override
-            public void setResult(JSONObject result) {
-                theStuff = result;
-                System.out.println(result.toString());
-                System.out.println("---------->" + theStuff.toString());
-            }
-        };
+    private static String tag_string_request = "string_req";
+    private static String tag_Json_request = "json_req";
 
-        System.out.println(userName + " " + password);
-        getResponse(context, callback, "http://proj-309-am-c-1.cs.iastate.edu/login.php?userName=\"" + userName + "\"&password=\"" + password + "\"");
-
-        int result = 0;
-        try{
-            System.out.println(theStuff.toString());
-            result = (int)theStuff.get("result");
-            System.out.println(result);
-        }
-        catch (Exception e){
-            System.out.println(e.toString());
-        }
-
-        return result == 1;
-    }
-
-    public static void getResponse(Context context, final VolleyCallback callback, String url){
+    /**
+     * Used to get a Json object back from the database
+     * @param context The context of the method calling this method
+     * @param callback Interface that handles actions after the response
+     * @param url The url to send the request to, most are found in ConstantURL
+     */
+    public static void getResponseJson(Context context, final VolleyCallback callback, String url){
         final JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-
                     @Override
                     public void onResponse(JSONObject response) {
                         System.out.println(response.toString());
                         try{
-                            callback.setResult(response);
+                            callback.doThings(response);
                         }
                         catch (Exception e){
                             System.out.println(e.toString());
@@ -67,14 +41,43 @@ public class VolleyBall {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        System.out.println(error.toString());
+                        System.out.println(error.toString() + "get Response method");
+                        VolleyLog.d(tag_Json_request, "Error: " + error.getMessage());
                     }
                 });
 
         RequestQueueSingleton.getInstance(context).addToRequestQueue(jsObjRequest);
     }
 
-    public interface VolleyCallback {
-        void setResult(JSONObject result);
+    /**
+     * Used to get a String back from the server
+     * @param context The context that the method was called from
+     * @param callback Interface that executes the jobs the programmer wants done after response
+     * @param url The url that the method connects to, most are found in ConstantURL
+     */
+    public static void getResponseString(Context context, final VolleyCallback callback, String url){
+        final StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        callback.doThings(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println(error.toString());
+                        VolleyLog.d(tag_Json_request, "Error: " + error.getMessage());
+                    }
+        });
+
+        RequestQueueSingleton.getInstance(context).addToRequestQueue(stringRequest);
+    }
+
+    /**
+     * Used to run code on response, written by the programmer
+     * @param <T> Whatever type of response the use called
+     */
+    public interface VolleyCallback<T> {
+        void doThings(T result);
     }
 }
