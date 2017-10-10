@@ -31,7 +31,7 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);//TODO remove once testing is done
+        //startActivity(intent);//TODO remove once testing is done
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);

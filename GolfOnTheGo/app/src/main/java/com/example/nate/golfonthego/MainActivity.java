@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     Button play;
@@ -21,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Random rand = new Random(System.currentTimeMillis());
+        altBackground(rand.nextInt()%5+1);
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         player.setVolume(currVolume, currVolume);
 
         //toggles the music on and off
+        /*
         final ToggleButton t;
         t=(ToggleButton)findViewById(R.id.toggleButton);
         t.setOnClickListener(new View.OnClickListener(){
@@ -64,26 +70,26 @@ public class MainActivity extends AppCompatActivity {
                 //mute
                 if(t.isChecked()){
                     player.stop();
-                    /*
-                    AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                    amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
-                    amanager.setStreamMute(AudioManager.STREAM_RING, true);
-                    */
+
+                    //AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
+                    //amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
+                    //amanager.setStreamMute(AudioManager.STREAM_RING, true);
+
                 }
 
                 else{
 
                     player.setLooping(true);
                     player.reset();
-                    /*
-                    AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                    amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
-                    amanager.setStreamMute(AudioManager.STREAM_RING, false);
-                    */
+
+                    //AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
+                    //amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
+                    //amanager.setStreamMute(AudioManager.STREAM_RING, false);
+
                 }
             }
 
-        });
+        });*/
     }
 
 
@@ -167,5 +173,68 @@ public class MainActivity extends AppCompatActivity {
         player.setVolume(0.90f, 0.90f);
         currVolume = 0.90f;
         return;
+    }
+    public void altBackground(int n){
+        final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
+        Handler handler = new Handler();
+
+
+
+        //while(true){
+        switch (n){
+            case 1:
+                handler.postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        layout.setBackgroundResource(R.drawable.golf_background1);
+                    }
+                }, 0000);
+                break;
+            case 2:
+                handler.postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        layout.setBackgroundResource(R.drawable.golf_background2);
+                    }
+                }, 0000);
+                break;
+            case 3:
+                handler.postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        layout.setBackgroundResource(R.drawable.golf_background3);
+                    }
+                }, 0000);
+                break;
+            case 4:
+                handler.postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        layout.setBackgroundResource(R.drawable.golf_background4);
+                    }
+                }, 0000);
+                break;
+            case 5:
+                handler.postDelayed(new Runnable(){
+
+                    @Override
+                    public void run() {
+                        layout.setBackgroundResource(R.drawable.golf_background5);
+                    }
+                }, 0000);
+                break;
+
+
+
+        }
+            //if(n>=5) n=1;
+            //altBackground(n);
+
+
+        //}
     }
 }
