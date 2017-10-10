@@ -7,4 +7,5 @@ package Constants;
 public class ConstantURL {
     public static String URL_LOGIN = "http://proj-309-am-c-1.cs.iastate.edu/login.php?";
     public static String URL_REGISTER = "http://proj-309-am-c-1.cs.iastate.edu/register.php?";
+    public static String URL_STATS = "http://proj-309-am-c-1.cs.iastate.edu/swingstats.php?";
 }

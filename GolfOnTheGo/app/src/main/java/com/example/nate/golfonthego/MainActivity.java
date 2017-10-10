@@ -89,7 +89,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+<<<<<<< HEAD
         });*/
+=======
+        });
+        Button testButton = (Button)findViewById(R.id.testButton);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent testScreenIntent = new Intent(context, AccelerometerTest.class);
+                startActivity(testScreenIntent);
+            }
+        });
+>>>>>>> origin/AlphaRelease
     }
 
 
