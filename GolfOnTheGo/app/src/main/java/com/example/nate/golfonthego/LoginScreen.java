@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import org.json.JSONObject;
-
 import Constants.ConstantURL;
 import VolleyAPI.VolleyBall;
 
@@ -51,12 +50,19 @@ public class LoginScreen extends AppCompatActivity {
             return;
         }
 
+        /*
+        We use VolleyBall to make calls to the server and get data
+        back from the database or the server itself
+         */
         VolleyBall.getResponseJson(this, new VolleyBall.VolleyCallback() {
             @Override
             public void doThings(Object result) {
                 try{
+                    //cast the object coming back to JSON
                     JSONObject re = (JSONObject)result;
                     System.out.println(result.toString());
+
+                    //if the string result
                     if(re.getInt("result") == 1){
                         Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                         intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
