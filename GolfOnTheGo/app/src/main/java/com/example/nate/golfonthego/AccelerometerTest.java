@@ -35,28 +35,19 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private ArrayList<String> swingStat;
 
     private ListView popup;
-    private CountDownTimer timer;
 
     //Sensor objects
     private Sensor accelSensor;
     private SensorManager SM;
 
-    //swing bool
-    private int push = 0;
-
-    private float xAcc;
-    private float yAcc;
-    private float zAcc;
-
+    //swinger object
     private Swinger playerSwing;
 
     //logic objects
     private float power;
     private float overswing;
     private float swingScore;
-    private float error = 0;
-    private float backSwingVal = -15;
-    private int backSwing = 0;
+    private float error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -97,9 +88,8 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         playerSwing.x = sensorEvent.values[0];
         playerSwing.y = sensorEvent.values[1];
         playerSwing.z = sensorEvent.values[2];
-        backSwing = playerSwing.swingTrack;
 
-        if(backSwing != 0) {
+        if(playerSwing.swingTrack != 0) {
             playerSwing.swang();
         }
 
@@ -112,7 +102,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
             ListView popup = (ListView) findViewById(R.id.popup);
             popup.setAdapter(adapter);
-            backSwing = 0;
         }
     }
 
@@ -126,8 +115,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     public void buttonPush()
     {
 
-        if (backSwing == 0) {
-            playerSwing = new Swinger(xAcc, yAcc, zAcc, backSwing);
+        if (playerSwing.swingTrack == 0) {
             playerSwing.swingTrack = 1;
         }
 

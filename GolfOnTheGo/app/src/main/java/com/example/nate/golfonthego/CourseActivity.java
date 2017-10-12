@@ -8,9 +8,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
+import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
@@ -51,14 +54,13 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
-        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
+        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener, swingFragment.OnFragmentInteractionListener {
 
     //LEO'S VARIABLES
-    // put extra sent to accelerometertest
-    private ArrayList<String> swingStat;
-    //swing bool
+    //button
     private Button swingButton;
-
+    //swinger object
+    public Swinger playerSwing;
 
     // main google map object
     private GoogleMap mMap;
@@ -113,12 +115,29 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
 
+        playerSwing = new Swinger();
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     //Leo's accelerometer stuff
     public void onSensorChanged(SensorEvent sensorEvent)
     {
+        //saving accelerometer values
+        playerSwing.x = sensorEvent.values[0];
+        playerSwing.y = sensorEvent.values[1];
+        playerSwing.z = sensorEvent.values[2];
 
+        if(playerSwing.swingTrack != 0) {
+            playerSwing.swang();
+        }
+
+        if(playerSwing.done()){
+
+        }
     }
 
     @Override
@@ -187,9 +206,13 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
+                /*Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
                 swingFinishIntent.putExtra("SwingStats", swingStat);
-                startActivity(swingFinishIntent);
+                startActivity(swingFinishIntent);*/
+
+                FragmentTransaction swingFragTransaction = getSupportFragmentManager().beginTransaction();
+                swingFragTransaction.replace(R.id.swingFrame, new Fragment());
+                swingFragTransaction.commit();
             }
         });
 

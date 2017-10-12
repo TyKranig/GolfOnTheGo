@@ -10,17 +10,17 @@ public class Swinger {
         *   0: when the user has stopped swinging. the done() method will return true after first swing now.*/
 
     int swingTrack;
-    boolean first;
+    private boolean first;
     float x, y, z;
-    float Xmax, Xmin, Xavg, Ymax, Ymin, Yavg, Zmax, Zmin, Zavg;
+    private float Xmax, Xmin, Xavg, Ymax, Ymin, Yavg, Zmax, Zmin, Zavg;
     float power, overswing, error, score;
 
-    /*scoreArray is a 4 index array where:
+    /* scoreArray is a 4 index array where:
         *   0 : power
         *   1 : overswing
         *   2 : error
-        *   3 : scoreArray*/
-
+        *   3 : scoreArray
+    */
     float[] scoreArray = new float[4];
 
 
@@ -36,22 +36,14 @@ public class Swinger {
         first = true;
     }
 
-    public Swinger(float xTemp, float yTemp, float zTemp, int swingTemp){
-        x = xTemp;
-        y = yTemp;
-        z = zTemp;
-        swingTrack = swingTemp;
-        first = true;
-    }
-
     public void swang() {
 
         //start the swing logic on a backswing
-        if (swingTrack == 1 && x + z < -15) {
+        if (swingTrack == 1 && (x + z < -15 || x < -25 || z < -25)){
             swingTrack = 2;
             return;
         }
-        if (swingTrack == 2 && x > 0 && z > 0) {
+        if (swingTrack == 2 && ((x > 0 && z > 0) || x > 10)){
             swingTrack = 3;
             return;
         }
@@ -83,7 +75,7 @@ public class Swinger {
 
         }
         //end swing
-        if (swingTrack == 3 && x <= 0 && z <= 0) {
+        if (swingTrack == 3 && x <= 5 && z <= 5) {
 
             //calculating power, overswing, error, and score.
             power = Xmax + Zmax;
