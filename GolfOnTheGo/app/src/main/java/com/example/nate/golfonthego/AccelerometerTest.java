@@ -10,9 +10,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.app.Activity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -34,12 +32,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private Button testButton;
 
     private ArrayAdapter adapter;
-    private ArrayAdapter fullAdapter;
     private ArrayList<String> swingStat;
-    private ArrayList<String> xStat;
-    private ArrayList<String> yStat;
-    private ArrayList<String> zStat;
-    private ArrayList<String> allStat;
 
     private ListView popup;
     private CountDownTimer timer;
@@ -55,6 +48,8 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float yAcc;
     private float zAcc;
 
+    private Swinger playerSwing;
+
     //logic objects
     private float power;
     private float overswing;
@@ -62,9 +57,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float error = 0;
     private float backSwingVal = -15;
     private int backSwing = 0;
-
-    private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -77,6 +69,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
 
+        playerSwing = new Swinger();
         //setting up both buttons
         Button testButton = (Button)findViewById(R.id.test);
         testButton.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +79,8 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             }
         });
 
-        Button backButton = (Button)findViewById(R.id.testToMain);
-        backButton.setOnClickListener(new View.OnClickListener() {
+        Button backButtonSwing = (Button)findViewById(R.id.testToMain);
+        backButtonSwing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 Intent testToMain = new Intent(AccelerometerTest.this, MainActivity.class);
@@ -99,68 +92,27 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     @Override
     public void onSensorChanged(SensorEvent sensorEvent)
     {
+
         //saving accelerometer values
-        xAcc = sensorEvent.values[0];
-        yAcc = sensorEvent.values[1];
-        zAcc = sensorEvent.values[2];
+        playerSwing.x = sensorEvent.values[0];
+        playerSwing.y = sensorEvent.values[1];
+        playerSwing.z = sensorEvent.values[2];
+        backSwing = playerSwing.swingTrack;
 
-        //start the swing logic on a backswing
-        if(xAcc + zAcc < backSwingVal && backSwing == 1){
-            backSwing = 2;
-        }
-        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
-            backSwing = 3;
+        if(backSwing != 0) {
+            playerSwing.swang();
         }
 
-        //after the swing starts...
-        if(backSwing == 3){
-            avgX = (avgX + xAcc) / 2;
-            avgY = (avgY + yAcc) / 2;
-            avgZ = (avgZ + zAcc) / 2;
-            if(xAcc > maxX){
-                maxX = xAcc;
-            }
-            if(xAcc < minX) {
-                minX = xAcc;
-            }
-            if(yAcc > maxY){
-                maxY = yAcc;
-            }
-            if(yAcc < minY){
-                minY = yAcc;
-            }
-            if(zAcc > maxZ){
-                maxZ = zAcc;
-            }
-            if(zAcc < minZ){
-                minZ = zAcc;
-            }
-
-        }
-        //end swing
-        if(backSwing == 3 && xAcc <= 0 && zAcc <= 0){
-
-            //calculating power, overswing, error, and swingscore.
-            power = maxX + maxZ;
-            overswing = ((maxX + maxZ) - (avgX + avgZ)) - 70;
-
-            //error is based solely on Y acceleration
-            error = avgY - 10;
-            overswing = overswing < 0? 0 : overswing;
-
-            swingScore = power - overswing;
-
-            backSwing = 0;
-            push = 0;
-
-            swingStat.add("Power:       " + power + "\n");
-            swingStat.add("Overswing:   " + overswing + "\n");
-            swingStat.add("Error:       " + error + "\n");
-            swingStat.add("Score:       " + swingScore + "\n");
-
+        if(playerSwing.done()){
+            swingStat = new ArrayList<String>();
+            swingStat.add("Power:      " + playerSwing.power);
+            swingStat.add("Overswing:  " + playerSwing.overswing);
+            swingStat.add("Error:      " + playerSwing.error);
+            swingStat.add("Score:      " + playerSwing.score);
             ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
             ListView popup = (ListView) findViewById(R.id.popup);
             popup.setAdapter(adapter);
+            backSwing = 0;
         }
     }
 
@@ -173,15 +125,13 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     //when either button is pushed
     public void buttonPush()
     {
-        swingStat = new ArrayList<String>();
-        allStat = new ArrayList<String>();
-        xStat = new ArrayList<String>();
-        yStat = new ArrayList<String>();
-        zStat = new ArrayList<String>();
 
-        float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
+        if (backSwing == 0) {
+            playerSwing = new Swinger(xAcc, yAcc, zAcc, backSwing);
+            playerSwing.swingTrack = 1;
+        }
 
-        backSwing = 1;
+
         /*xStat.add("Time, X");
         yStat.add("Time, Y");
         zStat.add("Time, Z");

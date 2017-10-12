@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     final Context context = this;
     float currVolume = 0.90f;
     MediaPlayer player;
+    private Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
