@@ -15,16 +15,16 @@ public class guildListMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guild_list_main);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         Guild[] guild = {new Guild("Golfer4Life", 1), new Guild("HackingGolf", 2), new Guild("TigerBools", 3)};
         ListAdapter guildAdapter = new guildAdapter(this, guild);
         ListView guildListView = (ListView) findViewById(R.id.listGuilds);
         guildListView.setAdapter(guildAdapter);
 
-
+        guildListView.setOnItemClickListener(guildClick());
     }
 
     AdapterView.OnItemClickListener guildClick(){

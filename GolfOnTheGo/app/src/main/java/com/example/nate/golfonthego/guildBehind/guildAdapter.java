@@ -34,11 +34,9 @@ public class guildAdapter extends ArrayAdapter<Guild>{
         TextView guildText = customView.findViewById(R.id.txtGuildName);
         TextView scoreText = customView.findViewById(R.id.txtGuildScore);
 
-        Random rand = new Random();
-
         assert guild != null;
         guildText.setText(guild.get_name());
-        scoreText.setText(rand.nextInt(1000)+1);
+        scoreText.setText(guild.get_id());
 
         return customView;
     }
