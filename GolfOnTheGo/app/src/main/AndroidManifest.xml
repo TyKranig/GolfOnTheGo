@@ -44,7 +44,6 @@
                 android:value="com.example.nate.golfonthego.LoginScreen" />
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".MainScreen" />
         <activity android:name=".LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,6 +54,7 @@
         <activity android:name=".LeaderActivity" />
         <activity android:name=".AccelerometerTest" />
         <activity android:name=".List" />
+        <activity android:name=".guildListMain"></activity>
     </application>
 
 </manifest>

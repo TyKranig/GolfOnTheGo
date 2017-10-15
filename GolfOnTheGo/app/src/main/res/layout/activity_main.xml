@@ -145,7 +145,7 @@
         app:layout_constraintVertical_bias="0.015" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnGuild"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -156,8 +156,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        android:onClick="friendsBtn_onClick"
-        android:text="@string/friends"
+        android:onClick="guildBtn_onClick"
+        android:text="@string/guilds"
         android:textColor="#ff9090"
         android:textSize="23sp"
         android:textStyle="bold"

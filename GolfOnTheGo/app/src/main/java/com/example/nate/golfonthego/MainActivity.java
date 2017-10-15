@@ -52,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void guildBtn_onClick(View view){
+        Intent intent = new Intent(this, guildListMain.class);
+        startActivity(intent);
+    }
+
     public void friendsBtn_onClick(View view){ // used to test dialogues
         //dialog
         final Dialog dialog = new Dialog(context);
