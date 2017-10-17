@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
-        altBackground(rand.nextInt()%5+1);
+        altBackground(rand.nextInt()%4+2);
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
