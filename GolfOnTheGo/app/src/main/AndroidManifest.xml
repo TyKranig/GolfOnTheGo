@@ -23,11 +23,11 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-<<<<<<< HEAD
+
             android:theme="@style/AppTheme.NoActionBar"></activity>
-=======
+
             android:theme="@style/AppTheme.NoActionBar" />
->>>>>>> origin/AlphaRelease
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -56,12 +56,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".LeaderActivity"></activity>
-=======
+
         <activity android:name=".AccelerometerTest" />
         <activity android:name=".List"></activity>
->>>>>>> origin/AlphaRelease
+
     </application>
 
 </manifest>

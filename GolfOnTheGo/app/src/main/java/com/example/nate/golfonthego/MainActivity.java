@@ -91,8 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
 <<<<<<< HEAD
         });*/
-=======
-        });
+
+        //});
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(testScreenIntent);
             }
         });
->>>>>>> origin/AlphaRelease
+
     }
 
 
