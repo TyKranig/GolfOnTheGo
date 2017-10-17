@@ -1,5 +1,6 @@
 package com.example.nate.golfonthego;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,8 +32,8 @@ public class guildListMain extends AppCompatActivity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Guild guild = (Guild) adapterView.getItemAtPosition(position);
-                Toast.makeText(guildListMain.this, guild.get_name(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(guildListMain.this, guildInfoScreen.class);
+                startActivity(intent);
             }
         };
     }

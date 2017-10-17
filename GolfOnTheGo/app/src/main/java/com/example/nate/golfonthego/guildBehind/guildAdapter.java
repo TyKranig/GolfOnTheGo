@@ -32,11 +32,9 @@ public class guildAdapter extends ArrayAdapter<Guild>{
 
         Guild guild = getItem(position);
         TextView guildText = customView.findViewById(R.id.txtGuildName);
-        TextView scoreText = customView.findViewById(R.id.txtGuildScore);
 
         assert guild != null;
         guildText.setText(guild.get_name());
-        scoreText.setText(guild.get_id());
 
         return customView;
     }
