@@ -13,17 +13,19 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.Toast;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
+
 
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
@@ -54,13 +56,11 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
-        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener, swingFragment.OnFragmentInteractionListener {
+        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, swingFragment.OnFragmentInteractionListener {
 
     //LEO'S VARIABLES
     //button
     private Button swingButton;
-    //swinger object
-    public Swinger playerSwing;
 
     // main google map object
     private GoogleMap mMap;
@@ -75,10 +75,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     // current location marker
     Marker livePlayerMarker;
     Marker ballmarker;
-
-    //sensor stuff
-    private Sensor accelSensor;
-    private SensorManager SM;
 
     // request for location
     LocationRequest locationRequest;
@@ -95,10 +91,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Sensor manager and accelerometer
-        SM = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         // create the location request
         this.checkLocationPermission();
         this.createLocationRequest();
@@ -115,34 +107,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
 
-        playerSwing = new Swinger();
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
-
-    }
-
-    //Leo's accelerometer stuff
-    public void onSensorChanged(SensorEvent sensorEvent)
-    {
-        //saving accelerometer values
-        playerSwing.x = sensorEvent.values[0];
-        playerSwing.y = sensorEvent.values[1];
-        playerSwing.z = sensorEvent.values[2];
-
-        if(playerSwing.swingTrack != 0) {
-            playerSwing.swang();
-        }
-
-        if(playerSwing.done()){
-
-        }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i)
-    {
 
     }
 
@@ -182,7 +150,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        final LatLng TEST = new LatLng(42.021679, -93.677612);
+        final LatLng TEST =  new LatLng(42.027572, -93.649757);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
         final Course currentCourse = new Course(1);
@@ -206,13 +174,13 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                /*Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
-                swingFinishIntent.putExtra("SwingStats", swingStat);
-                startActivity(swingFinishIntent);*/
 
+                swingFragment swingFrag = new swingFragment();
                 FragmentTransaction swingFragTransaction = getSupportFragmentManager().beginTransaction();
-                swingFragTransaction.replace(R.id.swingFrame, new Fragment());
+                swingFragTransaction.replace(R.id.swingFrame, swingFrag);
+                swingFragTransaction.addToBackStack(null);
                 swingFragTransaction.commit();
+
             }
         });
 
@@ -225,6 +193,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     Location teeLocation = new Location("tmp");
                     teeLocation.setLatitude(TEST.latitude);
                     teeLocation.setLongitude(TEST.longitude);
+
+                    //REMEMBER to change this
+
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
                     // if the distance  between the player and the first tee is less than 10 meters
                     if(location.distanceTo(teeLocation) < 10){

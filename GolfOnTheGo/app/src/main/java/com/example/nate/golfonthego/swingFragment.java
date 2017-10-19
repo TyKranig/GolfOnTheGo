@@ -4,42 +4,97 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.widget.Toast;
 
-public class swingFragment extends Fragment {
+import static android.content.Context.SENSOR_SERVICE;
 
-    Button swingFragButton;
+public class swingFragment extends Fragment implements SensorEventListener{
+
+    private Button swingFragButton;
+    private Button swingFragBackButton;
     public CourseActivity Course;
-    private OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener mListener;    //sensor stuff
+    private Sensor accelSensor;
+    private SensorManager SM;
+    private Swinger playerSwing;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        //Sensor manager and accelerometer
+        SM = (SensorManager)getContext().getSystemService(SENSOR_SERVICE);
+        accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         Course = (CourseActivity) getActivity();
 
+        playerSwing = new Swinger();
+        System.out.println("SwingTrack = " + playerSwing.swingTrack);
         swingFragButton = (Button)getView().findViewById(R.id.swingFragSwing);
         swingFragButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
-                if (Course.playerSwing.swingTrack == 0) {
-                    Course.playerSwing.swingTrack = 1;
+                
+                if (playerSwing.swingTrack == 0) {
+                    playerSwing.swingTrack = 1;
+                    System.out.println("SwingTrack = " + playerSwing.swingTrack);
                 }
+            }
+        });
+        swingFragBackButton = (Button)getView().findViewById(R.id.swingFragBack);
+        swingFragBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                getActivity().getFragmentManager().popBackStack();
             }
         });
         return inflater.inflate(R.layout.fragment_swing, container, false);
     }
 
+    //Leo's accelerometer stuff
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent)
+    {
+        //saving accelerometer values
+        playerSwing.x = sensorEvent.values[0];
+        playerSwing.y = sensorEvent.values[1];
+        playerSwing.z = sensorEvent.values[2];
+
+        playerSwing.swang();
+
+        if(playerSwing.done()){
+            CharSequence text = "Power:     " + playerSwing.power +
+                    "\nOverswing:  " + playerSwing.overswing +
+                    "\nError:      " + playerSwing.error +
+                    "\nScore:      " + playerSwing.score;
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(getContext(), text, duration);
+            toast.show();
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i)
+    {
+
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        System.out.println("Attached");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
+
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");

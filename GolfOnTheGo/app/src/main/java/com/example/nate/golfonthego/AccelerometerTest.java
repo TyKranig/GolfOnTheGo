@@ -3,7 +3,6 @@ package com.example.nate.golfonthego;
 import java.util.ArrayList;
 
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.hardware.Sensor;
@@ -13,7 +12,6 @@ import android.hardware.SensorEventListener;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Button;
 
 import com.android.volley.Request;

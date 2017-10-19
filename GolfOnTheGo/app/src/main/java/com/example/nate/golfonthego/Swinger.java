@@ -25,7 +25,7 @@ public class Swinger {
 
 
     //three parameeters:
-    //x, y, and zTemp are acceleration values
+    //x, y, and z are acceleration values
     //swingTemp is the backswing value, or int value tracking swing progress.
 
     public Swinger(){
@@ -38,19 +38,24 @@ public class Swinger {
 
     public void swang() {
 
+        if(swingTrack == 0){
+            return;
+        }
         //start the swing logic on a backswing
         if (swingTrack == 1 && (x + z < -15 || x < -25 || z < -25)){
             swingTrack = 2;
+            System.out.println("SwingTrack = " + swingTrack);
             return;
         }
         if (swingTrack == 2 && ((x > 0 && z > 0) || x > 10)){
             swingTrack = 3;
+            System.out.println("SwingTrack = " + swingTrack);
             return;
         }
 
         //after the swing starts...
         //calculating max/min/avg
-        else if (swingTrack == 3) {
+        if (swingTrack == 3) {
             Xavg = (Xavg + x) / 2;
             Yavg = (Yavg + y) / 2;
             Zavg = (Zavg + z) / 2;
@@ -101,7 +106,8 @@ public class Swinger {
     //if swing is over and new swing has not started, returns true
     //else returns false
     public boolean done(){
-        if(swingTrack == 0 && !first){
+        System.out.println("" + swingTrack + "  " + first);
+        if(!first){
             return true;
         }
         else{
