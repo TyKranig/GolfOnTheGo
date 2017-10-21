@@ -10,6 +10,7 @@
 
 
     <Button
+
         android:id="@+id/button8"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="wrap_content"
@@ -25,6 +26,7 @@
         android:text="Mute"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -48,6 +50,7 @@
         android:text="High"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -71,12 +74,30 @@
         android:text="Med"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.685"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/testButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="40dp"
+        android:onClick="play_onClick"
+        android:text="Test"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
+
 
     <Button
         android:id="@+id/button3"
@@ -94,6 +115,7 @@
         android:text="Courses"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -117,6 +139,7 @@
         android:text="Open Settings"
         android:textColor="#ff9090"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.966"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -140,6 +163,7 @@
         android:text="Friends"
         android:textColor="#ff9090"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -163,6 +187,7 @@
         android:text="Leader Boards"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -185,6 +210,7 @@
         android:text="@string/playbutton"
         android:textColor="#ff9090"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -207,6 +233,7 @@
         android:text="Low"
         android:textColor="#b0b0ff"
         android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -216,14 +243,15 @@
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_width="392dp"
-        android:layout_height="576dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:background="@drawable/golf_background1"
         android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:context="overbit.user.MainActivity"
         android:layout_marginRight="8dp"
+
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="8dp"

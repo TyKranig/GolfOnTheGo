@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
-        altBackground(rand.nextInt()%5+1);
+        altBackground(rand.nextInt()%4+2);
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -89,7 +89,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+<<<<<<< HEAD
         });*/
+
+        //});
+        Button testButton = (Button)findViewById(R.id.testButton);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                Intent testScreenIntent = new Intent(context, AccelerometerTest.class);
+                startActivity(testScreenIntent);
+            }
+        });
+
     }
 
 

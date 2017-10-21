@@ -407,4 +407,8 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="playbutton">Play</string>
+
+
+    <string name="title_activity_accelerometer_test">AccelerometerTest</string>
+
 </resources>
