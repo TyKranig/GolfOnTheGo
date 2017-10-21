@@ -8,11 +8,12 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.nate.golfonthego.guildBehind.*;
+import com.example.nate.golfonthego.Models.Guild;
+import com.example.nate.golfonthego.guildBehind.guildAdapters.guildListAdapter;
 
 public class guildListMain extends AppCompatActivity {
+    public static String tag_guild_name = "guildName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ public class guildListMain extends AppCompatActivity {
         setContentView(R.layout.activity_guild_list_main);
 
         Guild[] guild = {new Guild("Golfer4Life", 1), new Guild("HackingGolf", 2), new Guild("TigerBools", 3)};
-        ListAdapter guildAdapter = new guildAdapter(this, guild);
+        ListAdapter guildAdapter = new guildListAdapter(this, guild);
         ListView guildListView = (ListView) findViewById(R.id.listGuilds);
         guildListView.setAdapter(guildAdapter);
 
@@ -32,7 +33,10 @@ public class guildListMain extends AppCompatActivity {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Guild guild = (Guild)adapterView.getItemAtPosition(position);
                 Intent intent = new Intent(guildListMain.this, guildInfoScreen.class);
+                System.out.println(guild.get_name());
+                intent.putExtra(tag_guild_name, guild.get_name());
                 startActivity(intent);
             }
         };

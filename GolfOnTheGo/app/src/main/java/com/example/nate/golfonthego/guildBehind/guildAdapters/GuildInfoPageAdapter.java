@@ -1,4 +1,4 @@
-package com.example.nate.golfonthego.guildBehind;
+package com.example.nate.golfonthego.guildBehind.guildAdapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by tyler on 10/16/2017.
+ * Used to handle the tabs in the guild info page
  */
 
 public class GuildInfoPageAdapter extends FragmentPagerAdapter{

@@ -14,29 +14,33 @@
 
         <TextView
             android:id="@+id/header_guild_member"
-            android:layout_width="wrap_content"
+            android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/backbox"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/userName"
             android:textSize="18sp"
-            android:background="@drawable/backbox"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/header_guild_password"
-            android:layout_width="wrap_content"
+            android:layout_width="25dp"
             android:layout_height="match_parent"
             android:layout_weight="1.02"
+            android:background="@drawable/backbox"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/password"
             android:textSize="18sp"
-            android:background="@drawable/backbox"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ListView
+        android:id="@+id/list_Members"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout2" />
+        android:layout_below="@+id/linearLayout2"
+        android:background="@color/cast_expanded_controller_ad_container_white_stripe_color" />
 </RelativeLayout>

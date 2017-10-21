@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnGuildScores"
-        android:layout_width="191dp"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <TextView
-        android:id="@+id/txtGuildScores"
+    <ListView
+        android:id="@+id/list_guild_scores"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Scores go Here" />
-</LinearLayout>
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

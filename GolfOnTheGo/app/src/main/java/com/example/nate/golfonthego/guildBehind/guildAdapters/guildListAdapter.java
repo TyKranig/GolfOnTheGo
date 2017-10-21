@@ -1,4 +1,4 @@
-package com.example.nate.golfonthego.guildBehind;
+package com.example.nate.golfonthego.guildBehind.guildAdapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,17 +10,16 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.nate.golfonthego.R;
-
-import java.util.Random;
+import com.example.nate.golfonthego.Models.Guild;
 
 /**
  * Created by tyler on 10/15/17.
  * Used as a custom adapted for guild list screen
  */
 
-public class guildAdapter extends ArrayAdapter<Guild>{
+public class guildListAdapter extends ArrayAdapter<Guild>{
 
-    public guildAdapter(Context context, Guild[] guilds) {
+    public guildListAdapter(Context context, Guild[] guilds) {
         super(context, R.layout.custom_row_guild, guilds);
     }
 

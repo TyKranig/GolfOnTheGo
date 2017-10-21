@@ -1,4 +1,4 @@
-package com.example.nate.golfonthego.guildBehind;
+package com.example.nate.golfonthego.Models;
 
 /**
  * Created by tyler on 10/15/17.
