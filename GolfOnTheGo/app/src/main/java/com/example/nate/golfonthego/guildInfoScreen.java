@@ -9,8 +9,6 @@ import android.support.v7.widget.Toolbar;
 import com.example.nate.golfonthego.guildBehind.*;
 import com.example.nate.golfonthego.guildBehind.guildAdapters.GuildInfoPageAdapter;
 
-//TODO: add stuff to the toolbar
-
 public class guildInfoScreen extends AppCompatActivity {
 
     private GuildInfoPageAdapter _guildInfoPageAdapter;
@@ -22,6 +20,7 @@ public class guildInfoScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guild_info_screen);
 
+        //here we set the title of toolbar to the guild name that was put inside the intent
         Toolbar infoToolbar = (Toolbar) findViewById(R.id.guildInfoToolbar);
         setSupportActionBar(infoToolbar);
         getSupportActionBar().setTitle(getIntent().getExtras().getString(guildListMain.tag_guild_name));

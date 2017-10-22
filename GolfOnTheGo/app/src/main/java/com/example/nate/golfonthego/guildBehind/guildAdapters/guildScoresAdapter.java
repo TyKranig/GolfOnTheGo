@@ -1,7 +1,6 @@
 package com.example.nate.golfonthego.guildBehind.guildAdapters;
 
 import android.content.Context;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -29,7 +28,10 @@ public class guildScoresAdapter extends ArrayAdapter<Score>{
         LayoutInflater guildInflater = LayoutInflater.from(getContext());
         View customView = guildInflater.inflate(R.layout.custom_row_guildscore, parent, false);
 
+        //first load in the score
         Score score = getItem(position);
+
+        //second find all the views in the table inside the fragment
         TextView courseName = customView.findViewById(R.id.txtGuildScoreCourse);
         TextView score1User = customView.findViewById(R.id.txtGuildScoreUser1);
         TextView score1 = customView.findViewById(R.id.txtGuildScore1);
@@ -38,10 +40,11 @@ public class guildScoresAdapter extends ArrayAdapter<Score>{
         TextView score3User = customView.findViewById(R.id.txtGuildScoreUser3);
         TextView score3 = customView.findViewById(R.id.txtGuildScore3);
 
-        assert score != null && score1User != null;
-        courseName.setText(score.courseName);
+        //make sure the score exists
+        assert score != null;
 
-        System.out.println(score.getUser(1));
+        //set the text of each box to the correlating score
+        courseName.setText(score.courseName);
 
         score1User.setText(score.getUser(0));
         score1.setText("" + score.getScore(0));

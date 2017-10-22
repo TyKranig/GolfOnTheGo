@@ -22,6 +22,7 @@ import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 
+import com.example.nate.golfonthego.Models.Course;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
