@@ -58,7 +58,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
 
-        playerSwing = new Swinger();
+        playerSwing = new Swinger(false);
         //setting up both buttons
         Button testButton = (Button)findViewById(R.id.test);
         testButton.setOnClickListener(new View.OnClickListener() {

@@ -34,7 +34,8 @@ public class swingFragment extends Fragment implements SensorEventListener{
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         Course = (CourseActivity) getActivity();
 
-        playerSwing = new Swinger();
+        //TODO switch parameter to be player indicated lefty or righty (where true is lefty)
+        playerSwing = new Swinger(false);
         View swingFragView = inflater.inflate(R.layout.fragment_swing, container, false);
         System.out.println("SwingTrack = " + playerSwing.swingTrack);
         Button swingFragButton = (Button)swingFragView.findViewById(R.id.swingFragSwing);
@@ -63,10 +64,16 @@ public class swingFragment extends Fragment implements SensorEventListener{
     public void onSensorChanged(SensorEvent sensorEvent)
     {
         //saving accelerometer values
-        playerSwing.x = sensorEvent.values[0];
-        playerSwing.y = sensorEvent.values[1];
-        playerSwing.z = sensorEvent.values[2];
-
+        if(playerSwing.swingLefty) {
+            playerSwing.x = -sensorEvent.values[0];
+            playerSwing.y = -sensorEvent.values[1];
+            playerSwing.z = -sensorEvent.values[2];
+        }
+        else{
+            playerSwing.x = sensorEvent.values[0];
+            playerSwing.y = sensorEvent.values[1];
+            playerSwing.z = sensorEvent.values[2];
+        }
         playerSwing.swang();
 
         if(playerSwing.done()){

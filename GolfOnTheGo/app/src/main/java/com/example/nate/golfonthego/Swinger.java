@@ -14,6 +14,7 @@ public class Swinger {
     float x, y, z;
     private float Xmax, Xmin, Xavg, Ymax, Ymin, Yavg, Zmax, Zmin, Zavg;
     float power, overswing, error, score;
+    boolean swingLefty;
 
     /* scoreArray is a 4 index array where:
         *   0 : power
@@ -28,12 +29,13 @@ public class Swinger {
     //x, y, and z are acceleration values
     //swingTemp is the backswing value, or int value tracking swing progress.
 
-    public Swinger(){
+    public Swinger(boolean orient){
         x = 0;
         y = 0;
         z = 0;
         swingTrack = 0;
         first = true;
+        swingLefty = orient;
     }
 
     public void swang() {
@@ -41,6 +43,7 @@ public class Swinger {
         if(swingTrack == 0){
             return;
         }
+
         //start the swing logic on a backswing
         if (swingTrack == 1 && (x + z < -20 || x < -15 || z < -15)){
             swingTrack = 2;
