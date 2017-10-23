@@ -42,7 +42,7 @@ public class Swinger {
             return;
         }
         //start the swing logic on a backswing
-        if (swingTrack == 1 && (x + z < -15 || x < -25 || z < -25)){
+        if (swingTrack == 1 && (x + z < -20 || x < -15 || z < -15)){
             swingTrack = 2;
             System.out.println("SwingTrack = " + swingTrack);
             return;
@@ -84,10 +84,10 @@ public class Swinger {
 
             //calculating power, overswing, error, and score.
             power = Xmax + Zmax;
-            overswing = ((Xmax + Zmax) - (Xavg + Zavg)) - 70;
+            overswing = ((Xmax + Zmax) - (Xavg + Zavg)) - 60;
 
             //error is based solely on Y acceleration
-            error = Yavg - 10;
+            error = Yavg - 5;
             overswing = overswing < 0 ? 0 : overswing;
 
             score = power - overswing;
@@ -107,12 +107,7 @@ public class Swinger {
     //else returns false
     public boolean done(){
         System.out.println("" + swingTrack + "  " + first);
-        if(!first){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return(!first);
     }
 
 }
