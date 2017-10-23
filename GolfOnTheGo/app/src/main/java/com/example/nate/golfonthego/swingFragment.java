@@ -38,8 +38,9 @@ public class swingFragment extends Fragment implements SensorEventListener{
         Course = (CourseActivity) getActivity();
 
         playerSwing = new Swinger();
+        View swingFragView = inflater.inflate(R.layout.fragment_swing, container, false);
         System.out.println("SwingTrack = " + playerSwing.swingTrack);
-        swingFragButton = (Button)getView().findViewById(R.id.swingFragSwing);
+        swingFragButton = (Button)swingFragView.findViewById(R.id.swingFragSwing);
         swingFragButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
@@ -50,14 +51,14 @@ public class swingFragment extends Fragment implements SensorEventListener{
                 }
             }
         });
-        swingFragBackButton = (Button)getView().findViewById(R.id.swingFragBack);
+        swingFragBackButton = (Button)swingFragView.findViewById(R.id.swingFragBack);
         swingFragBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 getActivity().getFragmentManager().popBackStack();
             }
         });
-        return inflater.inflate(R.layout.fragment_swing, container, false);
+        return swingFragView;
     }
 
     //Leo's accelerometer stuff
