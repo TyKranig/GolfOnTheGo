@@ -18,6 +18,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     Button play;
     float currVolume = 0.90f;
+    private Handler handler = new Handler();
     MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
-        altBackground(rand.nextInt()%4+2);
+
+        //handler.postDelayed(altBackground(rand), 500);
+
+        altBackground(rand);
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -186,58 +190,28 @@ public class MainActivity extends AppCompatActivity {
         currVolume = 0.90f;
         return;
     }
-    public void altBackground(int n){
+    public void altBackground(Random r){
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
-        Handler handler = new Handler();
 
 
-
-        //while(true){
-        switch (n){
+        switch (r.nextInt()%5+1){
             case 1:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background1);
-                    }
-                }, 0000);
                 break;
             case 2:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background2);
-                    }
-                }, 0000);
+
                 break;
             case 3:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background3);
-                    }
-                }, 0000);
+
                 break;
             case 4:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background4);
-                    }
-                }, 0000);
+
                 break;
             case 5:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background5);
-                    }
-                }, 0000);
                 break;
 
 
@@ -246,7 +220,7 @@ public class MainActivity extends AppCompatActivity {
             //if(n>=5) n=1;
             //altBackground(n);
 
-
-        //}
+        //handler.postDelayed(altBackground(r), 500);
+        return;
     }
 }
