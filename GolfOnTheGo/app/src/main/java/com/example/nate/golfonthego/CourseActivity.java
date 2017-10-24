@@ -141,7 +141,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        final LatLng TEST =  new LatLng(42.027572, -93.649757);
+        final LatLng TEST =  new LatLng(42.027694, -93.649824);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
         final Course currentCourse = new Course(1);
@@ -165,7 +165,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-
+                swingButton.setVisibility(View.INVISIBLE);
+                swingButton.setVisibility(View.GONE);
                 swingFragment swingFrag = new swingFragment();
                 FragmentTransaction swingFragTransaction = getSupportFragmentManager().beginTransaction();
                 swingFragTransaction.replace(R.id.swingFrame, swingFrag);

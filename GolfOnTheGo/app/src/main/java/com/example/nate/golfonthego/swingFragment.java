@@ -81,9 +81,10 @@ public class swingFragment extends Fragment implements SensorEventListener{
                     "\nOverswing:  " + playerSwing.overswing +
                     "\nError:      " + playerSwing.error +
                     "\nScore:      " + playerSwing.score;
-            int duration = Toast.LENGTH_LONG;
+            int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(getContext(), text, duration);
             toast.show();
+            playerSwing.first = true;
         }
     }
 

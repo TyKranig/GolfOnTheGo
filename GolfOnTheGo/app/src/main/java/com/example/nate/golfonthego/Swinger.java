@@ -10,7 +10,7 @@ public class Swinger {
         *   0: when the user has stopped swinging. the done() method will return true after first swing now.*/
 
     int swingTrack;
-    private boolean first;
+    boolean first;
     float x, y, z;
     private float Xmax, Xmin, Xavg, Ymax, Ymin, Yavg, Zmax, Zmin, Zavg;
     float power, overswing, error, score;
@@ -45,7 +45,7 @@ public class Swinger {
         }
 
         //start the swing logic on a backswing
-        if (swingTrack == 1 && (x + z < -20 || x < -15 || z < -15)){
+        if (swingTrack == 1 && (x + z < -5 || x < -5 || z < -5)){
             swingTrack = 2;
             System.out.println("SwingTrack = " + swingTrack);
             return;
@@ -109,8 +109,7 @@ public class Swinger {
     //if swing is over and new swing has not started, returns true
     //else returns false
     public boolean done(){
-        System.out.println("" + swingTrack + "  " + first);
-        return(!first);
+        return (!first);
     }
 
 }
