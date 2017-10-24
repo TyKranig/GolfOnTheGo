@@ -16,15 +16,17 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    Button play;
+    final Context context = this;
     float currVolume = 0.90f;
     MediaPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
+<<<<<<< HEAD
         altBackground(rand.nextInt()%4+2);
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -55,11 +57,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Plays music - change music eventualy or comment to perma-off
+=======
+        altBackground(rand.nextInt()%5+1);
+
+        //Plays music - change music eventualy or comment to off
+>>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
         player.setVolume(currVolume, currVolume);
 
+<<<<<<< HEAD
         //toggles the music on and off
         /*
         final ToggleButton t;
@@ -93,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //});
+=======
+>>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(testScreenIntent);
             }
         });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
     }
 
 
@@ -111,24 +124,17 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
-    final Context context = this;
-    private Button button;
 
     public void friendsBtn_onClick(View view){ // used to test dialogues
-        /*
-        Intent intent = new Intent(this, Activity.class);
-        startActivity(intent);
-        */
-
         //dialog
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.custom);
         dialog.setTitle("Title");
 
         // set the custom dialog components - text, image and button
-        TextView text = (TextView) dialog.findViewById(R.id.text);
+        TextView text = dialog.findViewById(R.id.text);
         text.setText("Dialog Testing");
-        Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+        Button dialogButton = dialog.findViewById(R.id.dialogButtonOK);
 
         //close dialog
         dialogButton.setOnClickListener(new View.OnClickListener() {
@@ -142,8 +148,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void coursesBtn_onClick(View view){
 
-        Intent intent = new Intent(this, CourseActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, CourseActivity.class);
+        //startActivity(intent);
 
     }
     public void leaderBoardBtn_onClick(View view){
@@ -154,37 +160,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void play_onClick(View view){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, CourseActivity.class);
         startActivity(intent);
     }
     public void volumeOff(View view) {
         //MediaPlayer mediaPlayer = null;
         player.setVolume(0.0f, 0.0f);
         currVolume = 0.0f;
-        return;
     }
 
     public void volumeLow(View view){
         //MediaPlayer mediaPlayer = null;
-            player.setVolume(0.09f, 0.09f);
-            currVolume = 0.09f;
-        return;
-        //currVolume=25;
-        //float v  = (float)(Math.log(50-currVolume)/Math.log(50));
-        //player.setVolume(1-v);
+        player.setVolume(0.09f, 0.09f);
+        currVolume = 0.09f;
     }
     public void volumeMed(View view) {
         //MediaPlayer mediaPlayer = null;
         player.setVolume(0.40f, 0.40f);
         currVolume = 0.40f;
-        return;
     }
 
     public void volumeHigh(View view) {
         //MediaPlayer mediaPlayer = null;
         player.setVolume(0.90f, 0.90f);
         currVolume = 0.90f;
-        return;
     }
     public void altBackground(int n){
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
@@ -201,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background1);
                     }
-                }, 0000);
+                }, 0);
                 break;
             case 2:
                 handler.postDelayed(new Runnable(){
@@ -210,7 +209,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background2);
                     }
-                }, 0000);
+                }, 0);
                 break;
             case 3:
                 handler.postDelayed(new Runnable(){
@@ -219,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background3);
                     }
-                }, 0000);
+                }, 0);
                 break;
             case 4:
                 handler.postDelayed(new Runnable(){
@@ -228,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background4);
                     }
-                }, 0000);
+                }, 0);
                 break;
             case 5:
                 handler.postDelayed(new Runnable(){
@@ -237,16 +236,11 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background5);
                     }
-                }, 0000);
+                }, 0);
                 break;
 
 
 
         }
-            //if(n>=5) n=1;
-            //altBackground(n);
-
-
-        //}
     }
 }

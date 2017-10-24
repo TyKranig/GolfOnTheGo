@@ -7,16 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONObject;
-
 import Constants.ConstantURL;
-import VolleyAPI.RequestQueueSingleton;
+import VolleyAPI.VolleyBall;
 
 public class LoginScreen extends AppCompatActivity {
 
@@ -25,7 +18,6 @@ public class LoginScreen extends AppCompatActivity {
     public Button login;
     public Button register;
     public static final String EXTRA_MESSAGE = "userName";
-    private String tag_string_request = "string_req";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,40 +47,39 @@ public class LoginScreen extends AppCompatActivity {
     private void loginRequest(){
         String user = userName.getText().toString();
         String pass = password.getText().toString();
+        String url = ConstantURL.URL_LOGIN + "userName=\"" + user + "\"&password=\"" + pass + "\"";
 
         if (user.equals("") || pass.equals("")) {
             Toast.makeText(getApplicationContext(), "Please enter a UserName and Password", Toast.LENGTH_LONG).show();
             return;
         }
 
-        JsonObjectRequest loginRequest = new JsonObjectRequest
-                (Request.Method.GET, ConstantURL.URL_LOGIN + "userName=\"" + user + "\"&password=\"" + pass + "\""
-                        , null, new Response.Listener<JSONObject>(){
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try{
-                            System.out.println(response.toString());
-                            if(response.getInt("result") == 1){
-                                Intent intent = new Intent(LoginScreen.this, MainActivity.class);
-                                intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
-                                finish();
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "Incorrect Username or password", Toast.LENGTH_LONG).show();
-                            }
-                        } catch (Exception e){
-                            System.out.println(e.toString());
-                        }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        System.out.println(error.toString());
-                        VolleyLog.d(tag_string_request, "Error: " + error.getMessage());
-                    }
-                });
+        /*
+        We use VolleyBall to make calls to the server and get data
+        back from the database or the server itself
+         */
+        VolleyBall.getResponseJson(this, new VolleyBall.VolleyCallback() {
+            @Override
+            public void doThings(Object result) {
+                try{
+                    //cast the object coming back to JSON
+                    JSONObject re = (JSONObject)result;
+                    System.out.println(result.toString());
 
-        RequestQueueSingleton.getInstance(this).addToRequestQueue(loginRequest);
+                    //if the string result
+                    if(re.getInt("result") == 1){
+                        Intent intent = new Intent(LoginScreen.this, MainActivity.class);
+                        intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
+                        finish();
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Incorrect Username or password", Toast.LENGTH_LONG).show();
+                    }
+                } catch (Exception e){
+                    System.out.println(e.toString());
+                }
+            }
+        }, url);
     }
 
     View.OnClickListener RegisterClickDo() {
