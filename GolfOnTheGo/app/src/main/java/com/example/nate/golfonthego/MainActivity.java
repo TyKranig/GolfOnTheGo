@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Random rand = new Random(System.currentTimeMillis());
 
         //handler.postDelayed(altBackground(rand), 500);
+        handler.postDelayed(runnable, 0);
+        //altBackground(rand);
 
-        altBackground(rand);
+
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -194,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
 
 
-        switch (r.nextInt()%5+1){
+        switch (r.nextInt()%4+2){ //skip background 1 for now
             case 1:
                         layout.setBackgroundResource(R.drawable.golf_background1);
                 break;
@@ -223,4 +225,14 @@ public class MainActivity extends AppCompatActivity {
         //handler.postDelayed(altBackground(r), 500);
         return;
     }
+
+    private Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+            Random rand = new Random(System.currentTimeMillis());
+            altBackground(rand);
+            handler.postDelayed(this, 5000);
+        }
+    };
 }
