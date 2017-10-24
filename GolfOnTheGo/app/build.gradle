@@ -37,13 +37,19 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     /*
 <<<<<<< HEAD
 =======
 
 >>>>>>> origin/AlphaRelease*/
+<<<<<<< HEAD
 =======
 >>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
+=======
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'

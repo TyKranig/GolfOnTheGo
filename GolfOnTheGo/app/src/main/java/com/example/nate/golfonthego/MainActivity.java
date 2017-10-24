@@ -18,6 +18,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     final Context context = this;
     float currVolume = 0.90f;
+    private Handler handler = new Handler();
     MediaPlayer player;
 
     @Override
@@ -27,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
 <<<<<<< HEAD
+<<<<<<< HEAD
         altBackground(rand.nextInt()%4+2);
+=======
+
+        //handler.postDelayed(altBackground(rand), 500);
+        handler.postDelayed(runnable, 0);
+        //altBackground(rand);
+
+
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -101,8 +111,11 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //});
+<<<<<<< HEAD
 =======
 >>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
+=======
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,9 +125,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
+=======
+
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     }
 
 
@@ -185,62 +202,75 @@ public class MainActivity extends AppCompatActivity {
         player.setVolume(0.90f, 0.90f);
         currVolume = 0.90f;
     }
-    public void altBackground(int n){
+    public void altBackground(Random r){
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
-        Handler handler = new Handler();
 
 
-
-        //while(true){
-        switch (n){
+        switch (r.nextInt()%4+2){ //skip background 1 for now
             case 1:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background1);
+<<<<<<< HEAD
                     }
                 }, 0);
+=======
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 break;
             case 2:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background2);
+<<<<<<< HEAD
                     }
                 }, 0);
+=======
+
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 break;
             case 3:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background3);
+<<<<<<< HEAD
                     }
                 }, 0);
+=======
+
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 break;
             case 4:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background4);
+<<<<<<< HEAD
                     }
                 }, 0);
+=======
+
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 break;
             case 5:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background5);
+<<<<<<< HEAD
                     }
                 }, 0);
+=======
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 break;
 
 
 
         }
+<<<<<<< HEAD
+=======
+            //if(n>=5) n=1;
+            //altBackground(n);
+
+        //handler.postDelayed(altBackground(r), 500);
+        return;
+>>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     }
+
+    private Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+            Random rand = new Random(System.currentTimeMillis());
+            altBackground(rand);
+            handler.postDelayed(this, 5000);
+        }
+    };
 }
