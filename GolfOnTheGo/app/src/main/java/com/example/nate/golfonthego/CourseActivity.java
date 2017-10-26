@@ -30,6 +30,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -52,6 +53,14 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     //LEO'S VARIABLES
     //button
     private Button swingButton;
+    private Button aimButton;
+    private Button aimClockButton;
+    private Button aimCounterClockButton;
+
+    LatLng tmp;
+
+    private Location playerLocation;
+    private float playerBearing;
 
     // main google map object
     private GoogleMap mMap;
@@ -141,7 +150,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        final LatLng TEST =  new LatLng(42.027694, -93.649824);
+        final LatLng TEST =  new LatLng(42.028600, -93.646529);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
         final Course currentCourse = new Course(1);
@@ -167,12 +176,69 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             public void onClick(View arg0) {
                 swingButton.setVisibility(View.INVISIBLE);
                 swingButton.setVisibility(View.GONE);
+
                 swingFragment swingFrag = new swingFragment();
                 FragmentTransaction swingFragTransaction = getSupportFragmentManager().beginTransaction();
                 swingFragTransaction.replace(R.id.swingFrame, swingFrag);
                 swingFragTransaction.addToBackStack(null);
                 swingFragTransaction.commit();
 
+            }
+        });
+
+        //aimButton functionality
+        aimButton = (Button)findViewById(R.id.aimButton);
+        aimButton.setVisibility(View.GONE);
+        aimButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                aimButton.setVisibility(View.INVISIBLE);
+                aimButton.setVisibility(View.GONE);
+                aimClockButton.setVisibility(View.VISIBLE);
+                aimClockButton.setText("->");
+                aimCounterClockButton.setVisibility(View.VISIBLE);
+                aimCounterClockButton.setText("<-");
+                mMap.getUiSettings().setAllGesturesEnabled(false);
+            }
+        });
+
+        //aim clockwise
+        aimClockButton = (Button)findViewById(R.id.changeAimClockButton);
+        aimClockButton.setVisibility(View.GONE);
+        aimClockButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                float posBearing = playerLocation.getBearing();
+                if(posBearing + 5 > 360){
+                    posBearing = (posBearing - 355);
+                }
+                    CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
+                            //.zoom(15)                   // Sets the zoom
+                            .bearing(posBearing) // Sets the orientation of the camera to east
+                            .tilt(0)                   // Sets the tilt of the camera to 0 degrees
+                            .build();                   // Creates a CameraPosition from the builder
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                playerBearing = posBearing;
+            }
+        });
+
+        //aim counter-clockwise
+        aimCounterClockButton = (Button)findViewById(R.id.changeAimCounterClockButton);
+        aimCounterClockButton.setVisibility(View.GONE);
+        aimCounterClockButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                    float negBearing = playerLocation.getBearing();
+                    if(negBearing - 5 < 0){
+                        negBearing = 360 - (5 - negBearing);
+                    }
+                    CameraPosition cameraPosition = new CameraPosition.Builder()
+                            //.zoom(15)                   // Sets the zoom
+                            .bearing(negBearing) // Sets the orientation of the camera to east
+                            .tilt(0)                   // Sets the tilt of the camera to 0 degrees
+                            .build();                   // Creates a CameraPosition from the builder
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                    playerBearing = negBearing;
             }
         });
 
@@ -186,11 +252,19 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     teeLocation.setLatitude(TEST.latitude);
                     teeLocation.setLongitude(TEST.longitude);
 
+                    playerLocation = location;
+                    playerLocation.setBearing(playerBearing);
+                    /*if(playerLocation.hasBearing() || playerLocation.getBearing() == 0) {
+                        playerLocation = location;
+                        playerLocation.setBearing(0);
+                    }
+                    */
+
                     //REMEMBER to change this
 
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
-                    // if the distance  between the player and the first tee is less than 10 meters
-                    if(location.distanceTo(teeLocation) < 10){
+                    // if the distance  between the player and the first tee is less than 15 meters
+                    if(location.distanceTo(teeLocation) < 15){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
                         ballmarker = mMap.addMarker(
@@ -201,10 +275,20 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
                         swingButton.setText("Swing");
+                        aimButton.setVisibility(View.VISIBLE);
+                        aimButton.setText("Aim");
+
                     }
                     else{
                         swingButton.setVisibility(View.INVISIBLE);
                         swingButton.setVisibility(View.GONE);
+                        aimButton.setVisibility(View.INVISIBLE);
+                        aimButton.setVisibility(View.GONE);
+                        aimClockButton.setVisibility(View.INVISIBLE);
+                        aimClockButton.setVisibility(View.GONE);
+                        aimCounterClockButton.setVisibility(View.INVISIBLE);
+                        aimCounterClockButton.setVisibility(View.GONE);
+                        mMap.getUiSettings().setAllGesturesEnabled(true);
                     }
                 }
             };
