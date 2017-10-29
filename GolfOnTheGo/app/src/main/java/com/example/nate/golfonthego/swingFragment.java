@@ -35,14 +35,15 @@ public class swingFragment extends Fragment implements SensorEventListener{
         Course = (CourseActivity) getActivity();
 
         //TODO switch parameter to be player indicated lefty or righty (where true is lefty)
-        playerSwing = new Swinger(false);
+        playerSwing = Swinger.getSwinger();
         View swingFragView = inflater.inflate(R.layout.fragment_swing, container, false);
         System.out.println("SwingTrack = " + playerSwing.swingTrack);
-        Button swingFragButton = (Button)swingFragView.findViewById(R.id.swingFragSwing);
+        final Button swingFragButton = (Button)swingFragView.findViewById(R.id.swingFragSwing);
         swingFragButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                
+                swingFragButton.setVisibility(View.INVISIBLE);
+                swingFragButton.setVisibility(View.GONE);
                 if (playerSwing.swingTrack == 0) {
                     playerSwing.swingTrack = 1;
                     System.out.println("SwingTrack = " + playerSwing.swingTrack);

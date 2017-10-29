@@ -46,6 +46,7 @@ import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
+import static java.security.AccessController.getContext;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener, swingFragment.OnFragmentInteractionListener {
@@ -56,8 +57,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private Button aimButton;
     private Button aimClockButton;
     private Button aimCounterClockButton;
-
-    LatLng tmp;
 
     private Location playerLocation;
     private float playerBearing;
@@ -150,7 +149,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        final LatLng TEST =  new LatLng(42.028600, -93.646529);
+        final LatLng TEST =  new LatLng(42.021639, -93.677610);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
         final Course currentCourse = new Course(1);
@@ -182,7 +181,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 swingFragTransaction.replace(R.id.swingFrame, swingFrag);
                 swingFragTransaction.addToBackStack(null);
                 swingFragTransaction.commit();
-
             }
         });
 
@@ -278,6 +276,20 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         aimButton.setVisibility(View.VISIBLE);
                         aimButton.setText("Aim");
 
+                        //test to see if swinger singleton works
+                        Swinger playerSwing = Swinger.getSwinger();
+                        if(playerSwing != null){
+                            CharSequence text = "THIS IS A TEST" +
+                                    "\nPower:     " + playerSwing.power +
+                                    "\nOverswing:  " + playerSwing.overswing +
+                                    "\nError:      " + playerSwing.error +
+                                    "\nScore:      " + playerSwing.score;
+                            int duration = Toast.LENGTH_SHORT;
+                            Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+                            toast.show();
+                            playerSwing.first = true;
+                        }
+
                     }
                     else{
                         swingButton.setVisibility(View.INVISIBLE);
@@ -293,6 +305,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 }
             };
         };
+        // draw the hole on the map
         PolygonOptions hole1 = new PolygonOptions().addAll(
                 currentCourse.getFairway(currentHole)).fillColor(Color.GREEN).strokeJointType(2)
                 .strokeWidth((float)10).strokeColor(Color.GREEN);
