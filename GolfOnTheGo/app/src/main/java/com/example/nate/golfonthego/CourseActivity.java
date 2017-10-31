@@ -214,7 +214,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 }
                     CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
                             //.zoom(15)                   // Sets the zoom
-                            .bearing(posBearing) // Sets the orientation of the camera to east
+                            .bearing(posBearing)        // Rotates orientation 5 degress CW
                             .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                             .build();                   // Creates a CameraPosition from the builder
                     mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -230,11 +230,11 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             public void onClick(View arg0){
                     float negBearing = playerLocation.getBearing();
                     if(negBearing - 5 < 0){
-                        negBearing = 360 - (5 - negBearing);
+                        negBearing = 355 + negBearing;
                     }
                     CameraPosition cameraPosition = new CameraPosition.Builder()
                             //.zoom(15)                   // Sets the zoom
-                            .bearing(negBearing) // Sets the orientation of the camera to east
+                            .bearing(negBearing)        // Rotates orientation 5 degrees CCW
                             .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                             .build();                   // Creates a CameraPosition from the builder
                     mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
@@ -254,11 +254,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
                     playerLocation = location;
                     playerLocation.setBearing(playerBearing);
-                    /*if(playerLocation.hasBearing() || playerLocation.getBearing() == 0) {
-                        playerLocation = location;
-                        playerLocation.setBearing(0);
-                    }
-                    */
 
                     //REMEMBER to change this
 
@@ -288,6 +283,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         aimClockButton.setVisibility(View.GONE);
                         aimCounterClockButton.setVisibility(View.INVISIBLE);
                         aimCounterClockButton.setVisibility(View.GONE);
+
                         mMap.getUiSettings().setAllGesturesEnabled(true);
                     }
                 }
