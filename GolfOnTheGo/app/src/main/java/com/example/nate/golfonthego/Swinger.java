@@ -9,6 +9,9 @@ public class Swinger {
         *   3: the user has started to swing forward, so the acc values are being tracked and calculated.
         *   0: when the user has stopped swinging. the done() method will return true after first swing now.*/
 
+    //this is a singleton class, here is the instance variable
+    private static Swinger swinger;
+
     int swingTrack;
     boolean first;
     float x, y, z;
@@ -29,13 +32,19 @@ public class Swinger {
     //x, y, and z are acceleration values
     //swingTemp is the backswing value, or int value tracking swing progress.
 
-    public Swinger(boolean orient){
+    private Swinger(boolean orient){
         x = 0;
         y = 0;
         z = 0;
         swingTrack = 0;
         first = true;
         swingLefty = orient;
+    }
+
+    public static Swinger getSwinger(){
+        if (swinger == null)
+            return swinger = new Swinger(false);
+        return swinger;
     }
 
     public void swang() {
