@@ -10,14 +10,7 @@
 
 
     <Button
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
-
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         android:id="@+id/button8"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="wrap_content"
@@ -103,42 +96,9 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-<<<<<<< HEAD
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
-        android:onClick="play_onClick"
-        android:text="Test"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
 
-=======
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
 
-    <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="40dp"
-        android:onClick="play_onClick"
-        android:text="Test"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
 
 
     <Button
@@ -285,19 +245,12 @@
 
     <LinearLayout
         android:id="@+id/linearlayout"
-<<<<<<< HEAD
-<<<<<<< HEAD
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-=======
-        android:layout_width="392dp"
-        android:layout_height="576dp"
+
         android:layout_marginBottom="8dp"
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
+
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
@@ -305,15 +258,8 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-<<<<<<< HEAD
-        tools:context="overbit.user.MainActivity"
-        android:layout_marginRight="8dp"
 
-<<<<<<< HEAD
-=======
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.52"

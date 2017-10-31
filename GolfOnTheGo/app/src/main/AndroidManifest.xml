@@ -23,21 +23,11 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
 
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
-            android:theme="@style/AppTheme.NoActionBar" />
 
-<<<<<<< HEAD
-=======
-            android:theme="@style/AppTheme.NoActionBar" />
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -66,24 +56,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
 
         <activity android:name=".LeaderActivity"></activity>
 
         <activity android:name=".AccelerometerTest" />
         <activity android:name=".List"></activity>
 
-<<<<<<< HEAD
-=======
-        <activity android:name=".LeaderActivity" />
-        <activity android:name=".AccelerometerTest" />
-        <activity android:name=".List" />
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
     </application>
 
 </manifest>

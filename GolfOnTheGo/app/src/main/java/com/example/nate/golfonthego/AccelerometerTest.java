@@ -1,46 +1,19 @@
 package com.example.nate.golfonthego;
 
-import java.util.ArrayList;
-<<<<<<< HEAD
-
 import android.content.Intent;
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.hardware.Sensor;
-<<<<<<< HEAD
-import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.app.Activity;
-=======
-import android.app.Activity;
-import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Button;
-<<<<<<< HEAD
-=======
-import android.widget.Toast;
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+import android.widget.ListView;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import org.json.JSONObject;
-
-import Constants.ConstantURL;
-import VolleyAPI.RequestQueueSingleton;
+import java.util.ArrayList;
 
 
 public class AccelerometerTest extends AppCompatActivity implements SensorEventListener{
@@ -69,7 +42,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private float yAcc;
     private float zAcc;
 
-<<<<<<< HEAD
     //logic objects
     private float power;
     private float overswing;
@@ -79,12 +51,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     private int backSwing = 0;
 
     private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-=======
-    private float swingThroughVal;
-    private float backSwingVal;
-    private int swingThroughCount;
-    private boolean backSwing = false;
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
 
 
     @Override
@@ -98,20 +64,12 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
 
-<<<<<<< HEAD
-=======
-        backSwingVal = - 25;
-        swingThroughVal = 25;
-        swingThroughCount = 0;
-
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         //setting up both buttons
         Button testButton = (Button)findViewById(R.id.test);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-<<<<<<< HEAD
-                    buttonPush();
+                buttonPush();
             }
         });
 
@@ -121,12 +79,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             public void onClick(View arg0) {
                 Intent testToMain = new Intent(AccelerometerTest.this, MainActivity.class);
                 startActivity(testToMain);
-=======
-                if(push < 1) {
-                    push ++;
-                    buttonPush();
-                }
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
             }
         });
     }
@@ -134,16 +86,12 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
     @Override
     public void onSensorChanged(SensorEvent sensorEvent)
     {
-<<<<<<< HEAD
         //saving accelerometer values
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         xAcc = sensorEvent.values[0];
         yAcc = sensorEvent.values[1];
         zAcc = sensorEvent.values[2];
 
         //start the swing logic on a backswing
-<<<<<<< HEAD
         if(xAcc + zAcc < backSwingVal && backSwing == 1){
             backSwing = 2;
         }
@@ -200,19 +148,6 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             ArrayAdapter adapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, swingStat);
             ListView popup = (ListView) findViewById(R.id.popup);
             popup.setAdapter(adapter);
-=======
-        if(xAcc < backSwingVal){
-            backSwing = true;
-        }
-
-        //after the swing starts...
-        if(backSwing && xAcc > swingThroughVal){
-            swingThroughVal -= 5;
-            swingThroughCount ++;
-        }
-        else{
-            swingThroughCount --;
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         }
     }
 
@@ -231,15 +166,10 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
         yStat = new ArrayList<String>();
         zStat = new ArrayList<String>();
 
-<<<<<<< HEAD
         float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
 
         backSwing = 1;
         /*xStat.add("Time, X");
-=======
-        backSwing = false;
-        xStat.add("Time, X");
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         yStat.add("Time, Y");
         zStat.add("Time, Z");
 
@@ -300,10 +230,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                 swingStat.add("Min Z Value: " + minZ);
                 swingStat.add("Avg Z Value: " + avgZ);
 
-<<<<<<< HEAD
                 //putting stats into the all stat ArrayList
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 while(!xStat.isEmpty()){
                     allStat.add(xStat.get(0));
                     xStat.remove(0);
@@ -340,10 +267,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
 
                 RequestQueueSingleton.getInstance(AccelerometerTest.this).addToRequestQueue(registerRequest);
 
-<<<<<<< HEAD
                 //adapters filling the listviews with text
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 ArrayAdapter fullAdapter = new ArrayAdapter<String>(AccelerometerTest.this, R.layout.activity_list, R.id.textView, allStat);
                 ListView fullList = (ListView) findViewById(R.id.fullList);
                 fullList.setAdapter(fullAdapter);
@@ -352,36 +276,14 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
                 ListView popup = (ListView) findViewById(R.id.popup);
                 popup.setAdapter(adapter);
 
-<<<<<<< HEAD
                 //reinitializing all ArrayLists
-=======
-
-
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
                 swingStat = new ArrayList<String>();
                 allStat = new ArrayList<String>();
                 xStat = new ArrayList<String>();
                 yStat = new ArrayList<String>();
-<<<<<<< HEAD
                 zStat = new ArrayList<String>();*/
 
-            }
-
-        }
-        //timer.start();
-
-
-
-
-=======
-                zStat = new ArrayList<String>();
-
-            }
-
-        };
-        timer.start();
-        //
     }
 
 }
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+//timer.start();

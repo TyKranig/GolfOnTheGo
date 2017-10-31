@@ -404,16 +404,6 @@
   <string name="pref_title_ringtone">Ringtone</string>
   <string name="pref_ringtone_silent">Silent</string>
 
-<<<<<<< HEAD
-    <string name="pref_title_vibrate">Vibrate</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="playbutton">Play</string>
-
-
-    <string name="title_activity_accelerometer_test">AccelerometerTest</string>
-
-<<<<<<< HEAD
-=======
   <string name="pref_title_vibrate">Vibrate</string>
   <string name="title_activity_main">MainActivity</string>
   <string name="playbutton">Play</string>
@@ -428,7 +418,4 @@
   <string name="mute">Mute</string>
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
 </resources>

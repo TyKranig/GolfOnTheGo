@@ -27,17 +27,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
-<<<<<<< HEAD
-<<<<<<< HEAD
-        altBackground(rand.nextInt()%4+2);
-=======
+
+        //altBackground(rand.nextInt()%4+2);
+
 
         //handler.postDelayed(altBackground(rand), 500);
         handler.postDelayed(runnable, 0);
         //altBackground(rand);
 
 
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
         //creates tool bar
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
@@ -67,17 +65,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Plays music - change music eventualy or comment to perma-off
-=======
-        altBackground(rand.nextInt()%5+1);
+
+        //altBackground(rand.nextInt()%5+1);
 
         //Plays music - change music eventualy or comment to off
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
+
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
         player.setVolume(currVolume, currVolume);
 
-<<<<<<< HEAD
         //toggles the music on and off
         /*
         final ToggleButton t;
@@ -111,11 +108,7 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
         //});
-<<<<<<< HEAD
-=======
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,14 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(testScreenIntent);
             }
         });
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 9f68db9e95803c31accdae1c9f141c75b680818c
-=======
-
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     }
 
 
@@ -209,59 +195,43 @@ public class MainActivity extends AppCompatActivity {
         switch (r.nextInt()%4+2){ //skip background 1 for now
             case 1:
                         layout.setBackgroundResource(R.drawable.golf_background1);
-<<<<<<< HEAD
-                    }
-                }, 0);
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
+
+
                 break;
             case 2:
                         layout.setBackgroundResource(R.drawable.golf_background2);
-<<<<<<< HEAD
-                    }
-                }, 0);
-=======
 
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
                 break;
             case 3:
                         layout.setBackgroundResource(R.drawable.golf_background3);
-<<<<<<< HEAD
-                    }
-                }, 0);
-=======
 
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
+
+
                 break;
             case 4:
                         layout.setBackgroundResource(R.drawable.golf_background4);
-<<<<<<< HEAD
-                    }
-                }, 0);
-=======
 
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
+
                 break;
             case 5:
                         layout.setBackgroundResource(R.drawable.golf_background5);
-<<<<<<< HEAD
-                    }
-                }, 0);
-=======
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
+
+
                 break;
 
 
 
         }
-<<<<<<< HEAD
-=======
+
             //if(n>=5) n=1;
             //altBackground(n);
 
         //handler.postDelayed(altBackground(r), 500);
         return;
->>>>>>> f7577ed2daf10b26d6618611403dc0513fc3ce18
     }
 
     private Runnable runnable = new Runnable() {
