@@ -43,7 +43,7 @@ public class Swinger extends Observable{
         swingLefty = orient;
     }
 
-    public synchronized static Swinger getSwinger(){
+    public static Swinger getSwinger(){
         if (swinger == null)
             return swinger = new Swinger(false);
         return swinger;
@@ -118,6 +118,8 @@ public class Swinger extends Observable{
     }
 
     public synchronized void done(){
+        System.out.println("why me god");
+        setChanged();
         this.notifyObservers();
     }
 

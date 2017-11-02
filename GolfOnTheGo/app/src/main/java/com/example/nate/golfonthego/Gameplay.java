@@ -33,9 +33,9 @@ public class Gameplay implements Observer{
     private Swinger playerSwing;
     private static Gameplay game;
 
-    private Gameplay(){
+    public boolean gamePlayInProgress;
 
-    }
+    private Gameplay(){}
 
     public void setParameters(GoogleMap gm, Marker m, Context c){
         courseMap = gm;
@@ -45,13 +45,13 @@ public class Gameplay implements Observer{
         playerSwing.addObserver(this);
     }
 
-    public synchronized static Gameplay getGameplay(){
+    public static Gameplay getGameplay(){
         if (game == null)
             return game = new Gameplay();
         return game;
     }
 
-    public synchronized void executeSwing(Button b, FragmentManager fg){
+    public void executeSwing(Button b, FragmentManager fg){
         b.setVisibility(View.INVISIBLE);
         b.setVisibility(View.GONE);
 
@@ -62,7 +62,7 @@ public class Gameplay implements Observer{
         swingFragTransaction.commit();
     }
 
-    public synchronized void moveBall(Context con){
+    public void moveBall(Context con){
         //test to see if swinger singleton works
         if(playerSwing != null){
             System.out.println("fuck less thing");
@@ -79,6 +79,7 @@ public class Gameplay implements Observer{
             animateMarker(ballMark, randomTest, false);
             courseCon = con;
             playerSwing.first = true;
+            this.gamePlayInProgress = false;
         }
     }
 
@@ -122,6 +123,7 @@ public class Gameplay implements Observer{
 
     @Override
     public void update(Observable o, Object n){
+        System.out.println("why not here tho");
         moveBall(courseCon);
     }
 }
