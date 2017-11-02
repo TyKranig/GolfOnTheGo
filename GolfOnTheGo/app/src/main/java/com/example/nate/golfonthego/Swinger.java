@@ -1,6 +1,8 @@
 package com.example.nate.golfonthego;
 
-public class Swinger {
+import java.util.Observable;
+
+public class Swinger extends Observable{
 
     /*Backswing is the variable keeping track of the stages of the swing.
         *   0: the swing has not started yet.
@@ -13,7 +15,7 @@ public class Swinger {
     private static Swinger swinger;
 
     int swingTrack;
-    boolean first;
+    boolean first = true;
     float x, y, z;
     private float Xmax, Xmin, Xavg, Ymax, Ymin, Yavg, Zmax, Zmin, Zavg;
     float power, overswing, error, score;
@@ -41,13 +43,13 @@ public class Swinger {
         swingLefty = orient;
     }
 
-    public static Swinger getSwinger(){
+    public synchronized static Swinger getSwinger(){
         if (swinger == null)
             return swinger = new Swinger(false);
         return swinger;
     }
 
-    public void swang() {
+    public synchronized void swang() {
 
         if(swingTrack == 0){
             return;
@@ -115,10 +117,8 @@ public class Swinger {
 
     }
 
-    //if swing is over and new swing has not started, returns true
-    //else returns false
-    public boolean done(){
-        return (!first);
+    public synchronized void done(){
+        this.notifyObservers();
     }
 
 }

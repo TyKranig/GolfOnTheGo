@@ -6,15 +6,20 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.location.Location;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -27,6 +32,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -46,7 +52,6 @@ import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
-import static java.security.AccessController.getContext;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, LocationListener, swingFragment.OnFragmentInteractionListener {
@@ -57,6 +62,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     private Button aimButton;
     private Button aimClockButton;
     private Button aimCounterClockButton;
+
+    Gameplay SwingGame;
 
     private Location playerLocation;
     private float playerBearing;
@@ -105,7 +112,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
-
     }
 
     @Override
@@ -149,7 +155,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             toast.show();
         }
 
-        final LatLng TEST =  new LatLng(42.021639, -93.677610);
+        final LatLng TEST =  new LatLng(42.027614, -93.649791);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
         final Course currentCourse = new Course(1);
@@ -173,14 +179,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                swingButton.setVisibility(View.INVISIBLE);
-                swingButton.setVisibility(View.GONE);
+                FragmentManager tempfrag = getSupportFragmentManager();
+                SwingGame.executeSwing(swingButton, tempfrag);
 
-                swingFragment swingFrag = new swingFragment();
-                FragmentTransaction swingFragTransaction = getSupportFragmentManager().beginTransaction();
-                swingFragTransaction.replace(R.id.swingFrame, swingFrag);
-                swingFragTransaction.addToBackStack(null);
-                swingFragTransaction.commit();
             }
         });
 
@@ -211,7 +212,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     posBearing = (posBearing - 355);
                 }
                     CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
-                            //.zoom(15)                   // Sets the zoom
+                            .zoom(15)                   // Sets the zoom
                             .bearing(posBearing)        // Rotates orientation 5 degress CW
                             .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                             .build();                   // Creates a CameraPosition from the builder
@@ -231,7 +232,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         negBearing = 355 + negBearing;
                     }
                     CameraPosition cameraPosition = new CameraPosition.Builder()
-                            //.zoom(15)                   // Sets the zoom
+                            .zoom(15)                   // Sets the zoom
                             .bearing(negBearing)        // Rotates orientation 5 degrees CCW
                             .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                             .build();                   // Creates a CameraPosition from the builder
@@ -249,6 +250,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     Location teeLocation = new Location("tmp");
                     teeLocation.setLatitude(TEST.latitude);
                     teeLocation.setLongitude(TEST.longitude);
+                    SwingGame = Gameplay.getGameplay();
 
                     playerLocation = location;
                     playerLocation.setBearing(playerBearing);
@@ -264,27 +266,13 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext());
 
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
                         swingButton.setText("Swing");
                         aimButton.setVisibility(View.VISIBLE);
                         aimButton.setText("Aim");
-
-                        //test to see if swinger singleton works
-                        Swinger playerSwing = Swinger.getSwinger();
-                        if(playerSwing != null){
-                            CharSequence text = "THIS IS A TEST" +
-                                    "\nPower:     " + playerSwing.power +
-                                    "\nOverswing:  " + playerSwing.overswing +
-                                    "\nError:      " + playerSwing.error +
-                                    "\nScore:      " + playerSwing.score;
-                            int duration = Toast.LENGTH_SHORT;
-                            Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-                            toast.show();
-                            playerSwing.first = true;
-                        }
-
                     }
                     else{
                         swingButton.setVisibility(View.INVISIBLE);

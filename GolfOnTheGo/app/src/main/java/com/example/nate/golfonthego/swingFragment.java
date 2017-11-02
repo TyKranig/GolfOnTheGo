@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +14,13 @@ import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.widget.Toast;
-
 import static android.content.Context.SENSOR_SERVICE;
 
-public class swingFragment extends Fragment implements SensorEventListener{
+public class swingFragment extends Fragment implements SensorEventListener {
 
     public CourseActivity Course;
     private OnFragmentInteractionListener mListener;    //sensor stuff
-    private Sensor accelSensor;
-    private SensorManager SM;
+
     private Swinger playerSwing;
 
     @Override
@@ -29,6 +28,8 @@ public class swingFragment extends Fragment implements SensorEventListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //Sensor manager and accelerometer
+        Sensor accelSensor;
+        SensorManager SM;
         SM = (SensorManager)getContext().getSystemService(SENSOR_SERVICE);
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
@@ -77,15 +78,14 @@ public class swingFragment extends Fragment implements SensorEventListener{
         }
         playerSwing.swang();
 
-        if(playerSwing.done()){
-            CharSequence text = "Power:     " + playerSwing.power +
-                    "\nOverswing:  " + playerSwing.overswing +
-                    "\nError:      " + playerSwing.error +
-                    "\nScore:      " + playerSwing.score;
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(getContext(), text, duration);
-            toast.show();
+        if(!playerSwing.first){
             playerSwing.first = true;
+
+            //remove fragment, return to courseActivity
+            //.done will update observers(Gameplay)
+            playerSwing.done();
+            FragmentTransaction closeFrag = getFragmentManager().beginTransaction();
+            closeFrag.remove(swingFragment.this).commit();
         }
     }
 
@@ -106,6 +106,7 @@ public class swingFragment extends Fragment implements SensorEventListener{
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+
     }
 
     @Override

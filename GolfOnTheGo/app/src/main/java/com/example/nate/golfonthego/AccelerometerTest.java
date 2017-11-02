@@ -91,7 +91,7 @@ public class AccelerometerTest extends AppCompatActivity implements SensorEventL
             playerSwing.swang();
         }
 
-        if(playerSwing.done()){
+        if(!playerSwing.first){
             swingStat = new ArrayList<String>();
             swingStat.add("Power:      " + playerSwing.power);
             swingStat.add("Overswing:  " + playerSwing.overswing);
