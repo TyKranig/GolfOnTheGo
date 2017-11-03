@@ -7,6 +7,10 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Random;
 
 public class LeaderActivity extends AppCompatActivity {
@@ -15,18 +19,37 @@ public class LeaderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader);
-        initTable();
+        try {
+            initTable();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
-    public void initTable(){
+    public void initTable() throws SQLException {
 
         //Find Table
         TableLayout tl=(TableLayout)findViewById(R.id.Table);
 
         String[] names = {"NAME:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
         Random rand = new Random(System.currentTimeMillis());
-        for(int i=0; i<10; i++) {
+
+        Connection con = null;
+        String sql = "SELECT userName FROM user";
+        ResultSet namesql = null;
+        try {
+            con = DriverManager.getConnection("jdbc:mysql.cs.iastate.edu:db309amc1", "dbu309amc1", "XFsBvb1t");
+            //jdbc:subprotocol:subname
+            namesql = con.prepareStatement(sql).executeQuery();
+        }  catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Unable to make connection to database");
+            //return;
+        }
+
+
+        for(int i=0; (i<10)/*&&(namesql.next())*/; i++) {
             //create a new row
             TableRow tr = new TableRow(this);
             tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));

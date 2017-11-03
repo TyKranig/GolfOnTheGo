@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Plays music - change music eventualy or comment to perma-off
 
-        //altBackground(rand.nextInt()%5+1);
+
 
         //Plays music - change music eventualy or comment to off
 
@@ -75,39 +75,6 @@ public class MainActivity extends AppCompatActivity {
         player.start();
         player.setVolume(currVolume, currVolume);
 
-        //toggles the music on and off
-        /*
-        final ToggleButton t;
-        t=(ToggleButton)findViewById(R.id.toggleButton);
-        t.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //mute
-                if(t.isChecked()){
-                    player.stop();
-
-                    //AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                    //amanager.setStreamMute(AudioManager.STREAM_MUSIC, true);
-                    //amanager.setStreamMute(AudioManager.STREAM_RING, true);
-
-                }
-
-                else{
-
-                    player.setLooping(true);
-                    player.reset();
-
-                    //AudioManager amanager=(AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                    //amanager.setStreamMute(AudioManager.STREAM_MUSIC, false);
-                    //amanager.setStreamMute(AudioManager.STREAM_RING, false);
-
-                }
-            }
-
-<<<<<<< HEAD
-        });*/
-
-        //});
 
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
@@ -195,42 +162,20 @@ public class MainActivity extends AppCompatActivity {
         switch (r.nextInt()%4+2){ //skip background 1 for now
             case 1:
                         layout.setBackgroundResource(R.drawable.golf_background1);
-
-
-
                 break;
             case 2:
                         layout.setBackgroundResource(R.drawable.golf_background2);
-
-
                 break;
             case 3:
                         layout.setBackgroundResource(R.drawable.golf_background3);
-
-
-
-
                 break;
             case 4:
                         layout.setBackgroundResource(R.drawable.golf_background4);
-
-
-
                 break;
             case 5:
                         layout.setBackgroundResource(R.drawable.golf_background5);
-
-
                 break;
-
-
-
         }
-
-            //if(n>=5) n=1;
-            //altBackground(n);
-
-        //handler.postDelayed(altBackground(r), 500);
         return;
     }
 
