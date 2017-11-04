@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.example.nate.golfonthego.Models.Guild;
 import com.example.nate.golfonthego.guildBehind.*;
 import com.example.nate.golfonthego.guildBehind.guildAdapters.GuildInfoPageAdapter;
 
@@ -14,6 +15,8 @@ public class guildInfoScreen extends AppCompatActivity {
     private GuildInfoPageAdapter _guildInfoPageAdapter;
 
     private ViewPager _guildViewPager;
+
+    public static Guild currentGuild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class guildInfoScreen extends AppCompatActivity {
         Toolbar infoToolbar = (Toolbar) findViewById(R.id.guildInfoToolbar);
         setSupportActionBar(infoToolbar);
         getSupportActionBar().setTitle(getIntent().getExtras().getString(guildListMain.tag_guild_name));
+        currentGuild = new Guild(getIntent().getExtras().getString(guildListMain.tag_guild_name), 0);
 
         _guildInfoPageAdapter = new GuildInfoPageAdapter(getSupportFragmentManager());
 
@@ -34,6 +38,8 @@ public class guildInfoScreen extends AppCompatActivity {
         //setup the tab layout object
         TabLayout guildTabs = (TabLayout) findViewById(R.id.guildInfoTabs);
         guildTabs.setupWithViewPager(_guildViewPager);
+
+        _guildViewPager.setOffscreenPageLimit(3);
 
     }
 

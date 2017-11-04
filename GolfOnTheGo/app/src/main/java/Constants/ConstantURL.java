@@ -10,4 +10,6 @@ public class ConstantURL {
     public static String URL_REGISTER = "http://proj-309-am-c-1.cs.iastate.edu/register.php?";
     public static String URL_STATS = "http://proj-309-am-c-1.cs.iastate.edu/swingstats.php?";
     public static String URL_GUILDLIST = "http://proj-309-am-c-1.cs.iastate.edu/getAllGuilds.php?";
+    public static String URL_GUILDMEMBERS = "http://proj-309-am-c-1.cs.iastate.edu/getGuildMembers.php?";
+    public static String URL_GUILDEVENTS = "http://proj-309-am-c-1.cs.iastate.edu/getGuildEvents.php?";
 }

@@ -12,13 +12,15 @@ import android.widget.TextView;
 import com.example.nate.golfonthego.Models.User;
 import com.example.nate.golfonthego.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by tyler on 10/21/2017.
  * Used to generate the list view for the guild info members fragment
  */
 
 public class guildMemberAdapter extends ArrayAdapter<User> {
-    public guildMemberAdapter(Context context, User[] users) {
+    public guildMemberAdapter(Context context, ArrayList<User> users) {
         super(context, R.layout.custom_row_guildmember, users);
     }
 

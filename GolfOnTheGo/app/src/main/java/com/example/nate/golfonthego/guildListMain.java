@@ -38,12 +38,7 @@ public class guildListMain extends AppCompatActivity {
         setContentView(R.layout.activity_guild_list_main);
 
         //Generate some fake guilds to use for testing, in the future this will be called from the network
-        //ArrayList<Guild> guild = {new Guild("Golfer4Life", 1), new Guild("HackingGolf", 2), new Guild("TigerBools", 3)};
         guilds = new ArrayList();
-        //guilds.add(new Guild("Golfer4Life", 1));
-        //guilds.add(new Guild("HackingGolf", 1));
-        //guilds.add(new Guild("TigerBools", 1));
-
         //Create a new adapter using the guilds we made above
         guildAdapter = new guildListAdapter(this, guilds);
         guildListView = (ListView) findViewById(R.id.listGuilds);

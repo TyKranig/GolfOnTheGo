@@ -3,15 +3,29 @@ package com.example.nate.golfonthego.guildBehind;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.nate.golfonthego.*;
+import com.example.nate.golfonthego.Models.Guild;
 import com.example.nate.golfonthego.Models.User;
 import com.example.nate.golfonthego.guildBehind.guildAdapters.guildMemberAdapter;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import Constants.ConstantURL;
+import VolleyAPI.VolleyBall;
 
 /**
  * Created by tyler on 10/16/2017.
@@ -19,6 +33,9 @@ import com.example.nate.golfonthego.guildBehind.guildAdapters.guildMemberAdapter
  */
 
 public class fragGuildMembers extends Fragment{
+    ArrayList<User> users;
+    ArrayAdapter<User> memberAdapter;
+    ListView memberListView;
 
     @Nullable
     @Override
@@ -26,11 +43,40 @@ public class fragGuildMembers extends Fragment{
         View view = inflater.inflate(R.layout.guildlist_members_fragment, container, false);
 
         //get the users in the guild then set the Adapter to interpret them
-        User[] users = {new User("nate", "nate"), new User("tyler", "tyler"), new User("ryan", "ryan")};
-        ListAdapter memberAdapter = new guildMemberAdapter(this.getContext(), users);
-        ListView memberListView = view.findViewById(R.id.list_Members);
+        users = new ArrayList<>();
+
+        memberAdapter = new guildMemberAdapter(this.getContext(), users);
+        memberListView = view.findViewById(R.id.list_Members);
         memberListView.setAdapter(memberAdapter);
 
+        if(users.isEmpty()) {
+            loadData();
+        }
+
         return view;
+    }
+
+    private void loadData(){
+        VolleyBall.getResponseJsonArray(this.getContext(), new VolleyBall.VolleyCallback<JSONArray>() {
+            @Override
+            public void doThings(JSONArray result) {
+                for(int i = 0; i < result.length(); i++){
+                    try {
+                        JSONObject obj = result.getJSONObject(i);
+
+                        User user = new User(obj.getString("userName"), obj.getString("password"));
+                        users.add(user);
+                        Log.i("json array error", "added things");
+                    }
+                    catch (JSONException e) {
+                        Log.i("json array error", e.toString());
+                    }
+
+                    memberAdapter.notifyDataSetChanged();
+                }
+
+            }
+        }, ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");
+        Log.i("guildMembersURL", ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");
     }
 }

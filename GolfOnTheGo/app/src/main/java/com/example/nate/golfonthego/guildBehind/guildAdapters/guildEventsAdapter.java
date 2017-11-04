@@ -12,13 +12,15 @@ import android.widget.TextView;
 import com.example.nate.golfonthego.Models.Event;
 import com.example.nate.golfonthego.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by tyler on 10/23/17.
  * Used to create a list and set the guild events inside it
  */
 
 public class guildEventsAdapter extends ArrayAdapter<Event> {
-    public guildEventsAdapter(Context context, Event[] users) {
+    public guildEventsAdapter(Context context, ArrayList<Event> users) {
         super(context, R.layout.custom_row_guild_event, users);
     }
 
