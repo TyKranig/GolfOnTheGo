@@ -19,7 +19,7 @@ import com.example.nate.golfonthego.R;
 
 public class guildMemberAdapter extends ArrayAdapter<User> {
     public guildMemberAdapter(Context context, User[] users) {
-        super(context, R.layout.custom_row_guild, users);
+        super(context, R.layout.custom_row_guildmember, users);
     }
 
     @NonNull

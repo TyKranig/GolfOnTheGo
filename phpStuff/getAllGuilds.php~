@@ -1,0 +1,42 @@
+<?php
+error_reporting(-1);
+ini_set('display_errors','On');
+
+include('dbConnection.php');
+
+$guildName = $_GET['guildName'];
+
+guildInfo($guildName);
+
+function guildInfo($guildName){
+    global $con;
+    $query = ;
+
+    $result = mysqli_query($con, $query);
+
+    if($result->num_rows != 0){
+        $rows = array();
+
+        while($row = $result->fetch_array(MYSQL_BOTH)){
+            $rows[] = $row;
+        }
+
+        $success = 0;
+        $pass = str_replace("\"", "", $pass);
+
+        if($rows[0]['password'] == $pass){
+            $success = 1;
+        }	
+	
+    }
+    else{
+        $success = 0;
+    }		
+
+    $data = [ 'result' => $success];
+
+    echo json_encode($data);
+
+    $con->close();
+}
+?>

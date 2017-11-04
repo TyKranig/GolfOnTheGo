@@ -3,15 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btnGuildEvents"
-        android:layout_width="191dp"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <TextView
-        android:id="@+id/txtGuildEvents"
+    <ListView
+        android:id="@+id/list_guild_events"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Events go Here" />
+        android:layout_height="match_parent" />
 </LinearLayout>

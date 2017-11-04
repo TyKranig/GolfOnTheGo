@@ -19,7 +19,7 @@ import com.example.nate.golfonthego.R;
 
 public class guildScoresAdapter extends ArrayAdapter<Score>{
     public guildScoresAdapter(Context context, Score[] scores) {
-        super(context, R.layout.custom_row_guild, scores);
+        super(context, R.layout.custom_row_guildscore, scores);
     }
 
     @NonNull
