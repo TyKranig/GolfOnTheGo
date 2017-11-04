@@ -3,17 +3,31 @@ package com.example.nate.golfonthego;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.nate.golfonthego.Models.Guild;
 import com.example.nate.golfonthego.guildBehind.guildAdapters.guildListAdapter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import Constants.ConstantURL;
+import VolleyAPI.VolleyBall;
+
 public class guildListMain extends AppCompatActivity {
     public static String tag_guild_name = "guildName";
+    ArrayList<Guild> guilds;
+    ArrayAdapter<Guild> guildAdapter;
+    ListView guildListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +38,21 @@ public class guildListMain extends AppCompatActivity {
         setContentView(R.layout.activity_guild_list_main);
 
         //Generate some fake guilds to use for testing, in the future this will be called from the network
-        Guild[] guild = {new Guild("Golfer4Life", 1), new Guild("HackingGolf", 2), new Guild("TigerBools", 3)};
+        //ArrayList<Guild> guild = {new Guild("Golfer4Life", 1), new Guild("HackingGolf", 2), new Guild("TigerBools", 3)};
+        guilds = new ArrayList();
+        //guilds.add(new Guild("Golfer4Life", 1));
+        //guilds.add(new Guild("HackingGolf", 1));
+        //guilds.add(new Guild("TigerBools", 1));
 
         //Create a new adapter using the guilds we made above
-        ListAdapter guildAdapter = new guildListAdapter(this, guild);
-        ListView guildListView = (ListView) findViewById(R.id.listGuilds);
+        guildAdapter = new guildListAdapter(this, guilds);
+        guildListView = (ListView) findViewById(R.id.listGuilds);
 
         //set the adapter to the guild adapter we made
         guildListView.setAdapter(guildAdapter);
+
+        //load data
+        loadData();
 
         //When a user clicks a guild we send them to the guild info screen for that guild
         guildListView.setOnItemClickListener(guildClick());
@@ -50,5 +71,30 @@ public class guildListMain extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+    }
+
+    private void loadData(){
+        VolleyBall.getResponseJsonArray(this, new VolleyBall.VolleyCallback<JSONArray>() {
+            @Override
+            public void doThings(JSONArray result) {
+                for(int i = 0; i < result.length(); i++){
+                    try {
+                        JSONObject obj = result.getJSONObject(i);
+
+                        Guild guild = new Guild(obj.getString("guildName"), 0);
+                        guilds.add(guild);
+                        Log.i("json array error", "added things");
+                    }
+                    catch (JSONException e) {
+                        Log.i("json array error", e.toString());
+                    }
+
+                    guildAdapter.notifyDataSetChanged();
+                }
+
+            }
+        }, ConstantURL.URL_GUILDLIST + "userName=" +
+                "\"" + MainActivity.mainUser.getName() +"\"");
+        Log.i("vollel do things url",ConstantURL.URL_GUILDLIST + "userName=\"" + MainActivity.mainUser.getName() +"\"");
     }
 }

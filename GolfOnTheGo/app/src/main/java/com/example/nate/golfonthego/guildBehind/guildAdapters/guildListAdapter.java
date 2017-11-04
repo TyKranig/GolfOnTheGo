@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.example.nate.golfonthego.R;
 import com.example.nate.golfonthego.Models.Guild;
 
+import java.util.ArrayList;
+
 /**
  * Created by tyler on 10/15/17.
  * Used as a custom adapted for guild list screen
@@ -19,7 +21,7 @@ import com.example.nate.golfonthego.Models.Guild;
 
 public class guildListAdapter extends ArrayAdapter<Guild>{
 
-    public guildListAdapter(Context context, Guild[] guilds) {
+    public guildListAdapter(Context context, ArrayList<Guild> guilds) {
         super(context, R.layout.custom_row_guild, guilds);
     }
 
@@ -37,5 +39,6 @@ public class guildListAdapter extends ArrayAdapter<Guild>{
 
         return customView;
     }
+
 }
 

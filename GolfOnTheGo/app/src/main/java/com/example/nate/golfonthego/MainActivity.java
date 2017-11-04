@@ -13,12 +13,15 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.nate.golfonthego.Models.User;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     final Context context = this;
     float currVolume = 0.90f;
     MediaPlayer player;
+    public static User mainUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
         altBackground(rand.nextInt()%5+1);
+
+        Intent intent = getIntent();
+        mainUser = new User(intent.getStringExtra(LoginScreen.EXTRA_MESSAGE), "");
 
         //Plays music - change music eventualy or comment to off
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
@@ -170,9 +176,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, 0);
                 break;
-
-
-
         }
     }
 }
