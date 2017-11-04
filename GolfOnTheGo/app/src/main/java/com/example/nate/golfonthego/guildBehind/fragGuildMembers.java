@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,6 +37,7 @@ public class fragGuildMembers extends Fragment{
     ArrayList<User> users;
     ArrayAdapter<User> memberAdapter;
     ListView memberListView;
+    SwipeRefreshLayout memberRefresher;
 
     @Nullable
     @Override
@@ -52,6 +54,22 @@ public class fragGuildMembers extends Fragment{
         if(users.isEmpty()) {
             loadData();
         }
+
+        memberRefresher = view.findViewById(R.id.membersRefresher);
+
+        memberRefresher.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        Log.i("member refresh", "onRefresh called from SwipeRefreshLayout");
+
+                        // This method performs the actual data-refresh operation.
+                        // The method calls setRefreshing(false) when it's finished.
+                        users.clear();
+                        loadData();
+                    }
+                }
+        );
 
         return view;
     }
@@ -73,6 +91,7 @@ public class fragGuildMembers extends Fragment{
                     }
 
                     memberAdapter.notifyDataSetChanged();
+                    memberRefresher.setRefreshing(false);
                 }
 
             }

@@ -49,6 +49,7 @@ public class fragGuildEvents extends Fragment{
 
         loadData();
 
+
         return view;
     }
 
