@@ -267,7 +267,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     playerLocation.setBearing(playerBearing);
 
                     //REMEMBER to change this
-
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
                     // if the distance  between the player and the first tee is less than 15 meters
                     if(location.distanceTo(teeLocation) < 15 && !SwingGame.gamePlayInProgress){

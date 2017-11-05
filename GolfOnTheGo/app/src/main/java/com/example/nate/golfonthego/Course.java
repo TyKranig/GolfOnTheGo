@@ -67,6 +67,7 @@ public class Course {
 
     private void CourseInit (int courseNumber) {
         if(courseNumber == 1){
+            this.courseNumber = 1;
             ArrayList<LatLng> hole1 = new ArrayList<LatLng>();
             hole1.add(new LatLng(42.026855, -93.647630));
             hole1.add(new LatLng(42.026499, -93.647619));
@@ -84,6 +85,30 @@ public class Course {
             hole1Green.add(new LatLng(42.026406, -93.645795));
             hole1Green.add(new LatLng(42.026370, -93.645495));
             hole1Green.add(new LatLng(42.026677, -93.645500));
+
+            Hole holeToAdd = new Hole();
+            holeToAdd.setFairway(hole1);
+            holeToAdd.setGreen(hole1Green);
+            holeToAdd.setTee(hole1Tee);
+
+            holes.add(holeToAdd);
+            // end course 1
+        }
+        if(courseNumber == 2){
+            this.courseNumber = 2;
+            ArrayList<LatLng> hole1 = new ArrayList<LatLng>();
+            hole1.add(new LatLng(42.021608, -93.677601));
+            hole1.add(new LatLng(42.021606, -93.677515));
+            hole1.add(new LatLng(42.021841, -93.677520));
+            hole1.add(new LatLng(42.021841, -93.677676));
+
+            LatLng hole1Tee = new LatLng(42.021650, -93.677566);
+
+            ArrayList<LatLng> hole1Green = new ArrayList<LatLng>();
+            hole1Green.add(new LatLng(42.021787, -93.677604));
+            hole1Green.add(new LatLng(42.021789, -93.677534));
+            hole1Green.add(new LatLng(42.021787, -93.677604));
+            hole1Green.add(new LatLng(42.021788, -93.677534));
 
             Hole holeToAdd = new Hole();
             holeToAdd.setFairway(hole1);
