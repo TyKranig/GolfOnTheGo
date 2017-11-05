@@ -15,7 +15,7 @@ function guildInfo($userName){
                   on g.guildID = m.guildID
               inner join db309amc1.user u
               on u.userId = m.userID
-              where u.userId = $userName";
+              where u.userName = $userName";
 
     $result = mysqli_query($con, $query);
 

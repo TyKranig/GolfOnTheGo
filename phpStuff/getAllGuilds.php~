@@ -4,38 +4,27 @@ ini_set('display_errors','On');
 
 include('dbConnection.php');
 
-$guildName = $_GET['guildName'];
+$userName = $_GET['userName'];
 
-guildInfo($guildName);
+guildInfo($userName);
 
-function guildInfo($guildName){
+function guildInfo($userName){
     global $con;
-    $query = ;
+    $query = "select guildName From db309amc1.guild g
+              inner join db309amc1.guildMember m
+                  on g.guildID = m.guildID
+              inner join db309amc1.user u
+              on u.userId = m.userID
+              where u.userId = $userName";
 
     $result = mysqli_query($con, $query);
 
-    if($result->num_rows != 0){
-        $rows = array();
-
-        while($row = $result->fetch_array(MYSQL_BOTH)){
-            $rows[] = $row;
-        }
-
-        $success = 0;
-        $pass = str_replace("\"", "", $pass);
-
-        if($rows[0]['password'] == $pass){
-            $success = 1;
-        }	
-	
+    $rows = array();
+    while($r = mysqli_fetch_assoc($result)) {
+        $rows[] = $r;
     }
-    else{
-        $success = 0;
-    }		
 
-    $data = [ 'result' => $success];
-
-    echo json_encode($data);
+    echo json_encode($rows);
 
     $con->close();
 }

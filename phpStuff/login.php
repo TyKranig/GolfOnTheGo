@@ -11,7 +11,7 @@ login($userName, $pass);
 
 function login($userName, $pass){
     global $con;
-    $query = "Select password from user where user.userName = $userName";
+    $query = "Select password,userID from user where user.userName = $userName";
 
     $result = mysqli_query($con, $query);
 
@@ -27,14 +27,15 @@ function login($userName, $pass){
 
         if($rows[0]['password'] == $pass){
             $success = 1;
-        }	
+            $userID = $rows[0]['userID'];
+        }
 	
     }
     else{
         $success = 0;
     }		
 
-    $data = [ 'result' => $success];
+    $data = [ 'result' => $success, 'userID'=>$userID ];
 
     echo json_encode($data);
 
