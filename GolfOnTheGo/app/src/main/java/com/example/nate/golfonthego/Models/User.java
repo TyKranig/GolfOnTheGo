@@ -9,13 +9,14 @@ public class User {
 
     private String name;
     private String password;
+    private int userID;
 
     /**
      * @param name The username for the user
      * @param password The password for the user
      * Creates a new user object and returns
      */
-    public User(String name, String password){
+    public User(String name, String password, int userID){
         this.name = name;
         this.password = password;
     }
@@ -37,4 +38,11 @@ public class User {
         this.password = password;
     }
 
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
 }

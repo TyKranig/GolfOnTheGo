@@ -1,5 +1,6 @@
 package com.example.nate.golfonthego.guildBehind;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,9 +11,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.nate.golfonthego.*;
 import com.example.nate.golfonthego.Models.Guild;
@@ -74,25 +77,38 @@ public class fragGuildMembers extends Fragment{
         return view;
     }
 
+    AdapterView.OnItemClickListener memberClick(){
+        return new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if(position == 0){
+                    //start intent to go to new member page
+                }
+            }
+        };
+    }
+
     private void loadData(){
         VolleyBall.getResponseJsonArray(this.getContext(), new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
             public void doThings(JSONArray result) {
+                users.add(new User("+", "Add New User", -1));
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
 
-                        User user = new User(obj.getString("userName"), obj.getString("password"));
+                        User user = new User(obj.getString("userName"), obj.getString("password"), obj.getInt("userID"));
                         users.add(user);
                         Log.i("json array error", "added things");
                     }
                     catch (JSONException e) {
                         Log.i("json array error", e.toString());
                     }
-
-                    memberAdapter.notifyDataSetChanged();
-                    memberRefresher.setRefreshing(false);
                 }
+
+                memberAdapter.notifyDataSetChanged();
+                memberRefresher.setRefreshing(false);
+                Toast.makeText(getContext(), "Data Refreshed", Toast.LENGTH_SHORT).show();
 
             }
         }, ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");

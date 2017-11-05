@@ -1,6 +1,7 @@
 package com.example.nate.golfonthego;
 
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.nate.golfonthego.Models.Guild;
 import com.example.nate.golfonthego.guildBehind.guildAdapters.guildListAdapter;
@@ -28,6 +30,7 @@ public class guildListMain extends AppCompatActivity {
     ArrayList<Guild> guilds;
     ArrayAdapter<Guild> guildAdapter;
     ListView guildListView;
+    SwipeRefreshLayout guildsListRefresher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,19 +54,40 @@ public class guildListMain extends AppCompatActivity {
 
         //When a user clicks a guild we send them to the guild info screen for that guild
         guildListView.setOnItemClickListener(guildClick());
+
+        guildsListRefresher = findViewById(R.id.guildListRefresher);
+
+        guildsListRefresher.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        Log.i("member refresh", "onRefresh called from SwipeRefreshLayout");
+
+                        // This method performs the actual data-refresh operation.
+                        // The method calls setRefreshing(false) when it's finished.
+                        guilds.clear();
+                        loadData();
+                    }
+                }
+        );
     }
 
     AdapterView.OnItemClickListener guildClick(){
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Guild guild = (Guild)adapterView.getItemAtPosition(position);
-                Intent intent = new Intent(guildListMain.this, guildInfoScreen.class);
-                System.out.println(guild.get_name());
+                if(position == 0){
+                    //start intent to go to new guild page
+                }
+                else{
+                    Guild guild = (Guild)adapterView.getItemAtPosition(position);
+                    Intent intent = new Intent(guildListMain.this, guildInfoScreen.class);
+                    System.out.println(guild.get_name());
 
-                //making sure that the guild name gets included
-                intent.putExtra(tag_guild_name, guild.get_name());
-                startActivity(intent);
+                    //making sure that the guild name gets included
+                    intent.putExtra(tag_guild_name, guild.get_name());
+                    startActivity(intent);
+                }
             }
         };
     }
@@ -72,6 +96,7 @@ public class guildListMain extends AppCompatActivity {
         VolleyBall.getResponseJsonArray(this, new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
             public void doThings(JSONArray result) {
+                guilds.add(new Guild("Add New Guild", -1));
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
@@ -83,10 +108,10 @@ public class guildListMain extends AppCompatActivity {
                     catch (JSONException e) {
                         Log.i("json array error", e.toString());
                     }
-
-                    guildAdapter.notifyDataSetChanged();
                 }
-
+                guildsListRefresher.setRefreshing(false);
+                guildAdapter.notifyDataSetChanged();
+                Toast.makeText(getApplicationContext(), "Data Refreshed", Toast.LENGTH_SHORT).show();
             }
         }, ConstantURL.URL_GUILDLIST + "userName=" +
                 "\"" + MainActivity.mainUser.getName() +"\"");

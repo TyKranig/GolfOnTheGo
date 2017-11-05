@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         altBackground(rand.nextInt()%5+1);
 
         Intent intent = getIntent();
-        mainUser = new User(intent.getStringExtra(LoginScreen.EXTRA_MESSAGE), "");
+        mainUser = new User(intent.getStringExtra(LoginScreen.EXTRA_MESSAGE), "", intent.getIntExtra(LoginScreen.EXTRA_USERID, -1));
 
         //Plays music - change music eventualy or comment to off
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
