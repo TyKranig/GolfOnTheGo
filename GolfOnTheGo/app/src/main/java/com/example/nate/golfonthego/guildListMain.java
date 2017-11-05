@@ -27,6 +27,7 @@ import VolleyAPI.VolleyBall;
 
 public class guildListMain extends AppCompatActivity {
     public static String tag_guild_name = "guildName";
+    public static String tag_guild_id = "guildID";
     ArrayList<Guild> guilds;
     ArrayAdapter<Guild> guildAdapter;
     ListView guildListView;
@@ -78,6 +79,8 @@ public class guildListMain extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 if(position == 0){
                     //start intent to go to new guild page
+                    Intent intent = new Intent(guildListMain.this, NewGuild.class);
+                    startActivity(intent);
                 }
                 else{
                     Guild guild = (Guild)adapterView.getItemAtPosition(position);
@@ -86,6 +89,7 @@ public class guildListMain extends AppCompatActivity {
 
                     //making sure that the guild name gets included
                     intent.putExtra(tag_guild_name, guild.get_name());
+                    intent.putExtra(tag_guild_id, guild.get_id());
                     startActivity(intent);
                 }
             }
@@ -101,7 +105,7 @@ public class guildListMain extends AppCompatActivity {
                     try {
                         JSONObject obj = result.getJSONObject(i);
 
-                        Guild guild = new Guild(obj.getString("guildName"), 0);
+                        Guild guild = new Guild(obj.getString("guildName"), obj.getInt("guildID"));
                         guilds.add(guild);
                         Log.i("json array error", "added things");
                     }

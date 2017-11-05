@@ -74,6 +74,8 @@ public class fragGuildMembers extends Fragment{
                 }
         );
 
+        memberListView.setOnItemClickListener(memberClick());
+
         return view;
     }
 
@@ -83,6 +85,9 @@ public class fragGuildMembers extends Fragment{
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 if(position == 0){
                     //start intent to go to new member page
+                    Intent intent = new Intent(getContext(), newGuildMember.class);
+                    intent.putExtra("GuildID", guildInfoScreen.currentGuild.get_id());
+                    startActivity(intent);
                 }
             }
         };
