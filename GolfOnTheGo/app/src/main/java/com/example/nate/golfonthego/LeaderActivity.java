@@ -7,11 +7,11 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Random;
+
+import Constants.ConstantURL;
+import VolleyAPI.VolleyBall;
 
 public class LeaderActivity extends AppCompatActivity {
     //TableLayout ll = (TableLayout) findViewById(R.id.Table);
@@ -27,15 +27,32 @@ public class LeaderActivity extends AppCompatActivity {
     }
 
 
-    public void initTable() throws SQLException {
+    public void initTable() throws SQLException{
 
-        //Find Table
-        TableLayout tl=(TableLayout)findViewById(R.id.Table);
 
-        String[] names = {"NAME:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
-        Random rand = new Random(System.currentTimeMillis());
+        int t = 0;
+        String url = ConstantURL.URL_LEADER + "pos=\"" + t + "\"";
+        VolleyBall.getResponseString(this, new VolleyBall.VolleyCallback() {
+            @Override
+            public void doThings(Object result) {
+                try{
+                    String[] name = {"Pass:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
+                    //JSONObject list = (JSONObject)result;
+                    name[0] = (String) result;
+                    //System.out.println(list.toString());
+                    displayTable(name);
 
-        Connection con = null;
+
+                } catch (Exception e){
+                    String[] name = {"Fail:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
+                    displayTable(name);
+                    System.out.println(e.toString());
+                    System.out.println("failed");
+                }
+            }
+        }, url);
+
+        /*Connection con = null;
         String sql = "SELECT userName FROM user";
         ResultSet namesql = null;
         try {
@@ -46,10 +63,19 @@ public class LeaderActivity extends AppCompatActivity {
             e.printStackTrace();
             System.out.println("Unable to make connection to database");
             //return;
-        }
+        }*/
 
 
-        for(int i=0; (i<10)/*&&(namesql.next())*/; i++) {
+
+
+    }
+
+    public void displayTable(String[] names){
+        //Find Table
+        TableLayout tl=(TableLayout)findViewById(R.id.Table);
+        //String[] names = {"NAME:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
+        Random rand = new Random(System.currentTimeMillis());
+        for(int i=0; i<10; i++) {
             //create a new row
             TableRow tr = new TableRow(this);
             tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
@@ -75,7 +101,7 @@ public class LeaderActivity extends AppCompatActivity {
             //add text for score
             TextView tvs = new TextView(this);
             if(i==0) tvs.setText("SCORE:");
-            //else tvs.setText("asdf");
+                //else tvs.setText("asdf");
             else{
                 int score = rand.nextInt()%999+1;
                 if(score<1) score = score *-1;
@@ -89,7 +115,6 @@ public class LeaderActivity extends AppCompatActivity {
             //add row into table
             tl.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
         }
-
 
     }
 }
