@@ -27,7 +27,7 @@ public class guildInfoScreen extends AppCompatActivity {
         Toolbar infoToolbar = (Toolbar) findViewById(R.id.guildInfoToolbar);
         setSupportActionBar(infoToolbar);
         getSupportActionBar().setTitle(getIntent().getExtras().getString(guildListMain.tag_guild_name));
-        currentGuild = new Guild(getIntent().getExtras().getString(guildListMain.tag_guild_name), 0);
+        currentGuild = new Guild(getIntent().getExtras().getString(guildListMain.tag_guild_name), getIntent().getExtras().getInt(guildListMain.tag_guild_id));
 
         _guildInfoPageAdapter = new GuildInfoPageAdapter(getSupportFragmentManager());
 

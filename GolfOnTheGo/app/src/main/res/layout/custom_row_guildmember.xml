@@ -6,7 +6,7 @@
     <TextView
         android:id="@+id/list_memberName"
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:layout_weight="0.42"
         android:text=""
 
@@ -15,7 +15,7 @@
     <TextView
         android:id="@+id/list_memberPassword"
         android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_height="40dp"
         android:layout_weight="0.42"
         android:text=""
 
