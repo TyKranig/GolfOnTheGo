@@ -27,55 +27,52 @@ public class LeaderActivity extends AppCompatActivity {
     }
 
 
+    //fills table with first 10 userNames.
     public void initTable() throws SQLException{
-
-
+        //initializes headers.
+        String[] header = {"Names:"};
+        displayTable(header, 0);
         int t = 0;
-        String url = ConstantURL.URL_LEADER + "pos=\"" + t + "\"";
-        VolleyBall.getResponseString(this, new VolleyBall.VolleyCallback() {
-            @Override
-            public void doThings(Object result) {
-                try{
-                    String[] name = {"Pass:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
-                    //JSONObject list = (JSONObject)result;
-                    name[0] = (String) result;
-                    //System.out.println(list.toString());
-                    displayTable(name);
+        //loops to pull 10 userNames from the database
+        for(int i=1; i<11; i++) {
+            //initializes whitch position in database to pull from
+            t++;
+            String url = ConstantURL.URL_LEADER + "pos=" + t ;
+
+            final int finalI = i;
+            VolleyBall.getResponseString(this, new VolleyBall.VolleyCallback() {
+                @Override
+                public void doThings(Object result) {
+                    try {
+                        //overwrites default list to paste new name from database
+                        String[] name = {"Pass:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John", "dude"};
+                        String temp = result.toString();
+                        temp = temp.replace("\n", "").replace("\r", ""); //reomves new lines added in from transition from php.
+                        name[finalI] = temp;
+                        displayTable(name, finalI);
 
 
-                } catch (Exception e){
-                    String[] name = {"Fail:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
-                    displayTable(name);
-                    System.out.println(e.toString());
-                    System.out.println("failed");
+                    } catch (Exception e) {
+                        //ends gives error message and ends table filling.
+                        String[] name = {"Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database", "Failure to access Database"};
+                        displayTable(name, finalI);
+                        System.out.println(e.toString());
+                        System.out.println("failed");
+                        return;
+                    }
                 }
-            }
-        }, url);
-
-        /*Connection con = null;
-        String sql = "SELECT userName FROM user";
-        ResultSet namesql = null;
-        try {
-            con = DriverManager.getConnection("jdbc:mysql.cs.iastate.edu:db309amc1", "dbu309amc1", "XFsBvb1t");
-            //jdbc:subprotocol:subname
-            namesql = con.prepareStatement(sql).executeQuery();
-        }  catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Unable to make connection to database");
-            //return;
-        }*/
-
-
+            }, url);
+        }
 
 
     }
 
-    public void displayTable(String[] names){
+    public void displayTable(String[] names, int i){
         //Find Table
         TableLayout tl=(TableLayout)findViewById(R.id.Table);
         //String[] names = {"NAME:", "Stan", "Dave", "Matt", "Larry", "Joseph", "Danny", "Luke", "Zach", "John"};
         Random rand = new Random(System.currentTimeMillis());
-        for(int i=0; i<10; i++) {
+
             //create a new row
             TableRow tr = new TableRow(this);
             tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
@@ -114,7 +111,7 @@ public class LeaderActivity extends AppCompatActivity {
 
             //add row into table
             tl.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
-        }
+
 
     }
 }
