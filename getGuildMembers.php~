@@ -6,16 +6,15 @@ include('dbConnection.php');
 
 $guildName = $_GET['guildName'];
 
-"Select userName, password From db309amc1.user dude
-              inner join db309amc1.guildMember member
-                 on dude.userId = member.userID
-              Where guildName = $guildName;getGuildMembers($guildName);
+getGuildMembers($guildName);
 
 function getGuildMembers($guildName){
     global $con;
-    $query = "Select userName, password From db309amc1.user dude
+    $query = "Select userName, password, dude.userID From db309amc1.user dude
               inner join db309amc1.guildMember member
                  on dude.userId = member.userID
+              inner join db309amc1.guild guild
+                 on guild.guildID = member.guildID
               Where guildName = $guildName;";
     
     $result = mysqli_query($con, $query);
