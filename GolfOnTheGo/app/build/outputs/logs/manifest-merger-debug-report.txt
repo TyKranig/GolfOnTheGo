@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
 MERGED from [com.android.volley:volley:1.0.0] /home/nate/.gradle/caches/transforms-1/files-1.1/volley-1.0.0.aar/f677ceddd62f1abd0d41ed217afab04a/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/1c3a9677d504f4a0329c8da8e0f77654/AndroidManifest.xml:17:1-31:12
 MERGED from [com.google.android.gms:play-services:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-11.0.4.aar/f827203b73bf559c8f217e408805a45e/AndroidManifest.xml:2:1-6:12
@@ -74,20 +74,20 @@ MERGED from [com.android.support:palette-v7:25.2.0] /home/nate/.gradle/caches/tr
 MERGED from [com.android.support:support-core-utils:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/dc9af0cc58f190228dc28339bf949922/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/5f81e434c57868f33814da84c2c7d5c8/AndroidManifest.xml:17:1-31:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /home/nate/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/0ea49ab66ce1bbc80d76d88ff84d43b2/AndroidManifest.xml:17:1-30:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
-INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
+INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
 	package
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:3:5-43
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-66:12
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:1-71:12
 		INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:2:11-69
@@ -124,7 +124,7 @@ MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/nate/.gradle/caches/
 	android:name
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:11:22-64
 application
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:13:5-64:19
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:13:5-69:19
 MERGED from [com.android.volley:volley:1.0.0] /home/nate/.gradle/caches/transforms-1/files-1.1/volley-1.0.0.aar/f677ceddd62f1abd0d41ed217afab04a/AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.0.0] /home/nate/.gradle/caches/transforms-1/files-1.1/volley-1.0.0.aar/f677ceddd62f1abd0d41ed217afab04a/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/1c3a9677d504f4a0329c8da8e0f77654/AndroidManifest.xml:25:5-29:19
@@ -262,81 +262,77 @@ ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:21:13-45
 activity#com.example.nate.golfonthego.MainActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:23:9-26:59
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:23:9-28:68
 	android:label
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:25:13-56
 	android:theme
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:26:13-56
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:28:13-56
 	android:name
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:24:13-41
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:35:9-37:55
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:39:9-41:55
 	android:value
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:37:13-52
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:41:13-52
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:36:13-58
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:40:13-58
 activity#com.example.nate.golfonthego.CourseActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:39:9-45:20
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:43:9-49:20
 	android:label
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:41:13-58
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:45:13-58
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:44:13-43
 meta-data#androidss.support.PARENT_ACTIVITY
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:42:13-44:76
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:46:13-48:76
 	android:value
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:44:17-73
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:48:17-73
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:43:17-65
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:17-65
 activity#com.example.nate.golfonthego.Register
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:46:9-46
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:9-46
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:46:19-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:19-43
 activity#com.example.nate.golfonthego.LoginScreen
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:9-53:20
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:9-57:20
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:19-46
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:19-46
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:48:13-52:29
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:52:13-56:29
 action#android.intent.action.MAIN
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:49:17-69
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:53:17-69
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:49:25-66
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:53:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:17-77
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:17-77
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:27-74
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:27-74
 activity#com.example.nate.golfonthego.LeaderActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:54:9-52
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:9-61
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:54:19-49
-activity#com.example.nate.golfonthego.AccelerometerTest
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:9-55
-	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:19-52
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:19-49
 activity#com.example.nate.golfonthego.List
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:56:9-42
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:9-42
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:56:19-39
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:19-39
 activity#com.example.nate.golfonthego.guildListMain
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:57:9-51
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:9-51
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:57:19-48
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:19-48
 activity#com.example.nate.golfonthego.guildInfoScreen
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:58:9-61:59
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:9-66:59
 	android:label
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:13-69
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:65:13-69
 	android:theme
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:13-56
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:66:13-56
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:59:13-44
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:64:13-44
 activity#com.example.nate.golfonthego.NewGuild
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:9-46
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:9-46
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:19-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:19-43
 activity#com.example.nate.golfonthego.newGuildMember
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:9-61
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:9-61
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:19-49
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:19-49
 uses-sdk
 INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml

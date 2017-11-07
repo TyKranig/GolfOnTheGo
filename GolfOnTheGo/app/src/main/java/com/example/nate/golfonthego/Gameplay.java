@@ -71,7 +71,6 @@ public class Gameplay implements Observer{
     public void moveBall(Context con){
         //test to see if swinger singleton works
         if(playerSwing != null){
-            System.out.println("fuck less thing");
             CharSequence text =
                     "\nPower:     " + playerSwing.power +
                     "\nOverswing:  " + playerSwing.overswing +
@@ -80,7 +79,6 @@ public class Gameplay implements Observer{
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(con, text, duration);
             toast.show();
-            System.out.println("fuck one thing");
             animateMarker(ballMark, course.getHoleLocation(holeNumber), false);
             courseCon = con;
             playerSwing.first = true;
@@ -95,10 +93,9 @@ public class Gameplay implements Observer{
         Projection proj = courseMap.getProjection();
         Point startPoint = proj.toScreenLocation(marker.getPosition());
         final LatLng startLatLng = proj.fromScreenLocation(startPoint);
-        final long duration = 500;
+        final long duration = 5000;
 
         final Interpolator interpolator = new LinearInterpolator();
-        System.out.println("fuck everything");
         handler.post(new Runnable() {
             @Override
             public void run() {

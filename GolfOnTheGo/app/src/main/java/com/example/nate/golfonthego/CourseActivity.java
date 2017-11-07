@@ -148,7 +148,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         final LatLng TEST =  new LatLng(42.021707, -93.677687);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        final Course currentCourse = new Course(2);
+        final Course currentCourse = new Course(3);
         final int currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(currentHole), (float)19.0));
@@ -273,7 +273,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 
-                    // if the distance  between the player and the first tee is less than 15 meters
+                    // if the distance  between the player and the first tee is less than 20 meters
+                    // any more precise may cause issues due to the inconsistency of
+                    // fine location gps -nate
                     if(location.distanceTo(teeLocation) < 20 && !SwingGame.gamePlayInProgress){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
@@ -281,7 +283,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
-                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),2,1);
+                        // the following needs to be changed to be more modular
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
