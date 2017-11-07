@@ -160,9 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         switch (r.nextInt()%4+2){ //skip background 1 for now
-            case 1:
-                        layout.setBackgroundResource(R.drawable.golf_background1);
-                break;
             case 2:
                         layout.setBackgroundResource(R.drawable.golf_background2);
                 break;
