@@ -12,6 +12,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.nate.golfonthego.Models.Course;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.LatLng;
