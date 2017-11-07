@@ -147,7 +147,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         final LatLng TEST =  new LatLng(42.021707, -93.677687);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        final Course currentCourse = new Course(1);
+        final Course currentCourse = new Course(2);
         final int currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(currentHole), (float)19.0));
@@ -162,7 +162,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         tempTeeMarker.setIcon(startBitmapDescriptor);
 
         initializeButtons();
-        locationBasedContent(TEST, currentCourse, currentHole, tempTeeMarker);
+        locationBasedContent(currentCourse.getTee(currentHole), currentCourse, currentHole, tempTeeMarker);
         drawHole(currentCourse, currentHole);
 
     }
@@ -251,32 +251,36 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     }
 
     // all content based on the updating location from the user
-    public void locationBasedContent(final LatLng TEST, final Course currentCourse,
+    public void locationBasedContent(final LatLng ballMarker, final Course currentCourse,
                                      final int currentHole, final Marker tempTeeMarker){
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 for (Location location : locationResult.getLocations()) {
+                    // set the pin that represents the users location
                     livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
+                    // set a marker where the tee is for the given course
                     Location teeLocation = new Location("tmp");
-                    teeLocation.setLatitude(TEST.latitude);
-                    teeLocation.setLongitude(TEST.longitude);
+                    teeLocation.setLatitude(ballMarker.latitude);
+                    teeLocation.setLongitude(ballMarker.longitude);
+
+                    // get the instance of the gameplay singleton
                     SwingGame = Gameplay.getGameplay();
 
                     playerLocation = location;
                     playerLocation.setBearing(playerBearing);
 
-                    //REMEMBER to change this
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
+
                     // if the distance  between the player and the first tee is less than 15 meters
-                    if(location.distanceTo(teeLocation) < 15 && !SwingGame.gamePlayInProgress){
+                    if(location.distanceTo(teeLocation) < 20 && !SwingGame.gamePlayInProgress){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
                         ballmarker = mMap.addMarker(
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
-                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext());
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),2,1);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
@@ -299,7 +303,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 }
             };
         };
-
     }
 
     // draws the current hole that the user is on
@@ -315,6 +318,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         greenPolygon1.setZIndex(1);
     }
 
+    // the next section of code includes connection methods for google api calls
     @Override
     public void onConnectionSuspended(int i) {
 

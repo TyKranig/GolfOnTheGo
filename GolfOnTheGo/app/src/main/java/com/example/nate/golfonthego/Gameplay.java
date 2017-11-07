@@ -32,17 +32,22 @@ public class Gameplay implements Observer{
     private Context courseCon;
     private Swinger playerSwing;
     private static Gameplay game;
+    private Course course;
+    private int holeNumber;
 
     public boolean gamePlayInProgress;
+    public boolean gameHasBeenStarted;
 
-    private Gameplay(){}
+    private Gameplay(){ gameHasBeenStarted = false; }
 
-    public void setParameters(GoogleMap gm, Marker m, Context c){
+    public void setParameters(GoogleMap gm, Marker m, Context c, int courseNumber, int holeNumber){
         courseMap = gm;
         ballMark = m;
         courseCon = c;
         playerSwing = Swinger.getSwinger();
         playerSwing.addObserver(this);
+        course = new Course(courseNumber);
+        holeNumber = holeNumber;
     }
 
     public static Gameplay getGameplay(){
@@ -66,7 +71,7 @@ public class Gameplay implements Observer{
         //test to see if swinger singleton works
         if(playerSwing != null){
             System.out.println("fuck less thing");
-            CharSequence text = "THIS IS A TEST" +
+            CharSequence text =
                     "\nPower:     " + playerSwing.power +
                     "\nOverswing:  " + playerSwing.overswing +
                     "\nError:      " + playerSwing.error +
@@ -74,9 +79,8 @@ public class Gameplay implements Observer{
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(con, text, duration);
             toast.show();
-            LatLng randomTest = new LatLng(42.028323, -93.649174);
             System.out.println("fuck one thing");
-            animateMarker(ballMark, randomTest, false);
+            animateMarker(ballMark, course.getHoleLocation(holeNumber), false);
             courseCon = con;
             playerSwing.first = true;
             this.gamePlayInProgress = false;

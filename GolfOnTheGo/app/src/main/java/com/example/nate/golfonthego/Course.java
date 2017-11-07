@@ -31,11 +31,14 @@ public class Course {
         return holes.get(hole - 1).getTee();
     }
 
+    public LatLng getHoleLocation(int hole) { return holes.get(hole).getHoleLocation(); }
+
     private class Hole {
 
         private ArrayList<LatLng> fairway;
         private ArrayList<LatLng> green;
         private LatLng tee;
+        private LatLng holeLocation;
 
         public Hole() {
             //fairway = new ArrayList<>();
@@ -63,6 +66,9 @@ public class Course {
         public LatLng getTee() {
             return this.tee;
         }
+
+        public void setHoleLocation(LatLng holeLocation) { this.holeLocation = holeLocation; }
+        public LatLng getHoleLocation() { return this.holeLocation; }
     }
 
     private void CourseInit (int courseNumber) {
@@ -90,6 +96,7 @@ public class Course {
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
+            holeToAdd.setHoleLocation(new LatLng(42.06400, -93.645600));
 
             holes.add(holeToAdd);
             // end course 1
@@ -114,6 +121,7 @@ public class Course {
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
+            holeToAdd.setHoleLocation(new LatLng(42.021788, -93.677534));
 
             holes.add(holeToAdd);
             // end course 1
