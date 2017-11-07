@@ -30,4 +30,10 @@
         android:positiveButtonText="@null"
         android:title="@string/pref_title_add_friends_to_messages" />
 
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="example_switch"
+        android:summary="Match the switch with your dominant hand"
+        android:title="Dominant Hand" />
+
 </PreferenceScreen>
