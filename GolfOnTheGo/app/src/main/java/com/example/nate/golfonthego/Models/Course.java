@@ -1,4 +1,4 @@
-package com.example.nate.golfonthego;
+package com.example.nate.golfonthego.Models;
 
 import com.google.android.gms.maps.model.LatLng;
 
