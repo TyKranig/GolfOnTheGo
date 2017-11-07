@@ -20,6 +20,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     final Context context = this;
     float currVolume = 0.90f;
+    private Handler handler = new Handler();
     MediaPlayer player;
     public static User mainUser;
 
@@ -29,25 +30,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
-        altBackground(rand.nextInt()%5+1);
+        handler.postDelayed(runnable, 0);
+
+        //Plays music - change music eventualy or comment to perma-off
+
+
 
         Intent intent = getIntent();
         mainUser = new User(intent.getStringExtra(LoginScreen.EXTRA_MESSAGE), "", intent.getIntExtra(LoginScreen.EXTRA_USERID, -1));
 
         //Plays music - change music eventualy or comment to off
+
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
         player.setVolume(currVolume, currVolume);
 
+
         Button testButton = (Button)findViewById(R.id.testButton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent testScreenIntent = new Intent(context, AccelerometerTest.class);
-                startActivity(testScreenIntent);
             }
         });
+
     }
 
 
@@ -123,59 +129,34 @@ public class MainActivity extends AppCompatActivity {
         player.setVolume(0.90f, 0.90f);
         currVolume = 0.90f;
     }
-    public void altBackground(int n){
+    public void altBackground(Random r){
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
-        Handler handler = new Handler();
 
 
-
-        //while(true){
-        switch (n){
-            case 1:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
-                        layout.setBackgroundResource(R.drawable.golf_background1);
-                    }
-                }, 0);
-                break;
+        switch (r.nextInt()%4+2){ //skip background 1 for now
             case 2:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background2);
-                    }
-                }, 0);
                 break;
             case 3:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background3);
-                    }
-                }, 0);
                 break;
             case 4:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background4);
-                    }
-                }, 0);
                 break;
             case 5:
-                handler.postDelayed(new Runnable(){
-
-                    @Override
-                    public void run() {
                         layout.setBackgroundResource(R.drawable.golf_background5);
-                    }
-                }, 0);
                 break;
         }
+        return;
     }
+
+    private Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+            Random rand = new Random(System.currentTimeMillis());
+            altBackground(rand);
+            handler.postDelayed(this, 5000);
+        }
+    };
 }

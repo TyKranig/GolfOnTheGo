@@ -15,4 +15,5 @@ public class ConstantURL {
     public static String URL_MEMBERSEARCH = "http://proj-309-am-c-1.cs.iastate.edu/searchMembers.php?";
     public static String URL_ADDGUILDMEMBER = "http://proj-309-am-c-1.cs.iastate.edu/guildAddMember.php?";
     public static String URL_GUILDCREATENEW = "http://proj-309-am-c-1.cs.iastate.edu/guildCreateNew.php?";
+    public static String URL_LEADER = "http://proj-309-am-c-1.cs.iastate.edu/leaderBoard.php?";
 }
