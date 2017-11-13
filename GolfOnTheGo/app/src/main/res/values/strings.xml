@@ -408,6 +408,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="playbutton">Play</string>
     <string name="title_activity_accelerometer_test">AccelerometerTest</string>
+    <string name="friends">Friends</string>
     <string name="courses">Courses</string>
     <string name="med">Med</string>
     <string name="high">High</string>
