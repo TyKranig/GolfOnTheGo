@@ -41,8 +41,8 @@ public class Course {
         private LatLng holeLocation;
 
         public Hole() {
-            //fairway = new ArrayList<>();
-            //green = new ArrayList<>();
+            fairway = new ArrayList<>();
+            green = new ArrayList<>();
         }
 
         public void setFairway(ArrayList<LatLng> coords) {

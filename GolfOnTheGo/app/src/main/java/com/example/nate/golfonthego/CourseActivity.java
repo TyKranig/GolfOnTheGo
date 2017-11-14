@@ -147,10 +147,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         final LatLng TEST =  new LatLng(42.021707, -93.677687);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        final Course currentCourse = new Course(2);
+        final Course currentCourse = new Course(3);
         final int currentHole = 1;
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(currentHole), (float)19.0));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(1), (float)19.0));
         // this is the instantiation of the player marker, updates position when permissed.
         livePlayerMarker = mMap.addMarker(
                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("You are here"));
@@ -274,7 +274,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 
                     // if the distance  between the player and the first tee is less than 15 meters
-                    if(location.distanceTo(teeLocation) < 20 && !SwingGame.gamePlayInProgress){
+                    if(location.distanceTo(teeLocation) < 2000 && !SwingGame.gamePlayInProgress){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
                         ballmarker = mMap.addMarker(
