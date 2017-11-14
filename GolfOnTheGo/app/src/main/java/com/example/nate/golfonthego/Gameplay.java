@@ -76,6 +76,7 @@ public class Gameplay implements Observer{
             Toast toast = Toast.makeText(con, text, duration);
             toast.show();
             animateMarker(ballMark, calculateSwing(courseMap, playerSwing.score), false);
+
             courseCon = con;
             playerSwing.first = true;
             this.gamePlayInProgress = false;
@@ -89,7 +90,7 @@ public class Gameplay implements Observer{
         Projection proj = courseMap.getProjection();
         Point startPoint = proj.toScreenLocation(marker.getPosition());
         final LatLng startLatLng = proj.fromScreenLocation(startPoint);
-        final long duration = 500;
+        final long duration = 5000;
 
         final Interpolator interpolator = new LinearInterpolator();
         handler.post(new Runnable() {

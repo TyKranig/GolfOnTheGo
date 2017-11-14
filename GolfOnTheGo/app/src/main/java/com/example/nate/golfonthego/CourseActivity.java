@@ -274,14 +274,18 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 
                     // if the distance  between the player and the first tee is less than 15 meters
-                    if(location.distanceTo(teeLocation) < 2000 && !SwingGame.gamePlayInProgress){
+                    // if the distance  between the player and the first tee is less than 20 meters
+                    // any more precise may cause issues due to the inconsistency of
+                    // fine location gps -nate
+                    if(location.distanceTo(teeLocation) < 20 && !SwingGame.gamePlayInProgress){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
                         ballmarker = mMap.addMarker(
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
-                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),2,1);
+                        // the following needs to be changed to be more modular
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);

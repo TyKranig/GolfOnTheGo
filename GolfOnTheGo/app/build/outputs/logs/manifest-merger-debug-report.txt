@@ -1,0 +1,805 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\8fa2e1a77e986e00a04b67b717e001c6\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:17:1-31:12
+MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\8df16f318d9a29f53be79996140fafa7\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\fffb67172f0c714622377ca31db3dda2\AndroidManifest.xml:16:1-19:12
+MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\2e8b87ac30efdb990d4fb759ccd144b8\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\13d9196f87f36f945108031ff9611cdf\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\be92ee77d16d551062cd3e3d863613d6\AndroidManifest.xml:16:1-18:12
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-tagmanager:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-11.0.4.aar\5c0956767f05fbbad8bf122ebdbe0a70\AndroidManifest.xml:16:1-18:12
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\47b290474fd27a920e935ae19eeadc2d\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:16:1-27:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.0.4.aar\dec36e6bdee2755a78c5306ae587bb88\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:16:1-26:12
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.0.4.aar\c74e32ac882f6fe018cc6b77671ae759\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\ac6967fd836202bee4353579c71aa869\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\6971c9c6a8793fd04b8eff038e5c677d\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\5bef6e4592c6e95921155538510701ee\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\22a5744b8e5544bd6205060fc6f791e6\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\34effc1df630e1afce5ceccd2dd03b48\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\dc6c0f40d9e56d0b7e1f7f39bbff215a\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\8591792db49704e00654e084363cb98c\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\5ae90a9a991b3788a9b4254ee23ab54d\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\ef513e00c72370fd950a1385ba2174a9\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\f9b83f7a7cfa11ff0fe6a5824f6d1f15\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\e9cd460a86a89b9c53bc333f8f979410\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\f8b8be347fe7e0ba4d83ae3463e5fe09\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\d5846a7916d9ff6179bab21726476f6e\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\8a90a4b28af1808512219b50878c2aa1\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\485e04bb634287d4c2a44b23be5d00fd\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\c6b1bea8664435cc5cd69b74d68103a9\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-safetynet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\5dfc7502b2cc59118ee9f4d67add21f8\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-vision:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\d8b44577da26706126d6b0201df6edcd\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-vision-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\ed596abcc13c1846345a6507b012ac3a\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-wearable:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\b9d483fb3a3de0b6b9179a78048ed170\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\657e0a959e94605dc53f6c6008d05d83\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\6dcb03606de830ddf65d8aa7d25520f2\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:16:1-30:12
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:16:1-50:12
+MERGED from [com.google.firebase:firebase-storage:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.0.4.aar\52cb5191412a14bfc4b2da327aefcbeb\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-storage-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.0.4.aar\bb9ee5bdf2ad17646a4bec43c29fa28c\AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\65099802cb345ed8d0409d54ef9b8b51\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\a08dccc8122a12be89a6907c2e8f0ac6\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\af9fbaa7fa5ff5f50164ba19bea0dc84\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\70d9465cbd9820e2eace73d824681066\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:17:1-30:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+	package
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:3:5-43
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:1-71:12
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:10:22-76
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:18:5-66
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:18:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:11:22-64
+application
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:13:5-69:19
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\8fa2e1a77e986e00a04b67b717e001c6\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\8fa2e1a77e986e00a04b67b717e001c6\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:25:5-29:19
+MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\8df16f318d9a29f53be79996140fafa7\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\8df16f318d9a29f53be79996140fafa7\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:4:5-8:19
+MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\fffb67172f0c714622377ca31db3dda2\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\fffb67172f0c714622377ca31db3dda2\AndroidManifest.xml:18:5-19
+MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\2e8b87ac30efdb990d4fb759ccd144b8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\2e8b87ac30efdb990d4fb759ccd144b8\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\13d9196f87f36f945108031ff9611cdf\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\13d9196f87f36f945108031ff9611cdf\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:23:5-26:19
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:23:5-26:19
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\47b290474fd27a920e935ae19eeadc2d\AndroidManifest.xml:19:5-19
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\47b290474fd27a920e935ae19eeadc2d\AndroidManifest.xml:19:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:26:5-19
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:19:5-26:19
+MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:19:5-25:19
+MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\ac6967fd836202bee4353579c71aa869\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\ac6967fd836202bee4353579c71aa869\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\6971c9c6a8793fd04b8eff038e5c677d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\6971c9c6a8793fd04b8eff038e5c677d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\5bef6e4592c6e95921155538510701ee\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\5bef6e4592c6e95921155538510701ee\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\22a5744b8e5544bd6205060fc6f791e6\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\22a5744b8e5544bd6205060fc6f791e6\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\34effc1df630e1afce5ceccd2dd03b48\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\34effc1df630e1afce5ceccd2dd03b48\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\dc6c0f40d9e56d0b7e1f7f39bbff215a\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\dc6c0f40d9e56d0b7e1f7f39bbff215a\AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\8591792db49704e00654e084363cb98c\AndroidManifest.xml:5:3-17
+MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\8591792db49704e00654e084363cb98c\AndroidManifest.xml:5:3-17
+MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\5ae90a9a991b3788a9b4254ee23ab54d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\5ae90a9a991b3788a9b4254ee23ab54d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:23:5-19
+MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\ef513e00c72370fd950a1385ba2174a9\AndroidManifest.xml:18:5-19
+MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\ef513e00c72370fd950a1385ba2174a9\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\e9cd460a86a89b9c53bc333f8f979410\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\e9cd460a86a89b9c53bc333f8f979410\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:23:5-19
+MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\d5846a7916d9ff6179bab21726476f6e\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\d5846a7916d9ff6179bab21726476f6e\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\8a90a4b28af1808512219b50878c2aa1\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\8a90a4b28af1808512219b50878c2aa1\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:5:5-19
+MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\485e04bb634287d4c2a44b23be5d00fd\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\485e04bb634287d4c2a44b23be5d00fd\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\c6b1bea8664435cc5cd69b74d68103a9\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\c6b1bea8664435cc5cd69b74d68103a9\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\5dfc7502b2cc59118ee9f4d67add21f8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-safetynet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\5dfc7502b2cc59118ee9f4d67add21f8\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-vision:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\d8b44577da26706126d6b0201df6edcd\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\d8b44577da26706126d6b0201df6edcd\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\ed596abcc13c1846345a6507b012ac3a\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-vision-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\ed596abcc13c1846345a6507b012ac3a\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-wearable:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\b9d483fb3a3de0b6b9179a78048ed170\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-wearable:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\b9d483fb3a3de0b6b9179a78048ed170\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:19:5-29:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:23:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\65099802cb345ed8d0409d54ef9b8b51\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\65099802cb345ed8d0409d54ef9b8b51\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\a08dccc8122a12be89a6907c2e8f0ac6\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\a08dccc8122a12be89a6907c2e8f0ac6\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\70d9465cbd9820e2eace73d824681066\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\70d9465cbd9820e2eace73d824681066\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:18:9-35
+	android:label
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:16:9-41
+	android:roundIcon
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:17:9-54
+	android:icon
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:15:9-43
+	android:allowBackup
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:19:9-40
+activity#com.example.nate.golfonthego.SettingsActivity
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:20:9-22:63
+	android:label
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:22:13-60
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:21:13-45
+activity#com.example.nate.golfonthego.MainActivity
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:23:9-28:68
+	android:label
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:25:13-56
+	android:theme
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:24:13-41
+meta-data#com.google.android.geo.API_KEY
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:39:9-41:55
+	android:value
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:41:13-52
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:40:13-58
+activity#com.example.nate.golfonthego.CourseActivity
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:43:9-49:20
+	android:label
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:45:13-58
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:44:13-43
+meta-data#androidss.support.PARENT_ACTIVITY
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:46:13-48:76
+	android:value
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:48:17-73
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:47:17-65
+activity#com.example.nate.golfonthego.Register
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:9-46
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:19-43
+activity#com.example.nate.golfonthego.LoginScreen
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:51:9-57:20
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:51:19-46
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:52:13-56:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:53:17-69
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:53:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:17-77
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:27-74
+activity#com.example.nate.golfonthego.LeaderActivity
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:60:9-61
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:60:19-49
+activity#com.example.nate.golfonthego.List
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:61:9-42
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:61:19-39
+activity#com.example.nate.golfonthego.guildListMain
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:9-51
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:19-48
+activity#com.example.nate.golfonthego.guildInfoScreen
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:63:9-66:59
+	android:label
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:65:13-69
+	android:theme
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:66:13-56
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:64:13-44
+activity#com.example.nate.golfonthego.NewGuild
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:9-46
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:19-43
+activity#com.example.nate.golfonthego.newGuildMember
+ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:9-61
+	android:name
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:19-49
+uses-sdk
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\8fa2e1a77e986e00a04b67b717e001c6\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\volley-1.0.0.aar\8fa2e1a77e986e00a04b67b717e001c6\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:21:5-23:62
+MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\8df16f318d9a29f53be79996140fafa7\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\8df16f318d9a29f53be79996140fafa7\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\fffb67172f0c714622377ca31db3dda2\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\fffb67172f0c714622377ca31db3dda2\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\2e8b87ac30efdb990d4fb759ccd144b8\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\2e8b87ac30efdb990d4fb759ccd144b8\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\13d9196f87f36f945108031ff9611cdf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\13d9196f87f36f945108031ff9611cdf\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\be92ee77d16d551062cd3e3d863613d6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\be92ee77d16d551062cd3e3d863613d6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-11.0.4.aar\5c0956767f05fbbad8bf122ebdbe0a70\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-11.0.4.aar\5c0956767f05fbbad8bf122ebdbe0a70\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\47b290474fd27a920e935ae19eeadc2d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-v4-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\47b290474fd27a920e935ae19eeadc2d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.0.4.aar\dec36e6bdee2755a78c5306ae587bb88\AndroidManifest.xml:3:3-41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.0.4.aar\dec36e6bdee2755a78c5306ae587bb88\AndroidManifest.xml:3:3-41
+MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.0.4.aar\c74e32ac882f6fe018cc6b77671ae759\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.0.4.aar\c74e32ac882f6fe018cc6b77671ae759\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\ac6967fd836202bee4353579c71aa869\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\ac6967fd836202bee4353579c71aa869\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\6971c9c6a8793fd04b8eff038e5c677d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\6971c9c6a8793fd04b8eff038e5c677d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\5bef6e4592c6e95921155538510701ee\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\5bef6e4592c6e95921155538510701ee\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\22a5744b8e5544bd6205060fc6f791e6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\22a5744b8e5544bd6205060fc6f791e6\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\34effc1df630e1afce5ceccd2dd03b48\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\34effc1df630e1afce5ceccd2dd03b48\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\dc6c0f40d9e56d0b7e1f7f39bbff215a\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\dc6c0f40d9e56d0b7e1f7f39bbff215a\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\8591792db49704e00654e084363cb98c\AndroidManifest.xml:3:3-41
+MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\8591792db49704e00654e084363cb98c\AndroidManifest.xml:3:3-41
+MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\5ae90a9a991b3788a9b4254ee23ab54d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\5ae90a9a991b3788a9b4254ee23ab54d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\ef513e00c72370fd950a1385ba2174a9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\ef513e00c72370fd950a1385ba2174a9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\f9b83f7a7cfa11ff0fe6a5824f6d1f15\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\f9b83f7a7cfa11ff0fe6a5824f6d1f15\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\e9cd460a86a89b9c53bc333f8f979410\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\e9cd460a86a89b9c53bc333f8f979410\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\f8b8be347fe7e0ba4d83ae3463e5fe09\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\f8b8be347fe7e0ba4d83ae3463e5fe09\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\d5846a7916d9ff6179bab21726476f6e\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\d5846a7916d9ff6179bab21726476f6e\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\8a90a4b28af1808512219b50878c2aa1\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\8a90a4b28af1808512219b50878c2aa1\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\485e04bb634287d4c2a44b23be5d00fd\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\485e04bb634287d4c2a44b23be5d00fd\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\c6b1bea8664435cc5cd69b74d68103a9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\c6b1bea8664435cc5cd69b74d68103a9\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-safetynet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\5dfc7502b2cc59118ee9f4d67add21f8\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-safetynet:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\5dfc7502b2cc59118ee9f4d67add21f8\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-vision:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\d8b44577da26706126d6b0201df6edcd\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-vision:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\d8b44577da26706126d6b0201df6edcd\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-vision-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\ed596abcc13c1846345a6507b012ac3a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-vision-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\ed596abcc13c1846345a6507b012ac3a\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-wearable:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\b9d483fb3a3de0b6b9179a78048ed170\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-wearable:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\b9d483fb3a3de0b6b9179a78048ed170\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\24808db3366983ad105f1d7c0387b175\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\657e0a959e94605dc53f6c6008d05d83\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\657e0a959e94605dc53f6c6008d05d83\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\6dcb03606de830ddf65d8aa7d25520f2\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\6dcb03606de830ddf65d8aa7d25520f2\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-storage:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.0.4.aar\52cb5191412a14bfc4b2da327aefcbeb\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.0.4.aar\52cb5191412a14bfc4b2da327aefcbeb\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.0.4.aar\bb9ee5bdf2ad17646a4bec43c29fa28c\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-storage-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.0.4.aar\bb9ee5bdf2ad17646a4bec43c29fa28c\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\65099802cb345ed8d0409d54ef9b8b51\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\65099802cb345ed8d0409d54ef9b8b51\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\a08dccc8122a12be89a6907c2e8f0ac6\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\a08dccc8122a12be89a6907c2e8f0ac6\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\af9fbaa7fa5ff5f50164ba19bea0dc84\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\af9fbaa7fa5ff5f50164ba19bea0dc84\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\70d9465cbd9820e2eace73d824681066\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\70d9465cbd9820e2eace73d824681066\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:20:5-22:41
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Leo\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\cacd16e22771997653e5184488c757f0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\transition-26.1.0.aar\6ad874c87ae8630923ab20bba05c5d17\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\407b5a54bfec6c06af8b8c2270e519f0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\6856532afb3adc528152d68b5ada863b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\ff22a909f93ac42fb3988fb76d8f3348\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.1.0.aar\adce12dbe376d64cf84232b43ce8ce10\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\9210197c14cf8fbfa844a5765151ed9a\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\ad2dbdc20001ac2f353ed15d733d6fc7\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\9f79bb5d0c2797164b12627c2b6fc704\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\884cb4bb3f2c2f04539a2f170d3bcd18\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\963562710bbe64f3f0b99343d9916870\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\design-26.1.0.aar\085805d1ba9f06f706eda832c57792d4\AndroidManifest.xml:27:13-51
+receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
+ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:5:9-99
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:5:19-97
+service#com.google.android.gms.cast.framework.media.MediaNotificationService
+ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:6:9-103
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:6:18-101
+service#com.google.android.gms.cast.framework.ReconnectionService
+ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:7:9-92
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\185b3f489324a3efcf8b24ac27cb88ff\AndroidManifest.xml:7:18-90
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\58556181d7780a1fc76cadfbaddbc35e\AndroidManifest.xml:4:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:20:22-76
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:25:9-232
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:25:72-181
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:25:182-230
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\49094a13463534f7ef5b1ddfcae081f1\AndroidManifest.xml:25:19-71
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\555e48e2a44a90fb7618dac818876015\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\df647554dcf4f286b581b122717a18cb\AndroidManifest.xml:24:22-65
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:20:9-25:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:20:51-74
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:20:75-121
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:20:19-50
+intent-filter#android.intent.category.DEFAULT+com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:21:13-24:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:22:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:22:25-87
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:23:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\0b7f6a190623e3ae220ac9432e30b138\AndroidManifest.xml:23:27-73
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:20:9-189
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:20:129-162
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:20:163-187
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:20:69-128
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:20:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:24:9-184
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:24:64-87
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:24:88-182
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\f4c74bf3e92ce517c32e480aacc30c53\AndroidManifest.xml:24:18-63
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:20:5-81
+MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\baf1f4f97453665a0a663d67e612b827\AndroidManifest.xml:20:5-81
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:22:5-81
+MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\99b9c184816afde6dc8ff1de57bc870f\AndroidManifest.xml:20:22-79
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\89473f0fabdea3b46f0e16f2162d5a41\AndroidManifest.xml:21:52-75
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\9c8ff76e1a3ffca8553bf4159ea61adf\AndroidManifest.xml:19:19-85
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:23:9-27:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:23:88-111
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:23:18-87
+intent-filter#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:24:13-26:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:24:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\706490c0902dacd8385d175143ae8057\AndroidManifest.xml:25:25-75
+service#com.google.android.gms.tagmanager.TagManagerService
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:24:9-134
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:24:110-132
+	android:exported
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:24:85-109
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:24:18-84
+activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:25:9-32:20
+	android:noHistory
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:25:118-142
+	android:exported
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:25:94-117
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:25:19-93
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:26:13-31:29
+data
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:27:17-71
+	android:scheme
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:27:23-69
+action#android.intent.action.VIEW
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:28:17-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:28:25-66
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\322d58928dffbc496cf6502f813b5bb3\AndroidManifest.xml:30:27-75
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:27:162-184
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:27:185-208
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\663cedf6d9d048a26a78113b77009c00\AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:32:16-87
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:33:7-197
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:33:148-170
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:33:171-195
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:33:91-147
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\9b30c38fc60dd6731b0b0f19c278ea60\AndroidManifest.xml:33:16-90
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:17-71
+permission#com.example.nate.golfonthego.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:26:22-76
+uses-permission#com.example.nate.golfonthego.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:31:13-34:29
+intent-filter#com.example.nate.golfonthego+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:33:27-58
+category#com.example.nate.golfonthego
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\5495750c26ad7f7e09991b49c8e29d90\AndroidManifest.xml:45:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\320668b8179cad48dbf40494bbe4cd6c\AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\1f2364fc5544f2baa22203fe01c7253f\AndroidManifest.xml:20:20-65
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Leo\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\5b5bbf914d7602e585f9f78f3930781b\AndroidManifest.xml:26:13-58

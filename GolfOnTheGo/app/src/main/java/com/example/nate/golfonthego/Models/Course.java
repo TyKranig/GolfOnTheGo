@@ -124,7 +124,37 @@ public class Course {
             holeToAdd.setHoleLocation(new LatLng(42.021788, -93.677534));
 
             holes.add(holeToAdd);
-            // end course 1
+            // end course 2 test course at nates apartment
+        }
+        if(courseNumber == 3) {
+            this.courseNumber = 3;
+            ArrayList<LatLng> hole1 = new ArrayList<LatLng>();
+            hole1.add(new LatLng(42.028258, -93.649823));
+            hole1.add(new LatLng(42.028198, -93.649820));
+            hole1.add(new LatLng(42.028156, -93.650238));
+            hole1.add(new LatLng(42.028266, -93.650694));
+            hole1.add(new LatLng(42.028381, -93.650789));
+            hole1.add(new LatLng(42.028523, -93.650673));
+            hole1.add(new LatLng(42.028409, -93.650418));
+            hole1.add(new LatLng(42.028262, -93.650139));
+
+            LatLng hole1Tee = new LatLng(42.028236, -93.649875);
+
+            ArrayList<LatLng> hole1Green = new ArrayList<LatLng>();
+            hole1Green.add(new LatLng(42.028373, -93.650725));
+            hole1Green.add(new LatLng(42.028423, -93.650663));
+            hole1Green.add(new LatLng(42.028379, -93.650599));
+            hole1Green.add(new LatLng(42.028329, -93.650696));
+
+            Hole holeToAdd = new Hole();
+            holeToAdd.setFairway(hole1);
+            holeToAdd.setGreen(hole1Green);
+            holeToAdd.setTee(hole1Tee);
+            holeToAdd.setHoleLocation(new LatLng(42.028367, -93.650666));
+
+            holes.add(holeToAdd);
+            // end course 3 test course at attanassoff for demos
+
         }
     }
 }
