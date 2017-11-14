@@ -65,7 +65,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     // where gameplay logic resides
     private Gameplay SwingGame;
     // variables for player location and direction
-    private Location playerLocation;
     private float playerBearing;
     // main google map object
     private GoogleMap mMap;
@@ -216,17 +215,19 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         aimClockButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0){
-                float posBearing = playerLocation.getBearing();
+                float posBearing = currentLocation.getBearing();
                 if(posBearing + 5 > 360){
                     posBearing = (posBearing - 355);
                 }
                 CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
+                        .target(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()))
                         .zoom(15)                   // Sets the zoom
                         .bearing(posBearing)        // Rotates orientation 5 degress CW
                         .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                         .build();                   // Creates a CameraPosition from the builder
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 playerBearing = posBearing;
+                currentLocation.setBearing(playerBearing);
             }
         });
 
@@ -236,17 +237,19 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         aimCounterClockButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0){
-                float negBearing = playerLocation.getBearing();
+                float negBearing = currentLocation.getBearing();
                 if(negBearing - 5 < 0){
                     negBearing = 355 + negBearing;
                 }
                 CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .target(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()))
                         .zoom(15)                   // Sets the zoom
                         .bearing(negBearing)        // Rotates orientation 5 degrees CCW
                         .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                         .build();                   // Creates a CameraPosition from the builder
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 playerBearing = negBearing;
+                currentLocation.setBearing(playerBearing);
             }
         });
     }
@@ -267,9 +270,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
                     // get the instance of the gameplay singleton
                     SwingGame = Gameplay.getGameplay();
-
-                    playerLocation = location;
-                    playerLocation.setBearing(playerBearing);
 
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 

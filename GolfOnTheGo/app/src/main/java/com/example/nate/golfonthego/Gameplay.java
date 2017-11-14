@@ -33,8 +33,6 @@ public class Gameplay implements Observer{
     private Context courseCon;
     private Swinger playerSwing;
     private static Gameplay game;
-    private Course course;
-    private int holeNumber;
 
     public boolean gamePlayInProgress;
     public boolean gameHasBeenStarted;
@@ -47,8 +45,6 @@ public class Gameplay implements Observer{
         courseCon = c;
         playerSwing = Swinger.getSwinger();
         playerSwing.addObserver(this);
-        course = new Course(courseNumber);
-        holeNumber = holeNumber;
     }
 
     public static Gameplay getGameplay(){
@@ -71,17 +67,15 @@ public class Gameplay implements Observer{
     public void moveBall(Context con){
         //test to see if swinger singleton works
         if(playerSwing != null){
-            System.out.println("fuck less thing");
             CharSequence text =
-                    "\nPower:     " + playerSwing.power +
+                    "\nPower:      " + playerSwing.power +
                     "\nOverswing:  " + playerSwing.overswing +
                     "\nError:      " + playerSwing.error +
                     "\nScore:      " + playerSwing.score;
             int duration = Toast.LENGTH_LONG;
             Toast toast = Toast.makeText(con, text, duration);
             toast.show();
-            System.out.println("fuck one thing");
-            animateMarker(ballMark, course.getHoleLocation(holeNumber), false);
+            animateMarker(ballMark, calculateSwing(courseMap, playerSwing.score), false);
             courseCon = con;
             playerSwing.first = true;
             this.gamePlayInProgress = false;
@@ -98,7 +92,6 @@ public class Gameplay implements Observer{
         final long duration = 500;
 
         final Interpolator interpolator = new LinearInterpolator();
-        System.out.println("fuck everything");
         handler.post(new Runnable() {
             @Override
             public void run() {
@@ -128,7 +121,34 @@ public class Gameplay implements Observer{
 
     @Override
     public void update(Observable o, Object n){
-        System.out.println("why not here tho");
         moveBall(courseCon);
+    }
+
+    private LatLng calculateSwing(GoogleMap currMap, float shotLength){
+
+        double swingLat = currMap.getCameraPosition().target.latitude;
+        double playerLat = currMap.getCameraPosition().target.latitude;
+        double swingLng = currMap.getCameraPosition().target.latitude;
+        double playerLng = currMap.getCameraPosition().target.longitude;
+        float tempBearing = currMap.getCameraPosition().bearing;
+
+        if(tempBearing <= 90){
+            swingLat = shotLength * Math.sin(tempBearing);
+            swingLng = shotLength * Math.cos(tempBearing);
+        }
+        else if(tempBearing <= 180 && tempBearing > 90){
+            swingLat = shotLength * Math.cos(tempBearing - 90);
+            swingLng = -shotLength * Math.sin(tempBearing - 90);
+        }
+        else if(tempBearing <= 270 && tempBearing > 180){
+            swingLat = -shotLength * Math.sin(tempBearing - 180);
+            swingLng = -shotLength * Math.cos(tempBearing - 180);
+        }
+        else if(tempBearing <= 360 && tempBearing > 270){
+            swingLat = - shotLength * Math.cos(tempBearing - 270);
+            swingLng = shotLength * Math.sin(tempBearing - 270);
+        }
+
+        return new LatLng(playerLat + swingLat, playerLng + swingLng);
     }
 }

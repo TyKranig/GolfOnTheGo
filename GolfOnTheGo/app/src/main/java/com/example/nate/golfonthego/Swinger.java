@@ -104,7 +104,19 @@ public class Swinger extends Observable{
             error = Yavg - 5;
             overswing = overswing < 0 ? 0 : overswing;
 
-            score = power - overswing;
+            //20 power is 100 yds
+            //30 power is 200 yds
+            //40 power is 300 yds
+            float yards = 10 * (power + overswing) - 100;
+
+            //anything less than or equal to 10 will default to 10 yards
+            yards =  yards < 0 ? 10 : yards;
+
+            // multiply yards by 3 to convert yards to feet
+            // divide feet by 3280.4 to go from feet to kilometers
+            // 90 / 10000 is the conversion from kilometers to lat/lng
+            //score is now in "lat/lng" units
+            score = (yards) * (3) / (3280.4f) * (90 / 10000);
 
             first = false;
             swingTrack = 0;
