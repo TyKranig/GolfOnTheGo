@@ -8,6 +8,7 @@ package com.example.nate.golfonthego.Models;
 public class Guild {
     private String _name;
     private int _id;
+    public int currentUserIsLeader;
 
     public String get_name() {
         return _name;
