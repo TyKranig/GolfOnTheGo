@@ -4,37 +4,20 @@
             "outputFile": "C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ar\\values-ar.xml",
             "map": [
                 {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\b3680e741dddeb595e65166beba70eab\\res\\values-ar\\values.xml",
+                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\f31b1a013e7bf6b14724a7ea95466a18\\res\\values-ar\\values.xml",
                     "from": {
-                        "startLines": "4,5,6",
-                        "startColumns": "0,0,0",
-                        "startOffsets": "288,426,567",
-                        "endColumns": "137,140,94",
-                        "endOffsets": "425,566,661"
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "237,304,413,475,536,609",
+                        "endColumns": "66,108,61,60,72,97",
+                        "endOffsets": "303,412,474,535,608,706"
                     },
                     "to": {
-                        "startLines": "37,38,39",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3708,3846,3987",
-                        "endColumns": "137,140,98",
-                        "endOffsets": "3841,3982,4081"
-                    }
-                },
-                {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-ar\\values-ar.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,154,260,369,481,580,664,759,864,960,1053,1148,1239,1350,1464,1553,1635,1726,1835,1921",
-                        "endColumns": "98,105,108,111,98,83,94,104,95,92,94,90,110,113,88,81,90,108,85,93",
-                        "endOffsets": "149,255,364,476,575,659,754,859,955,1048,1143,1234,1345,1459,1548,1630,1721,1830,1916,2010"
-                    },
-                    "to": {
-                        "startLines": "75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "8262,8361,8467,8576,8688,8787,8871,8966,9071,9167,9260,9355,9446,9557,9671,9760,9842,9933,10042,10128",
-                        "endColumns": "98,105,108,111,98,83,94,104,95,92,94,90,110,113,88,81,90,108,85,93",
-                        "endOffsets": "8356,8462,8571,8683,8782,8866,8961,9066,9162,9255,9350,9441,9552,9666,9755,9837,9928,10037,10123,10217"
+                        "startLines": "97,98,99,100,101,102",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "10417,10488,10601,10667,10732,10809",
+                        "endColumns": "70,112,65,64,76,101",
+                        "endOffsets": "10483,10596,10662,10727,10804,10906"
                     }
                 },
                 {
@@ -55,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\b3680e741dddeb595e65166beba70eab\\res\\values-ar\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "288,426,567",
+                        "endColumns": "137,140,94",
+                        "endOffsets": "425,566,661"
+                    },
+                    "to": {
+                        "startLines": "37,38,39",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3708,3846,3987",
+                        "endColumns": "137,140,98",
+                        "endOffsets": "3841,3982,4081"
+                    }
+                },
+                {
                     "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\cc44a90a438a371f1787382e4bb54995\\res\\values-ar\\values.xml",
                     "from": {
                         "startLines": "4,5",
@@ -69,40 +69,6 @@
                         "startOffsets": "10222,10322",
                         "endColumns": "99,94",
                         "endOffsets": "10317,10412"
-                    }
-                },
-                {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\67221c4fcb3892f3dcaf7b208c169b02\\res\\values-ar\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "283,385,561,681,784,981,1107,1234,1430,1532,1713,1833,2031,2203,2293,2385",
-                        "endColumns": "101,175,119,102,196,125,126,195,101,180,119,197,171,89,91,108",
-                        "endOffsets": "384,560,680,783,980,1106,1233,1429,1531,1712,1832,2030,2202,2292,2384,2493"
-                    },
-                    "to": {
-                        "startLines": "58,59,60,61,62,63,64,66,67,68,69,70,71,72,73,74",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5817,5923,6099,6223,6330,6527,6657,6978,7174,7280,7461,7585,7783,7959,8053,8149",
-                        "endColumns": "105,175,123,106,196,129,130,195,105,180,123,197,175,93,95,112",
-                        "endOffsets": "5918,6094,6218,6325,6522,6652,6783,7169,7275,7456,7580,7778,7954,8048,8144,8257"
-                    }
-                },
-                {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\88f4153404ad1654743f7a096f54c98a\\res\\values-ar\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "240",
-                        "endColumns": "101",
-                        "endOffsets": "341"
-                    },
-                    "to": {
-                        "startLines": "105",
-                        "startColumns": "4",
-                        "startOffsets": "11093",
-                        "endColumns": "105",
-                        "endOffsets": "11194"
                     }
                 },
                 {
@@ -140,20 +106,54 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\f31b1a013e7bf6b14724a7ea95466a18\\res\\values-ar\\values.xml",
+                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\88f4153404ad1654743f7a096f54c98a\\res\\values-ar\\values.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "0,0,0,0,0,0",
-                        "startOffsets": "237,304,413,475,536,609",
-                        "endColumns": "66,108,61,60,72,97",
-                        "endOffsets": "303,412,474,535,608,706"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "240",
+                        "endColumns": "101",
+                        "endOffsets": "341"
                     },
                     "to": {
-                        "startLines": "97,98,99,100,101,102",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "10417,10488,10601,10667,10732,10809",
-                        "endColumns": "70,112,65,64,76,101",
-                        "endOffsets": "10483,10596,10662,10727,10804,10906"
+                        "startLines": "105",
+                        "startColumns": "4",
+                        "startOffsets": "11093",
+                        "endColumns": "105",
+                        "endOffsets": "11194"
+                    }
+                },
+                {
+                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-ar\\values-ar.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,154,260,369,481,580,664,759,864,960,1053,1148,1239,1350,1464,1553,1635,1726,1835,1921",
+                        "endColumns": "98,105,108,111,98,83,94,104,95,92,94,90,110,113,88,81,90,108,85,93",
+                        "endOffsets": "149,255,364,476,575,659,754,859,955,1048,1143,1234,1345,1459,1548,1630,1721,1830,1916,2010"
+                    },
+                    "to": {
+                        "startLines": "75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "8262,8361,8467,8576,8688,8787,8871,8966,9071,9167,9260,9355,9446,9557,9671,9760,9842,9933,10042,10128",
+                        "endColumns": "98,105,108,111,98,83,94,104,95,92,94,90,110,113,88,81,90,108,85,93",
+                        "endOffsets": "8356,8462,8571,8683,8782,8866,8961,9066,9162,9255,9350,9441,9552,9666,9755,9837,9928,10037,10123,10217"
+                    }
+                },
+                {
+                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\67221c4fcb3892f3dcaf7b208c169b02\\res\\values-ar\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "283,385,561,681,784,981,1107,1234,1430,1532,1713,1833,2031,2203,2293,2385",
+                        "endColumns": "101,175,119,102,196,125,126,195,101,180,119,197,171,89,91,108",
+                        "endOffsets": "384,560,680,783,980,1106,1233,1429,1531,1712,1832,2030,2202,2292,2384,2493"
+                    },
+                    "to": {
+                        "startLines": "58,59,60,61,62,63,64,66,67,68,69,70,71,72,73,74",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5817,5923,6099,6223,6330,6527,6657,6978,7174,7280,7461,7585,7783,7959,8053,8149",
+                        "endColumns": "105,175,123,106,196,129,130,195,105,180,123,197,175,93,95,112",
+                        "endOffsets": "5918,6094,6218,6325,6522,6652,6783,7169,7275,7456,7580,7778,7954,8048,8144,8257"
                     }
                 }
             ]
