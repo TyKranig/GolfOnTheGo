@@ -2,26 +2,30 @@ package com.example.nate.golfonthego;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.location.Location;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.hardware.Sensor;
-import android.hardware.SensorManager;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 
+
+import com.example.nate.golfonthego.Models.Course;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
@@ -29,9 +33,11 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -45,34 +51,22 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
-import java.util.ArrayList;
-
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 import static com.example.nate.golfonthego.R.id.map;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
-        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, SensorEventListener {
+        ConnectionCallbacks, OnConnectionFailedListener, LocationListener, swingFragment.OnFragmentInteractionListener {
 
-    //LEO'S VARIABLES
-    // put extra sent to accelerometertest
-    private ArrayList<String> swingStat;
-    //swing bool
-    private int push = 0;
-    //accelerations vals
-    private float xAcc;
-    private float yAcc;
-    private float zAcc;
+    // buttons for the activity
     private Button swingButton;
-    //logic objects leading to the final swingScore
-    private float power;
-    private float overswing;
-    private float swingScore;
-    private float error = 0;
-    private float backSwingVal = -20;
-    private int backSwing = 0;
-    //swing statistics to be tracked
-    private float maxX, maxY, maxZ, minX, minY, minZ, avgX, avgY, avgZ = 0;
-
+    private Button aimButton;
+    private Button aimClockButton;
+    private Button aimCounterClockButton;
+    // where gameplay logic resides
+    private Gameplay SwingGame;
+    // variables for player location and direction
+    private Location playerLocation;
+    private float playerBearing;
     // main google map object
     private GoogleMap mMap;
     // api for getting location
@@ -86,10 +80,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     // current location marker
     Marker livePlayerMarker;
     Marker ballmarker;
-
-    //sensor stuff
-    private Sensor accelSensor;
-    private SensorManager SM;
 
     // request for location
     LocationRequest locationRequest;
@@ -106,10 +96,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Sensor manager and accelerometer
-        SM = (SensorManager) getSystemService(SENSOR_SERVICE);
-        accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         // create the location request
         this.checkLocationPermission();
         this.createLocationRequest();
@@ -125,86 +111,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
-
-    }
-
-    //Leo's accelerometer stuff
-    public void onSensorChanged(SensorEvent sensorEvent)
-    {
-        /*Backswing is the variable keeping track of the stages of the swing.
-        *   0: the swing has not started yet.
-        *   1: the user has indicated somehow they want to swing. (e.g. button)
-        *   2: the user has started the swing by swinging back past the backSwingVal threshold.
-        *   3: the user has started to swing forward, so the acc values are being tracked and calculated.
-        *   0: back to 0 when the user has stopped swinging, or started swinging back again ( X + Z <=0 ) */
-
-        //saving accelerometer values
-        xAcc = sensorEvent.values[0];
-        yAcc = sensorEvent.values[1];
-        zAcc = sensorEvent.values[2];
-
-        //start the swing logic on a backswing
-        if(backSwing == 1 && xAcc + zAcc < backSwingVal){
-            backSwing = 2;
-        }
-        if(backSwing == 2 && xAcc > 0 && zAcc > 0){
-            backSwing = 3;
-        }
-
-        //after the swing starts...
-        if(backSwing == 3){
-            avgX = (avgX + xAcc) / 2;
-            avgY = (avgY + yAcc) / 2;
-            avgZ = (avgZ + zAcc) / 2;
-            if(xAcc > maxX){
-                maxX = xAcc;
-            }
-            if(xAcc < minX) {
-                minX = xAcc;
-            }
-            if(yAcc > maxY){
-                maxY = yAcc;
-            }
-            if(yAcc < minY){
-                minY = yAcc;
-            }
-            if(zAcc > maxZ){
-                maxZ = zAcc;
-            }
-            if(zAcc < minZ){
-                minZ = zAcc;
-            }
-
-        }
-        //end swing
-        if(backSwing == 3 && xAcc + zAcc <= 0){
-
-            //calculating power, overswing, error, and swingscore.
-            power = maxX + maxZ;
-            overswing = ((maxX + maxZ) - (avgX + avgZ)) - 70;
-
-            //error is based solely on Y acceleration
-            error = avgY - 10;
-            error = error < 0? 0 : error;
-            overswing = overswing < 0? 0 : overswing;
-
-            swingScore = power - overswing;
-
-            backSwing = 0;
-            push = 0;
-
-            swingStat.add(power + "\n");
-            swingStat.add(overswing + "\n");
-            swingStat.add(error + "\n");
-            swingStat.add(swingScore + "\n");
-
-        }
-
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int i)
-    {
+    public void onFragmentInteraction(Uri uri) {
 
     }
 
@@ -232,22 +142,13 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
+        // set the google map object and attempt to add the map style
         mMap = googleMap;
-        boolean mapStyleSuccess = mMap.setMapStyle(new MapStyleOptions(getResources().getString(R.string.map_style)));
-
-        if(!mapStyleSuccess) {
-            Context context = getApplicationContext();
-            CharSequence text = "Style Input Failed";
-            int duration = Toast.LENGTH_SHORT;
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-        }
-
-        final LatLng TEST = new LatLng(42.021679, -93.677612);
+        setMapStyle();
+        final LatLng TEST =  new LatLng(42.021707, -93.677687);
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        final Course currentCourse = new Course(1);
+        final Course currentCourse = new Course(2);
         final int currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(currentHole), (float)19.0));
@@ -261,49 +162,152 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
         tempTeeMarker.setIcon(startBitmapDescriptor);
 
-        // where the magic happens, location callbacks and updating UI
-        // initialize button, make it invisible
+        initializeButtons();
+        locationBasedContent(currentCourse.getTee(currentHole), currentCourse, currentHole, tempTeeMarker);
+        drawHole(currentCourse, currentHole);
+
+    }
+
+    // sets the style of the google map to the custom style
+    public void setMapStyle(){
+        boolean mapStyleSuccess = mMap.setMapStyle(new MapStyleOptions(getResources().getString(R.string.map_style)));
+        if(!mapStyleSuccess) {
+            Context context = getApplicationContext();
+            CharSequence text = "Style Input Failed";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+    }
+
+    // initializes all the buttons on the screen
+    public void initializeButtons(){
+        // swing button top left of screen
         swingButton = (Button)findViewById(R.id.swingButton);
         swingButton.setVisibility(View.GONE);
         swingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                Intent swingFinishIntent = new Intent(CourseActivity.this, AccelerometerTest.class);
-                swingFinishIntent.putExtra("SwingStats", swingStat);
-                startActivity(swingFinishIntent);
+                FragmentManager tempfrag = getSupportFragmentManager();
+                SwingGame.executeSwing(swingButton, tempfrag);
+
             }
         });
 
+        // aim button top right of screen
+        aimButton = (Button)findViewById(R.id.aimButton);
+        aimButton.setVisibility(View.GONE);
+        aimButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                aimButton.setVisibility(View.INVISIBLE);
+                aimButton.setVisibility(View.GONE);
+                aimClockButton.setVisibility(View.VISIBLE);
+                aimClockButton.setText("->");
+                aimCounterClockButton.setVisibility(View.VISIBLE);
+                aimCounterClockButton.setText("<-");
+                mMap.getUiSettings().setAllGesturesEnabled(false);
+            }
+        });
+
+        //aim clockwise
+        aimClockButton = (Button)findViewById(R.id.changeAimClockButton);
+        aimClockButton.setVisibility(View.GONE);
+        aimClockButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                float posBearing = playerLocation.getBearing();
+                if(posBearing + 5 > 360){
+                    posBearing = (posBearing - 355);
+                }
+                CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
+                        .zoom(15)                   // Sets the zoom
+                        .bearing(posBearing)        // Rotates orientation 5 degress CW
+                        .tilt(0)                   // Sets the tilt of the camera to 0 degrees
+                        .build();                   // Creates a CameraPosition from the builder
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                playerBearing = posBearing;
+            }
+        });
+
+        //aim counter-clockwise
+        aimCounterClockButton = (Button)findViewById(R.id.changeAimCounterClockButton);
+        aimCounterClockButton.setVisibility(View.GONE);
+        aimCounterClockButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                float negBearing = playerLocation.getBearing();
+                if(negBearing - 5 < 0){
+                    negBearing = 355 + negBearing;
+                }
+                CameraPosition cameraPosition = new CameraPosition.Builder()
+                        .zoom(15)                   // Sets the zoom
+                        .bearing(negBearing)        // Rotates orientation 5 degrees CCW
+                        .tilt(0)                   // Sets the tilt of the camera to 0 degrees
+                        .build();                   // Creates a CameraPosition from the builder
+                mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+                playerBearing = negBearing;
+            }
+        });
+    }
+
+    // all content based on the updating location from the user
+    public void locationBasedContent(final LatLng ballMarker, final Course currentCourse,
+                                     final int currentHole, final Marker tempTeeMarker){
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 for (Location location : locationResult.getLocations()) {
+                    // set the pin that represents the users location
                     livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
-                    //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
+                    // set a marker where the tee is for the given course
                     Location teeLocation = new Location("tmp");
-                    teeLocation.setLatitude(TEST.latitude);
-                    teeLocation.setLongitude(TEST.longitude);
+                    teeLocation.setLatitude(ballMarker.latitude);
+                    teeLocation.setLongitude(ballMarker.longitude);
+
+                    // get the instance of the gameplay singleton
+                    SwingGame = Gameplay.getGameplay();
+
+                    playerLocation = location;
+                    playerLocation.setBearing(playerBearing);
+
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
-                    // if the distance  between the player and the first tee is less than 10 meters
-                    if(location.distanceTo(teeLocation) < 10){
+
+                    // if the distance  between the player and the first tee is less than 15 meters
+                    if(location.distanceTo(teeLocation) < 20 && !SwingGame.gamePlayInProgress){
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
                         ballmarker = mMap.addMarker(
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
-
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),2,1);
+                        SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
                         swingButton.setText("Swing");
+                        aimButton.setVisibility(View.VISIBLE);
+                        aimButton.setText("Aim");
                     }
                     else{
                         swingButton.setVisibility(View.INVISIBLE);
                         swingButton.setVisibility(View.GONE);
+                        aimButton.setVisibility(View.INVISIBLE);
+                        aimButton.setVisibility(View.GONE);
+                        aimClockButton.setVisibility(View.INVISIBLE);
+                        aimClockButton.setVisibility(View.GONE);
+                        aimCounterClockButton.setVisibility(View.INVISIBLE);
+                        aimCounterClockButton.setVisibility(View.GONE);
+
+                        mMap.getUiSettings().setAllGesturesEnabled(true);
                     }
                 }
             };
         };
+    }
+
+    // draws the current hole that the user is on
+    public void drawHole(Course currentCourse, int currentHole){
         PolygonOptions hole1 = new PolygonOptions().addAll(
                 currentCourse.getFairway(currentHole)).fillColor(Color.GREEN).strokeJointType(2)
                 .strokeWidth((float)10).strokeColor(Color.GREEN);
@@ -315,6 +319,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         greenPolygon1.setZIndex(1);
     }
 
+    // the next section of code includes connection methods for google api calls
     @Override
     public void onConnectionSuspended(int i) {
 

@@ -3,6 +3,7 @@ package com.example.nate.golfonthego;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,12 +19,10 @@ public class LoginScreen extends AppCompatActivity {
     public Button login;
     public Button register;
     public static final String EXTRA_MESSAGE = "userName";
+    public static final String EXTRA_USERID = "userID";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        Intent intent = new Intent(this, MainActivity.class);
-        //startActivity(intent);//TODO remove once testing is done
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
@@ -58,18 +57,19 @@ public class LoginScreen extends AppCompatActivity {
         We use VolleyBall to make calls to the server and get data
         back from the database or the server itself
          */
-        VolleyBall.getResponseJson(this, new VolleyBall.VolleyCallback() {
+        VolleyBall.getResponseJson(this, new VolleyBall.VolleyCallback<JSONObject>() {
             @Override
-            public void doThings(Object result) {
+            public void doThings(JSONObject result) {
                 try{
                     //cast the object coming back to JSON
-                    JSONObject re = (JSONObject)result;
                     System.out.println(result.toString());
 
                     //if the string result
-                    if(re.getInt("result") == 1){
+                    if(result.getInt("result") == 1){
                         Intent intent = new Intent(LoginScreen.this, MainActivity.class);
                         intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
+                        Log.i("userID is", "" + result.getInt("userID"));
+                        intent.putExtra(EXTRA_USERID, result.getInt("userID"));
                         finish();
                         startActivity(intent);
                     } else {
