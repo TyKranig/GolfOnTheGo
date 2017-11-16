@@ -27,6 +27,7 @@ import VolleyAPI.VolleyBall;
 public class guildListMain extends AppCompatActivity {
     public static String tag_guild_name = "guildName";
     public static String tag_guild_id = "guildID";
+    public static String tag_guild_leader = "guildLeader";
     ArrayList<Guild> guilds;
     ArrayAdapter<Guild> guildAdapter;
     ListView guildListView;
@@ -89,6 +90,7 @@ public class guildListMain extends AppCompatActivity {
                     //making sure that the guild name gets included
                     intent.putExtra(tag_guild_name, guild.get_name());
                     intent.putExtra(tag_guild_id, guild.get_id());
+                    intent.putExtra(tag_guild_leader, guild.isLeader());
                     startActivity(intent);
                 }
             }
@@ -99,12 +101,12 @@ public class guildListMain extends AppCompatActivity {
         VolleyBall.getResponseJsonArray(this, new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
             public void doThings(JSONArray result) {
-                guilds.add(new Guild("Add New Guild", -1));
+                guilds.add(new Guild("Add New Guild", -1, 0));
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
 
-                        Guild guild = new Guild(obj.getString("guildName"), obj.getInt("guildID"));
+                        Guild guild = new Guild(obj.getString("guildName"), obj.getInt("guildID"), obj.getInt("leader"));
                         guilds.add(guild);
                         Log.i("json array error", "added things");
                     }
@@ -118,6 +120,6 @@ public class guildListMain extends AppCompatActivity {
             }
         }, ConstantURL.URL_GUILDLIST + "userName=" +
                 "\"" + MainActivity.mainUser.getName() +"\"");
-        Log.i("vollel do things url",ConstantURL.URL_GUILDLIST + "userName=\"" + MainActivity.mainUser.getName() +"\"");
+        Log.i("volley do things url",ConstantURL.URL_GUILDLIST + "userName=\"" + MainActivity.mainUser.getName() +"\"");
     }
 }
