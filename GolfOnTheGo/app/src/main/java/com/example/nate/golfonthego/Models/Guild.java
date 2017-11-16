@@ -8,7 +8,7 @@ package com.example.nate.golfonthego.Models;
 public class Guild {
     private String _name;
     private int _id;
-    public int currentUserIsLeader;
+    private int currentUserIsLeader;
 
     public String get_name() {
         return _name;
@@ -26,8 +26,13 @@ public class Guild {
         this._id = _id;
     }
 
-    public Guild(String _name, int _id) {
+    public int isLeader(){
+        return currentUserIsLeader;
+    }
+
+    public Guild(String _name, int _id, int currentUserIsLeader) {
         this._name = _name;
         this._id = _id;
+        this.currentUserIsLeader = currentUserIsLeader;
     }
 }

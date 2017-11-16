@@ -97,7 +97,10 @@ public class fragGuildMembers extends Fragment{
         VolleyBall.getResponseJsonArray(this.getContext(), new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
             public void doThings(JSONArray result) {
-                users.add(new User("+", "Add New User", -1));
+                Log.i("CURRENT USER IS LEADER", guildInfoScreen.currentGuild.isLeader() + "");
+                if(guildInfoScreen.currentGuild.isLeader() == 1){
+                    users.add(new User("+", "Add New User", -1));
+                }
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
@@ -117,6 +120,6 @@ public class fragGuildMembers extends Fragment{
 
             }
         }, ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");
-        Log.i("guildMembersURL", ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");
+        //Log.i("guildMembersURL", ConstantURL.URL_GUILDMEMBERS + "guildName=" + "\"" + guildInfoScreen.currentGuild.get_name() +"\"");
     }
 }

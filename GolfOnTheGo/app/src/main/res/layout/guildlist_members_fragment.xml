@@ -40,8 +40,10 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/membersRefresher"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="50dp"
         android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ListView
