@@ -425,4 +425,5 @@
     <string name="guildName">Guild Name</string>
     <string name="starteventname">Starting Event Name</string>
     <string name="startingEventDate">Starting Event Date</string>
+    <string name="title_activity_course_builder">courseBuild</string>
 </resources>

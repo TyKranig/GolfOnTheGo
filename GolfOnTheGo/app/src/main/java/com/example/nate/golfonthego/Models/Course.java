@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by nate on 10/9/17.
+ * Used to store courses in android
  */
 
 public class Course {
