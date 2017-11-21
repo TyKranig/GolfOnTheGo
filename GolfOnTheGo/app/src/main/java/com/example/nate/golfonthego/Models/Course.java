@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Course {
 
     public ArrayList<Hole> holes;
-    private int courseNumber;
+    public int courseNumber;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;

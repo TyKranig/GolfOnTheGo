@@ -42,15 +42,16 @@ public class guildListMain extends AppCompatActivity {
         setContentView(R.layout.activity_guild_list_main);
 
         //Generate some fake guilds to use for testing, in the future this will be called from the network
-        guilds = new ArrayList();
+        guilds = new ArrayList<>();
+
         //Create a new adapter using the guilds we made above
         guildAdapter = new guildListAdapter(this, guilds);
-        guildListView = (ListView) findViewById(R.id.listGuilds);
+        guildListView = findViewById(R.id.listGuilds);
 
         //set the adapter to the guild adapter we made
         guildListView.setAdapter(guildAdapter);
 
-        //load data
+        //load data from the server
         loadData();
 
         //When a user clicks a guild we send them to the guild info screen for that guild

@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
     public void coursesBtn_onClick(View view){
-        Intent intent = new Intent(this, CourseBuilder.class);
+        Intent intent = new Intent(this, courseBuildCourseSelector.class);
         startActivity(intent);
     }
     public void leaderBoardBtn_onClick(View view){

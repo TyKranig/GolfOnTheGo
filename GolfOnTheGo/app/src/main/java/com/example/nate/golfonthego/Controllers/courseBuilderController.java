@@ -13,19 +13,24 @@ import java.util.ArrayList;
 
 public class courseBuilderController {
     private Course course = null;
-    private courseBuilderController builder;
+    private static courseBuilderController builder = null;
 
-    public courseBuilderController getInstance(Course course){
+    public static courseBuilderController getInstance(Course course){
         if(builder == null){
-            builder = new courseBuilderController(course);
+            builder = new courseBuilderController();
         }
+
+        //set the course to start on
+        builder.setCourse(course);
 
         return builder;
     }
 
-    private courseBuilderController(Course course){
-            this.course = course;
+    public void setCourse(Course course){
+        this.course = course;
     }
+
+    private courseBuilderController(){}
 
     public Hole getHole(int hole){
         return course.holes.get(hole - 1);
@@ -33,9 +38,5 @@ public class courseBuilderController {
 
     public void setHoleFairway(ArrayList<LatLng> fairway, int hole){
         course.holes.get(hole - 1).setFairway(fairway);
-    }
-
-    public void setCourse(Course course){
-        this.course = course;
     }
 }
