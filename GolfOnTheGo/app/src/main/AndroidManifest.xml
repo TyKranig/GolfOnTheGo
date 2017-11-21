@@ -63,7 +63,8 @@
         <activity android:name=".newGuildMember" />
         <activity
             android:name=".CourseBuilder"
-            android:label="@string/title_activity_course_builder"></activity>
+            android:label="@string/title_activity_course_builder" />
+        <activity android:name=".courseBuildCourseSelector"></activity>
     </application>
 
 </manifest>
