@@ -12,18 +12,30 @@ import java.util.ArrayList;
  */
 
 public class courseBuilderController {
-    private Course course;
+    private Course course = null;
+    private courseBuilderController builder;
 
-    public courseBuilderController(Course course){
-        this.course = course;
+    public courseBuilderController getInstance(Course course){
+        if(builder == null){
+            builder = new courseBuilderController(course);
+        }
+
+        return builder;
+    }
+
+    private courseBuilderController(Course course){
+            this.course = course;
     }
 
     public Hole getHole(int hole){
         return course.holes.get(hole - 1);
     }
 
-    public void setCourseFairway(ArrayList<LatLng> fairway){
-        
+    public void setHoleFairway(ArrayList<LatLng> fairway, int hole){
+        course.holes.get(hole - 1).setFairway(fairway);
     }
 
+    public void setCourse(Course course){
+        this.course = course;
+    }
 }
