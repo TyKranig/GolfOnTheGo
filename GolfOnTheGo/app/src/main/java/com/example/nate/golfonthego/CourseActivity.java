@@ -356,7 +356,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
     }
 
-    // The remaining is allowing for persistent lcoation permissions for the app across life cycles
+    // The remaining is allowing for persistent location permissions for the app across life cycles
     //
     // requesting permissions for fine location
     //
