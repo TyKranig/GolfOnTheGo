@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -28,25 +29,44 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_build_course_selector);
 
+        //courses array setup
         courses = new ArrayList<>();
         courses.add(new Course(1));
         courses.add(new Course(2));
 
+        //set the data for the courses list
         courseAdapter = new courseListAdapter(this, courses);
-        courseListView = findViewById(R.id.lstBuiltHoles);
+        courseListView = findViewById(R.id.lstBuiltCourses);
         courseListView.setAdapter(courseAdapter);
+        courseListView.setOnItemClickListener(courseClick());
 
+        //set button click listener
         btnAddCourse = findViewById(R.id.btnAddCourse);
         btnAddCourse.setOnClickListener(newCourseClick());
     }
 
-    View.OnClickListener newCourseClick(){
+    private View.OnClickListener newCourseClick(){
         return new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 Course newCourse = new Course(courses.size());
+                courses.add(newCourse);
                 courseBuilder = courseBuilderController.getInstance(newCourse);
+                Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
+                startActivity(intent);
+
+                //update the courses list
+                courseAdapter.notifyDataSetChanged();
+            }
+        };
+    }
+
+    private AdapterView.OnItemClickListener courseClick() {
+        return new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                courseBuilder = courseBuilderController.getInstance((Course)adapterView.getItemAtPosition(position));
                 Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
                 startActivity(intent);
             }
