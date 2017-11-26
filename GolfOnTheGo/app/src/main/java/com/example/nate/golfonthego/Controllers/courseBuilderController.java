@@ -2,6 +2,7 @@ package com.example.nate.golfonthego.Controllers;
 
 import com.example.nate.golfonthego.Models.Course;
 import com.example.nate.golfonthego.Models.Hole;
+import com.example.nate.golfonthego.R;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -14,6 +15,9 @@ import java.util.ArrayList;
 public class courseBuilderController {
     private Course course = null;
     private static courseBuilderController builder = null;
+    public static final String Tee = "tee";
+    public static final String Fairway = "fairway";
+    public static final String Green = "green";
 
     public static courseBuilderController getInstance(Course course){
         if(builder == null){
@@ -35,12 +39,26 @@ public class courseBuilderController {
     public ArrayList<Hole> getHoles(){
         return course.holes;
     }
-
     public Hole getHole(int hole){
-        return course.holes.get(hole - 1);
+        return course.holes.get(hole);
     }
 
-    public void setHoleFairway(ArrayList<LatLng> fairway, int hole){
-        course.holes.get(hole - 1).setFairway(fairway);
+    public void addLatLng(ArrayList<LatLng> latLngs, int currentHole, int whichPart){
+        Hole hole = getHole(currentHole);
+
+        switch (whichPart){
+            case R.id.rdoTee:
+                hole.setTee(latLngs.get(0));
+                break;
+            case R.id.rdoFairway:
+                hole.setFairway(latLngs);
+                break;
+            case R.id.rdoGreen:
+                hole.setGreen(latLngs);
+                break;
+            default:
+                break;
+        }
+
     }
 }

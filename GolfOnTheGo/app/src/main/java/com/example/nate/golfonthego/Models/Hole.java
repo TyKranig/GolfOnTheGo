@@ -23,21 +23,20 @@ public class Hole {
     public void setFairway(ArrayList<LatLng> coords) {
         this.fairway = coords;
     }
-
     public ArrayList<LatLng> getFairway() {
         return this.fairway;
     }
+
     public void setGreen(ArrayList<LatLng> coords) {
         this.green = coords;
     }
-
     public ArrayList<LatLng> getGreen() {
         return this.green;
     }
+
     public void setTee(LatLng tee) {
         this.tee = tee;
     }
-
     public LatLng getTee() {
         return this.tee;
     }

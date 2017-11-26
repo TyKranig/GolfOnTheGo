@@ -1,10 +1,18 @@
 package com.example.nate.golfonthego;
 
 import android.content.Context;
+import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.nate.golfonthego.Controllers.courseBuilderController;
+import com.example.nate.golfonthego.Models.Hole;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -13,9 +21,16 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class CourseBuilder extends FragmentActivity implements OnMapReadyCallback {
+import java.util.ArrayList;
 
+public class CourseBuilder extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMap;
+    private Button btnAdd;
+    private RadioGroup rdoGroup;
+    private ArrayList<LatLng> stagedAdds;
+    private int currentHoleNum;
+    private Hole currentHole;
+    private String currentBeingEdited;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +40,67 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.courseBuilderMap);
         mapFragment.getMapAsync(this);
+
+        //set the buttons
+        btnAdd = findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(btnAddClick());
+        rdoGroup = findViewById(R.id.rdoGroupEditorSelector);
+        currentBeingEdited = courseBuilderController.Tee;
+        rdoGroup.setOnCheckedChangeListener(rdoChange());
+
+        //setup array list to add the locations to that the user wants
+        stagedAdds = new ArrayList<>();
+
+        //get the current hole being edited
+        currentHoleNum = (int) getIntent().getExtras().get(courseBuilderHoleSelector.tag_current_hole);
+        currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
     }
 
+    //Things for button control
+    private View.OnClickListener btnAddClick(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
+                currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
+                stagedAdds.clear();
 
+            }
+        };
+    }
+
+    private RadioGroup.OnCheckedChangeListener rdoChange(){
+        return new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                ArrayList<LatLng> points = new ArrayList<>();
+                if(i == R.id.rdoTee){
+                    currentBeingEdited = courseBuilderController.Tee;
+                    points.add(currentHole.getTee());
+                }else if (i == R.id.rdoFairway){
+                    currentBeingEdited = courseBuilderController.Fairway;
+                    points = currentHole.getFairway();
+                }else if (i == R.id.rdoGreen){
+                    currentBeingEdited = courseBuilderController.Green;
+                    points = currentHole.getGreen();
+                }
+
+                stagedAdds.clear();
+                mMap.clear();
+
+                Log.i("points", points.toString());
+
+                for(int h = 0; h < points.size(); h++){
+                    LatLng latLng = points.get(h);
+                    mMap.addMarker(new MarkerOptions().position(latLng));
+                }
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentHole.getTee(), 16.0f));
+            }
+        };
+    }
+
+    //Google Maps things
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -41,10 +114,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        //set the start to the tee if it exists
+        mMap.addMarker(new MarkerOptions().position(currentHole.getTee()));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentHole.getTee(), 16.0f));
         mMap.setOnMapClickListener(mapClickListener());
         setMapStyle();
     }
@@ -53,8 +125,15 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         return new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
-                mMap.clear();
+                if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoTee){
+                    mMap.clear();
+                    stagedAdds.clear();
+                }
+                if(stagedAdds.size() == 0){
+                    mMap.clear();
+                }
                 mMap.addMarker(new MarkerOptions().position(latLng));
+                stagedAdds.add(latLng);
             }
         };
     }

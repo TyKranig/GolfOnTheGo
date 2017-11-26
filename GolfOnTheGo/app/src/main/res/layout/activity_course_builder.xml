@@ -14,44 +14,47 @@
         tools:context="com.example.nate.golfonthego.CourseBuilder" />
 
     <RadioGroup
-        android:id="@+id/radio_group_list_selector"
+        android:id="@+id/rdoGroupEditorSelector"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:orientation="horizontal"
         android:background="#80000000"
-        android:padding="4dp" >
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <RadioButton
-            android:id="@+id/radTee"
+            android:id="@+id/rdoTee"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:checked="true"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/tee" />
+            android:text="@string/tee"
+            android:textColor="@android:color/white" />
 
         <RadioButton
-            android:id="@+id/radFairway"
+            android:id="@+id/rdoFairway"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:checked="false"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/fairway" />
+            android:text="@string/fairway"
+            android:textColor="@android:color/white" />
 
         <RadioButton
-            android:id="@+id/radGreen"
+            android:id="@+id/rdoGreen"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal|center_vertical"
-            android:text="@string/green" />
+            android:text="@string/green"
+            android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/btnFinish"
+            android:id="@+id/btnAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/add" />
     </RadioGroup>
 </FrameLayout>
