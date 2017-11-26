@@ -26,11 +26,15 @@ public class courseBuilderController {
         return builder;
     }
 
-    public void setCourse(Course course){
+    private void setCourse(Course course){
         this.course = course;
     }
 
     private courseBuilderController(){}
+
+    public ArrayList<Hole> getHoles(){
+        return course.holes;
+    }
 
     public Hole getHole(int hole){
         return course.holes.get(hole - 1);

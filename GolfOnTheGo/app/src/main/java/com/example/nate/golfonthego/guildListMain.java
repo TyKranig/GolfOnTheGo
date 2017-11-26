@@ -74,7 +74,7 @@ public class guildListMain extends AppCompatActivity {
         );
     }
 
-    AdapterView.OnItemClickListener guildClick(){
+    private AdapterView.OnItemClickListener guildClick(){
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
