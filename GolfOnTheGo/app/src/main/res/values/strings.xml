@@ -428,4 +428,7 @@
     <string name="title_activity_course_builder">courseBuild</string>
     <string name="addCourse">Add Course</string>
     <string name="addHole" >Add Hole</string>
+    <string name="tee">Tee</string>
+    <string name="fairway">Fairway</string>
+    <string name="green">Green</string>
 </resources>
