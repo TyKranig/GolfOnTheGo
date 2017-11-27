@@ -61,10 +61,11 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
-                currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
-                stagedAdds.clear();
-
+                if(stagedAdds.size() > 0) {
+                    courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
+                    currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
+                    stagedAdds.clear();
+                }
             }
         };
     }
@@ -115,9 +116,18 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         mMap = googleMap;
 
         //set the start to the tee if it exists
-        mMap.addMarker(new MarkerOptions().position(currentHole.getTee()));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentHole.getTee(), 16.0f));
+        LatLng start;
+        if(currentHole.getTee() != null){
+            start = currentHole.getTee();
+        }
+        else{
+            start = new LatLng(42.026486, -93.647377);
+        }
+
+        mMap.addMarker(new MarkerOptions().position(start));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(start, 17.0f));
         mMap.setOnMapClickListener(mapClickListener());
+
         setMapStyle();
     }
 
