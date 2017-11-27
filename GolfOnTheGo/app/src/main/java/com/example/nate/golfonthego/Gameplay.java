@@ -12,6 +12,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.nate.golfonthego.Models.Ball;
 import com.example.nate.golfonthego.Models.Course;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
@@ -26,25 +27,28 @@ import java.util.Observer;
  * Created by Leo on 10/31/2017.
  */
 
-public class Gameplay implements Observer{
+public class Gameplay extends Observable implements Observer{
 
     private GoogleMap courseMap;
     private Marker ballMark;
     private Context courseCon;
     private Swinger playerSwing;
     private static Gameplay game;
+    private Course course;
 
     public boolean gamePlayInProgress;
     public boolean gameHasBeenStarted;
 
     private Gameplay(){ gameHasBeenStarted = false; }
 
-    public void setParameters(GoogleMap gm, Marker m, Context c, int courseNumber, int holeNumber){
+    public void setParameters(GoogleMap gm, Marker m, Context c, int courseNumber, int holeNumber, Course currCourse){
         courseMap = gm;
         ballMark = m;
         courseCon = c;
+        course = currCourse;
         playerSwing = Swinger.getSwinger();
         playerSwing.addObserver(this);
+        this.addObserver(currCourse.getBall());
     }
 
     public static Gameplay getGameplay(){
@@ -77,6 +81,8 @@ public class Gameplay implements Observer{
             toast.show();
             animateMarker(ballMark, calculateSwing(courseMap, playerSwing.score), false);
 
+            setChanged();
+            notifyObservers();
             courseCon = con;
             playerSwing.first = true;
             this.gamePlayInProgress = false;

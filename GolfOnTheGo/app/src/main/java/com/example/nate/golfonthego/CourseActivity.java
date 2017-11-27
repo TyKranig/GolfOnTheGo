@@ -285,7 +285,22 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         ballmarker.setIcon(ballMarker);
                         tempTeeMarker.remove();
                         // the following needs to be changed to be more modular
-                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1);
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1, currentCourse);
+                        SwingGame.gamePlayInProgress = true;
+                        //button appears
+                        swingButton.setVisibility(View.VISIBLE);
+                        swingButton.setText("Swing");
+                        aimButton.setVisibility(View.VISIBLE);
+                        aimButton.setText("Aim");
+                    }
+                    else if(location.distanceTo(currentCourse.getBall().getCurrentBallLocation()) < 20){
+                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
+                        BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
+                        ballmarker = mMap.addMarker(
+                                new MarkerOptions().position(currentCourse.getBall().getBallLatLng()));
+                        ballmarker.setIcon(ballMarker);
+                        // the following needs to be changed to be more modular
+                        SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1, currentCourse);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);

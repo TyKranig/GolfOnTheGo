@@ -12,11 +12,15 @@ public class Course {
 
     public ArrayList<Hole> holes;
     private int courseNumber;
+    private Ball currentBall;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
         CourseInit(courseNumber);
+
+        //sets up the ball for the course
+        currentBall = new Ball(courseNumber, getTee(1));
     }
 
     public ArrayList<LatLng> getFairway(int hole) {
@@ -33,16 +37,22 @@ public class Course {
 
     public LatLng getHoleLocation(int hole) { return holes.get(hole).getHoleLocation(); }
 
+    public Ball getBall() {return currentBall;}
+
     private class Hole {
 
         private ArrayList<LatLng> fairway;
         private ArrayList<LatLng> green;
         private LatLng tee;
         private LatLng holeLocation;
+        private Ball holeBall;
 
         public Hole() {
             fairway = new ArrayList<>();
             green = new ArrayList<>();
+
+            //setting up ball with hole
+            holeBall = new Ball(courseNumber, tee);
         }
 
         public void setFairway(ArrayList<LatLng> coords) {
