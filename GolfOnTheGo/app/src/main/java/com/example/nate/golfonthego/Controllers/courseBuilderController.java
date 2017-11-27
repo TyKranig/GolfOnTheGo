@@ -60,5 +60,6 @@ public class courseBuilderController {
                 break;
         }
 
+        course.holes.set(currentHole, hole);
     }
 }

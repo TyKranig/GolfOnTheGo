@@ -63,7 +63,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             public void onClick(View view) {
                 courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
                 currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
-                stagedAdds.clear();
+                //stagedAdds.clear();
 
             }
         };
@@ -132,6 +132,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 if(stagedAdds.size() == 0){
                     mMap.clear();
                 }
+
                 mMap.addMarker(new MarkerOptions().position(latLng));
                 stagedAdds.add(latLng);
             }

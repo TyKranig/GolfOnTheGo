@@ -21,14 +21,16 @@ public class Hole {
     }
 
     public void setFairway(ArrayList<LatLng> coords) {
-        this.fairway = coords;
+        fairway.clear();
+        fairway.addAll(coords);
     }
     public ArrayList<LatLng> getFairway() {
         return this.fairway;
     }
 
     public void setGreen(ArrayList<LatLng> coords) {
-        this.green = coords;
+        green.clear();
+        green.addAll(coords);
     }
     public ArrayList<LatLng> getGreen() {
         return this.green;
