@@ -189,7 +189,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             public void onClick(View arg0) {
                 FragmentManager tempfrag = getSupportFragmentManager();
                 SwingGame.executeSwing(swingButton, tempfrag);
-
+                    aimClockButton.setVisibility(View.INVISIBLE);
+                    aimClockButton.setVisibility(View.GONE);
+                    aimCounterClockButton.setVisibility(View.INVISIBLE);
+                    aimCounterClockButton.setVisibility(View.GONE);
             }
         });
 
@@ -219,15 +222,17 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 if(posBearing + 5 > 360){
                     posBearing = (posBearing - 355);
                 }
+                else{
+                    posBearing = posBearing - 5;
+                }
                 CameraPosition cameraPosition = new CameraPosition.Builder(mMap.getCameraPosition())
                         .target(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()))
-                        .zoom(15)                   // Sets the zoom
+                        .zoom(18)                   // Sets the zoom
                         .bearing(posBearing)        // Rotates orientation 5 degress CW
                         .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                         .build();                   // Creates a CameraPosition from the builder
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 playerBearing = posBearing;
-                currentLocation.setBearing(playerBearing);
             }
         });
 
@@ -241,15 +246,17 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 if(negBearing - 5 < 0){
                     negBearing = 355 + negBearing;
                 }
+                else{
+                    negBearing = negBearing - 5;
+                }
                 CameraPosition cameraPosition = new CameraPosition.Builder()
                         .target(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()))
-                        .zoom(15)                   // Sets the zoom
+                        .zoom(18)                   // Sets the zoom
                         .bearing(negBearing)        // Rotates orientation 5 degrees CCW
                         .tilt(0)                   // Sets the tilt of the camera to 0 degrees
                         .build();                   // Creates a CameraPosition from the builder
                 mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 playerBearing = negBearing;
-                currentLocation.setBearing(playerBearing);
             }
         });
     }
@@ -270,7 +277,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
                     // get the instance of the gameplay singleton
                     SwingGame = Gameplay.getGameplay();
-
+                    currentLocation = location;
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 
                     // if the distance  between the player and the first tee is less than 15 meters
@@ -294,11 +301,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         aimButton.setText("Aim");
                     }
                     else if(location.distanceTo(currentCourse.getBall().getCurrentBallLocation()) < 20){
-                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
-                        BitmapDescriptor ballMarker = BitmapDescriptorFactory.fromBitmap(ballMap);
-                        ballmarker = mMap.addMarker(
-                                new MarkerOptions().position(currentCourse.getBall().getBallLatLng()));
-                        ballmarker.setIcon(ballMarker);
                         // the following needs to be changed to be more modular
                         SwingGame.setParameters(mMap, ballmarker, getApplicationContext(),3,1, currentCourse);
                         SwingGame.gamePlayInProgress = true;
