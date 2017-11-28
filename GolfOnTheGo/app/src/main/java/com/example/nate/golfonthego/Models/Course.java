@@ -35,7 +35,7 @@ public class Course {
         return holes.get(hole - 1).getTee();
     }
 
-    public LatLng getHoleLocation(int hole) { return holes.get(hole).getHoleLocation(); }
+    public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getHoleLocation(); }
 
     public Ball getBall() {return currentBall;}
 

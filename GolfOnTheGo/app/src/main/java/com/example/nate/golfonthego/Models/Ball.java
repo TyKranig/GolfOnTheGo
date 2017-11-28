@@ -40,6 +40,8 @@ public class Ball implements Observer {
     @Override
     public void update(Observable o, Object n){
         ballLatLng = (LatLng) n;
-        hasTeedOff = false;
+        currentBallLocation.setLatitude(ballLatLng.latitude);
+        currentBallLocation.setLongitude(ballLatLng.longitude);
+        hasTeedOff = true;
     }
 }

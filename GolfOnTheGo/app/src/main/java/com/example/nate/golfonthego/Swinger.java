@@ -115,8 +115,10 @@ public class Swinger extends Observable{
             // multiply yards by 3 to convert yards to feet
             // divide feet by 3280.4 to go from feet to kilometers
             // 90 / 10000 is the conversion from kilometers to lat/lng
+            // divide by 10
             //score is now in "lat/lng" units
-            score = (yards) * (3) / (3280.4f) * (90 / 10000);
+            score = (yards) * (3) / (3280.4f) * (9);
+            score = score / 10000;
 
             first = false;
             swingTrack = 0;

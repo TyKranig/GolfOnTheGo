@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
-        player.setVolume(currVolume, currVolume);
+        player.setVolume(0, 0);
 
 
         Button testButton = (Button)findViewById(R.id.testButton);

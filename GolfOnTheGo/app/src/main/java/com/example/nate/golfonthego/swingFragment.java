@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.widget.Toast;
 import static android.content.Context.SENSOR_SERVICE;
 
 public class swingFragment extends Fragment implements SensorEventListener {
@@ -84,8 +84,8 @@ public class swingFragment extends Fragment implements SensorEventListener {
             //remove fragment, return to courseActivity
             //.done will update observers(Gameplay)
             playerSwing.done();
-            FragmentTransaction closeFrag = getFragmentManager().beginTransaction();
-            closeFrag.remove(swingFragment.this).commit();
+            if(getActivity() != null)
+                getActivity().getSupportFragmentManager().beginTransaction().remove(this).commitAllowingStateLoss();
         }
     }
 
