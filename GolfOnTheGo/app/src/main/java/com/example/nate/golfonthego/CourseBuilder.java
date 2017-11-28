@@ -1,6 +1,7 @@
 package com.example.nate.golfonthego;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
 
 import java.util.ArrayList;
 
@@ -64,6 +67,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 if(stagedAdds.size() > 0) {
                     courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
                     currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
+                    drawHole();
                     stagedAdds.clear();
                 }
             }
@@ -87,7 +91,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 }
 
                 stagedAdds.clear();
-                mMap.clear();
+               // mMap.clear();
 
                 Log.i("points", points.toString());
 
@@ -136,11 +140,11 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             @Override
             public void onMapClick(LatLng latLng) {
                 if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoTee){
-                    mMap.clear();
+                    //mMap.clear();
                     stagedAdds.clear();
                 }
                 if(stagedAdds.size() == 0){
-                    mMap.clear();
+                    //mMap.clear();
                 }
 
                 mMap.addMarker(new MarkerOptions().position(latLng));
@@ -157,6 +161,22 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             int duration = Toast.LENGTH_SHORT;
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+        }
+    }
+
+    private void drawHole(){
+        if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoFairway){
+            PolygonOptions fairwayOpt = new PolygonOptions()
+                    .addAll(stagedAdds).fillColor(Color.GREEN).strokeJointType(2).strokeWidth((float)10).strokeColor(Color.GREEN);
+            Polygon fairway = mMap.addPolygon(fairwayOpt);
+            fairway.setZIndex(0);
+
+        }else if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoGreen){
+            PolygonOptions greenOpt = new PolygonOptions()
+                    .addAll(stagedAdds).fillColor(Color.GREEN);
+            Polygon green = mMap.addPolygon(greenOpt);
+            green.setZIndex(1);
+
         }
     }
 }
