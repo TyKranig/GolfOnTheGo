@@ -20,6 +20,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
@@ -33,7 +34,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     private ArrayList<LatLng> stagedAdds;
     private int currentHoleNum;
     private Hole currentHole;
-    private String currentBeingEdited;
+    private ArrayList<Marker> markerList;
+    private Polygon fairway = null;
+    private Polygon green = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,6 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         btnAdd = findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(btnAddClick());
         rdoGroup = findViewById(R.id.rdoGroupEditorSelector);
-        currentBeingEdited = courseBuilderController.Tee;
         rdoGroup.setOnCheckedChangeListener(rdoChange());
 
         //setup array list to add the locations to that the user wants
@@ -57,6 +59,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         //get the current hole being edited
         currentHoleNum = (int) getIntent().getExtras().get(courseBuilderHoleSelector.tag_current_hole);
         currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
+
+        //setup markerlist
+        markerList = new ArrayList<>();
     }
 
     //Things for button control
@@ -67,8 +72,10 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 if(stagedAdds.size() > 0) {
                     courseBuildCourseSelector.courseBuilder.addLatLng(stagedAdds, currentHoleNum, rdoGroup.getCheckedRadioButtonId());
                     currentHole = courseBuildCourseSelector.courseBuilder.getHole(currentHoleNum);
-                    drawHole();
+
+                    drawHole(rdoGroup.getCheckedRadioButtonId(), stagedAdds);
                     stagedAdds.clear();
+                    clearMarkerList();
                 }
             }
         };
@@ -80,25 +87,22 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 ArrayList<LatLng> points = new ArrayList<>();
                 if(i == R.id.rdoTee){
-                    currentBeingEdited = courseBuilderController.Tee;
                     points.add(currentHole.getTee());
                 }else if (i == R.id.rdoFairway){
-                    currentBeingEdited = courseBuilderController.Fairway;
                     points = currentHole.getFairway();
                 }else if (i == R.id.rdoGreen){
-                    currentBeingEdited = courseBuilderController.Green;
                     points = currentHole.getGreen();
                 }
 
                 stagedAdds.clear();
-               // mMap.clear();
+                clearMarkerList();
 
                 Log.i("points", points.toString());
 
-                for(int h = 0; h < points.size(); h++){
-                    LatLng latLng = points.get(h);
-                    mMap.addMarker(new MarkerOptions().position(latLng));
-                }
+                drawHole(R.id.rdoFairway, currentHole.getFairway());
+                drawHole(R.id.rdoGreen, currentHole.getGreen());
+
+                drawHole(i, points);
 
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentHole.getTee(), 16.0f));
             }
@@ -132,6 +136,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(start, 17.0f));
         mMap.setOnMapClickListener(mapClickListener());
 
+        drawHole(R.id.rdoFairway, currentHole.getFairway());
+        drawHole(R.id.rdoGreen, currentHole.getGreen());
+
         setMapStyle();
     }
 
@@ -144,10 +151,14 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                     stagedAdds.clear();
                 }
                 if(stagedAdds.size() == 0){
-                    //mMap.clear();
+                    clearMarkerList();
+                    clearPolygons(rdoGroup.getCheckedRadioButtonId());
                 }
 
-                mMap.addMarker(new MarkerOptions().position(latLng));
+                MarkerOptions markerOptions = new MarkerOptions().position(latLng);
+                Marker m = mMap.addMarker(markerOptions);
+                markerList.add(m);
+
                 stagedAdds.add(latLng);
             }
         };
@@ -164,19 +175,41 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
         }
     }
 
-    private void drawHole(){
-        if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoFairway){
+    private void drawHole(int selectedID, ArrayList<LatLng> list){
+        if(selectedID == R.id.rdoFairway){
             PolygonOptions fairwayOpt = new PolygonOptions()
-                    .addAll(stagedAdds).fillColor(Color.GREEN).strokeJointType(2).strokeWidth((float)10).strokeColor(Color.GREEN);
+                    .addAll(list).fillColor(Color.GREEN).strokeJointType(2).strokeWidth((float)10).strokeColor(Color.GREEN);
             Polygon fairway = mMap.addPolygon(fairwayOpt);
             fairway.setZIndex(0);
+            if(this.fairway != null){
+                clearPolygons(selectedID);
+            }
+            this.fairway = fairway;
 
-        }else if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoGreen){
+        }else if(selectedID == R.id.rdoGreen){
             PolygonOptions greenOpt = new PolygonOptions()
-                    .addAll(stagedAdds).fillColor(Color.GREEN);
+                    .addAll(list).fillColor(Color.GREEN);
             Polygon green = mMap.addPolygon(greenOpt);
             green.setZIndex(1);
+            if(this.green != null){
+                clearPolygons(selectedID);
+            }
+            this.green = green;
 
+        }
+    }
+
+    private void clearMarkerList(){
+        for(Marker m:markerList){
+            m.remove();
+        }
+    }
+
+    private void clearPolygons(int selectedID){
+        if(selectedID == R.id.rdoFairway){
+            this.fairway.remove();
+        }else if(selectedID == R.id.rdoGreen){
+            this.green.remove();
         }
     }
 }
