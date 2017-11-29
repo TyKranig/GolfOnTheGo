@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSG\\values-en-rSG.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSG\\values-en-rSG.xml",
             "map": [
                 {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\88f4153404ad1654743f7a096f54c98a\\res\\values-en-rSG\\values.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\88f4153404ad1654743f7a096f54c98a\\res\\values-en-rSG\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -23,10 +23,32 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSG\\values-en-rSG.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rSG\\values-en-rSG.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\7b05fe6b69b6864aacd3ef71d0d364d9\\res\\values-en-rSG\\values.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\7b05fe6b69b6864aacd3ef71d0d364d9\\res\\values-en-rSG\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "244",
+                        "endColumns": "99",
+                        "endOffsets": "343"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "103",
+                        "endOffsets": "154"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rSG/values-en-rSG.xml",
+            "map": [
+                {
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/res/values-en-rSG/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

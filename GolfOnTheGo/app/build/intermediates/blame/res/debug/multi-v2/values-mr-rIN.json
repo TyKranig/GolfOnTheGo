@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr-rIN\\values-mr-rIN.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr-rIN/values-mr-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\f594291450b177fe6bf898f4c794b70e\\res\\values-mr-rIN\\values-mr-rIN.xml",
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/b8749f4f961461e9932e2719724a6455/res/values-mr-rIN/values-mr-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,25 @@
             ]
         },
         {
-            "outputFile": "C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr-rIN\\values-mr-rIN.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr-rIN\\values-mr-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-mr-rIN\\values-mr-rIN.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\f594291450b177fe6bf898f4c794b70e\\res\\values-mr-rIN\\values-mr-rIN.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,259,370,482,581,670,762,873,971,1070,1170,1267,1384,1493,1577,1662,1757,1861,1947",
+                        "endColumns": "97,105,110,111,98,88,91,110,97,98,99,96,116,108,83,84,94,103,85,96",
+                        "endOffsets": "148,254,365,477,576,665,757,868,966,1065,1165,1262,1379,1488,1572,1657,1752,1856,1942,2039"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mr-rIN\\values-mr-rIN.xml",
+            "map": [
+                {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-mr-rIN\\values-mr-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

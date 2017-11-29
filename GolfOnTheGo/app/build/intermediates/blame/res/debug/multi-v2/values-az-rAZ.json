@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az-rAZ\\values-az-rAZ.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-az-rAZ/values-az-rAZ.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\f594291450b177fe6bf898f4c794b70e\\res\\values-az-rAZ\\values-az-rAZ.xml",
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/b8749f4f961461e9932e2719724a6455/res/values-az-rAZ/values-az-rAZ.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,25 @@
             ]
         },
         {
-            "outputFile": "C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az-rAZ\\values-az-rAZ.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az-rAZ\\values-az-rAZ.xml",
             "map": [
                 {
-                    "source": "C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-az-rAZ\\values-az-rAZ.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\f594291450b177fe6bf898f4c794b70e\\res\\values-az-rAZ\\values-az-rAZ.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,263,370,487,585,675,774,878,976,1078,1178,1277,1390,1505,1592,1676,1771,1877,1963",
+                        "endColumns": "101,105,106,116,97,89,98,103,97,101,99,98,112,114,86,83,94,105,85,94",
+                        "endOffsets": "152,258,365,482,580,670,769,873,971,1073,1173,1272,1385,1500,1587,1671,1766,1872,1958,2053"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az-rAZ\\values-az-rAZ.xml",
+            "map": [
+                {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-az-rAZ\\values-az-rAZ.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
