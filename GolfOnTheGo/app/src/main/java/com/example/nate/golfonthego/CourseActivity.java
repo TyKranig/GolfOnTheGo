@@ -144,7 +144,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         setMapStyle();
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        currentCourse = new Course(3);
+        currentCourse = new Course(2);
         currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(1), (float)19.0));
@@ -163,7 +163,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             ballMarker = currentCourse.getTee(currentHole);
             locationBasedContent();
         drawHole(currentCourse, currentHole);
-
+        System.out.println("onmapready completed");
     }
 
     // sets the style of the google map to the custom style
@@ -208,15 +208,11 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     // set the pin that represents the users location
                     livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
                     // set a marker where the tee is for the given course
-
-
                     Location teeLocation = new Location("tmp");
                     if(!currentCourse.getBall().hasTeedOff) {
                         teeLocation.setLatitude(tempTeeMarker.getPosition().latitude);
                         teeLocation.setLongitude(tempTeeMarker.getPosition().longitude);
                     }
-
-                    testMethod();
 
                     currentLocation = location;
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
@@ -232,7 +228,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         teemarker.setIcon(ballBitmap);
                         tempTeeMarker.remove();
                         // the following needs to be changed to be more modular
-                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),3,1, currentCourse);
+                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),2,1, currentCourse);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
@@ -240,7 +236,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     }
                     else if(location.distanceTo(currentCourse.getBall().getCurrentBallLocation()) < 2000){
                         // the following needs to be changed to be more modular
-                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),3,1, currentCourse);
+                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),2,1, currentCourse);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
@@ -256,8 +252,6 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
             };
         };
     }
-
-    public void testMethod(){}
 
     // draws the current hole that the user is on
     public void drawHole(Course currentCourse, int currentHole){

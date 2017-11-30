@@ -38,8 +38,13 @@ public class Gameplay extends Observable implements Observer{
     private Course course;
     private int holeNum;
 
+    private static int StrokeCount = 0;
+
     public boolean gamePlayInProgress;
     public boolean gameHasBeenStarted;
+
+    public int increaseStrokeCount(){ return this.StrokeCount++; }
+    public int getStrokeCount(){ return this.StrokeCount; }
 
     private Gameplay(){ gameHasBeenStarted = false; }
 

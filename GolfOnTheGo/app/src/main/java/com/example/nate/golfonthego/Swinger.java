@@ -132,7 +132,7 @@ public class Swinger extends Observable{
     }
 
     public synchronized void done(){
-        System.out.println("why me god");
+        //System.out.println("why me god");
         setChanged();
         this.notifyObservers();
     }
