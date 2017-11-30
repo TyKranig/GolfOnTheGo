@@ -11,10 +11,11 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nate.golfonthego.Models.Ball;
 import com.example.nate.golfonthego.Models.Course;
+import com.example.nate.golfonthego.Models.GolfBag;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.model.LatLng;
@@ -37,6 +38,7 @@ public class Gameplay extends Observable implements Observer{
     private static Gameplay game;
     private Course course;
     private int holeNum;
+    private GolfBag bag;
 
     public boolean gamePlayInProgress;
     public boolean gameHasBeenStarted;
@@ -52,6 +54,7 @@ public class Gameplay extends Observable implements Observer{
         playerSwing.addObserver(this);
         this.addObserver(currCourse.getBall());
         holeNum = holeNumber;
+        bag = GolfBag.getBag();
     }
 
     public static Gameplay getGameplay(){
@@ -90,6 +93,7 @@ public class Gameplay extends Observable implements Observer{
             notifyObservers(ballFinalPosition);
             courseCon = con;
             playerSwing.first = true;
+            course.incrementScore(holeNum);
             this.gamePlayInProgress = false;
         }
     }
@@ -138,6 +142,23 @@ public class Gameplay extends Observable implements Observer{
 
     private LatLng calculateSwing(GoogleMap currMap, float shotLength){
 
+        switch(bag.club){
+            case 0:
+                break;
+            case 1:
+                shotLength *= 0.8;
+                break;
+            case 2:
+                shotLength *= 0.6;
+                break;
+            case 3:
+                shotLength *= 0.4;
+                break;
+            case 4:
+                shotLength *= 0.2;
+                break;
+        }
+
         double swingLat = 0;
         double ballLat = ballMark.getPosition().latitude;
         double swingLng = 0;
@@ -151,29 +172,30 @@ public class Gameplay extends Observable implements Observer{
         ballLoc.setLatitude(ballLat);
         ballLoc.setLongitude(ballLng);
 
-        float tempBearing = 0;
-        if(ballLoc.bearingTo(holeLoc) < 0){
-            tempBearing = ballLoc.bearingTo(holeLoc) + 360;
-        }
-        else{
-            tempBearing = ballLoc.bearingTo(holeLoc);
-        }
+        float tempBearing = courseMap.getCameraPosition().bearing;
+        System.out.println("Bearing: " + tempBearing);
+        tempBearing += playerSwing.error/10;
+        tempBearing *=  Math.PI / 180;
 
-        if(tempBearing <= 90){
+        //between 0 and 90
+        if(tempBearing <= Math.PI / 2){
             swingLat = shotLength * Math.cos(tempBearing);
             swingLng = shotLength * Math.sin(tempBearing);
         }
-        else if(tempBearing <= 180 && tempBearing > 90){
-            swingLat = -shotLength * Math.sin(tempBearing - 90);
-            swingLng = shotLength * Math.cos(tempBearing - 90);
+        //between 90 and 180
+        else if(tempBearing <= Math.PI && tempBearing > Math.PI / 2){
+            swingLat = -shotLength * Math.cos(tempBearing - Math.PI / 2);
+            swingLng = shotLength * Math.sin(tempBearing - Math.PI / 2);
         }
-        else if(tempBearing <= 270 && tempBearing > 180){
-            swingLat = -shotLength * Math.cos(tempBearing - 180);
-            swingLng = -shotLength * Math.sin(tempBearing - 180);
+        //between 180 and 270
+        else if(tempBearing <= Math.PI + Math.PI / 2 && tempBearing > Math.PI){
+            swingLat = -shotLength * Math.cos(tempBearing - Math.PI);
+            swingLng = -shotLength * Math.sin(tempBearing - Math.PI);
         }
-        else if(tempBearing <= 360 && tempBearing > 270){
-            swingLat = shotLength * Math.sin(tempBearing - 270);
-            swingLng = - shotLength * Math.cos(tempBearing - 270);
+        //between 270 and 360
+        else if(tempBearing <= 2 * Math.PI && tempBearing > Math.PI + Math.PI / 2){
+            swingLat = - shotLength * Math.sin(tempBearing - Math.PI + Math.PI / 2);
+            swingLng = shotLength * Math.cos(tempBearing - Math.PI + Math.PI / 2);
         }
 
         return new LatLng(ballLat + swingLat,  ballLng + swingLng);

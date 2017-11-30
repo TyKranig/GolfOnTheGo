@@ -17,10 +17,12 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import com.example.nate.golfonthego.Models.Course;
+import com.example.nate.golfonthego.Models.GolfBag;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationResult;
@@ -40,12 +42,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static com.example.nate.golfonthego.R.id.holeNumText;
 import static com.example.nate.golfonthego.R.id.map;
 
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
@@ -69,10 +71,17 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     Marker livePlayerMarker;
     Marker teemarker;
 
+    public TextView clubTextView;
+    public TextView holeNumTextView;
+    public TextView scoreTextView;
+    private int duplicateBall = 0;
     public LatLng ballMarker;
     public Course currentCourse;
     public int currentHole;
     public Marker tempTeeMarker;
+
+    // golf bag with club
+    private GolfBag bag;
 
     /*final LatLng ballMarker, final Course currentCourse,
     final int currentHole, final Marker tempTeeMarker*/
@@ -107,6 +116,17 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(map);
         mapFragment.getMapAsync(this);
+
+        holeNumTextView = findViewById(R.id.holeNumText);
+        holeNumTextView.setVisibility(View.INVISIBLE);
+
+        scoreTextView = findViewById(R.id.scoreText);
+        scoreTextView.setVisibility(View.INVISIBLE);
+
+        clubTextView = findViewById(R.id.clubText);
+        clubTextView.setVisibility(View.INVISIBLE);
+
+        bag = GolfBag.getBag();
     }
 
     // needed for fragment interaction
@@ -209,6 +229,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     livePlayerMarker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
                     // set a marker where the tee is for the given course
 
+                    setScoreText();
 
                     Location teeLocation = new Location("tmp");
                     if(!currentCourse.getBall().hasTeedOff) {
@@ -216,15 +237,26 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         teeLocation.setLongitude(tempTeeMarker.getPosition().longitude);
                     }
 
-                    testMethod();
-
                     currentLocation = location;
                     LinearLayout ll = (LinearLayout)findViewById(R.id.swingLayout);
 
                     // if the distance  between the player and the first tee is less than 20 meters
                     // any more precise may cause issues due to the inconsistency of
                     // fine location gps -nate
-                    if(location.distanceTo(teeLocation) < 2000 && !SwingGame.gamePlayInProgress && !currentCourse.getBall().hasTeedOff){
+                    if(currentCourse.getBall().getCurrentBallLocation().distanceTo(currentCourse.flagLocation) < 10){
+                        //TODO : start putting stuff
+                        currentCourse.resetScore(currentHole);
+                        setScoreText();
+                        // check to see if there is a next hole
+                        currentHole++;
+                        if(!(currentCourse.getTee(currentHole) != null))
+                            endGame();
+                    }
+                    else if(location.distanceTo(teeLocation) < 2000 && !SwingGame.gamePlayInProgress && !currentCourse.getBall().hasTeedOff){
+                        if(duplicateBall > 0){
+                            teemarker.remove();
+                            duplicateBall --;
+                        }
                         Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
                         BitmapDescriptor ballBitmap = BitmapDescriptorFactory.fromBitmap(ballMap);
                         teemarker = mMap.addMarker(
@@ -237,6 +269,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
                         swingButton.setText("Swing");
+                        duplicateBall ++;
                     }
                     else if(location.distanceTo(currentCourse.getBall().getCurrentBallLocation()) < 2000){
                         // the following needs to be changed to be more modular
@@ -257,7 +290,16 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         };
     }
 
-    public void testMethod(){}
+    public void endGame() {
+        int totalScore = currentCourse.getTotalScore();
+        Context context = getApplicationContext();
+        CharSequence text = "Mah Dude! you \n"
+         + "finished the course with a score of: " + totalScore;
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+
+    }
 
     // draws the current hole that the user is on
     public void drawHole(Course currentCourse, int currentHole){
@@ -270,6 +312,18 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                 .fillColor(Color.rgb((float)19, (float)82, (float)25));
         Polygon greenPolygon1 = mMap.addPolygon(green1);
         greenPolygon1.setZIndex(1);
+        mMap.addMarker(new MarkerOptions().position(currentCourse.getHoleLocation(currentHole)));
+    }
+
+    public void setScoreText(){
+        scoreTextView.setText("" + currentCourse.getScore(currentHole));
+        scoreTextView.setVisibility(View.VISIBLE);
+
+        holeNumTextView.setText("Hole: " + currentHole);
+        holeNumTextView.setVisibility(View.VISIBLE);
+
+        clubTextView.setText("Club: " + bag.clubName);
+        clubTextView.setVisibility(View.VISIBLE);
     }
 
     // the next section of code includes connection methods for google api calls
