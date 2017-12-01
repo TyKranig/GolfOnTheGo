@@ -62,4 +62,12 @@ public class courseBuilderController {
 
         course.holes.set(currentHole, hole);
     }
+
+    public Course getCourse(){
+        return this.course;
+    }
+
+    public void AddHole(Hole hole){
+        course.holes.add(hole);
+    }
 }

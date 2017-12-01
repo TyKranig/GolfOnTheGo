@@ -1,5 +1,7 @@
 package com.example.nate.golfonthego.Models;
 
+import android.location.Location;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -14,10 +16,17 @@ public class Hole {
     private ArrayList<LatLng> green;
     private LatLng tee;
     private LatLng holeLocation;
+    protected int holeScore = 0;
+    private Ball holeBall;
+    private Course course;
 
-    public Hole() {
+    public Hole(Course course) {
         fairway = new ArrayList<>();
         green = new ArrayList<>();
+
+        this.course = course;
+        //setting up ball with hole
+        holeBall = new Ball(this.course.courseNumber, tee);
     }
 
     public void setFairway(ArrayList<LatLng> coords) {
@@ -40,9 +49,23 @@ public class Hole {
         this.tee = tee;
     }
     public LatLng getTee() {
-        return this.tee;
+        try{
+            return this.tee;
+        } catch (Exception e) { return null; }
     }
 
-    public void setHoleLocation(LatLng holeLocation) { this.holeLocation = holeLocation; }
+
+    public void setHoleLocation(LatLng holeLocation) {
+        this.holeLocation = holeLocation;
+        course.flagLocation = setFlagLocation(holeLocation);
+    }
+
     public LatLng getHoleLocation() { return this.holeLocation; }
+
+    public Location setFlagLocation(LatLng flagLatLng){
+        Location l = new Location("flag");
+        l.setLatitude(flagLatLng.latitude);
+        l.setLongitude(flagLatLng.longitude);
+        return l;
+    }
 }

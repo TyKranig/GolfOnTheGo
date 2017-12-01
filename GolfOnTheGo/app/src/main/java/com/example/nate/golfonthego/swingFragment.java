@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +13,22 @@ import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.widget.Toast;
+import android.widget.FrameLayout;
+
+import com.example.nate.golfonthego.Models.GolfBag;
+
+import java.util.Observable;
+import java.util.Observer;
+
 import static android.content.Context.SENSOR_SERVICE;
 
-public class swingFragment extends Fragment implements SensorEventListener {
+public class swingFragment extends Fragment implements SensorEventListener, Observer {
 
     public CourseActivity Course;
     private OnFragmentInteractionListener mListener;    //sensor stuff
+    private FrameLayout frame;
+    private FragmentManager swingManager;
+    private GolfBag bag;
 
     private Swinger playerSwing;
 
@@ -30,34 +39,37 @@ public class swingFragment extends Fragment implements SensorEventListener {
         //Sensor manager and accelerometer
         Sensor accelSensor;
         SensorManager SM;
-        SM = (SensorManager)getContext().getSystemService(SENSOR_SERVICE);
+        SM = (SensorManager) getContext().getSystemService(SENSOR_SERVICE);
         accelSensor = SM.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         SM.registerListener(this, accelSensor, SensorManager.SENSOR_DELAY_GAME);
         Course = (CourseActivity) getActivity();
+        bag = GolfBag.getBag();
+        bag.addObserver(this);
 
         //TODO switch parameter to be player indicated lefty or righty (where true is lefty)
         playerSwing = Swinger.getSwinger();
         View swingFragView = inflater.inflate(R.layout.fragment_swing, container, false);
-        System.out.println("SwingTrack = " + playerSwing.swingTrack);
-        final Button swingFragButton = (Button)swingFragView.findViewById(R.id.swingFragSwing);
+        final Button clubBagButton = (Button) swingFragView.findViewById(R.id.changeClub);
+        clubBagButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View arg0){
+                bag.ShowBag(getContext());
+            }
+        });
+        final Button swingFragButton = (Button) swingFragView.findViewById(R.id.swingFragSwing);
         swingFragButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 swingFragButton.setVisibility(View.INVISIBLE);
                 swingFragButton.setVisibility(View.GONE);
+                clubBagButton.setVisibility(View.INVISIBLE);
+                clubBagButton.setVisibility(View.GONE);
                 if (playerSwing.swingTrack == 0) {
                     playerSwing.swingTrack = 1;
-                    System.out.println("SwingTrack = " + playerSwing.swingTrack);
                 }
             }
         });
-        Button swingFragBackButton = (Button)swingFragView.findViewById(R.id.swingFragBack);
-        swingFragBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                getActivity().getFragmentManager().popBackStack();
-            }
-        });
+
         return swingFragView;
     }
 
@@ -84,9 +96,16 @@ public class swingFragment extends Fragment implements SensorEventListener {
             //remove fragment, return to courseActivity
             //.done will update observers(Gameplay)
             playerSwing.done();
-            FragmentTransaction closeFrag = getFragmentManager().beginTransaction();
-            closeFrag.remove(swingFragment.this).commit();
+            frame.removeAllViews();
+            Course.setScoreText();
+            playerSwing.clearSwing();
+            swingManager.beginTransaction().remove(this).commit();
         }
+    }
+
+    @Override
+    public void update(Observable o, Object n){
+        Course.setScoreText();
     }
 
     @Override
@@ -98,6 +117,11 @@ public class swingFragment extends Fragment implements SensorEventListener {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+
+        //saving the frame and swingManager when attached
+        frame = getActivity().findViewById(R.id.swingFrame);
+        swingManager = getActivity().getSupportFragmentManager();
+
         System.out.println("Attached");
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;

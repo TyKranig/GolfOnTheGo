@@ -1,5 +1,7 @@
 package com.example.nate.golfonthego.Models;
 
+import android.location.Location;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -12,12 +14,18 @@ import java.util.ArrayList;
 public class Course {
 
     public ArrayList<Hole> holes;
+    private Ball currentBall;
+    public Location flagLocation;
+    private int totalScore;
     public int courseNumber;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
         CourseInit(courseNumber);
+        totalScore = 0;
+        //sets up the ball for the course
+        currentBall = new Ball(courseNumber, getTee(1));
     }
 
     public ArrayList<LatLng> getFairway(int hole) {
@@ -29,10 +37,25 @@ public class Course {
     }
 
     public LatLng getTee(int hole) {
-        return holes.get(hole - 1).getTee();
+        try {
+            return holes.get(hole - 1).getTee();
+        } catch (Exception e) { return null; }
     }
 
-    public LatLng getHoleLocation(int hole) { return holes.get(hole).getHoleLocation(); }
+    public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getHoleLocation(); }
+
+    public void incrementScore(int hole){holes.get(hole-1).holeScore ++;}
+
+    public int getTotalScore(){ return this.totalScore; }
+
+    public void resetScore(int hole){
+        this.totalScore += holes.get(hole-1).holeScore;
+        holes.get(hole-1).holeScore = 0;
+    }
+
+    public int getScore(int hole){return holes.get(hole-1).holeScore;}
+
+    public Ball getBall() {return currentBall;}
 
     private void CourseInit (int courseNumber) {
         if(courseNumber == 1){
@@ -55,7 +78,7 @@ public class Course {
             hole1Green.add(new LatLng(42.026370, -93.645495));
             hole1Green.add(new LatLng(42.026677, -93.645500));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
@@ -80,14 +103,44 @@ public class Course {
             hole1Green.add(new LatLng(42.021787, -93.677604));
             hole1Green.add(new LatLng(42.021788, -93.677534));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
             holeToAdd.setHoleLocation(new LatLng(42.021788, -93.677534));
 
             holes.add(holeToAdd);
-            // end course 1
+            // end course 2 test course at nates apartment
+        }
+        if(courseNumber == 3) {
+            this.courseNumber = 3;
+            ArrayList<LatLng> hole1 = new ArrayList<LatLng>();
+            hole1.add(new LatLng(42.028258, -93.649823));
+            hole1.add(new LatLng(42.028198, -93.649820));
+            hole1.add(new LatLng(42.028156, -93.650238));
+            hole1.add(new LatLng(42.028266, -93.650694));
+            hole1.add(new LatLng(42.028381, -93.650789));
+            hole1.add(new LatLng(42.028523, -93.650673));
+            hole1.add(new LatLng(42.028409, -93.650418));
+            hole1.add(new LatLng(42.028262, -93.650139));
+
+            LatLng hole1Tee = new LatLng(42.028236, -93.649875);
+
+            ArrayList<LatLng> hole1Green = new ArrayList<LatLng>();
+            hole1Green.add(new LatLng(42.028373, -93.650725));
+            hole1Green.add(new LatLng(42.028423, -93.650663));
+            hole1Green.add(new LatLng(42.028379, -93.650599));
+            hole1Green.add(new LatLng(42.028329, -93.650696));
+
+            Hole holeToAdd = new Hole(this);
+            holeToAdd.setFairway(hole1);
+            holeToAdd.setGreen(hole1Green);
+            holeToAdd.setTee(hole1Tee);
+            holeToAdd.setHoleLocation(new LatLng(42.028367, -93.650666));
+
+            holes.add(holeToAdd);
+            // end course 3 test course at attanassoff for demos
+
         }
     }
 }
