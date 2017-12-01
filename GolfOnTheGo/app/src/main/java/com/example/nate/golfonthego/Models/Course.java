@@ -8,15 +8,16 @@ import java.util.ArrayList;
 
 /**
  * Created by nate on 10/9/17.
+ * Used to store courses in android
  */
 
 public class Course {
 
     public ArrayList<Hole> holes;
-    private int courseNumber;
     private Ball currentBall;
     public Location flagLocation;
     private int totalScore;
+    public int courseNumber;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;

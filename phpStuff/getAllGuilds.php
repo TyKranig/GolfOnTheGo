@@ -10,7 +10,10 @@ guildInfo($userName);
 
 function guildInfo($userName){
     global $con;
-    $query = "select guildName,g.guildID From db309amc1.guild g
+    $query = "select guildName,g.guildID, 
+              exists (select 1 from db309amc1.guildLeader gl
+                      where gl.userId = u.userId and gl.guildId = g.guildID)as leader
+              From db309amc1.guild g
               inner join db309amc1.guildMember m
                   on g.guildID = m.guildID
               inner join db309amc1.user u

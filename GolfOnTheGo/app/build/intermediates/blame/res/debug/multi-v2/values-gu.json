@@ -128,23 +128,6 @@
             "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu\\values-gu.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\211732f8aeefd81b1d6c702459823d7e\\res\\values-gu\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6",
-                        "startColumns": "0,0,0",
-                        "startOffsets": "288,429,577",
-                        "endColumns": "140,147,97",
-                        "endOffsets": "428,576,674"
-                    },
-                    "to": {
-                        "startLines": "37,38,39",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3728,3869,4017",
-                        "endColumns": "140,147,101",
-                        "endOffsets": "3864,4012,4114"
-                    }
-                },
-                {
                     "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\83b87f34b70677603af04cbe152917f1\\res\\values-gu\\values-gu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
@@ -159,23 +142,6 @@
                         "startOffsets": "105,214,322,445,549,656,743,844,967,1044,1122,1202,1308,1410,1507,1616,1715,1825,1946,9076,9156",
                         "endColumns": "108,107,122,103,106,86,100,122,76,77,79,105,101,96,108,98,109,120,102,79,100",
                         "endOffsets": "209,317,440,544,651,738,839,962,1039,1117,1197,1303,1405,1502,1611,1710,1820,1941,2044,9151,9252"
-                    }
-                },
-                {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.0.4.aar\\1527fa7a8a05b030ea809b3d62781acf\\res\\values-gu\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "285",
-                        "endColumns": "205",
-                        "endOffsets": "490"
-                    },
-                    "to": {
-                        "startLines": "65",
-                        "startColumns": "4",
-                        "startOffsets": "6836",
-                        "endColumns": "205",
-                        "endOffsets": "7037"
                     }
                 },
                 {
@@ -196,20 +162,20 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\57917707abf1fe8eee1cdf3837dcb40e\\res\\values-gu\\values.xml",
+                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\211732f8aeefd81b1d6c702459823d7e\\res\\values-gu\\values.xml",
                     "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,331",
-                        "endColumns": "97,89",
-                        "endOffsets": "330,420"
+                        "startLines": "4,5,6",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "288,429,577",
+                        "endColumns": "140,147,97",
+                        "endOffsets": "428,576,674"
                     },
                     "to": {
-                        "startLines": "75,76",
-                        "startColumns": "4,4",
-                        "startOffsets": "8361,8463",
-                        "endColumns": "101,93",
-                        "endOffsets": "8458,8552"
+                        "startLines": "37,38,39",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3728,3869,4017",
+                        "endColumns": "140,147,101",
+                        "endOffsets": "3864,4012,4114"
                     }
                 },
                 {
@@ -230,6 +196,23 @@
                     }
                 },
                 {
+                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\57917707abf1fe8eee1cdf3837dcb40e\\res\\values-gu\\values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,331",
+                        "endColumns": "97,89",
+                        "endOffsets": "330,420"
+                    },
+                    "to": {
+                        "startLines": "75,76",
+                        "startColumns": "4,4",
+                        "startOffsets": "8361,8463",
+                        "endColumns": "101,93",
+                        "endOffsets": "8458,8552"
+                    }
+                },
+                {
                     "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-11.0.4.aar\\68cd017f235b22df151c83e1a04ec9d1\\res\\values-gu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
@@ -244,6 +227,23 @@
                         "startOffsets": "5837,5947,6145,6272,6386,6583,6707,7042,7249,7359,7554,7681,7883,8063,8154,8250",
                         "endColumns": "109,197,126,113,196,123,128,206,109,194,126,201,179,90,95,110",
                         "endOffsets": "5942,6140,6267,6381,6578,6702,6831,7244,7354,7549,7676,7878,8058,8149,8245,8356"
+                    }
+                },
+                {
+                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.0.4.aar\\1527fa7a8a05b030ea809b3d62781acf\\res\\values-gu\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "285",
+                        "endColumns": "205",
+                        "endOffsets": "490"
+                    },
+                    "to": {
+                        "startLines": "65",
+                        "startColumns": "4",
+                        "startOffsets": "6836",
+                        "endColumns": "205",
+                        "endOffsets": "7037"
                     }
                 }
             ]

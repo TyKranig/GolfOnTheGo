@@ -1,16 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "source": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "291",
+                        "startOffsets": "295",
                         "endColumns": "57",
-                        "endOffsets": "344"
+                        "endOffsets": "348"
                     },
                     "to": {
                         "startLines": "2",
@@ -23,16 +23,16 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
+            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
+                    "source": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "4",
-                        "startOffsets": "295",
+                        "startOffsets": "291",
                         "endColumns": "57",
-                        "endOffsets": "348"
+                        "endOffsets": "344"
                     },
                     "to": {
                         "startLines": "2",

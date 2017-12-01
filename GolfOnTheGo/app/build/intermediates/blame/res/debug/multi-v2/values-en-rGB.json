@@ -162,20 +162,20 @@
             "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rGB\\values-en-rGB.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.0.4.aar\\1527fa7a8a05b030ea809b3d62781acf\\res\\values-en-rGB\\values.xml",
+                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\211732f8aeefd81b1d6c702459823d7e\\res\\values-en-rGB\\values.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "289",
-                        "endColumns": "196",
-                        "endOffsets": "485"
+                        "startLines": "4,5,6",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "292,429,568",
+                        "endColumns": "136,138,93",
+                        "endOffsets": "428,567,661"
                     },
                     "to": {
-                        "startLines": "65",
-                        "startColumns": "4",
-                        "startOffsets": "6700",
-                        "endColumns": "196",
-                        "endOffsets": "6892"
+                        "startLines": "37,38,39",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "3645,3782,3921",
+                        "endColumns": "136,138,97",
+                        "endOffsets": "3777,3916,4014"
                     }
                 },
                 {
@@ -247,20 +247,20 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\211732f8aeefd81b1d6c702459823d7e\\res\\values-en-rGB\\values.xml",
+                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.0.4.aar\\1527fa7a8a05b030ea809b3d62781acf\\res\\values-en-rGB\\values.xml",
                     "from": {
-                        "startLines": "4,5,6",
-                        "startColumns": "0,0,0",
-                        "startOffsets": "292,429,568",
-                        "endColumns": "136,138,93",
-                        "endOffsets": "428,567,661"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "289",
+                        "endColumns": "196",
+                        "endOffsets": "485"
                     },
                     "to": {
-                        "startLines": "37,38,39",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "3645,3782,3921",
-                        "endColumns": "136,138,97",
-                        "endOffsets": "3777,3916,4014"
+                        "startLines": "65",
+                        "startColumns": "4",
+                        "startOffsets": "6700",
+                        "endColumns": "196",
+                        "endOffsets": "6892"
                     }
                 },
                 {

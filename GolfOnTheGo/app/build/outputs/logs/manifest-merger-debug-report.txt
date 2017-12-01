@@ -12,6 +12,10 @@ MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\resh_tkr
 MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\ada7f56211afbe7845a7e5d47174a68f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\abbd28823498eafb1568d068ffde0c01\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c5f704fcecb621b446910e1c0fc191a1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:16:1-25:12
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\c9fc27a0164727836eb584007ccbefb2\AndroidManifest.xml:16:1-18:12
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:16:1-27:12
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\3978755fd422ff3970daf422a1237376\AndroidManifest.xml:16:1-27:12
@@ -24,7 +28,6 @@ MERGED from [com.google.android.gms:play-services-auth:11.0.4] C:\Users\resh_tkr
 MERGED from [com.google.android.gms:play-services-auth-base:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.0.4.aar\d9d9ec1cf9d8357cec85eef74868dea2\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\b286cdd84a65bafef1b10341eeb42be5\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\7ca38569d3bc53e020239c5d111443ca\AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\54481bb7af1eec3c0b34648200a6ca65\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\aa66fcfba47e345b8c2a81f501162683\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\43eb49818590aad25385918ca5478937\AndroidManifest.xml:16:1-21:12
@@ -32,13 +35,10 @@ MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] C:\Users\resh_tk
 MERGED from [com.google.android.gms:play-services-fitness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\8ecf4c0d7d5412737dfee82dbd616216\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\f859ec8a324db8ab323f21c0e3e5a0cd\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\9fd9278d659787fe1a27591ecd9463b6\AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:16:1-20:12
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\28a00fe712b6701f65f038742f7c3471\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\de8ecf2ae1c6d85cb9e2d68016b67cd2\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\3d919fc5c3d4144fa491e1d9e9944daa\AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\a209b4b5e9ec65deb78eab4e08eaefd8\AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:16:1-25:12
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\6431757cb0e9a346943c0c4f52afbda8\AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-plus:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\f34f9dfa5d2091c39597d5607c20d556\AndroidManifest.xml:16:1-19:12
@@ -97,6 +97,8 @@ ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOn
 		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\3978755fd422ff3970daf422a1237376\AndroidManifest.xml:20:5-66
@@ -109,8 +111,6 @@ MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkra
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\f859ec8a324db8ab323f21c0e3e5a0cd\AndroidManifest.xml:21:5-66
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\de8ecf2ae1c6d85cb9e2d68016b67cd2\AndroidManifest.xml:21:5-66
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\de8ecf2ae1c6d85cb9e2d68016b67cd2\AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:20:5-66
 MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\b7bc3bb09e2be46c1e82267fb1f8221f\AndroidManifest.xml:18:5-66
 MERGED from [com.google.firebase:firebase-crash:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\b7bc3bb09e2be46c1e82267fb1f8221f\AndroidManifest.xml:18:5-66
 MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\929191dee77f0c7e23568e35726c5a33\AndroidManifest.xml:20:5-66
@@ -141,6 +141,12 @@ MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\resh_tkranig\.gra
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\abbd28823498eafb1568d068ffde0c01\AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c5f704fcecb621b446910e1c0fc191a1\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c5f704fcecb621b446910e1c0fc191a1\AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:23:5-26:19
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:23:5-26:19
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\3978755fd422ff3970daf422a1237376\AndroidManifest.xml:26:5-19
@@ -157,8 +163,6 @@ MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\resh
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\b286cdd84a65bafef1b10341eeb42be5\AndroidManifest.xml:18:5-19
 MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\7ca38569d3bc53e020239c5d111443ca\AndroidManifest.xml:18:5-19
 MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\7ca38569d3bc53e020239c5d111443ca\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\54481bb7af1eec3c0b34648200a6ca65\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\54481bb7af1eec3c0b34648200a6ca65\AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\aa66fcfba47e345b8c2a81f501162683\AndroidManifest.xml:18:5-19
@@ -179,10 +183,6 @@ MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkra
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\de8ecf2ae1c6d85cb9e2d68016b67cd2\AndroidManifest.xml:23:5-19
 MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\a209b4b5e9ec65deb78eab4e08eaefd8\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\a209b4b5e9ec65deb78eab4e08eaefd8\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:5:5-19
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:5:5-19
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\6431757cb0e9a346943c0c4f52afbda8\AndroidManifest.xml:18:5-19
@@ -262,77 +262,91 @@ ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOn
 	android:name
 		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:21:13-45
 activity#com.example.nate.golfonthego.MainActivity
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:23:9-28:68
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:23:9-26:59
 	android:label
 		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:25:13-56
 	android:theme
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:26:13-56
 	android:name
 		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:24:13-41
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:39:9-41:55
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:36:9-38:55
 	android:value
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:41:13-52
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:38:13-52
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:40:13-58
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:37:13-58
 activity#com.example.nate.golfonthego.CourseActivity
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:43:9-49:20
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:40:9-46:20
 	android:label
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:45:13-58
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:42:13-58
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:44:13-43
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:41:13-43
 meta-data#androidss.support.PARENT_ACTIVITY
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:46:13-48:76
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:43:13-45:76
 	android:value
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:48:17-73
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:45:17-73
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:47:17-65
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:44:17-65
 activity#com.example.nate.golfonthego.Register
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:9-46
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:47:9-46
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:19-43
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:47:19-43
 activity#com.example.nate.golfonthego.LoginScreen
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:51:9-57:20
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:48:9-54:20
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:51:19-46
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:48:19-46
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:52:13-56:29
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:53:17-69
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:53:25-66
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:17-77
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:27-74
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:52:27-74
 activity#com.example.nate.golfonthego.LeaderActivity
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:60:9-61
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:9-52
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:60:19-49
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:55:19-49
 activity#com.example.nate.golfonthego.List
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:61:9-42
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:56:9-42
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:61:19-39
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:56:19-39
 activity#com.example.nate.golfonthego.guildListMain
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:9-51
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:57:9-51
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:19-48
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:57:19-48
 activity#com.example.nate.golfonthego.guildInfoScreen
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:63:9-66:59
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:58:9-61:59
 	android:label
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:65:13-69
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:60:13-69
 	android:theme
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:66:13-56
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:61:13-56
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:64:13-44
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:59:13-44
 activity#com.example.nate.golfonthego.NewGuild
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:9-46
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:9-46
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:19-43
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:62:19-43
 activity#com.example.nate.golfonthego.newGuildMember
-ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:9-61
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:63:9-52
 	android:name
-		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:19-49
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:63:19-49
+activity#com.example.nate.golfonthego.CourseBuilder
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:64:9-66:69
+	android:label
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:66:13-66
+	android:name
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:65:13-42
+activity#com.example.nate.golfonthego.courseBuildCourseSelector
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:9-63
+	android:name
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:67:19-60
+activity#com.example.nate.golfonthego.courseBuilderHoleSelector
+ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:9-72
+	android:name
+		ADDED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml:68:19-60
 uses-sdk
 INJECTED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\src\main\AndroidManifest.xml
@@ -353,6 +367,14 @@ MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\resh_tkranig\.gra
 MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\abbd28823498eafb1568d068ffde0c01\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c5f704fcecb621b446910e1c0fc191a1\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\c5f704fcecb621b446910e1c0fc191a1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\c9fc27a0164727836eb584007ccbefb2\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\c9fc27a0164727836eb584007ccbefb2\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:22:5-43
@@ -377,8 +399,6 @@ MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\resh
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\b286cdd84a65bafef1b10341eeb42be5\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\7ca38569d3bc53e020239c5d111443ca\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-config:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\7ca38569d3bc53e020239c5d111443ca\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\10dd8490dad5a5d222a6d9b00fa95e01\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\54481bb7af1eec3c0b34648200a6ca65\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-games:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\54481bb7af1eec3c0b34648200a6ca65\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\aa66fcfba47e345b8c2a81f501162683\AndroidManifest.xml:17:5-43
@@ -393,8 +413,6 @@ MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkra
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\f859ec8a324db8ab323f21c0e3e5a0cd\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\9fd9278d659787fe1a27591ecd9463b6\AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\9fd9278d659787fe1a27591ecd9463b6\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\fafb354ff4372f122a52b7760ce068cc\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\28a00fe712b6701f65f038742f7c3471\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\28a00fe712b6701f65f038742f7c3471\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\de8ecf2ae1c6d85cb9e2d68016b67cd2\AndroidManifest.xml:17:5-43
@@ -403,10 +421,6 @@ MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\r
 MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\3d919fc5c3d4144fa491e1d9e9944daa\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\a209b4b5e9ec65deb78eab4e08eaefd8\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-location:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\a209b4b5e9ec65deb78eab4e08eaefd8\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-places:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\90015049bc8619892eb8de83b1a4ee3d\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\6431757cb0e9a346943c0c4f52afbda8\AndroidManifest.xml:17:5-43
@@ -530,13 +544,13 @@ ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users
 	android:name
 		ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\e082586e3a46d34dea6d1129b42c955a\AndroidManifest.xml:7:18-90
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:20:5-78
+ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:20:5-78
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\3978755fd422ff3970daf422a1237376\AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\3978755fd422ff3970daf422a1237376\AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\c3ace2b271603c6af531790626b7719c\AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\c3ace2b271603c6af531790626b7719c\AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:19:5-78
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:4:5-78
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\ce13cc7d6f3ef53b26750511a164c240\AndroidManifest.xml:4:5-78
 MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\929191dee77f0c7e23568e35726c5a33\AndroidManifest.xml:21:5-78
@@ -548,7 +562,13 @@ MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\resh_t
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\92850faa45a404a924520ba2a24656f2\AndroidManifest.xml:19:5-78
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\92850faa45a404a924520ba2a24656f2\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:20:22-76
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:19:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.ads.AdActivity
 ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\52cafb62b6310b60793d3e2146548689\AndroidManifest.xml:25:9-232
 	android:configChanges
@@ -613,12 +633,6 @@ MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\resh_tkranig\.gra
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\92850faa45a404a924520ba2a24656f2\AndroidManifest.xml:22:5-81
 	android:name
 		ADDED from [com.google.android.gms:play-services-gcm:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\f859ec8a324db8ab323f21c0e3e5a0cd\AndroidManifest.xml:20:22-79
-uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:5-77
-	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:19-51
-	android:required
-		ADDED from [com.google.android.gms:play-services-maps:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\f9f05a5a4c456054a5d4b0aa1148fa0e\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:11.0.4] C:\Users\resh_tkranig\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\5cb8e366d7ef7ddbe65999c139695c0d\AndroidManifest.xml:19:9-172
 	android:exported

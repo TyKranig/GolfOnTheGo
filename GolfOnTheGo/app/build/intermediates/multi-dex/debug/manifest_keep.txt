@@ -1,3 +1,3 @@
-# Referenced at C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:32
+# Referenced at C:\Users\resh_tkranig\AndroidStudioProjects\AM_C_1_ProjectName\GolfOnTheGo\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:34
 -keep class android.support.multidex.MultiDexApplication { <init>(...); }
 

@@ -354,7 +354,16 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         } catch(SecurityException e) { e.printStackTrace(); }
     }
 
-    // The remaining is allowing for persistent lcoation permissions for the app across life cycles
+    /*@Override
+    public void onLocationChanged(Location location){
+        currentLocation = location;
+        LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
+        mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
+
+    }*/
+
+    // The remaining is allowing for persistent location permissions for the app across life cycles
     //
     // requesting permissions for fine location
     //
