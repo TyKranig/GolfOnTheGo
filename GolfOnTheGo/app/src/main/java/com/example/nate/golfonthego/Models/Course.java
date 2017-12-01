@@ -8,6 +8,7 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
@@ -166,12 +167,12 @@ public class Course {
     public void saveCourse(Context context){
         String url = ConstantURL.URL_SAVECOURSE;
         //VolleyBall.getResponseJson();
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
-                url, null,
-                new Response.Listener<JSONObject>() {
+        StringRequest jsonObjReq = new StringRequest(Request.Method.POST,
+                url,
+                new Response.Listener<String>() {
 
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
                         Log.i("Save data", response.toString());
                     }
                 }, new Response.ErrorListener() {
@@ -183,11 +184,17 @@ public class Course {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                JSONArray js = new JSONArray(getFairway(0));
+                JSONArray js = new JSONArray(getFairway(1));
                 params.put("Fairway", js.toString());
                 Log.i("jason", js.toString());
                 params.put("courseID", courseNumber + "");
 
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/x-www-form-urlencoded;  charset=utf-8");
                 return params;
             }
         };
