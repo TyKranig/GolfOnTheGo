@@ -21,6 +21,7 @@ public class courseBuildCourseSelector extends AppCompatActivity {
     private ArrayAdapter<Course> courseAdapter;
     private ListView courseListView;
     private Button btnAddCourse;
+    private Button btnSaveCourse;
     public static courseBuilderController courseBuilder;
 
     @Override
@@ -37,12 +38,19 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         //set the data for the courses list
         courseAdapter = new courseListAdapter(this, courses);
         courseListView = findViewById(R.id.lstBuiltCourses);
-        courseListView.setAdapter(courseAdapter);
-        courseListView.setOnItemClickListener(courseClick());
 
         //set button click listener
         btnAddCourse = findViewById(R.id.btnAddCourse);
+        btnSaveCourse = findViewById(R.id.btnSaveCourse);
+
+        setupButtons();
+    }
+
+    private void setupButtons(){
+        courseListView.setAdapter(courseAdapter);
+        courseListView.setOnItemClickListener(courseClick());
         btnAddCourse.setOnClickListener(newCourseClick());
+        btnSaveCourse.setOnClickListener(saveCourseClick());
     }
 
     private View.OnClickListener newCourseClick(){
@@ -69,6 +77,16 @@ public class courseBuildCourseSelector extends AppCompatActivity {
                 courseBuilder = courseBuilderController.getInstance((Course)adapterView.getItemAtPosition(position));
                 Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
                 startActivity(intent);
+            }
+        };
+    }
+
+    private View.OnClickListener saveCourseClick(){
+        return new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                courseBuilder.getCourse().saveCourse(getBaseContext());
             }
         };
     }

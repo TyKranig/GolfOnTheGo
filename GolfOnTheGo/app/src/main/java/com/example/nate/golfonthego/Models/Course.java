@@ -1,10 +1,25 @@
 package com.example.nate.golfonthego.Models;
 
+import android.content.Context;
 import android.location.Location;
+import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.maps.model.LatLng;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import Constants.ConstantURL;
+import VolleyAPI.RequestQueueSingleton;
+import VolleyAPI.VolleyBall;
 
 /**
  * Created by nate on 10/9/17.
@@ -142,6 +157,42 @@ public class Course {
             // end course 3 test course at attanassoff for demos
 
         }
+    }
+
+    public Course loadCourse(int courseID){
+        return null;
+    }
+
+    public void saveCourse(Context context){
+        String url = ConstantURL.URL_SAVECOURSE;
+        //VolleyBall.getResponseJson();
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.i("Save data", response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i("errorSave",error.toString());
+                    }
+            }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                JSONArray js = new JSONArray(getFairway(0));
+                params.put("Fairway", js.toString());
+                Log.i("jason", js.toString());
+                params.put("courseID", courseNumber + "");
+
+                return params;
+            }
+        };
+        RequestQueueSingleton.getInstance(context).addToRequestQueue(jsonObjReq);
+
     }
 }
 
