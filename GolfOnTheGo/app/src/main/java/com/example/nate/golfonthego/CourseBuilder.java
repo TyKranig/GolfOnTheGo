@@ -37,6 +37,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     private ArrayList<Marker> markerList;
     private Polygon fairway = null;
     private Polygon green = null;
+    private Marker Tee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +105,16 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
 
                 drawHole(i, points);
 
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentHole.getTee(), 16.0f));
+                LatLng start;
+
+                if(currentHole.getTee() != null){
+                    start = currentHole.getTee();
+                }
+                else{
+                    start = new LatLng(42.026486, -93.647377);
+                }
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(start, 16.0f));
             }
         };
     }
@@ -132,7 +142,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             start = new LatLng(42.026486, -93.647377);
         }
 
-        mMap.addMarker(new MarkerOptions().position(start));
+        Tee = mMap.addMarker(new MarkerOptions().position(start));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(start, 17.0f));
         mMap.setOnMapClickListener(mapClickListener());
 
@@ -149,15 +159,21 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoTee){
                     //mMap.clear();
                     stagedAdds.clear();
+                    Tee.remove();
+                    MarkerOptions markerOptions = new MarkerOptions().position(latLng);
+                    Tee =  mMap.addMarker(markerOptions);
                 }
-                if(stagedAdds.size() == 0){
+                else if(stagedAdds.size() == 0){
                     clearMarkerList();
                     clearPolygons(rdoGroup.getCheckedRadioButtonId());
+
                 }
 
-                MarkerOptions markerOptions = new MarkerOptions().position(latLng);
-                Marker m = mMap.addMarker(markerOptions);
-                markerList.add(m);
+                if(rdoGroup.getCheckedRadioButtonId() != R.id.rdoTee){
+                    MarkerOptions markerOptions = new MarkerOptions().position(latLng);
+                    Marker m = mMap.addMarker(markerOptions);
+                    markerList.add(m);
+                }
 
                 stagedAdds.add(latLng);
             }
@@ -176,7 +192,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     }
 
     private void drawHole(int selectedID, ArrayList<LatLng> list){
-        if(selectedID == R.id.rdoFairway){
+        if(selectedID == R.id.rdoFairway && list.size() > 0){
             PolygonOptions fairwayOpt = new PolygonOptions()
                     .addAll(list).fillColor(Color.GREEN).strokeJointType(2).strokeWidth((float)10).strokeColor(Color.GREEN);
             Polygon fairway = mMap.addPolygon(fairwayOpt);
@@ -186,7 +202,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             }
             this.fairway = fairway;
 
-        }else if(selectedID == R.id.rdoGreen){
+        }else if(selectedID == R.id.rdoGreen && list.size() > 0){
             PolygonOptions greenOpt = new PolygonOptions()
                     .addAll(list).fillColor(Color.GREEN);
             Polygon green = mMap.addPolygon(greenOpt);
@@ -206,9 +222,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     }
 
     private void clearPolygons(int selectedID){
-        if(selectedID == R.id.rdoFairway){
+        if(selectedID == R.id.rdoFairway && fairway != null){
             this.fairway.remove();
-        }else if(selectedID == R.id.rdoGreen){
+        }else if(selectedID == R.id.rdoGreen && green != null){
             this.green.remove();
         }
     }

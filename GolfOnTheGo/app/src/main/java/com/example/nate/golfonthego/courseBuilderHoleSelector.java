@@ -48,8 +48,8 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Hole newHole = new Hole();
-                holes.add(newHole);
+                Hole newHole = new Hole(courseBuildCourseSelector.courseBuilder.getCourse());
+                courseBuildCourseSelector.courseBuilder.AddHole(newHole);
                 Intent intent = new Intent(courseBuilderHoleSelector.this, CourseBuilder.class);
                 intent.putExtra(tag_current_hole, holes.size() - 1);
                 startActivity(intent);
