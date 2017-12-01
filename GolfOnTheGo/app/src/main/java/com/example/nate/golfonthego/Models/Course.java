@@ -184,7 +184,14 @@ public class Course {
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
-                JSONArray js = new JSONArray(getFairway(1));
+                ArrayList<LatLng> fairways = getFairway(1);
+                ArrayList<String> fairwayStrings = new ArrayList<>();
+                for(int i = 0; i<fairways.size(); i++){
+                    LatLng ltlng = fairways.get(i);
+                    fairwayStrings.add(ltlng.latitude + "," + ltlng.longitude);
+                }
+
+                JSONArray js = new JSONArray(fairwayStrings);
                 params.put("Fairway", js.toString());
                 Log.i("jason", js.toString());
                 params.put("courseID", courseNumber + "");
