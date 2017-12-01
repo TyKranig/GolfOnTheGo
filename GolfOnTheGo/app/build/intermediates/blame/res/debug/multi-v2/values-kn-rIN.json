@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn-rIN/values-kn-rIN.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
             "map": [
                 {
-                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/b8749f4f961461e9932e2719724a6455/res/values-kn-rIN/values-kn-rIN.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-kn-rIN\\values-kn-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\AndroidStudioProjects\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-kn-rIN/values-kn-rIN.xml",
             "map": [
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\12699c18b300b6c0185a8001f89b61ed\\res\\values-kn-rIN\\values-kn-rIN.xml",
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/b8749f4f961461e9932e2719724a6455/res/values-kn-rIN/values-kn-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

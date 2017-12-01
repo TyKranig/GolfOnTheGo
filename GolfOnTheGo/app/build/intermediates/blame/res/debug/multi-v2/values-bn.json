@@ -38,20 +38,20 @@
                     }
                 },
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\19d6baa44b66d209be665209914c819f\\res\\values-bn\\values.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\2771e9a1dc6e9c1c7ab75857e8a7d44e\\res\\values-bn\\values.xml",
                     "from": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "0,0,0,0,0,0",
-                        "startOffsets": "237,312,429,497,572,658",
-                        "endColumns": "74,116,67,74,85,115",
-                        "endOffsets": "311,428,496,571,657,773"
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,338",
+                        "endColumns": "104,99",
+                        "endOffsets": "337,437"
                     },
                     "to": {
-                        "startLines": "77,78,79,80,81,82",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "8710,8789,8910,8982,9061,9151",
-                        "endColumns": "78,120,71,78,89,119",
-                        "endOffsets": "8784,8905,8977,9056,9146,9266"
+                        "startLines": "75,76",
+                        "startColumns": "4,4",
+                        "startOffsets": "8497,8606",
+                        "endColumns": "108,103",
+                        "endOffsets": "8601,8705"
                     }
                 },
                 {
@@ -72,6 +72,40 @@
                     }
                 },
                 {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\7b05fe6b69b6864aacd3ef71d0d364d9\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "240",
+                        "endColumns": "108",
+                        "endOffsets": "348"
+                    },
+                    "to": {
+                        "startLines": "85",
+                        "startColumns": "4",
+                        "startOffsets": "9462",
+                        "endColumns": "112",
+                        "endOffsets": "9570"
+                    }
+                },
+                {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\19d6baa44b66d209be665209914c819f\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "237,312,429,497,572,658",
+                        "endColumns": "74,116,67,74,85,115",
+                        "endOffsets": "311,428,496,571,657,773"
+                    },
+                    "to": {
+                        "startLines": "77,78,79,80,81,82",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "8710,8789,8910,8982,9061,9151",
+                        "endColumns": "78,120,71,78,89,119",
+                        "endOffsets": "8784,8905,8977,9056,9146,9266"
+                    }
+                },
+                {
                     "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-11.0.4.aar\\ac888167515f5967a828d2a62d3a8fdc\\res\\values-bn\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -89,23 +123,6 @@
                     }
                 },
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\2771e9a1dc6e9c1c7ab75857e8a7d44e\\res\\values-bn\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,338",
-                        "endColumns": "104,99",
-                        "endOffsets": "337,437"
-                    },
-                    "to": {
-                        "startLines": "75,76",
-                        "startColumns": "4,4",
-                        "startOffsets": "8497,8606",
-                        "endColumns": "108,103",
-                        "endOffsets": "8601,8705"
-                    }
-                },
-                {
                     "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\4fa646c8aac02ffff0af58a0504f250f\\res\\values-bn\\values.xml",
                     "from": {
                         "startLines": "4,5,6",
@@ -120,23 +137,6 @@
                         "startOffsets": "3810,3951,4094",
                         "endColumns": "140,142,107",
                         "endOffsets": "3946,4089,4197"
-                    }
-                },
-                {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\7b05fe6b69b6864aacd3ef71d0d364d9\\res\\values-bn\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "240",
-                        "endColumns": "108",
-                        "endOffsets": "348"
-                    },
-                    "to": {
-                        "startLines": "85",
-                        "startColumns": "4",
-                        "startOffsets": "9462",
-                        "endColumns": "112",
-                        "endOffsets": "9570"
                     }
                 }
             ]
@@ -179,23 +179,6 @@
                     }
                 },
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\cc44a90a438a371f1787382e4bb54995\\res\\values-bn\\values.xml",
-                    "from": {
-                        "startLines": "4,5",
-                        "startColumns": "0,0",
-                        "startOffsets": "233,338",
-                        "endColumns": "104,99",
-                        "endOffsets": "337,437"
-                    },
-                    "to": {
-                        "startLines": "75,76",
-                        "startColumns": "4,4",
-                        "startOffsets": "8497,8606",
-                        "endColumns": "108,103",
-                        "endOffsets": "8601,8705"
-                    }
-                },
-                {
                     "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-11.0.4.aar\\b3680e741dddeb595e65166beba70eab\\res\\values-bn\\values.xml",
                     "from": {
                         "startLines": "4,5,6",
@@ -210,23 +193,6 @@
                         "startOffsets": "3810,3951,4094",
                         "endColumns": "140,142,107",
                         "endOffsets": "3946,4089,4197"
-                    }
-                },
-                {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\f31b1a013e7bf6b14724a7ea95466a18\\res\\values-bn\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9",
-                        "startColumns": "0,0,0,0,0,0",
-                        "startOffsets": "237,312,429,497,572,658",
-                        "endColumns": "74,116,67,74,85,115",
-                        "endOffsets": "311,428,496,571,657,773"
-                    },
-                    "to": {
-                        "startLines": "77,78,79,80,81,82",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "8710,8789,8910,8982,9061,9151",
-                        "endColumns": "78,120,71,78,89,119",
-                        "endOffsets": "8784,8905,8977,9056,9146,9266"
                     }
                 },
                 {
@@ -247,6 +213,23 @@
                     }
                 },
                 {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-places-11.0.4.aar\\cc44a90a438a371f1787382e4bb54995\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4,5",
+                        "startColumns": "0,0",
+                        "startOffsets": "233,338",
+                        "endColumns": "104,99",
+                        "endOffsets": "337,437"
+                    },
+                    "to": {
+                        "startLines": "75,76",
+                        "startColumns": "4,4",
+                        "startOffsets": "8497,8606",
+                        "endColumns": "108,103",
+                        "endOffsets": "8601,8705"
+                    }
+                },
+                {
                     "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-11.0.4.aar\\88f4153404ad1654743f7a096f54c98a\\res\\values-bn\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -261,6 +244,23 @@
                         "startOffsets": "9462",
                         "endColumns": "112",
                         "endOffsets": "9570"
+                    }
+                },
+                {
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\home\\nate\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-ads-11.0.4.aar\\f31b1a013e7bf6b14724a7ea95466a18\\res\\values-bn\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "237,312,429,497,572,658",
+                        "endColumns": "74,116,67,74,85,115",
+                        "endOffsets": "311,428,496,571,657,773"
+                    },
+                    "to": {
+                        "startLines": "77,78,79,80,81,82",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "8710,8789,8910,8982,9061,9151",
+                        "endColumns": "78,120,71,78,89,119",
+                        "endOffsets": "8784,8905,8977,9056,9146,9266"
                     }
                 },
                 {

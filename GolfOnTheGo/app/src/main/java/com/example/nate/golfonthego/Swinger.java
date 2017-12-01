@@ -58,12 +58,10 @@ public class Swinger extends Observable{
         //start the swing logic on a backswing
         if (swingTrack == 1 && (x + z < -5 || x < -5 || z < -5)){
             swingTrack = 2;
-            System.out.println("SwingTrack = " + swingTrack);
             return;
         }
         if (swingTrack == 2 && ((x > 0 && z > 0) || x > 10)){
             swingTrack = 3;
-            System.out.println("SwingTrack = " + swingTrack);
             return;
         }
 
@@ -101,16 +99,13 @@ public class Swinger extends Observable{
             overswing = ((Xmax + Zmax) - (Xavg + Zavg)) - 60;
 
             //error is based solely on Y acceleration
-            error = Yavg - 5;
+            error = (Yavg - 5);
             overswing = overswing < 0 ? 0 : overswing;
 
             //20 power is 100 yds
             //30 power is 200 yds
             //40 power is 300 yds
             float yards = 10 * (power + overswing) - 100;
-
-            //anything less than or equal to 10 will default to 10 yards
-            yards =  yards < 0 ? 10 : yards;
 
             // multiply yards by 3 to convert yards to feet
             // divide feet by 3280.4 to go from feet to kilometers
@@ -131,8 +126,15 @@ public class Swinger extends Observable{
 
     }
 
+    public void clearSwing(){
+        swingTrack = 0;
+        first = true;
+        x = 0; y = 0; z = 0;
+        Xmax = 0; Xmin = 0; Xavg = 0; Ymax = 0; Ymin = 0; Yavg = 0; Zmax = 0; Zmin = 0; Zavg = 0;
+        power = 0; overswing = 0; error = 0; score = 0;
+    }
+
     public synchronized void done(){
-        //System.out.println("why me god");
         setChanged();
         this.notifyObservers();
     }

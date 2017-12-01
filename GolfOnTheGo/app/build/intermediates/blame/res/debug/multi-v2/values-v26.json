@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4a6d559f82ca6a21512125083c6ad495/res/values-v26/values-v26.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\3bf18149850131d95bd594f104ba3d12\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/1d67ff94c061e85d386be2c58debfb32/res/values-v26/values-v26.xml",
+                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\9f87decb949edc654e043907b4c7ace8\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",
@@ -87,10 +87,10 @@
             ]
         },
         {
-            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "/home/nate/AndroidStudioProjects/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\3bf18149850131d95bd594f104ba3d12\\res\\values-v26\\values-v26.xml",
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4a6d559f82ca6a21512125083c6ad495/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -109,7 +109,7 @@
                     }
                 },
                 {
-                    "source": "/home/nate/AndroidStudioProjects/GolfOnTheGo/C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\9f87decb949edc654e043907b4c7ace8\\res\\values-v26\\values-v26.xml",
+                    "source": "/home/nate/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/1d67ff94c061e85d386be2c58debfb32/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",

@@ -1,5 +1,7 @@
 package com.example.nate.golfonthego.Models;
 
+import android.location.Location;
+
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -13,12 +15,14 @@ public class Course {
     public ArrayList<Hole> holes;
     private int courseNumber;
     private Ball currentBall;
+    public Location flagLocation;
+    private int totalScore;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
         CourseInit(courseNumber);
-
+        totalScore = 0;
         //sets up the ball for the course
         currentBall = new Ball(courseNumber, getTee(1));
     }
@@ -32,10 +36,23 @@ public class Course {
     }
 
     public LatLng getTee(int hole) {
-        return holes.get(hole - 1).getTee();
+        try {
+            return holes.get(hole - 1).getTee();
+        } catch (Exception e) { return null; }
     }
 
     public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getHoleLocation(); }
+
+    public void incrementScore(int hole){holes.get(hole-1).holeScore ++;}
+
+    public int getTotalScore(){ return this.totalScore; }
+
+    public void resetScore(int hole){
+        this.totalScore += holes.get(hole-1).holeScore;
+        holes.get(hole-1).holeScore = 0;
+    }
+
+    public int getScore(int hole){return holes.get(hole-1).holeScore;}
 
     public Ball getBall() {return currentBall;}
 
@@ -45,6 +62,7 @@ public class Course {
         private ArrayList<LatLng> green;
         private LatLng tee;
         private LatLng holeLocation;
+        protected int holeScore = 0;
         private Ball holeBall;
 
         public Hole() {
@@ -74,11 +92,23 @@ public class Course {
         }
 
         public LatLng getTee() {
-            return this.tee;
+            try{
+                return this.tee;
+            } catch (Exception e) { return null; }
         }
 
-        public void setHoleLocation(LatLng holeLocation) { this.holeLocation = holeLocation; }
+        public void setHoleLocation(LatLng holeLocation) {
+            this.holeLocation = holeLocation;
+            flagLocation = setFlagLocation(holeLocation);
+
+        }
         public LatLng getHoleLocation() { return this.holeLocation; }
+        public Location setFlagLocation(LatLng flagLatLng){
+            Location l = new Location("flag");
+            l.setLatitude(flagLatLng.latitude);
+            l.setLongitude(flagLatLng.longitude);
+            return l;
+        }
     }
 
     private void CourseInit (int courseNumber) {
