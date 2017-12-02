@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -28,6 +27,7 @@ import VolleyAPI.VolleyBall;
 public class guildListMain extends AppCompatActivity {
     public static String tag_guild_name = "guildName";
     public static String tag_guild_id = "guildID";
+    public static String tag_guild_leader = "guildLeader";
     ArrayList<Guild> guilds;
     ArrayAdapter<Guild> guildAdapter;
     ListView guildListView;
@@ -42,15 +42,16 @@ public class guildListMain extends AppCompatActivity {
         setContentView(R.layout.activity_guild_list_main);
 
         //Generate some fake guilds to use for testing, in the future this will be called from the network
-        guilds = new ArrayList();
+        guilds = new ArrayList<>();
+
         //Create a new adapter using the guilds we made above
         guildAdapter = new guildListAdapter(this, guilds);
-        guildListView = (ListView) findViewById(R.id.listGuilds);
+        guildListView = findViewById(R.id.listGuilds);
 
         //set the adapter to the guild adapter we made
         guildListView.setAdapter(guildAdapter);
 
-        //load data
+        //load data from the server
         loadData();
 
         //When a user clicks a guild we send them to the guild info screen for that guild
@@ -73,7 +74,7 @@ public class guildListMain extends AppCompatActivity {
         );
     }
 
-    AdapterView.OnItemClickListener guildClick(){
+    private AdapterView.OnItemClickListener guildClick(){
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -90,6 +91,7 @@ public class guildListMain extends AppCompatActivity {
                     //making sure that the guild name gets included
                     intent.putExtra(tag_guild_name, guild.get_name());
                     intent.putExtra(tag_guild_id, guild.get_id());
+                    intent.putExtra(tag_guild_leader, guild.isLeader());
                     startActivity(intent);
                 }
             }
@@ -100,12 +102,12 @@ public class guildListMain extends AppCompatActivity {
         VolleyBall.getResponseJsonArray(this, new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
             public void doThings(JSONArray result) {
-                guilds.add(new Guild("Add New Guild", -1));
+                guilds.add(new Guild("Add New Guild", -1, 0));
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
 
-                        Guild guild = new Guild(obj.getString("guildName"), obj.getInt("guildID"));
+                        Guild guild = new Guild(obj.getString("guildName"), obj.getInt("guildID"), obj.getInt("leader"));
                         guilds.add(guild);
                         Log.i("json array error", "added things");
                     }
@@ -119,6 +121,6 @@ public class guildListMain extends AppCompatActivity {
             }
         }, ConstantURL.URL_GUILDLIST + "userName=" +
                 "\"" + MainActivity.mainUser.getName() +"\"");
-        Log.i("vollel do things url",ConstantURL.URL_GUILDLIST + "userName=\"" + MainActivity.mainUser.getName() +"\"");
+        Log.i("volley do things url",ConstantURL.URL_GUILDLIST + "userName=\"" + MainActivity.mainUser.getName() +"\"");
     }
 }

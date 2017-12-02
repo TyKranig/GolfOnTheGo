@@ -8,16 +8,20 @@ import java.util.ArrayList;
 
 /**
  * Created by nate on 10/9/17.
+ * Used to store courses in android
  */
-
 public class Course {
 
     public ArrayList<Hole> holes;
-    private int courseNumber;
     private Ball currentBall;
     public Location flagLocation;
     private int totalScore;
+    public int courseNumber;
 
+    /**
+     * Constructor for courses.
+     * @param courseNumber The number of the course to be construced.
+     */
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
@@ -27,90 +31,80 @@ public class Course {
         currentBall = new Ball(courseNumber, getTee(1));
     }
 
+    /**
+     * return the fairway for a hole
+     * @param hole hole number
+     * @return List of LatLng of points on the fairway.
+     */
     public ArrayList<LatLng> getFairway(int hole) {
         return holes.get(hole - 1).getFairway();
     }
 
+    /**
+     * Return the green for a hole.
+     * @param hole
+     * @return List of LatLng of points on the green
+     */
     public ArrayList<LatLng> getGreen(int hole) {
         return holes.get(hole - 1).getGreen();
     }
 
+    /**
+     * Return tee location
+     * @param hole hole number
+     * @return tee LatLng
+     */
     public LatLng getTee(int hole) {
         try {
             return holes.get(hole - 1).getTee();
         } catch (Exception e) { return null; }
     }
 
+    /**
+     * Return hole location
+     * @param hole hole number
+     * @return hole LatLng
+     */
     public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getHoleLocation(); }
 
+    /**
+     * Increase the score for a player on a hole by 1.
+     * @param hole hole number
+     */
     public void incrementScore(int hole){holes.get(hole-1).holeScore ++;}
 
+    /**
+     * Get the total score for a player so far
+     * @return the score of the player for all holes played
+     */
     public int getTotalScore(){ return this.totalScore; }
 
+    /**
+     * Set the score to 0 for the next hole
+     * @param hole hole number.
+     */
     public void resetScore(int hole){
         this.totalScore += holes.get(hole-1).holeScore;
         holes.get(hole-1).holeScore = 0;
     }
 
+    /**
+     * return players current score for a hole
+     * @param hole hole number
+     * @return players score on the hole
+     */
     public int getScore(int hole){return holes.get(hole-1).holeScore;}
 
+    /**
+     * Get ball object
+     * @return current ball
+     */
     public Ball getBall() {return currentBall;}
 
-    private class Hole {
-
-        private ArrayList<LatLng> fairway;
-        private ArrayList<LatLng> green;
-        private LatLng tee;
-        private LatLng holeLocation;
-        protected int holeScore = 0;
-        private Ball holeBall;
-
-        public Hole() {
-            fairway = new ArrayList<>();
-            green = new ArrayList<>();
-
-            //setting up ball with hole
-            holeBall = new Ball(courseNumber, tee);
-        }
-
-        public void setFairway(ArrayList<LatLng> coords) {
-            this.fairway = coords;
-        }
-
-        public ArrayList<LatLng> getFairway() {
-            return this.fairway;
-        }
-        public void setGreen(ArrayList<LatLng> coords) {
-            this.green = coords;
-        }
-
-        public ArrayList<LatLng> getGreen() {
-            return this.green;
-        }
-        public void setTee(LatLng tee) {
-            this.tee = tee;
-        }
-
-        public LatLng getTee() {
-            try{
-                return this.tee;
-            } catch (Exception e) { return null; }
-        }
-
-        public void setHoleLocation(LatLng holeLocation) {
-            this.holeLocation = holeLocation;
-            flagLocation = setFlagLocation(holeLocation);
-
-        }
-        public LatLng getHoleLocation() { return this.holeLocation; }
-        public Location setFlagLocation(LatLng flagLatLng){
-            Location l = new Location("flag");
-            l.setLatitude(flagLatLng.latitude);
-            l.setLongitude(flagLatLng.longitude);
-            return l;
-        }
-    }
-
+    /**
+     * Initializes courses, soon to be deprecated.
+     * @param courseNumber course number
+     */
     private void CourseInit (int courseNumber) {
         if(courseNumber == 1){
             this.courseNumber = 1;
@@ -132,7 +126,7 @@ public class Course {
             hole1Green.add(new LatLng(42.026370, -93.645495));
             hole1Green.add(new LatLng(42.026677, -93.645500));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
@@ -157,7 +151,7 @@ public class Course {
             hole1Green.add(new LatLng(42.021787, -93.677604));
             hole1Green.add(new LatLng(42.021788, -93.677534));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
@@ -186,7 +180,7 @@ public class Course {
             hole1Green.add(new LatLng(42.028379, -93.650599));
             hole1Green.add(new LatLng(42.028329, -93.650696));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
