@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.net.Uri;
+import android.support.annotation.ColorInt;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -47,9 +48,16 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static com.example.nate.golfonthego.R.id.center;
+import static com.example.nate.golfonthego.R.id.center_horizontal;
+import static com.example.nate.golfonthego.R.id.center_vertical;
 import static com.example.nate.golfonthego.R.id.holeNumText;
 import static com.example.nate.golfonthego.R.id.map;
 
+/**
+ * CourseActivity is the main game screen of the app. A google map takes up the screen, and a
+ * user walks around, to be with in proximity of their ball to trigger screens to play the game.
+ */
 public class CourseActivity extends FragmentActivity implements OnMapReadyCallback,
         ConnectionCallbacks, OnConnectionFailedListener, swingFragment.OnFragmentInteractionListener {
 
@@ -98,6 +106,12 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
     }
 
     // main on create of the activity
+
+    /**
+     * onCreate of the application, builds location permissions, and connections to the google
+     * api.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,20 +143,27 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         bag = GolfBag.getBag();
     }
 
-    // needed for fragment interaction
+    /**
+     * fragment interaction required for fragments
+     * @param uri
+     */
     @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
 
-    // overriden to start the googleapiclient
+    /**
+     * google api client call start
+     */
     @Override
     protected void onStart() {
         super.onStart();
         googleApiClient.connect();
     }
 
-    // overriden to stop the googleapiclient
+    /**
+     * google api client calls stop
+     */
     @Override
     protected void onStop() {
         super.onStop();
@@ -164,7 +185,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         setMapStyle();
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        currentCourse = new Course(2);
+        currentCourse = new Course(3);
         currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(1), (float)19.0));
@@ -186,7 +207,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         System.out.println("onmapready completed");
     }
 
-    // sets the style of the google map to the custom style
+    /**
+     * set the stylr of the google map to the custom style
+     */
     public void setMapStyle(){
         boolean mapStyleSuccess = mMap.setMapStyle(new MapStyleOptions(getResources().getString(R.string.map_style)));
         if(!mapStyleSuccess) {
@@ -198,7 +221,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         }
     }
 
-    // initializes all the buttons on the screen
+    /**
+     * initialize all the buttons on the screen
+     */
     public void initializeButtons(){
         // swing button top left of screen
         swingButton = (Button)findViewById(R.id.swingButton);
@@ -219,7 +244,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         });
     }
 
-    // all content based on the updating location from the user
+    /**
+     * Game content that is run while the activity is getting location updates.
+     */
     public void locationBasedContent(){
         locationCallback = new LocationCallback() {
             @Override
@@ -257,14 +284,17 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                             teemarker.remove();
                             duplicateBall --;
                         }
-                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ballmarker);
+
+                        Bitmap ballMap = BitmapFactory.decodeResource(getResources(), R.mipmap.ball_marker_foreground);
                         BitmapDescriptor ballBitmap = BitmapDescriptorFactory.fromBitmap(ballMap);
                         teemarker = mMap.addMarker(
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         teemarker.setIcon(ballBitmap);
+                        teemarker.setAnchor(2131297346,2131297346);
                         tempTeeMarker.remove();
+
                         // the following needs to be changed to be more modular
-                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),2,1, currentCourse);
+                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),currentCourse.courseNumber,currentHole, currentCourse);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
@@ -273,7 +303,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     }
                     else if(location.distanceTo(currentCourse.getBall().getCurrentBallLocation()) < 2000){
                         // the following needs to be changed to be more modular
-                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),2,1, currentCourse);
+                        SwingGame.setParameters(mMap, teemarker, getApplicationContext(),currentCourse.courseNumber,currentHole, currentCourse);
                         SwingGame.gamePlayInProgress = true;
                         //button appears
                         swingButton.setVisibility(View.VISIBLE);
@@ -290,6 +320,9 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         };
     }
 
+    /**
+     * When a game is ended, i.e. all holes of a course are completed, this method is called.
+     */
     public void endGame() {
         int totalScore = currentCourse.getTotalScore();
         Context context = getApplicationContext();
@@ -301,20 +334,32 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
 
     }
 
-    // draws the current hole that the user is on
+    /**
+     * Draws the current whole that the user is playing on the map
+     * @param currentCourse the course being played
+     * @param currentHole the current hole on the course being played
+     */
     public void drawHole(Course currentCourse, int currentHole){
         PolygonOptions hole1 = new PolygonOptions().addAll(
-                currentCourse.getFairway(currentHole)).fillColor(Color.GREEN).strokeJointType(2)
-                .strokeWidth((float)10).strokeColor(Color.GREEN);
+                currentCourse.getFairway(currentHole))
+                .fillColor(getResources().getColor(R.color.colorFairwayDrawColor)).strokeJointType(2)
+                .strokeWidth((float)10).strokeColor(getResources().getColor(R.color.colorFairwayDrawColor));
         Polygon holePolygon1 = mMap.addPolygon(hole1);
         holePolygon1.setZIndex(0);
         PolygonOptions green1 = new PolygonOptions().addAll(currentCourse.getGreen(currentHole))
-                .fillColor(Color.rgb((float)19, (float)82, (float)25));
+                .fillColor(getResources().getColor(R.color.colorGreenDrawColor));
         Polygon greenPolygon1 = mMap.addPolygon(green1);
         greenPolygon1.setZIndex(1);
-        mMap.addMarker(new MarkerOptions().position(currentCourse.getHoleLocation(currentHole)));
+        Marker hole = mMap.addMarker(new MarkerOptions().position(currentCourse.getHoleLocation(currentHole)));
+        Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.fore_flag_location);
+        BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
+        hole.setIcon(startBitmapDescriptor);
     }
 
+    /**
+     * Updates the heads up display on the top right of the screen with the hole number the current
+     * number of strokes, and the current club selected.
+     */
     public void setScoreText(){
         scoreTextView.setText("" + currentCourse.getScore(currentHole));
         scoreTextView.setVisibility(View.VISIBLE);
@@ -326,12 +371,19 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         clubTextView.setVisibility(View.VISIBLE);
     }
 
-    // the next section of code includes connection methods for google api calls
+    /**
+     * Google api connection suspended callback
+     * @param i
+     */
     @Override
     public void onConnectionSuspended(int i) {
 
     }
 
+    /**
+     * google api on connection failed callback
+     * @param connectionResult
+     */
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
         Context context = getApplicationContext();
@@ -341,6 +393,10 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         toast.show();
     }
 
+    /**
+     * Callback when the google api connection succeeds.
+     * @param bundle
+     */
     @Override
     public void onConnected(Bundle bundle) {
         startLocationUpdates();
@@ -354,23 +410,12 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         } catch(SecurityException e) { e.printStackTrace(); }
     }
 
-    /*@Override
-    public void onLocationChanged(Location location){
-        currentLocation = location;
-        LatLng tmp = new LatLng(location.getLatitude(), location.getLongitude());
-        mMap.addMarker(new MarkerOptions().position(tmp).title("You might be here!"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(tmp, (float)19.0));
-
-    }*/
-
-    // The remaining is allowing for persistent location permissions for the app across life cycles
-    //
-    // requesting permissions for fine location
-    //
-    //
-    //
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
+    /**
+     * Ask for persistent location permissions.
+     * @return true if the permission is granted.
+     */
     public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 ACCESS_FINE_LOCATION)
