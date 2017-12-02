@@ -31,7 +31,9 @@ public class LoginScreen extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
 
         login = (Button)findViewById(R.id.login);
+        login.setBackgroundResource(R.drawable.login_button);
         register = (Button)findViewById(R.id.register);
+        register.setBackgroundResource(R.drawable.login_button);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
