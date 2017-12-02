@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\59db8d4984fe29e0b7d720a558a782d8\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\59db8d4984fe29e0b7d720a558a782d8\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6ece469313bc98193615c1fc916f4125\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6ece469313bc98193615c1fc916f4125\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -52,10 +52,10 @@
             ]
         },
         {
-            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\83b87f34b70677603af04cbe152917f1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\83b87f34b70677603af04cbe152917f1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -82,7 +82,7 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\c8c119e3c99850675b7cb69dc8b6a218\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\c8c119e3c99850675b7cb69dc8b6a218\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -103,10 +103,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\abbd28823498eafb1568d068ffde0c01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\abbd28823498eafb1568d068ffde0c01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -116,7 +116,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\0373f2949512804a5cb5fec0bd5c0f95\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\0373f2949512804a5cb5fec0bd5c0f95\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -135,7 +135,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -149,6 +149,57 @@
                         "startOffsets": "1170,1239",
                         "endColumns": "68,68",
                         "endOffsets": "1234,1303"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c8c119e3c99850675b7cb69dc8b6a218/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,550,614,677",
+                        "endLines": "2,3,4,5,6,7,8,9,10,14",
+                        "endColumns": "59,69,70,71,57,57,105,63,62,12",
+                        "endOffsets": "110,180,251,323,381,439,545,609,672,854"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15,16,17,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "611,671,741,812,884,942,1000,1106,1308,1371",
+                        "endLines": "10,11,12,13,14,15,16,17,20,24",
+                        "endColumns": "59,69,70,71,57,57,105,63,62,12",
+                        "endOffsets": "666,736,807,879,937,995,1101,1165,1366,1548"
+                    }
+                },
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/4dbc27539c939f035d9493fbe7213ee0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,124",
+                        "endColumns": "68,68",
+                        "endOffsets": "119,188"
+                    },
+                    "to": {
+                        "startLines": "18,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "1170,1239",
+                        "endColumns": "68,68",
+                        "endOffsets": "1234,1303"
+                    }
+                },
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/83b87f34b70677603af04cbe152917f1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
                     }
                 }
             ]

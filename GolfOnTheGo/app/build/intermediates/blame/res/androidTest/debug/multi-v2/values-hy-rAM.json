@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-hy-rAM\\values-hy-rAM.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-hy-rAM\\values-hy-rAM.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-hy-rAM\\values-hy-rAM.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-hy-rAM\\values-hy-rAM.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -31,10 +31,25 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-hy-rAM/values-hy-rAM.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-hy-rAM\\values-hy-rAM.xml",
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/4dbc27539c939f035d9493fbe7213ee0/res/values-hy-rAM/values-hy-rAM.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,281,403,524,619,706,801,910,1006,1100,1191,1287,1407,1522,1606,1692,1793,1908,1996",
+                        "endColumns": "105,119,121,120,94,86,94,108,95,93,90,95,119,114,83,85,100,114,87,92",
+                        "endOffsets": "156,276,398,519,614,701,796,905,1001,1095,1186,1282,1402,1517,1601,1687,1788,1903,1991,2084"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
+            "map": [
+                {
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-hy-rAM\\values-hy-rAM.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

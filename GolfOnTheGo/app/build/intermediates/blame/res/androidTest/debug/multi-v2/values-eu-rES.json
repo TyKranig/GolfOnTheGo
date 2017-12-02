@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-eu-rES\\values-eu-rES.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-eu-rES\\values-eu-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-eu-rES/values-eu-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-eu-rES\\values-eu-rES.xml",
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/4dbc27539c939f035d9493fbe7213ee0/res/values-eu-rES/values-eu-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -31,10 +31,25 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-eu-rES\\values-eu-rES.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-eu-rES\\values-eu-rES.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,157,270,384,502,598,684,782,887,982,1077,1173,1266,1378,1502,1588,1678,1771,1883,1970",
+                        "endColumns": "101,112,113,117,95,85,97,104,94,94,95,92,111,123,85,89,92,111,86,93",
+                        "endOffsets": "152,265,379,497,593,679,777,882,977,1072,1168,1261,1373,1497,1583,1673,1766,1878,1965,2059"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-eu-rES\\values-eu-rES.xml",
+            "map": [
+                {
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-eu-rES\\values-eu-rES.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

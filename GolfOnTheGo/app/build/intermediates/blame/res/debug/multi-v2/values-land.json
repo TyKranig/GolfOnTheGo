@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\0373f2949512804a5cb5fec0bd5c0f95\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\0373f2949512804a5cb5fec0bd5c0f95\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\ada7f56211afbe7845a7e5d47174a68f\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\abbd28823498eafb1568d068ffde0c01\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\abbd28823498eafb1568d068ffde0c01\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -50,7 +50,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\e082586e3a46d34dea6d1129b42c955a\\res\\values-land\\values.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\resh_tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\e082586e3a46d34dea6d1129b42c955a\\res\\values-land\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9",
                         "startColumns": "0,0,0,0,0,0",
@@ -69,10 +69,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6ece469313bc98193615c1fc916f4125\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\6ece469313bc98193615c1fc916f4125\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -91,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\b123a343604cb86399c8646f72d55b97\\res\\values-land\\values.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\b123a343604cb86399c8646f72d55b97\\res\\values-land\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9",
                         "startColumns": "0,0,0,0,0,0",
@@ -108,7 +108,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\59db8d4984fe29e0b7d720a558a782d8\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\59db8d4984fe29e0b7d720a558a782d8\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -118,7 +118,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\Users\\tyler\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\13cb5893f7220a685dd7192df656a331\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -137,10 +137,10 @@
             ]
         },
         {
-            "outputFile": "C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\AndroidStudioProjects\\AM_C_1_ProjectName\\GolfOnTheGo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\83b87f34b70677603af04cbe152917f1\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\83b87f34b70677603af04cbe152917f1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -150,7 +150,7 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\701c4fe2080d1ee8cf80516b315bddd2\\res\\values-land\\values.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\701c4fe2080d1ee8cf80516b315bddd2\\res\\values-land\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9",
                         "startColumns": "0,0,0,0,0,0",
@@ -167,7 +167,7 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\4dbc27539c939f035d9493fbe7213ee0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -184,7 +184,75 @@
                     }
                 },
                 {
-                    "source": "C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\c8c119e3c99850675b7cb69dc8b6a218\\res\\values-land\\values-land.xml",
+                    "source": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/C:\\home\\tkranig\\.gradle\\caches\\transforms-1\\files-1.1\\design-26.1.0.aar\\c8c119e3c99850675b7cb69dc8b6a218\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "232"
+                    },
+                    "to": {
+                        "startLines": "15",
+                        "startColumns": "4",
+                        "startOffsets": "1066",
+                        "endLines": "18",
+                        "endColumns": "12",
+                        "endOffsets": "1243"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/tkranig/AndroidStudioProjects/AM_C_1_ProjectName/GolfOnTheGo/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/83b87f34b70677603af04cbe152917f1/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,125,189,260",
+                        "endColumns": "69,63,70,67",
+                        "endOffsets": "120,184,255,323"
+                    }
+                },
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.0.4.aar/701c4fe2080d1ee8cf80516b315bddd2/res/values-land/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9",
+                        "startColumns": "0,0,0,0,0,0",
+                        "startOffsets": "183,264,344,414,483,578",
+                        "endColumns": "80,79,69,68,94,90",
+                        "endOffsets": "263,343,413,482,577,668"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "328,413,497,571,644,743",
+                        "endColumns": "84,83,73,72,98,94",
+                        "endOffsets": "408,492,566,639,738,833"
+                    }
+                },
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/4dbc27539c939f035d9493fbe7213ee0/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,130,208",
+                        "endColumns": "74,77,74",
+                        "endOffsets": "125,203,278"
+                    },
+                    "to": {
+                        "startLines": "12,13,14",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "838,913,991",
+                        "endColumns": "74,77,74",
+                        "endOffsets": "908,986,1061"
+                    }
+                },
+                {
+                    "source": "/home/tkranig/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/c8c119e3c99850675b7cb69dc8b6a218/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
