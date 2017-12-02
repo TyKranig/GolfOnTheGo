@@ -10,7 +10,7 @@ getGuildMembers($guildName);
 
 function getGuildMembers($guildName){
     global $con;
-    $query = "Select userName, password From db309amc1.user dude
+    $query = "Select userName, password, dude.userID From db309amc1.user dude
               inner join db309amc1.guildMember member
                  on dude.userId = member.userID
               inner join db309amc1.guild guild

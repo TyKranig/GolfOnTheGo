@@ -8,15 +8,16 @@ import java.util.ArrayList;
 
 /**
  * Created by nate on 10/9/17.
+ * Used to store courses in android
  */
 
 public class Course {
 
     public ArrayList<Hole> holes;
-    private int courseNumber;
     private Ball currentBall;
     public Location flagLocation;
     private int totalScore;
+    public int courseNumber;
 
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
@@ -56,61 +57,6 @@ public class Course {
 
     public Ball getBall() {return currentBall;}
 
-    private class Hole {
-
-        private ArrayList<LatLng> fairway;
-        private ArrayList<LatLng> green;
-        private LatLng tee;
-        private LatLng holeLocation;
-        protected int holeScore = 0;
-        private Ball holeBall;
-
-        public Hole() {
-            fairway = new ArrayList<>();
-            green = new ArrayList<>();
-
-            //setting up ball with hole
-            holeBall = new Ball(courseNumber, tee);
-        }
-
-        public void setFairway(ArrayList<LatLng> coords) {
-            this.fairway = coords;
-        }
-
-        public ArrayList<LatLng> getFairway() {
-            return this.fairway;
-        }
-        public void setGreen(ArrayList<LatLng> coords) {
-            this.green = coords;
-        }
-
-        public ArrayList<LatLng> getGreen() {
-            return this.green;
-        }
-        public void setTee(LatLng tee) {
-            this.tee = tee;
-        }
-
-        public LatLng getTee() {
-            try{
-                return this.tee;
-            } catch (Exception e) { return null; }
-        }
-
-        public void setHoleLocation(LatLng holeLocation) {
-            this.holeLocation = holeLocation;
-            flagLocation = setFlagLocation(holeLocation);
-
-        }
-        public LatLng getHoleLocation() { return this.holeLocation; }
-        public Location setFlagLocation(LatLng flagLatLng){
-            Location l = new Location("flag");
-            l.setLatitude(flagLatLng.latitude);
-            l.setLongitude(flagLatLng.longitude);
-            return l;
-        }
-    }
-
     private void CourseInit (int courseNumber) {
         if(courseNumber == 1){
             this.courseNumber = 1;
@@ -132,7 +78,7 @@ public class Course {
             hole1Green.add(new LatLng(42.026370, -93.645495));
             hole1Green.add(new LatLng(42.026677, -93.645500));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
@@ -157,7 +103,7 @@ public class Course {
             hole1Green.add(new LatLng(42.021787, -93.677604));
             hole1Green.add(new LatLng(42.021788, -93.677534));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
@@ -186,7 +132,7 @@ public class Course {
             hole1Green.add(new LatLng(42.028379, -93.650599));
             hole1Green.add(new LatLng(42.028329, -93.650696));
 
-            Hole holeToAdd = new Hole();
+            Hole holeToAdd = new Hole(this);
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);

@@ -425,4 +425,11 @@
     <string name="guildName">Guild Name</string>
     <string name="starteventname">Starting Event Name</string>
     <string name="startingEventDate">Starting Event Date</string>
+    <string name="title_activity_course_builder">courseBuild</string>
+    <string name="addCourse">Add Course</string>
+    <string name="addHole" >Add Hole</string>
+    <string name="tee">Tee</string>
+    <string name="fairway">Fairway</string>
+    <string name="green">Green</string>
+    <string name="add">Add</string>
 </resources>

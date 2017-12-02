@@ -12,6 +12,10 @@ MERGED from [com.google.android.gms:play-services-cast:11.0.4] /home/nate/.gradl
 MERGED from [com.android.support:mediarouter-v7:25.2.0] /home/nate/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-25.2.0.aar/b8749f4f961461e9932e2719724a6455/AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4a6d559f82ca6a21512125083c6ad495/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nate/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/ddb5de029e7ff6bf57e1b1bf5d122ca1/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:16:1-25:12
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-11.0.4.aar/112bc907078f0c7e07d6cf9d7f4144b1/AndroidManifest.xml:16:1-18:12
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:16:1-27:12
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-11.0.4.aar/c7750282b1952fe1faa3707e029741aa/AndroidManifest.xml:16:1-27:12
@@ -24,7 +28,6 @@ MERGED from [com.google.android.gms:play-services-auth:11.0.4] /home/nate/.gradl
 MERGED from [com.google.android.gms:play-services-auth-base:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-11.0.4.aar/08f517f28fa7005106888bdde9db44f5/AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-11.0.4.aar/ce8686eaf2ae8ecc93df293ecf45765f/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.firebase:firebase-config:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-config-11.0.4.aar/a38083f5e2a179bdae5e31126945deb4/AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-games:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-games-11.0.4.aar/7168c253f8f149fc0f192df6d0c95135/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.4.aar/ad793fce0cc2eab70e2264a2d31c7ebf/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/4e5e913cafd1296260885f2792db7471/AndroidManifest.xml:16:1-21:12
@@ -32,13 +35,10 @@ MERGED from [com.google.firebase:firebase-dynamic-links:11.0.4] /home/nate/.grad
 MERGED from [com.google.android.gms:play-services-fitness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-fitness-11.0.4.aar/54fcc481d15b365cf7a9d47e104bb13e/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-gcm-11.0.4.aar/f44ec70a13b8148c23095111294c0520/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-appindexing-11.0.4.aar/7b153c0ca1cb899149ddd8ad49b1ff96/AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:16:1-20:12
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.0.4.aar/5318906245c9d58e5271c4faa11eb5a1/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-iid-11.0.4.aar/37c3b948eab6d7b30b2e14ceb412d924/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-instantapps-11.0.4.aar/cc0271e22b869f9192049f7b3dd5c238/AndroidManifest.xml:2:1-4:12
 MERGED from [com.google.android.gms:play-services-location:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-location-11.0.4.aar/82e7be583fcc8fd6e72c128ea292eaac/AndroidManifest.xml:2:1-5:12
-MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:16:1-19:12
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:16:1-25:12
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-panorama-11.0.4.aar/a81acf74fc68b946131d6e5c8ef8ad81/AndroidManifest.xml:16:1-19:12
 MERGED from [com.google.android.gms:play-services-plus:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-plus-11.0.4.aar/c5221ba894bc536764c78017ece5eb1a/AndroidManifest.xml:16:1-19:12
@@ -97,6 +97,8 @@ ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidMani
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
 ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-11.0.4.aar/c7750282b1952fe1faa3707e029741aa/AndroidManifest.xml:20:5-66
@@ -109,8 +111,6 @@ MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-gcm-11.0.4.aar/f44ec70a13b8148c23095111294c0520/AndroidManifest.xml:21:5-66
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-iid-11.0.4.aar/37c3b948eab6d7b30b2e14ceb412d924/AndroidManifest.xml:21:5-66
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-iid-11.0.4.aar/37c3b948eab6d7b30b2e14ceb412d924/AndroidManifest.xml:21:5-66
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:20:5-66
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:20:5-66
 MERGED from [com.google.firebase:firebase-crash:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-crash-11.0.4.aar/c484ddd8957e9afabac12c680e1be0f0/AndroidManifest.xml:18:5-66
 MERGED from [com.google.firebase:firebase-crash:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-crash-11.0.4.aar/c484ddd8957e9afabac12c680e1be0f0/AndroidManifest.xml:18:5-66
 MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-11.0.4.aar/d6862113000236a6da527155df704901/AndroidManifest.xml:20:5-66
@@ -141,6 +141,12 @@ MERGED from [com.android.support:appcompat-v7:26.1.0] /home/nate/.gradle/caches/
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4a6d559f82ca6a21512125083c6ad495/AndroidManifest.xml:25:5-29:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nate/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/ddb5de029e7ff6bf57e1b1bf5d122ca1/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nate/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/ddb5de029e7ff6bf57e1b1bf5d122ca1/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:23:5-26:19
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:23:5-26:19
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-11.0.4.aar/c7750282b1952fe1faa3707e029741aa/AndroidManifest.xml:26:5-19
@@ -157,8 +163,6 @@ MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] /home/nate/.g
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-11.0.4.aar/ce8686eaf2ae8ecc93df293ecf45765f/AndroidManifest.xml:18:5-19
 MERGED from [com.google.firebase:firebase-config:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-config-11.0.4.aar/a38083f5e2a179bdae5e31126945deb4/AndroidManifest.xml:18:5-19
 MERGED from [com.google.firebase:firebase-config:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-config-11.0.4.aar/a38083f5e2a179bdae5e31126945deb4/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-games:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-games-11.0.4.aar/7168c253f8f149fc0f192df6d0c95135/AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-games:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-games-11.0.4.aar/7168c253f8f149fc0f192df6d0c95135/AndroidManifest.xml:18:5-19
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.4.aar/ad793fce0cc2eab70e2264a2d31c7ebf/AndroidManifest.xml:18:5-19
@@ -179,10 +183,6 @@ MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-iid-11.0.4.aar/37c3b948eab6d7b30b2e14ceb412d924/AndroidManifest.xml:23:5-19
 MERGED from [com.google.android.gms:play-services-location:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-location-11.0.4.aar/82e7be583fcc8fd6e72c128ea292eaac/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-location:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-location-11.0.4.aar/82e7be583fcc8fd6e72c128ea292eaac/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:5:5-19
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:5:5-19
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-panorama-11.0.4.aar/a81acf74fc68b946131d6e5c8ef8ad81/AndroidManifest.xml:18:5-19
@@ -262,77 +262,91 @@ ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidMani
 	android:name
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:21:13-45
 activity#com.example.nate.golfonthego.MainActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:23:9-28:68
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:23:9-26:59
 	android:label
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:25:13-56
 	android:theme
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:28:13-56
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:26:13-56
 	android:name
 		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:24:13-41
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:39:9-41:55
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:36:9-38:55
 	android:value
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:41:13-52
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:38:13-52
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:40:13-58
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:37:13-58
 activity#com.example.nate.golfonthego.CourseActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:43:9-49:20
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:40:9-46:20
 	android:label
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:45:13-58
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:42:13-58
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:44:13-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:41:13-43
 meta-data#androidss.support.PARENT_ACTIVITY
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:46:13-48:76
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:43:13-45:76
 	android:value
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:48:17-73
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:45:17-73
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:17-65
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:44:17-65
 activity#com.example.nate.golfonthego.Register
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:9-46
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:9-46
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:19-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:47:19-43
 activity#com.example.nate.golfonthego.LoginScreen
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:9-57:20
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:48:9-54:20
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:51:19-46
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:48:19-46
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:52:13-56:29
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:53:17-69
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:53:25-66
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:17-77
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:27-74
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:52:27-74
 activity#com.example.nate.golfonthego.LeaderActivity
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:9-61
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:9-52
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:19-49
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:55:19-49
 activity#com.example.nate.golfonthego.List
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:9-42
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:56:9-42
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:19-39
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:56:19-39
 activity#com.example.nate.golfonthego.guildListMain
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:9-51
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:57:9-51
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:19-48
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:57:19-48
 activity#com.example.nate.golfonthego.guildInfoScreen
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:9-66:59
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:58:9-61:59
 	android:label
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:65:13-69
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:60:13-69
 	android:theme
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:66:13-56
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:61:13-56
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:64:13-44
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:59:13-44
 activity#com.example.nate.golfonthego.NewGuild
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:9-46
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:9-46
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:19-43
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:62:19-43
 activity#com.example.nate.golfonthego.newGuildMember
-ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:9-61
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:9-52
 	android:name
-		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:19-49
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:63:19-49
+activity#com.example.nate.golfonthego.CourseBuilder
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:64:9-66:69
+	android:label
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:66:13-66
+	android:name
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:65:13-42
+activity#com.example.nate.golfonthego.courseBuildCourseSelector
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:9-63
+	android:name
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:67:19-60
+activity#com.example.nate.golfonthego.courseBuilderHoleSelector
+ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:9-72
+	android:name
+		ADDED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml:68:19-60
 uses-sdk
 INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/nate/AndroidStudioProjects/GolfOnTheGo/app/src/main/AndroidManifest.xml
@@ -353,6 +367,14 @@ MERGED from [com.android.support:appcompat-v7:26.1.0] /home/nate/.gradle/caches/
 MERGED from [com.android.support:appcompat-v7:26.1.0] /home/nate/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/4a6d559f82ca6a21512125083c6ad495/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nate/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/ddb5de029e7ff6bf57e1b1bf5d122ca1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/nate/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/ddb5de029e7ff6bf57e1b1bf5d122ca1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-11.0.4.aar/112bc907078f0c7e07d6cf9d7f4144b1/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-ads:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-11.0.4.aar/112bc907078f0c7e07d6cf9d7f4144b1/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:22:5-43
@@ -377,8 +399,6 @@ MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] /home/nate/.g
 MERGED from [com.google.android.gms:play-services-clearcut:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-11.0.4.aar/ce8686eaf2ae8ecc93df293ecf45765f/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-config:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-config-11.0.4.aar/a38083f5e2a179bdae5e31126945deb4/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-config:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-config-11.0.4.aar/a38083f5e2a179bdae5e31126945deb4/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-awareness:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-awareness-11.0.4.aar/064184b71773f5fb8253a0fc8de2fff9/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-games:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-games-11.0.4.aar/7168c253f8f149fc0f192df6d0c95135/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-games:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-games-11.0.4.aar/7168c253f8f149fc0f192df6d0c95135/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-drive:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-drive-11.0.4.aar/ad793fce0cc2eab70e2264a2d31c7ebf/AndroidManifest.xml:17:5-43
@@ -393,8 +413,6 @@ MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle
 MERGED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-gcm-11.0.4.aar/f44ec70a13b8148c23095111294c0520/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-appindexing-11.0.4.aar/7b153c0ca1cb899149ddd8ad49b1ff96/AndroidManifest.xml:17:5-43
 MERGED from [com.google.firebase:firebase-appindexing:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-appindexing-11.0.4.aar/7b153c0ca1cb899149ddd8ad49b1ff96/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:18:5-43
-MERGED from [com.google.android.gms:play-services-wallet:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-wallet-11.0.4.aar/aee39f0e84a11e46cbfcf53506380374/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.0.4.aar/5318906245c9d58e5271c4faa11eb5a1/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-identity:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-identity-11.0.4.aar/5318906245c9d58e5271c4faa11eb5a1/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-iid-11.0.4.aar/37c3b948eab6d7b30b2e14ceb412d924/AndroidManifest.xml:17:5-43
@@ -403,10 +421,6 @@ MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] /home/nate
 MERGED from [com.google.android.gms:play-services-instantapps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-instantapps-11.0.4.aar/cc0271e22b869f9192049f7b3dd5c238/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-location:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-location-11.0.4.aar/82e7be583fcc8fd6e72c128ea292eaac/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-location:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-location-11.0.4.aar/82e7be583fcc8fd6e72c128ea292eaac/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-places:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-places-11.0.4.aar/281ceb1505d4a98a3c616a3c468bb685/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-panorama:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-panorama-11.0.4.aar/a81acf74fc68b946131d6e5c8ef8ad81/AndroidManifest.xml:17:5-43
@@ -530,13 +544,13 @@ ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] /home/na
 	android:name
 		ADDED from [com.google.android.gms:play-services-cast-framework:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-11.0.4.aar/b9f86789844fd56317480360f6b3b2c5/AndroidManifest.xml:7:18-90
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:20:5-78
+ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:20:5-78
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-11.0.4.aar/c7750282b1952fe1faa3707e029741aa/AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-11.0.4.aar/c7750282b1952fe1faa3707e029741aa/AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-11.0.4.aar/56eaea04a3f683280bcf14fdaf613fc9/AndroidManifest.xml:21:5-78
 MERGED from [com.google.android.gms:play-services-analytics-impl:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-11.0.4.aar/56eaea04a3f683280bcf14fdaf613fc9/AndroidManifest.xml:21:5-78
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:19:5-78
-MERGED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:19:5-78
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:4:5-78
 MERGED from [com.google.android.gms:play-services-nearby:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-nearby-11.0.4.aar/bede365fc56e2ad9f6c9027d12a740df/AndroidManifest.xml:4:5-78
 MERGED from [com.google.android.gms:play-services-tagmanager-api:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-11.0.4.aar/d6862113000236a6da527155df704901/AndroidManifest.xml:21:5-78
@@ -548,7 +562,13 @@ MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/nate/.gra
 MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/c03e4f2d8259828eb70fc4ddf93187dc/AndroidManifest.xml:19:5-78
 MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/c03e4f2d8259828eb70fc4ddf93187dc/AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:20:22-76
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:19:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:5-77
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:19-51
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.ads.AdActivity
 ADDED from [com.google.android.gms:play-services-ads-lite:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-11.0.4.aar/b54a9fc81e06acb4c8253cee7fe6027a/AndroidManifest.xml:25:9-232
 	android:configChanges
@@ -613,12 +633,6 @@ MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/nate/.gradle/caches/
 MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/c03e4f2d8259828eb70fc4ddf93187dc/AndroidManifest.xml:22:5-81
 	android:name
 		ADDED from [com.google.android.gms:play-services-gcm:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-gcm-11.0.4.aar/f44ec70a13b8148c23095111294c0520/AndroidManifest.xml:20:22-79
-uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:5-77
-	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:19-51
-	android:required
-		ADDED from [com.google.android.gms:play-services-maps:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-maps-11.0.4.aar/1db7460a69aa3ba3fa32bca9d265eb52/AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/nate/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/66710b034472be1cf5cbe813421f3cd6/AndroidManifest.xml:19:9-172
 	android:exported

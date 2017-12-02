@@ -1,5 +1,6 @@
 package com.example.nate.golfonthego;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +27,9 @@ public class guildInfoScreen extends AppCompatActivity {
         //here we set the title of toolbar to the guild name that was put inside the intent
         Toolbar infoToolbar = (Toolbar) findViewById(R.id.guildInfoToolbar);
         setSupportActionBar(infoToolbar);
-        getSupportActionBar().setTitle(getIntent().getExtras().getString(guildListMain.tag_guild_name));
-        currentGuild = new Guild(getIntent().getExtras().getString(guildListMain.tag_guild_name), getIntent().getExtras().getInt(guildListMain.tag_guild_id));
+        Intent i = getIntent();
+        getSupportActionBar().setTitle(i.getStringExtra(guildListMain.tag_guild_name));
+        currentGuild = new Guild(i.getStringExtra(guildListMain.tag_guild_name), i.getIntExtra(guildListMain.tag_guild_id, 0),i.getIntExtra(guildListMain.tag_guild_leader, 0));
 
         _guildInfoPageAdapter = new GuildInfoPageAdapter(getSupportFragmentManager());
 
