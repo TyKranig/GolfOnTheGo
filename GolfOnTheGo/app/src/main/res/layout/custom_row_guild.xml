@@ -14,15 +14,7 @@
         android:layout_weight="0.22"
         android:gravity="left|center"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="30sp" />
-
-    <TextView
-        android:id="@+id/txtGuildScore"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:layout_weight="0.20"
-        android:gravity="left|center"
-        android:textSize="18sp" />
 
 </LinearLayout>
