@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.nate.golfonthego.Controllers.Adapters.holeListAdapter;
-import com.example.nate.golfonthego.Controllers.courseBuilderController;
-import com.example.nate.golfonthego.Models.Course;
 import com.example.nate.golfonthego.Models.Hole;
 
 import java.util.ArrayList;
@@ -22,6 +20,7 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
     private ArrayAdapter<Hole> holeAdapter;
     private ListView holeListView;
     private Button btnAddHole;
+    private Button btnSaveCourse;
     public static final String tag_current_hole = "currentHole";
 
 
@@ -32,14 +31,19 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
         setContentView(R.layout.activity_course_builder_hole_selector);
 
         holes = courseBuildCourseSelector.courseBuilder.getHoles();
-
         holeAdapter = new holeListAdapter(this, holes);
         holeListView = findViewById(R.id.lstBuiltHoles);
+        btnAddHole = findViewById(R.id.btnAddHole);
+        btnSaveCourse = findViewById(R.id.btnSaveCourse);
+
+        setupButtons();
+    }
+
+    private void setupButtons(){
         holeListView.setAdapter(holeAdapter);
         holeListView.setOnItemClickListener(holeClick());
-
-        btnAddHole = findViewById(R.id.btnAddHole);
         btnAddHole.setOnClickListener(newHoleClick());
+        btnSaveCourse.setOnClickListener(saveCourseClick());
     }
 
 
@@ -67,6 +71,16 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
                 Intent intent = new Intent(courseBuilderHoleSelector.this, CourseBuilder.class);
                 intent.putExtra(tag_current_hole, position);
                 startActivity(intent);
+            }
+        };
+    }
+
+    private View.OnClickListener saveCourseClick(){
+        return new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                courseBuildCourseSelector.courseBuilder.getCourse().saveCourse(getBaseContext());
             }
         };
     }
