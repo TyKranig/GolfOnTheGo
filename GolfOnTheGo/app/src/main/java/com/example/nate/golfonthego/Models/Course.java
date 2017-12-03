@@ -1,10 +1,27 @@
 package com.example.nate.golfonthego.Models;
 
+import android.content.Context;
 import android.location.Location;
+import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.gms.maps.model.LatLng;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import Constants.ConstantURL;
+import VolleyAPI.RequestQueueSingleton;
+import VolleyAPI.VolleyBall;
 
 /**
  * Created by nate on 10/9/17.
@@ -12,6 +29,7 @@ import java.util.ArrayList;
  */
 public class Course {
 
+    public static ArrayList<Course> allCourses;
     public ArrayList<Hole> holes;
     private Ball currentBall;
     public Location flagLocation;
@@ -190,6 +208,97 @@ public class Course {
             // end course 3 test course at attanassoff for demos
 
         }
+    }
+
+    //called as soon as the main screen is loaded in order to load all courses from the database
+    public static void loadCourses(Context context){
+        allCourses = new ArrayList<>();
+        String url = ConstantURL.URL_LOADCOURSES;
+
+        VolleyBall.getResponseJsonArray(context, new VolleyBall.VolleyCallback<JSONArray>() {
+            @Override
+            public void doThings(JSONArray result) {
+                for(int i = 0; i < result.length(); i++){
+                    try {
+                        JSONObject obj = result.getJSONObject(i);
+                        Course c = new Course(obj.getInt("courseID"));
+                        allCourses.add(c);
+                        Log.d("json array error", c.toString());
+                    }
+                    catch (JSONException e) {
+                        Log.i("json array error", e.toString());
+                    }
+                }
+            }
+        }, url);
+    }
+
+    public void saveCourse(Context context){
+        for(int i = 0; i < holes.size(); i++){
+            RequestQueueSingleton.getInstance(context).addToRequestQueue(getRequestForSave(i + 1));
+        }
+    }
+
+    private StringRequest getRequestForSave(final int holeNumber){
+        String url = ConstantURL.URL_SAVECOURSE;
+
+        StringRequest jsonObjReq = new StringRequest(Request.Method.POST,
+                url,
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+                        Log.i("Save data", response.toString());
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i("errorSave",error.toString());
+                }
+        }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+
+                ArrayList<LatLng> fairway = getFairway(holeNumber);
+                ArrayList<LatLng> green = getGreen(holeNumber);
+
+                ArrayList<String> fairwayStrings = new ArrayList<>();
+                ArrayList<String> greenStrings = new ArrayList<>();
+
+                for(int i = 0; i < fairway.size(); i++){
+                    LatLng ltlng = fairway.get(i);
+                    fairwayStrings.add(ltlng.latitude + "," + ltlng.longitude);
+                }
+
+                for(int i = 0; i < green.size(); i++){
+                    LatLng ltlng = green.get(i);
+                    greenStrings.add(ltlng.latitude + "," + ltlng.longitude);
+                }
+
+                JSONArray fairwayJS = new JSONArray(fairwayStrings);
+                JSONArray greenJS = new JSONArray(greenStrings);
+
+                LatLng tee = holes.get(holeNumber - 1).getTee();
+                String teeString = tee.latitude + "," + tee.longitude;
+
+                params.put("tee", teeString);
+                params.put("fairway", fairwayJS.toString());
+                params.put("green", greenJS.toString());
+                params.put("courseID", courseNumber + "");
+                params.put("holeNumber",holeNumber + "");
+                Log.d("jason", params.toString());
+                return params;
+            }
+            @Override
+            public Map<String, String> getHeaders(){
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Content-Type", "application/x-www-form-urlencoded;  charset=utf-8");
+                return params;
+            }
+        };
+
+        return jsonObjReq;
     }
 }
 

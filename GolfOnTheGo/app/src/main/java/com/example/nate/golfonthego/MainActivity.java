@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.nate.golfonthego.Models.Course;
 import com.example.nate.golfonthego.Models.User;
 
 import java.util.Random;
@@ -38,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mainUser = new User(intent.getStringExtra(LoginScreen.EXTRA_MESSAGE), "", intent.getIntExtra(LoginScreen.EXTRA_USERID, -1));
+        mainUser.setAdmin(intent.getIntExtra(LoginScreen.EXTRA_ISADMIN, 0));
 
         //Plays music - change music eventualy or comment to off
-
         player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
         player.setLooping(true);
         player.start();
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Course.loadCourses(this);
     }
 
 

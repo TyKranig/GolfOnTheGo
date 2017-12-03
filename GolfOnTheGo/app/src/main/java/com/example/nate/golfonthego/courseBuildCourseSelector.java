@@ -17,7 +17,6 @@ import com.example.nate.golfonthego.Models.Course;
 import java.util.ArrayList;
 
 public class courseBuildCourseSelector extends AppCompatActivity {
-    private ArrayList<Course> courses;
     private ArrayAdapter<Course> courseAdapter;
     private ListView courseListView;
     private Button btnAddCourse;
@@ -29,20 +28,26 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_build_course_selector);
 
-        //courses array setup
-        courses = new ArrayList<>();
-        courses.add(new Course(1));
-        courses.add(new Course(2));
-
         //set the data for the courses list
-        courseAdapter = new courseListAdapter(this, courses);
+        courseAdapter = new courseListAdapter(this, Course.allCourses);
         courseListView = findViewById(R.id.lstBuiltCourses);
-        courseListView.setAdapter(courseAdapter);
-        courseListView.setOnItemClickListener(courseClick());
 
         //set button click listener
         btnAddCourse = findViewById(R.id.btnAddCourse);
-        btnAddCourse.setOnClickListener(newCourseClick());
+
+        setupButtons();
+    }
+
+    private void setupButtons(){
+        courseListView.setAdapter(courseAdapter);
+        if(MainActivity.mainUser.isAdmin()){
+            btnAddCourse.setOnClickListener(newCourseClick());
+            courseListView.setOnItemClickListener(courseClick());
+        }
+
+        if(!MainActivity.mainUser.isAdmin()){
+            btnAddCourse.setVisibility(View.GONE);
+        }
     }
 
     private View.OnClickListener newCourseClick(){
@@ -50,8 +55,8 @@ public class courseBuildCourseSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Course newCourse = new Course(courses.size());
-                courses.add(newCourse);
+                Course newCourse = new Course(Course.allCourses.size());
+                Course.allCourses.add(newCourse);
                 courseBuilder = courseBuilderController.getInstance(newCourse);
                 Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
                 startActivity(intent);
@@ -62,7 +67,7 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         };
     }
 
-    private AdapterView.OnItemClickListener courseClick() {
+    public AdapterView.OnItemClickListener courseClick() {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {

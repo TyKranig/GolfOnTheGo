@@ -10,6 +10,7 @@ public class User {
     private String name;
     private String password;
     private int userID;
+    private int isAdmin;
 
     /**
      * @param name The username for the user
@@ -45,5 +46,11 @@ public class User {
 
     public void setUserID(int userID) {
         this.userID = userID;
+    }
+
+    public void setAdmin(int isAdmin){ this.isAdmin = isAdmin; }
+
+    public boolean isAdmin(){
+        return this.isAdmin == 1;
     }
 }

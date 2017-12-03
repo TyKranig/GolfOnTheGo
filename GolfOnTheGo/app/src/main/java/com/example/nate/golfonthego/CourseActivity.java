@@ -185,7 +185,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         setMapStyle();
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        currentCourse = new Course(3);
+        currentCourse = new Course(2);
         currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(1), (float)19.0));
@@ -290,7 +290,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         teemarker = mMap.addMarker(
                                 new MarkerOptions().position(currentCourse.getTee(currentHole)).title("start here!"));
                         teemarker.setIcon(ballBitmap);
-                        teemarker.setAnchor(2131297346,2131297346);
+                        teemarker.setAnchor(0.5f,0.5f);
                         tempTeeMarker.remove();
 
                         // the following needs to be changed to be more modular
@@ -354,6 +354,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         Bitmap startBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.fore_flag_location);
         BitmapDescriptor startBitmapDescriptor = BitmapDescriptorFactory.fromBitmap(startBitmap);
         hole.setIcon(startBitmapDescriptor);
+        hole.setAnchor(0.5f,0.5f);
     }
 
     /**

@@ -7,4 +7,5 @@
     <color name="colorBabyBlue">#0c8b87</color>
     <color name="colorGreenDrawColor">#33691e</color>
     <color name="colorFairwayDrawColor">#4CAF50</color>
+    <color name="colorDark">#424242</color>
 </resources>
