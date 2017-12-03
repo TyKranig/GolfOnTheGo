@@ -12,6 +12,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class Course {
     public Location flagLocation;
     private int totalScore;
     public int courseNumber;
+
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
@@ -167,7 +169,18 @@ public class Course {
 
         VolleyBall.getResponseJsonArray(context, new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
-            public void doThings(JSONArray result) {git 
+            public void doThings(JSONArray result) {
+                for(int i = 0; i < result.length(); i++){
+                    try {
+                        JSONObject obj = result.getJSONObject(i);
+                        Course c = new Course(obj.getInt("courseID"));
+                        allCourses.add(c);
+                        Log.d("json array error", c.toString());
+                    }
+                    catch (JSONException e) {
+                        Log.i("json array error", e.toString());
+                    }
+                }
             }
         }, url);
     }

@@ -433,4 +433,6 @@
     <string name="green">Green</string>
     <string name="add">Add</string>
     <string name="save">Save</string>
+    <string name="selectCourse">Select Course</string>
+    <string name="buildCourse">Build</string>
 </resources>
