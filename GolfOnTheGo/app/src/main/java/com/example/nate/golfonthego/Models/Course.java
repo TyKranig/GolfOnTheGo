@@ -32,7 +32,6 @@ public class Course {
     public static ArrayList<Course> allCourses;
     public ArrayList<Hole> holes;
     private Ball currentBall;
-    public Location flagLocation;
     private int totalScore;
     public int courseNumber;
 
@@ -47,6 +46,14 @@ public class Course {
         totalScore = 0;
         //sets up the ball for the course
         currentBall = new Ball(courseNumber, getTee(1));
+    }
+
+    /**
+     * Constructor for network courses
+     */
+    public Course(){
+        holes = new ArrayList<>();
+        currentBall = new Ball();
     }
 
     /**
@@ -83,7 +90,7 @@ public class Course {
      * @param hole hole number
      * @return hole LatLng
      */
-    public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getHoleLocation(); }
+    public LatLng getHoleLocation(int hole) { return holes.get(hole - 1).getFlagLocationAsLatLng(); }
 
     /**
      * Increase the score for a player on a hole by 1.
@@ -148,7 +155,7 @@ public class Course {
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
-            holeToAdd.setHoleLocation(new LatLng(42.06400, -93.645600));
+            holeToAdd.setFlagLocation(new LatLng(42.06400, -93.645600));
 
             holes.add(holeToAdd);
             // end course 1
@@ -173,7 +180,7 @@ public class Course {
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
-            holeToAdd.setHoleLocation(new LatLng(42.021788, -93.677534));
+            holeToAdd.setFlagLocation(new LatLng(42.021788, -93.677534));
 
             holes.add(holeToAdd);
             // end course 2 test course at nates apartment
@@ -202,7 +209,7 @@ public class Course {
             holeToAdd.setFairway(hole1);
             holeToAdd.setGreen(hole1Green);
             holeToAdd.setTee(hole1Tee);
-            holeToAdd.setHoleLocation(new LatLng(42.028367, -93.650666));
+            holeToAdd.setFlagLocation(new LatLng(42.028367, -93.650666));
 
             holes.add(holeToAdd);
             // end course 3 test course at attanassoff for demos
@@ -221,7 +228,8 @@ public class Course {
                 for(int i = 0; i < result.length(); i++){
                     try {
                         JSONObject obj = result.getJSONObject(i);
-                        Course c = new Course(obj.getInt("courseID"));
+                        Course c = new Course();
+                        c.courseNumber = obj.getInt("courseID");
                         allCourses.add(c);
                         Log.d("json array error", c.toString());
                     }
@@ -287,6 +295,8 @@ public class Course {
                 params.put("green", greenJS.toString());
                 params.put("courseID", courseNumber + "");
                 params.put("holeNumber",holeNumber + "");
+                Location flag = holes.get(holeNumber - 1).flagLocation;
+                params.put("holeLocation", flag.getLatitude()+ "," + flag.getLongitude());
                 Log.d("jason", params.toString());
                 return params;
             }

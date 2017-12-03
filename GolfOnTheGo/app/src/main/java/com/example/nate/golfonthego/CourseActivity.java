@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 
 import com.example.nate.golfonthego.Models.Course;
+import com.example.nate.golfonthego.Models.CourseToPlay;
 import com.example.nate.golfonthego.Models.GolfBag;
 import com.google.android.gms.location.FusedLocationProviderApi;
 import com.google.android.gms.location.LocationCallback;
@@ -185,7 +186,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
         setMapStyle();
 
         //pick a course to load in, eventually will be extended to be based on savedIntsanceState
-        currentCourse = new Course(2);
+        currentCourse = CourseToPlay.getCourse();
         currentHole = 1;
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentCourse.getTee(1), (float)19.0));
@@ -270,7 +271,7 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                     // if the distance  between the player and the first tee is less than 20 meters
                     // any more precise may cause issues due to the inconsistency of
                     // fine location gps -nate
-                    if(currentCourse.getBall().getCurrentBallLocation().distanceTo(currentCourse.flagLocation) < 10){
+                    if(currentCourse.getBall().getCurrentBallLocation().distanceTo(currentCourse.holes.get(currentHole - 1).flagLocation) < 10){
                         //TODO : start putting stuff
                         currentCourse.resetScore(currentHole);
                         setScoreText();

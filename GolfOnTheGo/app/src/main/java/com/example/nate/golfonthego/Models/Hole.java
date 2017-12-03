@@ -15,10 +15,10 @@ public class Hole {
     private ArrayList<LatLng> fairway;
     private ArrayList<LatLng> green;
     private LatLng tee;
-    private LatLng holeLocation;
     protected int holeScore = 0;
     private Ball holeBall;
     private Course course;
+    public Location flagLocation;
 
     public Hole(Course course) {
         fairway = new ArrayList<>();
@@ -54,18 +54,26 @@ public class Hole {
         } catch (Exception e) { return null; }
     }
 
-
-    public void setHoleLocation(LatLng holeLocation) {
-        this.holeLocation = holeLocation;
-        course.flagLocation = setFlagLocation(holeLocation);
-    }
-
-    public LatLng getHoleLocation() { return this.holeLocation; }
-
     public Location setFlagLocation(LatLng flagLatLng){
         Location l = new Location("flag");
         l.setLatitude(flagLatLng.latitude);
         l.setLongitude(flagLatLng.longitude);
+        this.flagLocation = l;
         return l;
     }
+    public LatLng getFlagLocationAsLatLng(){
+        return new LatLng(flagLocation.getLatitude(), flagLocation.getLongitude());
+    }
+
+    public void addLatLng(LatLng latLng, int pointType){
+        if(pointType == greenInt){
+            green.add(latLng);
+        }
+        else if(pointType == fairwayInt){
+            fairway.add(latLng);
+        }
+    }
+
+    public static int fairwayInt = 0;
+    public static int greenInt = 1;
 }
