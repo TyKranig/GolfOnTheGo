@@ -29,12 +29,12 @@ import VolleyAPI.VolleyBall;
 
 public class Course {
 
+    public static ArrayList<Course> allCourses;
     public ArrayList<Hole> holes;
     private Ball currentBall;
     public Location flagLocation;
     private int totalScore;
     public int courseNumber;
-
     public Course(int courseNumber) {
         this.courseNumber = courseNumber;
         holes = new ArrayList<>();
@@ -160,17 +160,26 @@ public class Course {
         }
     }
 
-    public Course loadCourse(int courseID){
-        return null;
+    //called as soon as the main screen is loaded in order to load all courses from the database
+    public static void loadCourses(Context context){
+        allCourses = new ArrayList<>();
+        String url = ConstantURL.URL_LOADCOURSES;
+
+        VolleyBall.getResponseJsonArray(context, new VolleyBall.VolleyCallback<JSONArray>() {
+            @Override
+            public void doThings(JSONArray result) {
+
+            }
+        }, url);
     }
 
     public void saveCourse(Context context){
         for(int i = 0; i < holes.size(); i++){
-            RequestQueueSingleton.getInstance(context).addToRequestQueue(getRequest(i + 1));
+            RequestQueueSingleton.getInstance(context).addToRequestQueue(getRequestForSave(i + 1));
         }
     }
 
-    private StringRequest getRequest(final int holeNumber){
+    private StringRequest getRequestForSave(final int holeNumber){
         String url = ConstantURL.URL_SAVECOURSE;
 
         StringRequest jsonObjReq = new StringRequest(Request.Method.POST,
