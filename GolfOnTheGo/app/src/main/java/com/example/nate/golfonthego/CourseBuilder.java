@@ -38,6 +38,7 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
     private Polygon fairway = null;
     private Polygon green = null;
     private Marker Tee;
+    private Marker flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +94,8 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                     points = currentHole.getFairway();
                 }else if (i == R.id.rdoGreen){
                     points = currentHole.getGreen();
+                }else if(i == R.id.rdoFlag){
+                    points.add(currentHole.getFlagLocationAsLatLng());
                 }
 
                 stagedAdds.clear();
@@ -142,6 +145,10 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             start = new LatLng(42.026486, -93.647377);
         }
 
+        if(currentHole.flagLocation != null){
+            flag = mMap.addMarker(new MarkerOptions().position(currentHole.getFlagLocationAsLatLng()));
+        }
+
         Tee = mMap.addMarker(new MarkerOptions().position(start));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(start, 17.0f));
         mMap.setOnMapClickListener(mapClickListener());
@@ -157,19 +164,27 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
             @Override
             public void onMapClick(LatLng latLng) {
                 if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoTee){
-                    //mMap.clear();
                     stagedAdds.clear();
-                    Tee.remove();
+                    if(Tee != null){
+                        Tee.remove();
+                    }
                     MarkerOptions markerOptions = new MarkerOptions().position(latLng);
                     Tee =  mMap.addMarker(markerOptions);
+                }
+                else if(rdoGroup.getCheckedRadioButtonId() == R.id.rdoFlag){
+                    stagedAdds.clear();
+                    if(flag != null){
+                        flag.remove();
+                    }
+                    MarkerOptions markerOptions = new MarkerOptions().position(latLng);
+                    flag =  mMap.addMarker(markerOptions);
                 }
                 else if(stagedAdds.size() == 0){
                     clearMarkerList();
                     clearPolygons(rdoGroup.getCheckedRadioButtonId());
-
                 }
 
-                if(rdoGroup.getCheckedRadioButtonId() != R.id.rdoTee){
+                if(rdoGroup.getCheckedRadioButtonId() != R.id.rdoTee && rdoGroup.getCheckedRadioButtonId() != R.id.rdoFlag){
                     MarkerOptions markerOptions = new MarkerOptions().position(latLng);
                     Marker m = mMap.addMarker(markerOptions);
                     markerList.add(m);

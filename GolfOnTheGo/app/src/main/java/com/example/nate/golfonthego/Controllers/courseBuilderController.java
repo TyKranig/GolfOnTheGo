@@ -56,6 +56,9 @@ public class courseBuilderController {
             case R.id.rdoGreen:
                 hole.setGreen(latLngs);
                 break;
+            case R.id.rdoFlag:
+                hole.setFlagLocation(latLngs.get(0));
+                break;
             default:
                 break;
         }

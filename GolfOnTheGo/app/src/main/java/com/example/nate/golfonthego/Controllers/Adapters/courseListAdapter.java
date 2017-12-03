@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.example.nate.golfonthego.MainActivity;
 import com.example.nate.golfonthego.Models.Course;
+import com.example.nate.golfonthego.Models.CourseToPlay;
 import com.example.nate.golfonthego.R;
 
 import java.util.ArrayList;
@@ -39,14 +40,18 @@ public class courseListAdapter extends ArrayAdapter<Course>{
 
         assert course != null;
         txtCourseID.setText(course.courseNumber + "");
-        btnCourseSelect.setOnClickListener(selectCourseClick());
+        btnCourseSelect.setOnClickListener(selectCourseClick(course.courseNumber));
 
         return customView;
     }
 
-    private View.OnClickListener selectCourseClick(){
-
-        return null;
+    private View.OnClickListener selectCourseClick(final int position){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CourseToPlay.initServerCourse(position, getContext());
+            }
+        };
     }
 
 
