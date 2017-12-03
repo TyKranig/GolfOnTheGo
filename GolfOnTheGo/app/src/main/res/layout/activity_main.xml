@@ -39,27 +39,6 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/testButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/mr_group_collapse"
-        android:elevation="0dp"
-        android:text="@string/title_activity_accelerometer_test"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:textColor="@color/colorAccent"
-        android:shadowColor="#000000"
-        android:shadowDx="0.0"
-        android:shadowDy="0.0"
-        android:shadowRadius="5.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
         android:id="@+id/button7"
         style="@style/ThemeOverlay.AppCompat.Dark"
         android:layout_width="wrap_content"

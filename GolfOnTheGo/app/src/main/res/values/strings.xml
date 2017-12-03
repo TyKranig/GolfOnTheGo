@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GolfOnTheGo</string>
+    <string name="app_name">Golf On The Go</string>
     <string name="title_activity_course">Map</string>
     <string name="title_location_permission">Access Location</string>
     <string name="text_location_permission">Allow us to access your location to play the game?</string>
@@ -337,7 +337,7 @@
     <string name="tutorial">After logging in, select your course from the \'Courses\' button.\n
         \nNavigate back to the \'Play\' button and find the tee location on the map. Physically walk to this tee location to start the hole.\n
         \nRotate your screen to aim your shot and press the swing button when you are ready to swing. Physically swing your phone, emulating a golf swing, to hit the ball forward.\n
-        \nDifferent clubs can hit the clubs farther or shorter, but the power of your swing will affect how far the ball goes.</string>
+        \nDifferent clubs can hit the ball farther or shorter, but the power of your swing will affect how far the ball goes.</string>
 
 
     <!-- Strings related to Settings -->

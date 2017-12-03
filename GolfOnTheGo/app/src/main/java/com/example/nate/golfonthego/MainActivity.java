@@ -45,23 +45,20 @@ public class MainActivity extends AppCompatActivity {
         mainUser.setAdmin(intent.getIntExtra(LoginScreen.EXTRA_ISADMIN, 0));
 
         //Plays music - change music eventualy or comment to off
-        player = MediaPlayer.create(this, Settings.System.DEFAULT_RINGTONE_URI); //TODO find a way to change from a system default
-        player.setLooping(true);
-        player.start();
-        player.setVolume(0, 0);
 
-
-        Button testButton = (Button)findViewById(R.id.testButton);
-        testButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-            }
-        });
+        playMusic();
 
         Course.loadCourses(this);
     }
 
+    public void playMusic(){
+        player = MediaPlayer.create(this, R.raw.piano_background);
+        player.setLooping(true);
+        player.start();
+        player.setVolume(0.40f, 0.40f);
 
+        return;
+    }
 
     //options button function
     public void btnSettings_onClick(View view){
@@ -136,8 +133,9 @@ public class MainActivity extends AppCompatActivity {
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
 
         int nextRand = r.nextInt()%5+1;
-        while(nextRand == currImage)
-            nextRand = r.nextInt()%5+1;
+        if(nextRand == currImage){
+            nextRand ++;
+        }
 
         currImage = nextRand;
         switch (nextRand){ //skip background 1 for now
