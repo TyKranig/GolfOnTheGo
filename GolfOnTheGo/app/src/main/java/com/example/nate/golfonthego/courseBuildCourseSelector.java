@@ -17,7 +17,6 @@ import com.example.nate.golfonthego.Models.Course;
 import java.util.ArrayList;
 
 public class courseBuildCourseSelector extends AppCompatActivity {
-    private ArrayList<Course> courses;
     private ArrayAdapter<Course> courseAdapter;
     private ListView courseListView;
     private Button btnAddCourse;
@@ -28,11 +27,6 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_build_course_selector);
-
-        //courses array setup
-        courses = new ArrayList<>();
-        courses.add(new Course(1));
-        courses.add(new Course(2));
 
         //set the data for the courses list
         courseAdapter = new courseListAdapter(this, Course.allCourses);
@@ -61,8 +55,8 @@ public class courseBuildCourseSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Course newCourse = new Course(courses.size());
-                courses.add(newCourse);
+                Course newCourse = new Course(Course.allCourses.size());
+                Course.allCourses.add(newCourse);
                 courseBuilder = courseBuilderController.getInstance(newCourse);
                 Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
                 startActivity(intent);
