@@ -167,8 +167,7 @@ public class Course {
 
         VolleyBall.getResponseJsonArray(context, new VolleyBall.VolleyCallback<JSONArray>() {
             @Override
-            public void doThings(JSONArray result) {
-
+            public void doThings(JSONArray result) {git 
             }
         }, url);
     }
