@@ -35,14 +35,25 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         courses.add(new Course(2));
 
         //set the data for the courses list
-        courseAdapter = new courseListAdapter(this, courses);
+        courseAdapter = new courseListAdapter(this, Course.allCourses);
         courseListView = findViewById(R.id.lstBuiltCourses);
-        courseListView.setAdapter(courseAdapter);
-        courseListView.setOnItemClickListener(courseClick());
 
         //set button click listener
         btnAddCourse = findViewById(R.id.btnAddCourse);
-        btnAddCourse.setOnClickListener(newCourseClick());
+
+        setupButtons();
+    }
+
+    private void setupButtons(){
+        courseListView.setAdapter(courseAdapter);
+        if(MainActivity.mainUser.isAdmin()){
+            btnAddCourse.setOnClickListener(newCourseClick());
+            courseListView.setOnItemClickListener(courseClick());
+        }
+
+        if(!MainActivity.mainUser.isAdmin()){
+            btnAddCourse.setVisibility(View.GONE);
+        }
     }
 
     private View.OnClickListener newCourseClick(){
@@ -62,7 +73,7 @@ public class courseBuildCourseSelector extends AppCompatActivity {
         };
     }
 
-    private AdapterView.OnItemClickListener courseClick() {
+    public AdapterView.OnItemClickListener courseClick() {
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {

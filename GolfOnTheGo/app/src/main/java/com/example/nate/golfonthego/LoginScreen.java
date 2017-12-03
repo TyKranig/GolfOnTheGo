@@ -20,6 +20,7 @@ public class LoginScreen extends AppCompatActivity {
     public Button register;
     public static final String EXTRA_MESSAGE = "userName";
     public static final String EXTRA_USERID = "userID";
+    public static final String EXTRA_ISADMIN = "isAdmin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ public class LoginScreen extends AppCompatActivity {
                         intent.putExtra(EXTRA_MESSAGE, userName.getText().toString());
                         Log.i("userID is", "" + result.getInt("userID"));
                         intent.putExtra(EXTRA_USERID, result.getInt("userID"));
+                        intent.putExtra(EXTRA_ISADMIN, result.getInt("isAdmin"));
                         finish();
                         startActivity(intent);
                     } else {

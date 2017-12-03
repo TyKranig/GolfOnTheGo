@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.nate.golfonthego.MainActivity;
 import com.example.nate.golfonthego.Models.Course;
 import com.example.nate.golfonthego.R;
 
@@ -22,21 +24,32 @@ import java.util.ArrayList;
 public class courseListAdapter extends ArrayAdapter<Course>{
 
     public courseListAdapter(Context context, ArrayList<Course> courses) {
-        super(context, R.layout.custom_row_guild, courses);
+        super(context, R.layout.custom_row_course, courses);
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater guildInflater = LayoutInflater.from(getContext());
-        View customView = guildInflater.inflate(R.layout.custom_row_guild, parent, false);
+        View customView = guildInflater.inflate(R.layout.custom_row_course, parent, false);
 
         Course course = getItem(position);
-        TextView guildText = customView.findViewById(R.id.txtGuildName);
+        TextView txtCourseID = customView.findViewById(R.id.txtCourseID);
+        Button btnCourseSelect = customView.findViewById(R.id.btnCourseSelect);
 
         assert course != null;
-        guildText.setText(course.courseNumber + "");
+        txtCourseID.setText(course.courseNumber + "");
+        btnCourseSelect.setOnClickListener(selectCourseClick());
 
         return customView;
     }
+
+    private View.OnClickListener selectCourseClick(){
+
+        return null;
+    }
+
+
+
+
 }
