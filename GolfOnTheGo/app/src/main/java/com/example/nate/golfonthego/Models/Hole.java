@@ -62,7 +62,10 @@ public class Hole {
         return l;
     }
     public LatLng getFlagLocationAsLatLng(){
-        return new LatLng(flagLocation.getLatitude(), flagLocation.getLongitude());
+        if(flagLocation!=null){
+            return new LatLng(flagLocation.getLatitude(), flagLocation.getLongitude());
+        }
+        return null;
     }
 
     public void addLatLng(LatLng latLng, int pointType){

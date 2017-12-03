@@ -95,7 +95,9 @@ public class CourseBuilder extends FragmentActivity implements OnMapReadyCallbac
                 }else if (i == R.id.rdoGreen){
                     points = currentHole.getGreen();
                 }else if(i == R.id.rdoFlag){
-                    points.add(currentHole.getFlagLocationAsLatLng());
+                    if(currentHole.getFlagLocationAsLatLng()!=null){
+                        points.add(currentHole.getFlagLocationAsLatLng());
+                    }
                 }
 
                 stagedAdds.clear();

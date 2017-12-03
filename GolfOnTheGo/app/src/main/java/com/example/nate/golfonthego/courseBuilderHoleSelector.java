@@ -1,8 +1,11 @@
 package com.example.nate.golfonthego;
 
+import android.content.Context;
 import android.content.Intent;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -12,8 +15,16 @@ import android.widget.ListView;
 
 import com.example.nate.golfonthego.Controllers.Adapters.holeListAdapter;
 import com.example.nate.golfonthego.Models.Hole;
+import com.google.android.gms.maps.model.LatLng;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import Constants.ConstantURL;
+import VolleyAPI.VolleyBall;
 
 public class courseBuilderHoleSelector extends AppCompatActivity {
     private ArrayList<Hole> holes;
@@ -21,6 +32,7 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
     private ListView holeListView;
     private Button btnAddHole;
     private Button btnSaveCourse;
+    private SwipeRefreshLayout refreshHoles;
     public static final String tag_current_hole = "currentHole";
 
 
@@ -35,6 +47,10 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
         holeListView = findViewById(R.id.lstBuiltHoles);
         btnAddHole = findViewById(R.id.btnAddHole);
         btnSaveCourse = findViewById(R.id.btnSaveCourse);
+        refreshHoles = findViewById(R.id.holesRefresher);
+
+        refreshHoles.setRefreshing(true);
+        loadCourse(this);
 
         setupButtons();
     }
@@ -44,6 +60,16 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
         holeListView.setOnItemClickListener(holeClick());
         btnAddHole.setOnClickListener(newHoleClick());
         btnSaveCourse.setOnClickListener(saveCourseClick());
+
+        refreshHoles.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        Log.i("holes refresh", "onRefresh called from SwipeRefreshLayout");
+                        loadCourse(getBaseContext());
+                        System.out.println(holes.toString());
+                    }
+                });
     }
 
 
@@ -54,12 +80,13 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
             public void onClick(View view) {
                 Hole newHole = new Hole(courseBuildCourseSelector.courseBuilder.getCourse());
                 courseBuildCourseSelector.courseBuilder.AddHole(newHole);
+                holes = courseBuildCourseSelector.courseBuilder.getHoles();
+                //update the courses list
+                holeAdapter.notifyDataSetChanged();
+
                 Intent intent = new Intent(courseBuilderHoleSelector.this, CourseBuilder.class);
                 intent.putExtra(tag_current_hole, holes.size() - 1);
                 startActivity(intent);
-
-                //update the courses list
-                holeAdapter.notifyDataSetChanged();
             }
         };
     }
@@ -81,7 +108,69 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 courseBuildCourseSelector.courseBuilder.getCourse().saveCourse(getBaseContext());
+                refreshHoles.setRefreshing(true);
+                loadCourse(getBaseContext());
             }
         };
+    }
+
+    private void loadCourse(Context context){
+        VolleyBall.getResponseJsonArray(context, new VolleyBall.VolleyCallback<JSONArray>() {
+            @Override
+            public void doThings(JSONArray result) {
+                ArrayList<Hole> addedHoles = new ArrayList<>();
+                holes.clear();
+                try {
+                    for (int i = 0; i < result.length(); i++) {
+                        JSONObject obj = result.getJSONObject(i);
+                        int holeNum = obj.getInt("holeNum");
+
+                        Hole hole;
+                        try{
+                            hole = addedHoles.get(holeNum - 1);
+                        }
+                        catch(Exception e){
+                            hole = new Hole(courseBuildCourseSelector.courseBuilder.getCourse());
+                            hole.setFairway(new ArrayList<LatLng>());
+                            hole.setGreen(new ArrayList<LatLng>());
+                            addedHoles.add(hole);
+                            hole = addedHoles.get(holeNum - 1);
+                        }
+
+                        String[] latlong = obj.getString("point").split(",");
+                        Double latitude = Double.parseDouble(latlong[0]);
+                        Double longitude = Double.parseDouble(latlong[1]);
+                        LatLng latLng = new LatLng(latitude, longitude);
+
+                        if (obj.getString("pointType").equals("tee")) {
+                            hole.setTee(latLng);
+                        } else if (obj.getString("pointType").equals("fairway")) {
+                            hole.addLatLng(latLng, Hole.fairwayInt);
+                        } else if (obj.getString("pointType").equals("green")) {
+                            hole.addLatLng(latLng, Hole.greenInt);
+                        } else if (obj.getString("pointType").equals("hole")) {
+                            hole.setFlagLocation(latLng);
+                        }
+                    }
+                }
+                catch(JSONException e){
+                    Log.i("json array error", e.toString());
+                }
+                Hole hole = addedHoles.get(0);
+                System.out.println(hole.getFairway().toString());
+                System.out.println("TEEEEEEEEEE" + hole.getTee().toString());
+                System.out.println("FAIRWAY" + hole.getFairway().toString());
+                System.out.println("GREEN" + hole.getGreen().toString());
+                System.out.println(hole.flagLocation.toString());
+                System.out.println(addedHoles.size());
+
+                courseBuildCourseSelector.courseBuilder.getCourse().holes.clear();
+                courseBuildCourseSelector.courseBuilder.getCourse().holes.addAll(addedHoles);
+                holes.addAll(addedHoles);
+                holeAdapter.notifyDataSetChanged();
+                refreshHoles.setRefreshing(false);
+            }
+        }, ConstantURL.URL_LOADSPECIFICCOURSE + "courseID=" + courseBuildCourseSelector.courseBuilder.getCourse().courseNumber);
+
     }
 }
