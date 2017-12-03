@@ -32,9 +32,7 @@ public class LoginScreen extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
 
         login = (Button)findViewById(R.id.login);
-        login.setBackgroundResource(R.drawable.login_button);
         register = (Button)findViewById(R.id.register);
-        register.setBackgroundResource(R.drawable.login_button);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +41,9 @@ public class LoginScreen extends AppCompatActivity {
             }
         });
         register.setOnClickListener(RegisterClickDo());
+
+        Button howtoplay = (Button)findViewById(R.id.howtoplay);
+        howtoplay.setOnClickListener(howtoplayClick());
 
     }
 
@@ -90,6 +91,15 @@ public class LoginScreen extends AppCompatActivity {
         return new View.OnClickListener() {
             public void onClick(View v){
                 Intent intent = new Intent(LoginScreen.this, Register.class);
+                startActivity(intent);
+            }
+        };
+    }
+
+    View.OnClickListener howtoplayClick(){
+        return new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginScreen.this, HowToPlay.class);
                 startActivity(intent);
             }
         };

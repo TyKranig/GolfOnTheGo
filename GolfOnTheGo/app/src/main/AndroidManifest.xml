@@ -65,7 +65,8 @@
             android:name=".CourseBuilder"
             android:label="@string/title_activity_course_builder" />
         <activity android:name=".courseBuildCourseSelector" />
-        <activity android:name=".courseBuilderHoleSelector"></activity>
+        <activity android:name=".courseBuilderHoleSelector" />
+        <activity android:name=".HowToPlay"></activity>
     </application>
 
 </manifest>

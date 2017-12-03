@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private Handler handler = new Handler();
     MediaPlayer player;
     public static User mainUser;
+    private ImageView backgroundImage;
+    private int currImage = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Random rand = new Random(System.currentTimeMillis());
         handler.postDelayed(runnable, 0);
-
+        backgroundImage = findViewById(R.id.backgroundImageView);
         //Plays music - change music eventualy or comment to perma-off
 
 
@@ -132,22 +135,28 @@ public class MainActivity extends AppCompatActivity {
     public void altBackground(Random r){
         final LinearLayout layout = (LinearLayout) findViewById(R.id.linearlayout);
 
+        int nextRand = r.nextInt()%5+1;
+        while(nextRand == currImage)
+            nextRand = r.nextInt()%5+1;
 
-        switch (r.nextInt()%4+2){ //skip background 1 for now
+        currImage = nextRand;
+        switch (nextRand){ //skip background 1 for now
+            case 1:
+                        backgroundImage.setImageResource(R.drawable.golf_background1);
+                break;
             case 2:
-                        layout.setBackgroundResource(R.drawable.golf_background2);
+                        backgroundImage.setImageResource(R.drawable.golf_background2);
                 break;
             case 3:
-                        layout.setBackgroundResource(R.drawable.golf_background3);
+                        backgroundImage.setImageResource(R.drawable.golf_background3);
                 break;
             case 4:
-                        layout.setBackgroundResource(R.drawable.golf_background4);
+                        backgroundImage.setImageResource(R.drawable.golf_background4);
                 break;
             case 5:
-                        layout.setBackgroundResource(R.drawable.golf_background5);
+                        backgroundImage.setImageResource(R.drawable.golf_background5);
                 break;
         }
-        return;
     }
 
     private Runnable runnable = new Runnable() {
