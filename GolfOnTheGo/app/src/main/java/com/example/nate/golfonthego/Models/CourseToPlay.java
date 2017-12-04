@@ -49,14 +49,14 @@ public class CourseToPlay {
 
                         Hole hole;
                         try{
-                            hole = holes.get(holeNum - 1);
+                            hole = holes.get(holeNum);
                         }
                         catch(Exception e){
                             hole = new Hole(courseToPlay);
                             hole.setFairway(new ArrayList<LatLng>());
                             hole.setGreen(new ArrayList<LatLng>());
                             holes.add(hole);
-                            hole = holes.get(holeNum - 1);
+                            hole = holes.get(holeNum);
                         }
 
                         String[] latlong = obj.getString("point").split(",");
