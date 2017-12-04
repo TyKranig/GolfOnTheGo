@@ -125,14 +125,14 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
 
                         Hole hole;
                         try{
-                            hole = addedHoles.get(holeNum - 1);
+                            hole = addedHoles.get(holeNum);
                         }
                         catch(Exception e){
                             hole = new Hole(courseBuildCourseSelector.courseBuilder.getCourse());
                             hole.setFairway(new ArrayList<LatLng>());
                             hole.setGreen(new ArrayList<LatLng>());
                             addedHoles.add(hole);
-                            hole = addedHoles.get(holeNum - 1);
+                            hole = addedHoles.get(holeNum);
                         }
 
                         String[] latlong = obj.getString("point").split(",");
@@ -156,6 +156,7 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
                 }
 
                 courseBuildCourseSelector.courseBuilder.AddAllHoles(addedHoles);
+                System.out.println("added all holes");
 
                 holeAdapter.notifyDataSetChanged();
                 refreshHoles.setRefreshing(false);
