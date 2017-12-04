@@ -55,8 +55,12 @@ public class courseBuildCourseSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Course newCourse = new Course(Course.allCourses.size());
+                Course newCourse = new Course();
+
+                //id for the new course is going to be the next index available
                 Course.allCourses.add(newCourse);
+                newCourse.courseNumber = Course.allCourses.size()-1;
+
                 courseBuilder = courseBuilderController.getInstance(newCourse);
                 Intent intent = new Intent(courseBuildCourseSelector.this, courseBuilderHoleSelector.class);
                 startActivity(intent);

@@ -27,7 +27,6 @@ import Constants.ConstantURL;
 import VolleyAPI.VolleyBall;
 
 public class courseBuilderHoleSelector extends AppCompatActivity {
-    private ArrayList<Hole> holes;
     private ArrayAdapter<Hole> holeAdapter;
     private ListView holeListView;
     private Button btnAddHole;
@@ -40,10 +39,10 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course_builder_hole_selector);
 
-        holes = courseBuildCourseSelector.courseBuilder.getHoles();
-        holeAdapter = new holeListAdapter(this, holes);
+        setContentView(R.layout.activity_course_builder_hole_selector);
+        holeAdapter = new holeListAdapter(this, courseBuildCourseSelector.courseBuilder.getHoles());
+
         holeListView = findViewById(R.id.lstBuiltHoles);
         btnAddHole = findViewById(R.id.btnAddHole);
         btnSaveCourse = findViewById(R.id.btnSaveCourse);
@@ -67,7 +66,6 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
                     public void onRefresh() {
                         Log.i("holes refresh", "onRefresh called from SwipeRefreshLayout");
                         loadCourse(getBaseContext());
-                        System.out.println(holes.toString());
                     }
                 });
     }
@@ -80,12 +78,12 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
             public void onClick(View view) {
                 Hole newHole = new Hole(courseBuildCourseSelector.courseBuilder.getCourse());
                 courseBuildCourseSelector.courseBuilder.AddHole(newHole);
-                holes = courseBuildCourseSelector.courseBuilder.getHoles();
+
                 //update the courses list
                 holeAdapter.notifyDataSetChanged();
 
                 Intent intent = new Intent(courseBuilderHoleSelector.this, CourseBuilder.class);
-                intent.putExtra(tag_current_hole, holes.size() - 1);
+                intent.putExtra(tag_current_hole, courseBuildCourseSelector.courseBuilder.getHoles().size() - 1);
                 startActivity(intent);
             }
         };
@@ -107,7 +105,7 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                courseBuildCourseSelector.courseBuilder.getCourse().saveCourse(getBaseContext());
+                courseBuildCourseSelector.courseBuilder.saveCourse(getBaseContext());
                 refreshHoles.setRefreshing(true);
                 loadCourse(getBaseContext());
             }
@@ -119,7 +117,7 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
             @Override
             public void doThings(JSONArray result) {
                 ArrayList<Hole> addedHoles = new ArrayList<>();
-                holes.clear();
+
                 try {
                     for (int i = 0; i < result.length(); i++) {
                         JSONObject obj = result.getJSONObject(i);
@@ -156,17 +154,9 @@ public class courseBuilderHoleSelector extends AppCompatActivity {
                 catch(JSONException e){
                     Log.i("json array error", e.toString());
                 }
-                Hole hole = addedHoles.get(0);
-                System.out.println(hole.getFairway().toString());
-                System.out.println("TEEEEEEEEEE" + hole.getTee().toString());
-                System.out.println("FAIRWAY" + hole.getFairway().toString());
-                System.out.println("GREEN" + hole.getGreen().toString());
-                System.out.println(hole.flagLocation.toString());
-                System.out.println(addedHoles.size());
 
-                courseBuildCourseSelector.courseBuilder.getCourse().holes.clear();
-                courseBuildCourseSelector.courseBuilder.getCourse().holes.addAll(addedHoles);
-                holes.addAll(addedHoles);
+                courseBuildCourseSelector.courseBuilder.AddAllHoles(addedHoles);
+
                 holeAdapter.notifyDataSetChanged();
                 refreshHoles.setRefreshing(false);
             }

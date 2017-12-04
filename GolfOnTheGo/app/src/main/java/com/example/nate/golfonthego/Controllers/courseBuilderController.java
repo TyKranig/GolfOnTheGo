@@ -1,5 +1,7 @@
 package com.example.nate.golfonthego.Controllers;
 
+import android.content.Context;
+
 import com.example.nate.golfonthego.Models.Course;
 import com.example.nate.golfonthego.Models.Hole;
 import com.example.nate.golfonthego.R;
@@ -72,5 +74,13 @@ public class courseBuilderController {
 
     public void AddHole(Hole hole){
         course.holes.add(hole);
+    }
+    public void AddAllHoles(ArrayList<Hole> holeList){
+        course.holes.clear();
+        course.holes.addAll(holeList);
+    }
+
+    public void saveCourse(Context context){
+        course.saveCourse(context);
     }
 }
