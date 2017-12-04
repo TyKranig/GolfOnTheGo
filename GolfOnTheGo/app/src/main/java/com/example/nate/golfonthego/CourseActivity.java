@@ -240,7 +240,8 @@ public class CourseActivity extends FragmentActivity implements OnMapReadyCallba
                         .build();                   // Creates a CameraPosition from the builder
                 //mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                 FragmentManager tempfrag = getSupportFragmentManager();
-                SwingGame.executeSwing(swingButton, tempfrag);
+                if(SwingGame.gamePlayInProgress)
+                    SwingGame.executeSwing(swingButton, tempfrag);
             }
         });
     }

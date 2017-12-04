@@ -4,7 +4,7 @@
     android:layout_width="200dp"
     android:layout_height="200dp"
     android:layout_gravity="center_horizontal|center"
-    android:background="@color/colorBabyBlue"
+    android:background="@drawable/golfbollrounded"
     tools:context="com.example.nate.golfonthego.swingFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,13 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Swing"
-        android:layout_gravity="center_vertical|center"/>
+        android:layout_gravity="center_vertical|center"
+        android:background="@drawable/basic_button"/>
 
     <Button
         android:id="@+id/changeClub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Club"
-        android:layout_gravity="center_horizontal|bottom"/>
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@drawable/basic_button"/>
 
 </FrameLayout>

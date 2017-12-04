@@ -189,8 +189,8 @@ public class Gameplay extends Observable implements Observer{
         }
         //between 90 and 180
         else if(tempBearing <= Math.PI && tempBearing > Math.PI / 2){
-            swingLat = -shotLength * Math.cos(tempBearing - Math.PI / 2);
-            swingLng = shotLength * Math.sin(tempBearing - Math.PI / 2);
+            swingLat = -shotLength * Math.sin(tempBearing - Math.PI / 2);
+            swingLng = shotLength * Math.cos(tempBearing - Math.PI / 2);
         }
         //between 180 and 270
         else if(tempBearing <= Math.PI + Math.PI / 2 && tempBearing > Math.PI){
