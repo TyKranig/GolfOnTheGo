@@ -243,7 +243,7 @@ public class Course {
 
     public void saveCourse(Context context){
         for(int i = 0; i < holes.size(); i++){
-            RequestQueueSingleton.getInstance(context).addToRequestQueue(getRequestForSave(i + 1));
+            RequestQueueSingleton.getInstance(context).addToRequestQueue(getRequestForSave(i));
         }
     }
 
