@@ -268,8 +268,8 @@ public class Course {
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
 
-                ArrayList<LatLng> fairway = getFairway(holeNumber);
-                ArrayList<LatLng> green = getGreen(holeNumber);
+                ArrayList<LatLng> fairway = getFairway(holeNumber + 1);
+                ArrayList<LatLng> green = getGreen(holeNumber + 1);
 
                 ArrayList<String> fairwayStrings = new ArrayList<>();
                 ArrayList<String> greenStrings = new ArrayList<>();
@@ -287,7 +287,7 @@ public class Course {
                 JSONArray fairwayJS = new JSONArray(fairwayStrings);
                 JSONArray greenJS = new JSONArray(greenStrings);
 
-                LatLng tee = holes.get(holeNumber - 1).getTee();
+                LatLng tee = holes.get(holeNumber).getTee();
                 String teeString = tee.latitude + "," + tee.longitude;
 
                 params.put("tee", teeString);
@@ -295,7 +295,7 @@ public class Course {
                 params.put("green", greenJS.toString());
                 params.put("courseID", courseNumber + "");
                 params.put("holeNumber",holeNumber + "");
-                Location flag = holes.get(holeNumber - 1).flagLocation;
+                Location flag = holes.get(holeNumber).flagLocation;
                 params.put("holeLocation", flag.getLatitude()+ "," + flag.getLongitude());
                 Log.d("jason", params.toString());
                 return params;
