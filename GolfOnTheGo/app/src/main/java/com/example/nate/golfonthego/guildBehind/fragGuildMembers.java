@@ -83,7 +83,7 @@ public class fragGuildMembers extends Fragment{
         return new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if(position == 0){
+                if(position == 0 && guildInfoScreen.currentGuild.isLeader() == 1){
                     //start intent to go to new member page
                     Intent intent = new Intent(getContext(), newGuildMember.class);
                     intent.putExtra("GuildID", guildInfoScreen.currentGuild.get_id());
